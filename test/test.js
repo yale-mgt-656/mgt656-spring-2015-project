@@ -13,6 +13,7 @@ var expect = chai.expect;
 var _ = require('lodash');
 var request = require('request');
 var jsdom = require('jsdom');
+var events = require('../models/events');
 
 var HOST;
 var PORT;
