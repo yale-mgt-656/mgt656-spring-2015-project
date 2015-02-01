@@ -3,6 +3,8 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' />
+    <img src="http://www.japanjourneys.co.uk/images/great_north/Towadako.png" width="200" height="200">
   </head>
 
 	<body class="container">
@@ -16,7 +18,15 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/event0">Rohit's Birthday</a></li>
+        <li><a href="/event0">Supriyo's Job Start</a></li>
+        <li><a href="/event0">Jayant's Departure</a></li>
+        </ul>
+     </footer>
     {% endblock %}
 
   </body>

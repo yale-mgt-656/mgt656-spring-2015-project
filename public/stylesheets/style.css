@@ -1,12 +1,55 @@
+header{
+  font-family:garamond;
+  color: #FFFFF0 !important;
+}
+
+p{
+  font-family:garamond;
+  padding: 10px;
+  font-size:110%;
+  color: #FFFFF0 !important;
+}
+
+img{
+  padding-bottom:10px;
+}
+
+
+figcaption{
+  font-family:garamond;
+  color: #FFFFF0 !important;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    padding:10px;
+}
+
+ul{
+  background:#000000 !important;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  text-align: center;
+  background-color:#2F4F4F !important;
 }
 
 a {
-  color: #00B7FF;
+ 
+  font-weight: bolder;
+  font-family: garamond;
+  color: #FFD700 !important;
 }
 
 .form-errors {
 	color: red;
 }
+
+footer{
+  background-color: #000000;
+  border: solid;
+}
+
