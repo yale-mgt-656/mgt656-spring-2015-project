@@ -22,6 +22,9 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21,  
+    22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
@@ -61,6 +64,34 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
 
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.')
+  }
+
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer.')
+  }
+
+  if (!(validator.equals(request.body.year, 2015) || validator.equals(request.body.year, 2016))) {
+    contextData.errors.push('Your year can only be 2015 or 2016.')
+  }
+
+  if (validator.isInt(request.body.month) === false) {
+    contextData.errors.push('Your month should be an integer.')
+  }
+
+  if (validator.isIn(request.body.month, allowedDateInfo.months) === false) {
+    contextData.errors.push('Your months should be between 0 and 11.')
+  }
+
+  if (validator.isInt(request.body.day) === false) {
+    contextData.errors.push('Your day should be an integer.')
+  }
+
+  if (validator.isIn(request.body.day, allowedDateInfo.days) === false) {
+    contextData.errors.push('Your day should be between 1 and 31.')
+  }
+
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -75,6 +106,8 @@ function saveEvent(request, response){
   }else{
     response.render('create-event.html', contextData);
   }
+
+
 }
 
 function eventDetail (request, response) {
