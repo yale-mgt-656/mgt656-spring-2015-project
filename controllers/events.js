@@ -40,7 +40,30 @@ function listEvents(request, response) {
   };
   response.render('event.html', contextData);
 }
-
+/**
+ * Controller that renders a page for showing event details.
+ */
+function showEvent(request, response){
+  var eventId = parseInt(request.param('id'));
+  var eventObj = events.getById(eventId);
+  if(eventObj == null){
+    response.writeHead(404, {"Content-Type": "text/plain"});
+    response.write("404 Not Found\n");
+    response.end();
+  }else{
+    var date = new Date(eventObj.date);
+    var month = allowedDateInfo.months[date.getMonth()];
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var contextData = {
+      'event': eventObj,
+      'year': year,
+      'month': month,
+      'day': day
+    };
+  }
+  response.render('event-detail.html', contextData);
+}
 /**
  * Controller that renders a page for creating new events.
  */
@@ -111,5 +134,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'showEvent': showEvent
 };
