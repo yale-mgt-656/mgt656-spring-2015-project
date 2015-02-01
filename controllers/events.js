@@ -113,7 +113,9 @@ function saveEvent(request, response){
 
 
   if (contextData.errors.length === 0) {
+    var nextId = events.nextEventId();
     var newEvent = {
+      id: nextId,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -121,7 +123,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('event-detail.html');
+    response.redirect('/events/'+nextId);
   }else{
     response.render('create-event.html', contextData);
   }
