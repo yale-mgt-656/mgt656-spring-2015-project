@@ -16,13 +16,11 @@
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
-    <br>
+    <br />
 
     <label for="location">Location:</label>
     <input type="text" name="location">
-    <br>
-    
-    <label for="title">Image:</label>
+    <br />
 
     <label for="year">Year:</label>
     <select name="year">
@@ -117,7 +115,12 @@
     <option value="30">30</option>
     </select> 
 
-    <input id="submit" type="submit" value="Submit">
+    <br />
+    
+    <label for="image">Link to an Image:</label>
+    <input type="text" name="image">
+
+    <input id="submit" class="btn" type="submit" value="Submit">
 
   </form>
 {% endblock %}
