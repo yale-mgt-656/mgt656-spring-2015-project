@@ -20,8 +20,8 @@ configure(app);
 app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
-app.get('/events/:id', eventControllers.showEvent);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/events/:id', eventControllers.showEvent);
 app.post('/events/new', eventControllers.saveEvent);
 
 module.exports = app;
