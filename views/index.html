@@ -2,20 +2,22 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>{{ title }}</h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    {{tagline}}
   </p>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
   <p> Upcoming Events</p>
+    <div>
     {% include "fragments/events-list.html" %}
+    </div>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
