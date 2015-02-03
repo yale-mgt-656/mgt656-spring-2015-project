@@ -83,8 +83,8 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
-  if (validator.isLength(request.body.location, 0, 50) === false) {
-    contextData.errors.push('Your location should be between less than 50 letters.');
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be between 1 and 50 letters.');
   }
   var imageURL = request.body.image;
   var suffix = imageURL.substring(imageURL.length - 4,imageURL.length);
@@ -96,22 +96,22 @@ function saveEvent(request, response){
     contextData.errors.push('The URL of your image has to be a url ending with .png or .gif');
   }
   var year = parseInt(request.body.year);
-  if(year!=2015 && year!=2016 || request.body.year==""){
+  if(year!=2015 && year!=2016 || request.body.year=="" || !validator.isInt(request.body.year)){
     contextData.errors.push('Year must be 2015 or 2016');
   }
   var month = parseInt(request.body.month);
-  if(month<0 || month>11 || request.body.month==""){
+  if(month<0 || month>11 || request.body.month==""|| !validator.isInt(request.body.month)){
     contextData.errors.push('month must be an integer between 0 and 11');
   }
   var day = parseInt(request.body.day);
-  if(day<0 || day>31 || request.body.day==""){
-    contextData.errors.push('day must be an integer between 0 and 31');
+  if(day<1 || day>31 || request.body.day==""|| !validator.isInt(request.body.day)){
+    contextData.errors.push('day must be an integer between 1 and 31');
   }
   var hour = parseInt(request.body.hour);
-  if(hour<0 || hour>23 || request.body.hour==""){
+  if(hour<0 || hour>23 || request.body.hour==""|| !validator.isInt(request.body.hour)){
     contextData.errors.push('hour must be an integer between 0 and 23');
   }
-  var minute = parseInt(request.body.minute);
+  var minute = parseInt(request.body.minute|| !validator.isInt(request.body.minute));
   if(minute!=0 && minute!=30 || request.body.year==""){
     contextData.errors.push('Minute must be 0 or 30');
   }
