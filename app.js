@@ -9,7 +9,6 @@ var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 
-// This is not working. ever.
 // Create our express app
 var app = express();
 
@@ -22,5 +21,9 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/events/0', eventControllers.eventDetail);
+app.get('/events/1', eventControllers.eventDetail);
+app.get('/events/2', eventControllers.eventDetail);
+
 
 module.exports = app;
