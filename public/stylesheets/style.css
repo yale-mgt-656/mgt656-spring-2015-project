@@ -14,3 +14,34 @@ a {
 #logo {
   text-align: center;
 }
+
+/* styling the About Us Page */
+
+#allaboutphotos {
+  display: block;
+  width: 70%;
+  height: 225px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#AlexAboutPhoto {
+  float: left;
+  margin-left: 50px;
+}
+
+#JonasAboutPhoto {
+  float: left;
+  margin-left: 50px;
+}
+
+#AmandaAboutPhoto {
+  float: left;
+  margin-left: 50px;
+}
+
+#WhatWeDoAbout {
+   display: block;
+   width: 100%;
+}
+
