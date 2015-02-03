@@ -10,3 +10,7 @@ a {
 .form-errors {
 	color: red;
 }
+
+#logo {
+  text-align: center;
+}
