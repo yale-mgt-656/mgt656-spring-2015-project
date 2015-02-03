@@ -15,23 +15,16 @@
     },
     "language": {
         "@instanceHighlight": "true",
+        "@semi": "true",
         "@undeclaredVars": "true",
         "@unusedFunctionArgs": "false",
         "@warnLevel": "info"
     },
     "run": {
         "@path": "/.c9/runners",
-        "@runner": "node-gulp",
         "configs": {
             "@inited": "true",
-            "json()": {
-                "Gulp": {
-                    "command": "gulp",
-                    "debug": true,
-                    "name": "Gulp",
-                    "runner": "Shell command"
-                }
-            }
+            "json()": {}
         }
     },
     "share": {
