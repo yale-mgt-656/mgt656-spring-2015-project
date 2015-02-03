@@ -57,11 +57,26 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 0, 50) === false) {
+    contextData.errors.push('Your title should be less than 50 letters.');
   }
-
-
+  
+/*
+  The image URL must begin with ‘http://’ or ‘https://’ and end with ‘.gif’ or ‘.png’.
+  The title must be less than 50 characters
+  The location must be less than 50 characters
+  The year must be 2015 or 2016
+  The month must be between 0 to 11, inclusive
+  The hour must be 0-23
+  The minute must be 0 or 30
+*/
+  if (request.body.image.substring(0,7) == "http://" 
+  || request.body.image.substring(0,8) == "https://" 
+  || request.body.image.substring(request.body.iamge.length - 4,request.body.image.length) == ".png"
+  || request.body.image.substring(request.body.iamge.length - 4,request.body.image.length) == ".img") {
+    contextData.errors.push('Your url for your image should start with either {https:// | http://} and your file should end with {.img | .png}.');
+  }
+  
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
