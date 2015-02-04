@@ -1,6 +1,33 @@
+@font-face {
+ font-family: 'AsapBold';
+ src: url("asap-bold-webfont.eot");
+ src: url("asap-bold-webfont.svg");
+ src: url("asap-bold-webfont.tt");
+ src: url("asap-bold-webfont.woff");
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Asap';
+ src: url("asap-regular-webfont.eot");
+ src: url("asap-regular-webfont.svg");
+ src: url("asap-regular-webfont.ttf");
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'BPscript';
+ src: url("bpscript-webfont.eot");
+ src: url("bpscript-webfont.svg");
+ src: url("bpscript-webfont.ttf");
+ src: url("bpscript-webfont.woff");
+ font-weight: normal;
+ font-style: normal;
+}
 body.container{
   background-color: white;
-  font: 18px "Archer";
+  font-size: 18px;
+  font-family: "Asap";
 }
 a {
   color: black;
@@ -10,38 +37,41 @@ a {
 	color: red;
 }
 footer {
-  color: black;
-  font: 20px "Gotham Light";
+  font-size:  20px;
+  font-family: "Asap";
   margin-left: 950px;
   padding: 1em;
 }
 .headerBar {
-  color: black;
-  font: 20px "Gotham Light";
+  font-size:  20px;
+  font-family: "Asap";
   margin-left: 850px;
   padding: 1em;
 }
 .headerBar2 {
-  color: black;
-  font: 20px "Gotham Light";
+  font-size:  20px;
+  font-family: "Asap";
   margin-left: 950px;
 }
 .subtitle {
-  font: 40px "Gotham Light";
+  font-size: 40px;
+  font-family: "Asap";
 }
 .events {
-  font: 20px "Gotham";
-  color: black;
+  font-size: 30px;
+  font-family: "BPscript";
   margin-left: 200px;
   margin-right: 400px;
 }
 .createevents {
-  font: 20px "Gotham";
+  font-size: 30px;
+  font-family: "BPscript";
   color: black;
 }
 .title {
-  font:60px "Gotham";
-   margin-left: 350px;
+  font-size: 60px;
+  font-family: 'BPscript';
+  margin-left: 350px;
   padding: 1em;
 }
 .eventscontainer {
