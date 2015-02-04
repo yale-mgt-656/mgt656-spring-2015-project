@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-
+  
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -12,7 +12,7 @@
       </ul>
     </div>
   {% endif %}
-
+  
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
@@ -21,7 +21,7 @@
     <input type="text" name="location">
     
     <label for="image">Image:</label>
-    <input type="url" name="image"
+    <input type="url" name="image">
     
     <label for="year">Year</label>
     <select name="year">
@@ -115,7 +115,5 @@
     </select>
     
   </form>
+  
 {% endblock %}
-
-
-
