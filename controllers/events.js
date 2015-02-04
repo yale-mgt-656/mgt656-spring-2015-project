@@ -87,7 +87,7 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
+  if (ev === nunpll) {
     response.status(404).send('No such event');
   }
 
@@ -99,8 +99,12 @@ function rsvp (request, response){
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
 }
+function api(request,response){
+  var output = {events:events.all};
+  response.send(output)
+}
+
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -111,5 +115,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
