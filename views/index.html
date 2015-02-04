@@ -2,24 +2,24 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
+   <span class="headerBar"><a href="/">Home</a>  ||  <a href="/about">About</a></span>
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    <span class="title">{{ title }}</span>
   </p>
-  <p> Here is our list of events </p>
-    <div style = "border: 1px solid black">    
+  <p>
+   <center> Welcome to {{ title }}. {{tagline}}</center>
+  </p>
+  <br>
+  <p></p>
+  <span class="events"> Events</span> 
+  <span><a id="new" href="/events/new" class="createevents">Create a new event</a></span>
+  </p>
+    <div class="eventscontainer">    
     {% include "fragments/events-list.html" %}
     </div>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
 {% endblock %}

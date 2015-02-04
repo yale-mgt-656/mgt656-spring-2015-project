@@ -1,5 +1,15 @@
 {% extends "layout.html" %}
-
+{% block header %}
+      <header>
+          <span class="headerBar2"><a href="/">Home</a>  ||  <a href="/about">About</a></span>
+      </header>
+    {% endblock %}
 {% block mainContent %}
-  <p>This is the about us page</p>
+<p class="subtitle"> Our Team Members</p>
 {% endblock %}
+
+    {% block footer %}
+      <footer>
+        <a href="/">Home</a> || <a href="/about">About</a>
+      </footer>
+    {% endblock %}
