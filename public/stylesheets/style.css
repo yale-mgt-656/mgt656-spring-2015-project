@@ -1,6 +1,16 @@
-body.container{
-  background-color: white;
-  font: 18px "Archer";
+.site-wrapper {
+    background-image: url("http://www.lifeofpix.com/wp-content/uploads/2015/02/Life-of-Pix-free-stock-photos-night-light-city-Hide-Obara.jpg");
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+footer {
+    visibility: hidden;
+}
+
+/*body.container{
+  font: 18px "Gotham";
 }
 a {
   color: black;
@@ -9,6 +19,7 @@ a {
 .form-errors {
 	color: red;
 }
+
 footer {
   color: black;
   font: 20px "Gotham Light";
@@ -49,10 +60,11 @@ footer {
    margin-left: 0px;
   padding: 1em;
 }
-ul {
- list-style: none;
-}
 .names {
   margin-left: 50px
   margin-right: 50px;
 }
+
+ul {
+ list-style: none;
+ */
