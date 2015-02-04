@@ -87,7 +87,7 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
-  if (ev === nunpll) {
+  if (ev === null) {
     response.status(404).send('No such event');
   }
 
