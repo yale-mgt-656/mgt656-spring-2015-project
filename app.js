@@ -8,7 +8,7 @@ var configure = require('./config.js');
 var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
-
+var statusControllers = require('./controllers/status.js');
 
 // Create our express app
 var app = express();
@@ -21,6 +21,8 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/status', statusControllers.status);
+
 app.post('/events/new', eventControllers.saveEvent);
 
 module.exports = app;
