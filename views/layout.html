@@ -23,7 +23,7 @@
     <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
   </head>
 
-
+ {% block mainContent %}
 	<body class="container">
 
     <div class="site-wrapper">
@@ -31,30 +31,35 @@
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
-
+<img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">{{title}}</h3>
               <nav>
+                {% block header %}
                 <header>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="/">Home</a></li>
                   <li><a href="/about">About</a></li>
                   </header>
+                  {% endblock %}
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Deep Thought Events Page</h1>
             <p class="lead">{{tagline}}</p>
             <p class="lead">
             </p>
+            {% block left %}
+            {% endblock %}
           </div>
+          {% block footer %}
 <footer>
         <a href="/">Home</a> || <a href="/about">About</a>
       </footer>
+      {% endblock %}
           <div class="mastfoot">
             <div class="inner">
             </div>
@@ -63,22 +68,7 @@
         </div>
 
       </div>
-  
-<!--
-    {% block header %}
-      <header class="title">Deep Thought Event Machine</header>
-    {% endblock %}
-
-    {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
-    {% endblock %}
-
-    {% block footer %}
-      <footer>
-        <a href="/">Home</a> || <a href="/about">About</a>
-      </footer>
-    {% endblock %}
--->
+  {% endblock %}
   <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
