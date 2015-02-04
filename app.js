@@ -24,5 +24,8 @@ app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/status', statusControllers.status);
 app.post('/events/new', eventControllers.saveEvent);
+app.post('/events/0', eventControllers.saveEvent);
+app.post('/events/1', eventControllers.saveEvent);
+app.post('/events/2', eventControllers.saveEvent);
 
 module.exports = app;
