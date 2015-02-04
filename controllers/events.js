@@ -103,7 +103,7 @@ function rsvp (request, response){
 }
 
 function api(request, response){
-  var output = {events: []}
+  var output = {events: []};
   var search = request.query.search;
   
   if(search){
