@@ -24,7 +24,7 @@ footer {
 .headerBar2 {
   color: black;
   font: 20px "Gotham Light";
-  margin-left: 950px;
+  margin-left: 970px;
 }
 .subtitle {
   font: 40px "Gotham Light";
@@ -51,4 +51,8 @@ footer {
 }
 ul {
  list-style: none;
+}
+.names {
+  margin-left: 50px
+  margin-right: 50px;
 }
