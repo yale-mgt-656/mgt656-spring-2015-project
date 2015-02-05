@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 
-{% block mainContent %}
 
   {% if errors %}
     <div class="form-errors">
@@ -12,7 +11,7 @@
       </ul>
     </div>
   {% endif %}
-
+{% block header %}
 	<form id="create-event" action="../events/new" method="POST" class="form-horizontal">
 	  <div class="form-group">
       <label for="title" class="col-sm-2 text-right">Event title:</label>
@@ -69,5 +68,6 @@
     </div>
   </form>
 {% endblock %}
-
+{% block right %}
+{% endblock %}
 

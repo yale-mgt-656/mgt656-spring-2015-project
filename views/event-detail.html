@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% block mainContent %}
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -10,21 +9,22 @@
       </ul>
     </div>
   {% endif %}
+  {% block header %}
 <div class="row">
-
   <div class="col-md-6">
     <img src="{{event.image}}" class="img-responsive" id='image'/>
   </div>
   <div class="col-md-6">
-    <h1 id='title'>{{event.title}}</h1>
+    <h2 id='title'>{{event.title}}</h2>
     <span id='date'>{{month}} {{day}}, {{year}}</span>
     <span id='location'>{{event.location}}</span>
-    <h3>Attendees</h3>
+ <p><h3>Attendees</h3></p>
     <ul id='attendees'>
       {% for attendee in event.attending %}
         <li>
           {{attendee}}
         </li>
+      
       {% endfor %}
     </ul>
   </div>

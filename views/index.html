@@ -1,25 +1,11 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <header>
-    <img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
-   <span class="headerBar"><a href="/">Home</a>  ||  <a href="/about">About</a></span>
-  </header>
-{% endblock %}
-
-{% block mainContent %}
-  <p>
-    <span class="title">{{ title }}</span>
-  </p>
-  <p>
-   <center> Welcome to {{ title }}. {{tagline}}</center>
-  </p>
-  <br>
-  <p></p>
-  <span class="events"> Events</span> 
-  <span><a id="new" href="/events/new" class="createevents">Create a new event</a></span>
-  </p>
-    <div class="eventscontainer">    
+    {% block left %}
+    <h1>Events</h1>
     {% include "fragments/events-list.html" %}
+    <br>
+    <div class="eventscontainer">    
+    <span><a id="new" href="/events/new" class="btn btn-lg btn-default">Create a new event</a></span>
+    {% endblock %}
+    
     </div>
-{% endblock %}

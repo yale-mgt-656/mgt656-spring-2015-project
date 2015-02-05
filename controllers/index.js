@@ -8,7 +8,7 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'Deep Thought Event Machine',
+    'title': 'MGT656',
     'tagline': 'The world\'s best Eventbrite clone',
     'events': [],
   };
