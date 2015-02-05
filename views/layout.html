@@ -60,10 +60,13 @@
                         <a class="page-scroll" href="/">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Events</a>
+                        <a class="page-scroll" href="/#about">Events</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about/#about">Status Report</a>
                     </li>
                 </ul>
             </div>
@@ -82,8 +85,10 @@
                         <h1 class="brand-heading">{{title}}</h1>
                         <p class="intro-text">{{tagline}}</p>
                         {% endblock %}
+                        {% block right%}
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
+                            {% endblock %}
                         </a>
                     </div>
                 </div>
