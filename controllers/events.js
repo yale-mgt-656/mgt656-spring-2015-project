@@ -101,11 +101,30 @@ function rsvp (request, response){
   }
 }
 function api(request,response){
-  var output = {events:events.[]};
-  for (var i=0; i<= events.all.length; i++){
-    output.events.push('foo')
+  var url = require("url");
+  var keyword = url.parse(request.url, true).query.search;
+  var output = null;
+  if (keyword != null) {
+    var keywords = keyword.toLowerCase().split(" ");
+    console.log(keywords);
+    output = {events:[]};
+    for (var i=0; i < events.all.length; i++) {
+      var keyword_is_not_matching = false;
+      var title = events.all[i].title.toLowerCase();
+      for (var j = 0; j < keywords.length; ++j) {
+        if (title.indexOf(keywords[j]) < 0) {
+          keyword_is_not_matching = true;
+          break;
+        }
+      }
+      if (!keyword_is_not_matching) {
+        output.events.push(events.all[i]);
+      }
+    }
+  } else {
+    output = {events:events.all};
   }
-  response.json(output)
+  response.json(output);
 }
 
 
