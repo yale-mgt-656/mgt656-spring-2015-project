@@ -1,15 +1,11 @@
 {% extends "layout.html" %}
-<img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
-<a href="#" class="btn btn-lg btn-default">Learn more</a>
-  <p>
-    <img id="logo" src="http://i.imgur.com/TEpG0ur.png"/>
-  </p>
-  <span class="events"> Events</span> 
-  <span><a id="new" href="/events/new" class="createevents">Create a new event</a></span>
-  </p>
-    <div class="eventscontainer">    
+
     {% block left %}
+    <h1>Events</h1>
+    {% include "fragments/events-list.html" %}
+    <br>
+    <div class="eventscontainer">    
     <span><a id="new" href="/events/new" class="btn btn-lg btn-default">Create a new event</a></span>
     {% endblock %}
-    {% include "fragments/events-list.html" %}
+    
     </div>
