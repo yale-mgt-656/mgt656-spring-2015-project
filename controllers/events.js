@@ -120,6 +120,11 @@ function rsvp (request, response){
 
 }
 
+  function api(request,response) {
+    var output = {events: events.all};
+    response.send(output);
+  }
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -129,5 +134,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
