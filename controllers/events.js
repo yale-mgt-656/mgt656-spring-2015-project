@@ -58,9 +58,52 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
 
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be between 1 and 50 characters.');
+  }
+  
+  if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image is invalid.');
+  }
+
+  if (request.body.image.substring(request.body.image.length-3) != "gif" || request.body.image.substring(request.body.image.length-3) != "png") {
+    contextData.errors.push('Your image should either be gif or png');
+  }
+  
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer');
+  }
+
+  if (request.body.year <2015 || request.body.year > 2016 ) {
+    contextData.errors.push('Your year should either be 2015 or 2016');
+  }
+  
+  if (validator.isInt(request.body.month) === false) {
+    contextData.errors.push('Your month should be an integer');
+  }
+  
+  if (request.body.month < 0 || request.body.month > 11) {
+    contextData.errors.push('Your month is invalid');
+  }
+  
+  if (validator.isInt(request.body.day) === false) {
+    contextData.errors.push('Your day should be an integer');
+  }
+  
+  if (request.body.day < 1 || request.body.day > 31) {
+    contextData.errors.push('Your day is invalid');
+  }
+
+  if (validator.isInt(request.body.hour) === false) {
+    contextData.errors.push('Your hour should be an integer');
+  }
+  
+  if (request.body.day < 0 || request.body.day > 23) {
+    contextData.errors.push('Your hour is invalid');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
