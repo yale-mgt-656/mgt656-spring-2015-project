@@ -30,3 +30,11 @@ a {
 	padding: 10%;
 	display: inline;
 	}
+	
+.divHomePage {
+	font-family: "helvetica";
+	line-height: 100%;
+	font-size: 14px;
+	padding: 10%;
+	display: table-cell;
+	}
