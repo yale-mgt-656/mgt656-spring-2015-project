@@ -23,12 +23,10 @@ a {
 	line-height: 100%;
 	font-size: 18px;
 	padding: 10%;
-	display: table-cell;
-	vertical-align: middle;
+	display: table;
 	}
 
 .divAbout {
 	padding: 10%;
-	display: table-cell;
-	vertical-align: middle;
+	display: inline;
 	}
