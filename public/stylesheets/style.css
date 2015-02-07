@@ -20,8 +20,9 @@ a {
 
 .divEventForm {
 	font-family: "helvetica";
-	font-size: 22px;
-	padding: 20%;
+	line-height: 100%;
+	font-size: 18px;
+	padding: 10%;
 	display: table-cell;
 	vertical-align: middle;
 	}
