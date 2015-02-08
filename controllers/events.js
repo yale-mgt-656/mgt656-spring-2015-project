@@ -58,9 +58,17 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
-
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 50 letters.');
+  }
+if (validator.isURL(request.body.image, 'http','https'))  {
+    contextData.errors.push('Your image is not a URL');
+  }
+if (validator.contains(request.body.image, 'gif','png')) {
+    contextData.errors.push('Your image must be a .gif or .png');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
