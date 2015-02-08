@@ -2,7 +2,8 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <img id="HeaderPhoto" src="http://www.zenthemaster.in/images/header-bg.png" height="150" width="1150">
+    <h1>{{ title }} CARACHUGU</h1>
   </header>
 {% endblock %}
 
@@ -10,6 +11,11 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+  <img id="logo" src="http://i.kinja-img.com/gawker-media/image/upload/s--KfWpVfF9--/777799945904752783.png" width="1150">
+  <p>Here is our list of events</p>
+  <div style="border: 1px solid black">
+     {% include "fragments/events-list.html" %}
+  </div>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
