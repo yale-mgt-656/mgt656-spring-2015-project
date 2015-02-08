@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
@@ -9,4 +10,9 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+ul
+{
+list-style-type: none;
 }
