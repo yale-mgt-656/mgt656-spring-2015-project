@@ -49,6 +49,19 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+var value = null;
+if (validator.isInt(request.body[fieldName]) === false) {
+contextData.errors.push('Your ' + fieldName +' should be an integer.');
+} else {
+value = parseInt(request.body[fieldName], 10);
+if (value >maxVal || value < minVal) {
+contextData.errors.push('Your ' + fieldName + ' should be in the range ' + minVal + '-' + maxVal);
+}
+}
+return value;
+}
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -63,12 +76,14 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 50 letters.');
   }
-if (validator.isURL(request.body.image, 'http','https'))  {
-    contextData.errors.push('Your image is not a URL');
+  if (validator.isURL(request.body.image, 'http'|'https')) {
+    contextData.errors.push('Your image must be a URL.');
   }
-if (validator.contains(request.body.image, 'gif','png')) {
-    contextData.errors.push('Your image must be a .gif or .png');
-  }
+  
+  var year =checkIntRange(request, 'year', 2015, 2016, contextData);
+  var month=checkIntRange(request, 'month', 0, 11, contextData);
+  var day= checkIntRange(request, 'day', 1, 31, contextData);
+  var hour= checkIntRange(request, 'hour', 0, 23, contextData);
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -111,8 +126,18 @@ function rsvp (request, response){
 }
 
 function api(request, response) {
-  var output = {events: events.all};
-  response.send(output);
+  var output = {events: []};
+  var search = request.query.search;
+  if(search){
+    for(var i = 0; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+    output.events.push(events.all[i]);
+      }
+    }
+  }else{
+    output.events = events.all;
+  }
+  response.json(output);
 }
 
 /**
