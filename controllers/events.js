@@ -45,14 +45,21 @@ function listEvents(request, response) {
  * Controller that renders a list of events in JSON.
  */
 function listEventsJSON(request, response) {
-  var currentTime = new Date();
-  var contextData = {
-    'events': events.all,
-    'time': currentTime
-  };
+  var needle = request.query.search;
+  var allEvents = events.all;
+  var JSONevents = [];
+  if(needle){
+    for (var i = allEvents.length - 1; i >= 0; i--) {
+      if (allEvents[i].title.toLowerCase().search(needle.toLowerCase())>-1){
+        JSONevents.push(allEvents[i]);
+      }
+    }
+  }else{
+    JSONevents = allEvents;
+  }
   response.type('application/json');
   response.statusCode = 200;
-  response.json({'events':events.all});
+  response.json({'events': JSONevents});
   //response.render('event.html', contextData);
 }
 
