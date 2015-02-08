@@ -21,8 +21,11 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/api/events', eventControllers.listEventsJSON);
+
 app.get('/events/:id', eventControllers.showEvent);
 app.post('/events/new', eventControllers.saveEvent);
 app.post('/events/:id', eventControllers.rsvp);
+
 
 module.exports = app;

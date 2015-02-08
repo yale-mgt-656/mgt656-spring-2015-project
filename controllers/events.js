@@ -40,6 +40,22 @@ function listEvents(request, response) {
   };
   response.render('event.html', contextData);
 }
+
+/**
+ * Controller that renders a list of events in JSON.
+ */
+function listEventsJSON(request, response) {
+  var currentTime = new Date();
+  var contextData = {
+    'events': events.all,
+    'time': currentTime
+  };
+  response.type('application/json');
+  response.statusCode = 200;
+  response.json({'events':events.all});
+  //response.render('event.html', contextData);
+}
+
 /**
  * Controller that renders a page for showing event details.
  * Path: '/events/:id'
@@ -188,5 +204,6 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'showEvent': showEvent
+  'showEvent': showEvent,
+  'listEventsJSON': listEventsJSON
 };
