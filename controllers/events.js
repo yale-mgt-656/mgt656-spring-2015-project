@@ -42,6 +42,7 @@ function listEvents(request, response) {
 }
 /**
  * Controller that renders a page for showing event details.
+ * Path: '/events/:id'
  */
 function showEvent(request, response){
   var eventId = parseInt(request.param('id'));
@@ -156,17 +157,23 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {errors: [], event: ev};
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+  
+  if(!validator.contains(request.body.email, "@yale.edu")){
+    contextData.errors.push('Yalies Only');
+    response.render('event-detail.html', contextData); 
+  }
+  else{
+    if(validator.isEmail(request.body.email)){
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }else{
+      contextData.errors.push('Invalid email');
+      response.render('event-detail.html', contextData);    
+    }
   }
 
 }
