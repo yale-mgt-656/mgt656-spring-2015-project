@@ -5,39 +5,42 @@
 </header>
 
 {% block mainContent %}
-  <p>MGT 656 - Software Development Project Status Report</p>
-
+<center><h2>MGT 656 - Software Development Project Status Report</h2></center>
+<center><h3>February 10, 2015</h3></center>
+ <h3>Team</h3>
  <p>Jonas Clark (jonas.clark@yale.edu)</p>
  <p>Alex Henry (alex.henry@yale.edu)</p>
  <p>Amanda Rinderle (amanda.rinderle@yale.edu)</p>
-
-<p>February 4, 2015</p>
-
-<p>Burn Down Chart
+<h3>Sprint Burn Down Chart
 <div id="logo">
-     <img src="http://i.imgur.com/QKmrOrA.png" alt="Burn Down Chart" </div></p>
-     
+     <img src="https://www.spinozarods.com/wp-content/uploads/2015/02/Sprint-Burndown-2-v3.jpg"</div></h3>
+<p>On day 1, we made several bug fixes we discovered from our last sprint. On days 2-5, we did not make signficant progress on the project. In fact, on day 5 we received a curve ball from the instructors that increased our product backlog. On day 6 we made herculean progress with the team firing on all cylinders. We wrapped up remaining items on our sprint backlog list during the final day of the sprint.</p>     
 
-<p>Sprint Completed Stories</p>
-<ul>1. Using Bootstrap CSS</ul>
-<ul>2. Link to /about in the footer</ul>
-<ul>3. Link to / in the footer</ul>
-<ul>4. Team logo on /</ul>
-<ul>5. Team members on /about</ul>
-<ul>6. Photos of team members on /about</ul>
+<h3>Sprint Completed Stories</h3>
+<ul>1. Bug fix for homepage logo (now on cloud server)</ul>
+<ul>2. Bug fix for about page photos</ul>
+<ul>3. Bug  fix for about page name</ul>
+<ul>4. Status link added to pages for accessing project report</ul>
+<ul>5. Install Google Analytics</ul>
+<ul>6. Events list added to homepage</ul>
+<ul>7. Event links on homepage</ul>
+<ul>8. Hide old events on homepage</ul>
+<ul>9. Create form for new event that allows for event name, location, image, year, month, day, hour, and minute</ul>
+<ul>10. Create pull down menu for year, month, day, hour, minute</ul>
+<ul>11. Create submit button for new event</ul>
+<ul>12. Validate new event form entries (event name, location, image, year, month, day, hour, minute)</ul>
+<ul>13. API returns events in JSON format and allows for searching</ul>
+<ul>14. RSVP function that allows users to send RSVPs</ul>
+<ul>15. RSVP function that allows for validating RSVPS</ul>
 
-<p>We spent considerable time upfront setting up our collaborative workspaces and getting familiar with the basics of working together on the same application using Github, Cloud9, and Heroku. We decided to create new branches for each feature improvement for the application and work on these independently in Cloud9. This meant that we needed to understand the mechanics of how to push and pull code from Github, merge pieces of work, and deploy to Heroku. Something that sounds easy, but took a fair bit of time for us to all understand and be able to execute on (Kyle and Octocat both helped!). </p>
+<p>After having straightened out various collaboration and workflow issues in the first sprint, we spent this sprint focusing on the path ahead and grooming the product backlog. Since we tackled some of the easier HTML pieces during our first sprint, we priorititized site functionality (listing of events on homepage, creating new events on new event page, linking to new events, the API, etc.). We also incorporated several small bug fixes from the previous sprint and the curve ball provided by the instructors into our product backlog. Story points fell into two major buckets--html/css heavy and javascript based--and so we tried to have each team member pull from the backlog strategically based on relative strenths. </p>
 
-<p>We then worked on several html/css features that we prioritized because we believed that we’d be able to make these changes relatively quickly given both our existing knowledge and the size of the tasks. After making these updates in different branches we merged them with the origin master and deployed our updated application to Heroku. </p>
+<h3>Product Backlog</h3>
+<ul>1. Bug fixes from previous sprint</ul>
+<ul>2. Change layout.html styling</ul>
+<ul>3. Change homepage styling</ul>
+<ul>4. Change about page sytling</ul>
 
-<p>Product Backlog</p>
-<ul>1. Create additional required pages</ul>
-<ul>2. Create unordered list of events on homepage</ul>
-<ul>3. Allow for creating a new event on the homepage</ul>
-<ul>4. Create form for creating new events on new events page</ul>
-<ul>5. Create RSVP function</ul>
-<ul>6. Make site compliant with API JSON format</ul>
-
-<p>After finishing the html/css elements of the site (such as creating the additional required pages with bootstrap css, header/footer, and links, creating an unordered list of events), we plan to tackle some of the java script requirements (allow for creating new events, create form for creating new events, create RSVP function). We will save making the site compliant with API JSON format for last as we anticipate this taking the most time. </p>
+<p>After completing the main functionality elements of the site, we plan to evaluate whether there are any bugs and fix them as well as turn to the site UX, including updating the layout.html page, homepage, and about page. We want our site to more aesthetically pleasing!</p>
 
 {% endblock %}
