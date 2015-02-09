@@ -1,12 +1,13 @@
 header{
-  font-family:garamond;
-  color: #FFFFF0 !important;
+  font-family:'times new roman';
+  color: red !important;
+  font-weight: bolder;
 }
 
 p{
   font-family:garamond;
   padding: 15px;
-  font-size:110%;
+  font-size:130%;
   color: #FFFFF0 !important;
 }
 
@@ -16,6 +17,7 @@ span{
 
 img{
   padding-bottom:10px;
+  border-radius: 20px;;
 }
 
 
@@ -26,7 +28,7 @@ li {
 }
 
 ul{
-  background:#000000 !important;
+  color: orange !important;
   padding: 20px;
 }
 
@@ -34,14 +36,15 @@ body {
   padding: 50px;
   font: 14px;
   text-align: center;
-  background-color:#2F4F4F !important;
+  background: url("http://vmwebapp.com/vmworld/images/vmworld-gatherings.jpg");
+  background-size:cover;
 }
 
 a {
  
   font-weight: bolder;
   font-family: garamond;
-  color: #FFD700 !important;
+  color: orange !important;
 }
 
 .form-errors {
@@ -49,7 +52,7 @@ a {
 }
 
 footer{
-  background-color: #000000;
+  background-color: #FFFFFF;
   border: solid;
 }
 
