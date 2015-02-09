@@ -65,10 +65,18 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 0, 50) === false) {
     contextData.errors.push('Your title should be less than 50 letters.');
   }
+  
+  if (request.body.title.length === 0) {
+    contextData.errors.push('Your title length is 0, which leads the Hyperactive Alligators to believe that you did not put anything here. That is a problem; please add the image url.');
+  }
 
 //  The location must be less than 50 characters
   if (validator.isLength(request.body.location, 0, 50) === false) {
     contextData.errors.push('Your location should be less than 50 characters.');
+  }
+  
+  if (request.body.location.length === 0) {
+    contextData.errors.push('Your location length is 0, which leads the Hyperactive Alligators to believe that you did not put anything here. That is a problem; please add the image url.');
   }
 
 //The year must be 2015 or 2016
