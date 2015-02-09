@@ -185,7 +185,7 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
   
-  if(!validator.contains(request.body.email, "@yale.edu")){
+  if(!validator.contains(request.body.email.toLowerCase(), "@yale.edu")){
     contextData.errors.push('Yalies Only');
     response.render('event-detail.html', contextData); 
   }

@@ -7,7 +7,7 @@
     <img src="{{event.image}}" class="img-responsive" id='image'/>
   </div>
   <div class="col-md-6">
-    <h2 id='title'>{{event.title}}</h2>
+    <h1 id='title'>{{event.title}}</h1>
     <span id='date'>{{month}} {{day}}, {{year}}</span>
     <span id='location'>{{event.location}}</span>
  <p><h3>Attendees</h3></p>
@@ -21,7 +21,7 @@
         <form id="email" method="POST">
           <label for="email">Your Email:</label>
           <input type="email" name="email" >
-          <button type="rsvp" class="btn btn-default">RSVP</button>
+          <button type="submit" class="btn btn-default" name="Submit" id="Submit">RSVP</button>
         </form>
     </ul>
   </div>
@@ -33,7 +33,7 @@
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
