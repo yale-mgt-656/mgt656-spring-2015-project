@@ -38,3 +38,11 @@ a {
 	padding: 10%;
 	display: table-cell;
 	}
+	footer{
+		color: red;
+		display: inline;
+		padding: 8%;
+		font-size: 10px;
+	}
+	
+	}
