@@ -77,16 +77,16 @@ function saveEvent(request, response){
     contextData.errors.push('Your year needs to be either 2015 or 2016');
   }
 //  The month must be between 0 to 11, inclusive
-  if (Number(request.body.year) < 0
-  || Number(request.body.year) > 11
-  || Number(request.body.year)%1 !== 0) {
+  if (Number(request.body.month) < 0
+  || Number(request.body.month) > 11
+  || Number(request.body.month)%1 !== 0) {
     contextData.errors.push('Your month selection value is not an integer between 0 and 11. This means that the select option value for month on the HTML page is incorrect, most likely.');
   }
 
 // The hour must be an integer between 0-23
   if (Number(request.body.hour) < 0
-  || Number(request.body.day) > 23
-  || Number(request.body.day)%1 !== 0) {
+  || Number(request.body.hour) > 23
+  || Number(request.body.hour)%1 !== 0) {
     contextData.errors.push('Your hour selection value is not an integer between 0 and 23. This means that the select option value for hour on the HTML page is incorrect, most likely.');
   }
 
@@ -98,8 +98,8 @@ function saveEvent(request, response){
   }
 
 //  The minute must be 0 or 30
-  if (Number(request.body.minute) != 0
-  || Number(request.body.day) != 30) {
+  if (Number(request.body.minute) !== 0
+  && Number(request.body.minute) !== 30) {
     contextData.errors.push('Your minute selection value is not 0 or 30. This means that the select option value for minute on the HTML page is incorrect, most likely.');
   }
 
