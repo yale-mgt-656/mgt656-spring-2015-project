@@ -66,7 +66,6 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 }
   return value;
 }
-
 /**
  * Controller that assigns unique IDs
  */
@@ -133,6 +132,19 @@ function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
+  }
+  else{
+    var date = new Date();
+    date = ev.date;
+    var month = allowedDateInfo.months[date.getMonth()];
+    var day = date.get.Date();
+    var year = date.getFullYear();
+    var contextData = {
+      'event': ev,
+      'year':year,
+      'month':month,
+      'day': day
+    };
   }
   response.render('event-detail.html', {event: ev});
 }
