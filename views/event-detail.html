@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+<h1 id="title">{{event.title}}</h1>
+
+<p><img src="{{ event.image }}" id="image" alt=""></p>
+
+<p>
+    <li class="event" id="event-{{event.id}}">
+      <a href="/events/{{event.id}}">{{event.title}}</a>.
+      <span id="date"></span><time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+      <span id="location"></span>
+      {% for people in event.attending %}
+      <ul id="attendees"></ul>
+       {{people}}
+       {% endfor %}
+    </li>
+</p>
+
+{% endblock %}

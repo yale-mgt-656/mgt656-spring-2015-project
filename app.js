@@ -23,6 +23,7 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/status', statusControllers.status);
+app.get('/events/:id', eventControllers.eventDetail);
 app.post('/events/new', eventControllers.saveEvent);
 
 module.exports = app;
