@@ -89,12 +89,15 @@ function saveEvent(request, response){
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31) === false) {
     contextData.errors.push('Event day must be between 1 and 31.');
   }
-  if (validator.isURL(request.body.image, 'http','https') === false) {
-    contextData.errors.push('Event image must a url.');
-  }
-    if (validator.isURL(request.body.image, '.gif','.png') === false) {
-    contextData.errors.push('Event image must a gif or png.');
-  }
+  // if(validator.isNull(request.body.image) === false) {
+  // contextData.errors.push('Must include an image.')
+  // }
+  // if (validator.isURL(request.body.image, 'http','https') === false) {
+  // contextData.errors.push('Event image must a url.');
+  // }
+  // if (validator.isURL(request.body.image, '.gif','.png') === false) {
+  //   contextData.errors.push('Event image must a gif or png.');
+  // }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
