@@ -21,7 +21,7 @@
     <input type="text" name="location">
     <br>
     <label for="image">Event image:</label>
-    <input type="file" name="image">
+    <input type="url" name="image">
 <br>
 <b>Event date:</b>
 <br>
@@ -73,8 +73,8 @@
     <option value="31">31</option>
 </select>
 <label for ="year"></label><select name ="year" select id="year">
-  <option>2015</option>
-  <option>2016</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
 </select>
 </select>
 
@@ -82,9 +82,9 @@
 <b>Event Time:</b>
 <br>
 <label for="hour"></label>
-
 <select name="hour" id="hour" onchange="" size="1">
     <option value="00">00</option>
+    <option value="01">01</option>
     <option value="02">02</option>
     <option value="03">03</option>
     <option value="04">04</option>
@@ -109,8 +109,8 @@
     <option value="23">23</option>
 </select>
 <label for ="minute"></label><select name ="minute" id="minute">
-  <option>00</option>
-  <option>30</option>
+  <option value="00">00</option>
+  <option value="30">30</option>
 </select>
 <br>
    <input type="submit" value="Submit">

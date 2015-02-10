@@ -56,7 +56,7 @@ function listEvents(request, response) {
 */
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
-  if(validator.isInt(request.body[fieldName]) === false) {
+  if(validator.isInt(validator.toInt(request.body[fieldName])) === false) {
   contextData.errors.push('Your ' +fieldName+ ' should be an Integer.');
 }else {
   value = parseInt(request.body[fieldName], 10);
@@ -92,7 +92,7 @@ function saveEvent(request, response){
   var year = checkIntRange(request,'year', 2015, 2016, contextData);
   var month = checkIntRange(request,'month', 0, 11, contextData);
   var day = checkIntRange(request,'day', 1, 31, contextData);
-  var hour = checkIntRange(request,'year', 0, 23, contextData);
+  var hour = checkIntRange(request,'hour', 0, 23, contextData);
 
   if(validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
@@ -101,7 +101,7 @@ function saveEvent(request, response){
   if(validator.isLength(request.body.location,5,50) === false) {
     contextData.errors.push('Need to enter location between 5 and 50 letters.');
   }
-  var minute = request.body.minute;
+  var minute = validator.toInt(request.body.minute);
   if (minute !== 0 && minute !==30) {
     contextData.errors.push('Events can only start at the hour or half past the hour');
   }
@@ -120,8 +120,13 @@ function saveEvent(request, response){
       date: new Date(),
       attending: []
     };  
+       newEvent.date.setMinutes(request.body.minute);
+       newEvent.date.setHours(request.body.hour);
+       newEvent.date.setDate(request.body.day);
+       newEvent.date.setMonth(request.body.month);
+       newEvent.date.setYear(request.body.year);
        events.all.push(newEvent);
-       response.redirect('/events/'+ newID);
+       response.redirect('/events/');
   }
   else{
       response.render('create-event.html', contextData);
@@ -134,19 +139,10 @@ function eventDetail (request, response) {
     response.status(404).send('No such event');
   }
   else{
-    var date = new Date();
-    date = ev.date;
-    var month = allowedDateInfo.months[date.getMonth()];
-    var day = date.get.Date();
-    var year = date.getFullYear();
-    var contextData = {
-      'event': ev,
-      'year':year,
-      'month':month,
-      'day': day
-    };
+      response.render('event-detail.html', {event: ev});
+   
   }
-  response.render('event-detail.html', {event: ev});
+  
 }
 
 function rsvp (request, response){
