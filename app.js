@@ -10,6 +10,7 @@ var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var statusControllers = require('./controllers/status.js');
 
+
 // Create our express app
 var app = express();
 
@@ -23,7 +24,6 @@ app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/api/events', eventControllers.api);
 app.get('/status', statusControllers.status);
-//app.get('/events/:id', eventControllers.showEvent);
 
 app.post('/events/new', eventControllers.saveEvent);
 app.post('/events/:id', eventControllers.rsvp);
