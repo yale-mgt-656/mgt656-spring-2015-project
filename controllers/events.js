@@ -41,14 +41,19 @@ function listEvents(request, response) {
   response.render('event.html', contextData);
 }
 
+
 /**
  * Controller that renders a page for creating new events.
  */
-function newEvent(request, response){
+ 
+  function newEvent(request, response){
   var contextData = {};
   response.render('create-event.html', contextData);
 }
 
+/**
+ * Controller for validating integer inputs and ranges
+*/
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
   if(validator.isInt(request.body[fieldName]) === false) {
@@ -63,35 +68,64 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 }
 
 /**
+ * Controller that assigns unique IDs
+ */
+ function assignID() {
+   var currentID =0;
+   var allEvents = events.all;
+   for(var i = allEvents.length-1; i>=0 ;i--) {
+     if(currentID < allEvents[i].id) {
+       currentID = allEvents[i].id;
+     }
+   }
+   currentID++;
+   return currentID;
+ }
+
+/**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
  * our global list of events.
  */
-  
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  var year = checkIntRange(request,'year', 2015, 2016, contextData);
+  var month = checkIntRange(request,'month', 0, 11, contextData);
+  var day = checkIntRange(request,'day', 1, 31, contextData);
+  var hour = checkIntRange(request,'year', 0, 23, contextData);
+
+  if(validator.isLength(request.body.title, 5, 50) === false) {
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
 
-var year = checkIntRange(request,'year', 2015, 2016, contextData);
-var month = checkIntRange(request,'month', 0, 11, contextData);
-var day = checkIntRange(request,'day', 1, 31, contextData);
-var hour = checkIntRange(request,'year', 0, 23, contextData);
-  
+  if(validator.isLength(request.body.location,5,50) === false) {
+    contextData.errors.push('Need to enter location between 5 and 50 letters.');
+  }
+  var minute = request.body.minute;
+  if (minute !== 0 && minute !==30) {
+    contextData.errors.push('Events can only start at the hour or half past the hour');
+  }
+
+  if(validator.isURL(request.body.image) === false || request.body.image.match(/\.(?:gif|png)$/) === null) {
+  contextData.errors.push('You should link to a GIF or PNG URL');
+  }
+
   if (contextData.errors.length === 0) {
+   var newID = assignID();
     var newEvent = {
+      id: newID,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
       attending: []
-    };
-    events.all.push(newEvent);
-    response.redirect('/events');
-  }else{
-    response.render('create-event.html', contextData);
+    };  
+       events.all.push(newEvent);
+       response.redirect('/events/'+ newID);
+  }
+  else{
+      response.render('create-event.html', contextData);
   }
 }
 
@@ -105,22 +139,26 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var email = request.body.email;
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+  else if(validator.isEmail(email) && email.match(/(\W|^)[\w.+\-]{0,25}@(yale)\.edu(\W|$)/ig) !== null){
+        ev.attending.push(request.body.email);
+        response.redirect('/events/' + ev.id);
   }
-
+  else{
+    var contextData = {errors:[], event:ev};
+    contextData.errors.push('You can only use a valid Yale email');
+    response.render('event-detail.html', contextData);
+  }
 }
 
-  function api(request,response) {
+/**
+ * Controller that renders Searchable API.
+  */
+  
+   function api(request,response) {
     var output = {events: []};
     var search = request.query.search;
     if(search){
@@ -134,6 +172,7 @@ function rsvp (request, response){
     response.json(output);
   }
 
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -144,5 +183,6 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'api': api
+  'api': api,
+  'assignID' : assignID
 };
