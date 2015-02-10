@@ -63,7 +63,42 @@ function saveEvent(request, response){
    if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
-  
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Event year must be an integer.');
+  }
+  if (validator.isInt(request.body.month) === false) {
+    contextData.errors.push('Event month must be an integer.');
+  }
+  if (validator.isInt(request.body.day) === false) {
+    contextData.errors.push('Event day must be an integer.');
+  }
+  if (validator.isInt(request.body.hour) === false) {
+    contextData.errors.push('Event hour must be an integer.');
+  }
+  if (validator.equals(request.body.year, 2015, 2016) === false) {
+    contextData.errors.push('Event year must be an 2015 or 2016.');
+  }
+  if (validator.equals(request.body.month,0,1,2,3,4,5,6,7,8,9,10,11) === false) {
+    contextData.errors.push('Event month must be January through December.');
+  }
+  if (validator.equals(request.body.hour, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23) === false) {
+    contextData.errors.push('Event hour must be between 0 and 23.');
+  }
+  if (validator.equals(request.body.day, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31) === false) {
+    contextData.errors.push('Event day must be between 1 and 31.');
+  }
+  // if(validator.isNull(request.body.image) === false) {
+  // contextData.errors.push('Must include an image.')
+  // }
+  // if (validator.isURL(request.body.image, 'http','https') === false) {
+  // contextData.errors.push('Event image must a url.');
+  // }
+  // if (validator.isURL(request.body.image, '.gif','.png') === false) {
+  //   contextData.errors.push('Event image must a gif or png.');
+  // }
+
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
