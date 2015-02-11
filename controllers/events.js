@@ -157,8 +157,20 @@ function rsvp (request, response){
 }
 
 function api(request, response){
-  var output = {events: events.all}
-  response.send(output);
+  var output = {events: []};
+  var search = request.query.search;
+  if (search){
+    for(var i; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+        output.events.push(events.all[i]);
+     }
+    }
+  }
+  else{
+    output.events = events.all;
+  }
+  
+  response.json(output);
 }
 /**
  * Export all our functions (controllers in this case, because they
