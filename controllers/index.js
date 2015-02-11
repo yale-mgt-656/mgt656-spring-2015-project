@@ -6,7 +6,8 @@
 function index (request, response) {
   var contextData = {
     'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).'
+    'tagline': 'You are doomed (just kidding).',
+    'events': event.all,
   };
   response.render('index.html', contextData);
 }
