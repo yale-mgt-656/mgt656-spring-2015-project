@@ -103,16 +103,11 @@ function rsvp (request, response){
       contextData.errors.push('Yale emails only');
       response.render('event-detail.html', contextData);
     }
-//    //&&lowerCaseEmail.indexOf('yale.edu')>=0
-//    ev.attending.push(request.body.email);
-//    response.status(404).send('rsvp event');
-   // response.redirect('/events/' + ev.id);
+
   }
   else{
-//    
-//    contextData.errors.push('Invalid email');
-//    response.render('event-detail.html', contextData);  
-      response.redirect('/events');
+      contextData.errors.push('Not a valid email');
+      response.render('event-detail.html', contextData);
   }
 
 }
