@@ -2,7 +2,7 @@
     visibility: hidden;
 }
 .col {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,50,0.5);
     margin-right: 200px;
     margin-left: 200px;
     text-align: center;
@@ -29,7 +29,7 @@ ul {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(http://static.tumblr.com/ef5466a97624fb4692e93a04d7429efb/frfochp/8Cxndfy3w/tumblr_static_3w7vbpb1b0o4k4c4o88kwoc8g.jpg) no-repeat bottom center scroll;
+    background: url(https://s-media-cache-ak0.pinimg.com/736x/38/e6/30/38e63017ed16e2592b8bdd04f0e46748.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -63,4 +63,11 @@ ul {
     .intros .intro-body .intro-text {
         font-size: 25px;
     }
+}
+.pic {
+    height: 200px;
+    width: 200px;
+}
+.content-sections {
+    padding-top: 70px;
 }
