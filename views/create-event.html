@@ -24,19 +24,49 @@
     <input type="text" name="image"></div>
     
    <div> <label for="year">Event year:</label>
-    <input type="text" name="year"></div>
+    <select name="year">
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+</select> </div>
     
    <div> <label for="month">Event month:</label>
-    <input type="text" name="month"></div>
+     <select name="month">
+  <option value="01">January</option>
+  <option value="02">February</option>
+  <option value="03">March</option>
+    <option value="04">April</option>
+  <option value="05">May</option>
+  <option value="06">June</option>
+    <option value="07">July</option>
+  <option value="08">August</option>
+  <option value="09">September</option>
+    <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+</select></div>
     
    <div> <label for="day">Event day:</label>
-    <input type="text" name="day"></div>
+    
+    <select name="day">
+    {% for i in range(1, 32) -%}
+      <option value="{{ i }}" >{{ i }}</li>
+    {% endfor %}
+    </select>
+    </div>
     
     <div><label for="hour">Event hour:</label>
-    <input type="text" name="hour"></div>
+   <select name="hour">
+    {% for i in range(0, 24) -%}
+      <option value="{{ i }}" >{{ i }}</li>
+    {% endfor %}
+    </select>
+  </div>
     
     <div><label for="minute">Event minute:</label>
-    <input type="text" name="minute"></div>
+    <select name="minute">
+  <option value="0">0</option>
+  <option value="30">30</option>
+</select></div>
     
   </form>
 {% endblock %}
