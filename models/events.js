@@ -35,7 +35,7 @@ var allEvents = [
     id: 3,
     title: 'Office Hours feat. Donuts',
     date:   new Date(2015, 1, 23, 10, 0, 0),
-    image: '.gif',
+    image: 'gif',
     location: 'The Bunker',
     attending: ['kyle.jensen@yale.edu', 'jennifer.mcfadden@yale.edu']
   },

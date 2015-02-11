@@ -9,9 +9,6 @@
     <span id='location'>{{event.location}}</span>
  <p><h3>Attendees</h3></p>
     <ul id='attendees'>
-        <div class="col">
-    <img src="{{event.image}}" class="img-responsive" id='image'/>
-  </div>
       {% for attendee in event.attending %}
         <li>
           {{attendee}}
@@ -26,8 +23,22 @@
     </ul>
   </div>
 </div>
+   <div class="cols">
+    <img src="{{event.image}}" class="img-responsive" id='image'/>
+  </div>
 
 {% endblock %}
+    {% block left %}
+     <div class="clickme">
+          <img src="http://fc08.deviantart.net/fs70/f/2012/096/4/d/__click_me___bubble_speech_by_kirankiran-d4v5zqq.png"/>
+       </div>
+    <div class="meows"> 
+    <a href="http://cat-bounce.com/">
+    <img class="meow" src="http://31.media.tumblr.com/13e820beeaec357bcd341256862235ba/tumblr_mkl0yecyeW1s97mfpo1_1280.png"/>
+       </a>        
+       </div>
+       </div>
+    {% endblock %}
 
 {% block right %}
   {% if errors %}
