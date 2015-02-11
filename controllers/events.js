@@ -57,10 +57,17 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 50) === false) {
+    contextData.errors.push('Your title should be less than 50 letters.');
   }
-
+  
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be less than 50 letters.');
+  }
+    
+  if (validator.contains(request.body.date, 2015, 2016) === false) {
+    contextData.errors.push('Your year should be 2015 or 2016.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -142,5 +149,4 @@ module.exports = {
   'saveEvent': saveEvent,
   'rsvp': rsvp,
   'api' : api
-  
 };
