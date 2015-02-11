@@ -87,17 +87,27 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {errors: [], event: ev};
+    //var lowerCaseEmail = request.body.email.toLowerCase();
+
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(validator.contains(request.body.email,'yale.edu')){
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }
+    else{
+      contextData.errors.push('Yale emails only');
+      response.render('event-detail.html', contextData);
+    }
+
+  }
+  else{
+      contextData.errors.push('Not a valid email');
+      response.render('event-detail.html', contextData);
   }
 
 }
