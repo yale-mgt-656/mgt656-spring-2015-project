@@ -9,9 +9,6 @@
     <span id='location'>{{event.location}}</span>
  <p><h3>Attendees</h3></p>
     <ul id='attendees'>
-        <div class="col">
-    <img src="{{event.image}}" class="img-responsive" id='image'/>
-  </div>
       {% for attendee in event.attending %}
         <li>
           {{attendee}}
@@ -26,8 +23,17 @@
     </ul>
   </div>
 </div>
+   <div class="cols">
+    <img src="{{event.image}}" class="img-responsive" id='image'/>
+  </div>
 
 {% endblock %}
+    {% block left %}
+    <div class="meow"> 
+    <img src="https://38.media.tumblr.com/5c23f40850691f17d9a05ad798279371/tumblr_msf2bpQpsv1rtieoxo1_500.gif"/>
+    <img src="https://40.media.tumblr.com/2c7da31c87a49fd98d4146fa8a90a944/tumblr_mqjtiwh5kt1s50o8ro1_400.png"/>
+        </div>
+    {% endblock %}
 
 {% block right %}
   {% if errors %}
