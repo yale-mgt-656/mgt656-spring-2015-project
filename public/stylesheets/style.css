@@ -1,4 +1,12 @@
-
+.img-responsive {
+    visibility: hidden;
+}
+.col {
+    background: rgba(0,0,0,0.3);
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+}
 footer {
     visibility: hidden;
 }
@@ -21,7 +29,7 @@ ul {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(http://www.androidguys.com/wp-content/uploads/2013/08/assorted_08.jpg) no-repeat bottom center scroll;
+    background: url(http://static.tumblr.com/ef5466a97624fb4692e93a04d7429efb/frfochp/8Cxndfy3w/tumblr_static_3w7vbpb1b0o4k4c4o88kwoc8g.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
