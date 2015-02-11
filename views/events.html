@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+<p>Here's a list of upcoming events:</p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
+  <div>
+    <a href="/events/new">Create a new event</a>
+  </div>
+
+{% endblock %}
+
+
+{% endblock %}
