@@ -2,13 +2,28 @@
 
 {% block mainContent %}
 
-    <header>{{event.title}}</header>
-    <p>{{event.date}}</p>    
-    <p>{{event.image}}</p>  
-    <p>{{event.location}}</p>
-    <p>{{event.attending}}</p>
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+    <h1 id="title">{{event.title}}</h1>
+    <img src="{{event.image}}" id="image"></img>
+    <span id="date">{{event.date}}</span>
+    <span id="location">{{event.location}}</span>
+    <ul id="attendees">
+        {% for attendee in event.attending %}
+          <li>{{attendee}}</li>
+        {% endfor %}
+    </ul>
     
-    <form method='POST'>
+    <form method="POST">
         <input type="email" name="email" id="email"/>
         <input type="submit" value="Submit"/>
     </form>
