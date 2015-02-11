@@ -6,12 +6,8 @@ var events = require('../models/events');
  * Controller that renders our index (home) page.
  */
  
- var words = ['best',
-'strangest',
-'illest',
-'shittiest',
-'kyle-est',
-'sexiest'
+ var words = ['#hipster',
+'hipster',
 ];
 function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];

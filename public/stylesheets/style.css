@@ -1,4 +1,12 @@
-
+.img-responsive {
+    visibility: hidden;
+}
+.col {
+    background: rgba(0,0,50,0.5);
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center;
+}
 footer {
     visibility: hidden;
 }
@@ -12,4 +20,54 @@ ul {
 }
 .inputcolor {
     color: black;
+}
+
+.intros {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(https://s-media-cache-ak0.pinimg.com/736x/38/e6/30/38e63017ed16e2592b8bdd04f0e46748.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.intros .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.intros .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.intros .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:767px) {
+    .intros {
+        height: 100%;
+        padding: 0;
+        background-color: black;
+    }
+
+    .intros .intro-body .brand-heading {
+        font-size: 100px;
+    }
+
+    .intros .intro-body .intro-text {
+        font-size: 25px;
+    }
+}
+.pic {
+    height: 200px;
+    width: 200px;
+}
+.content-sections {
+    padding-top: 70px;
 }
