@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  {% block head %}
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -16,7 +17,7 @@
 </script>
 
 </head>
-
+{% endblock %}
 	<body class="container">
 
     {% block header %}
