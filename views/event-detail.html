@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <p>Welcome to event-{{event.id}}</p>
+  
+  <ul>
+      <li class="event" id="event-{{event.id}}">
+      <a href ="/events/{{event.id}}"> {{event.title}} </a>
+      <br></br>
+      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+      <br></br>
+      {{event.location}}
+      <br></br>
+      {{event.attending.length}} attending so far.
+      <br></br>
+      <img src='{{event.image}}'>
+    </li>
+    
+ </ul>
+{% endblock %}
+
+{% block footer %}
+  <footer>
+    The time is now {{time}}.
+    <a href="/about">About us</a>.
+  </footer>
+{% endblock %}
