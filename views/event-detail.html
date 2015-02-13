@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+<p>Here's a list of upcoming events:</p>
+  <div>
+  <li class="events" id="event-{{event.id}}">
+      <a href="/events/{{event.id}}">{{event.title}}</a>.
+      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+      {{event.attending.length}} attending so far.
+      <img src={{event.image}}/>
+      {%for person in event.attending%}
+      {{person}}
+      {%endfor%}
+    </li>
+  </div>
+  <div>
+    <a href="/events/new">Create a new event</a>
+  </div>
+
+{% endblock %}
+
+
+
