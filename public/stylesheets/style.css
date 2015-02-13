@@ -1,6 +1,13 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background: url("http://www.hdwallpaperscool.com/wp-content/uploads/2015/01/skater-snow-skiing-desktop-background-wide-high-resolution-wallpaper.jpg") ;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  
+  
 }
 
 a {
@@ -10,3 +17,32 @@ a {
 .form-errors {
 	color: red;
 }
+
+.divEventForm {
+	font-family: "helvetica";
+	line-height: 100%;
+	font-size: 18px;
+	padding: 10%;
+	display: table;
+	}
+
+.divAbout {
+	padding: 10%;
+	display: inline;
+	}
+	
+.divHomePage {
+	font-family: "helvetica";
+	line-height: 100%;
+	font-size: 14px;
+	padding: 10%;
+	display: table-cell;
+	}
+	footer{
+		color: red;
+		display: inline;
+		padding: 8%;
+		font-size: 10px;
+	}
+	
+	}
