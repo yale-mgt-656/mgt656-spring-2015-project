@@ -119,14 +119,13 @@ function rsvp (request, response){
 
 }
 
-
 function donate (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
-  response.render('event-donate.html', ev);    
+  response.render('event-donate.html', {event: ev});    
 }
 
 function api (request, response){
