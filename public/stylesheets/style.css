@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #F8F8FF;
 }
 
 .form-errors {
@@ -12,7 +12,8 @@ a {
 }
 
 footer{
-  background-color: #00FFFF;
+  background-color: #99CCFF
+;
   padding: 1em;
   border: 1px solid #ddd;
   margin: 2em 0;
