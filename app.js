@@ -22,6 +22,7 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/events/:id', eventControllers.eventDetail);
+app.get('/events/:id/donate', eventControllers.donate);
 app.get('/api/events', eventControllers.api);
 app.get('/report', reportControllers.report);
 app.post('/events/new', eventControllers.saveEvent);
