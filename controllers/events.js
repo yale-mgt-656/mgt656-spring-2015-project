@@ -57,10 +57,17 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 50) === false) {
+    contextData.errors.push('Your title should be less than 50 letters.');
   }
-
+  
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be less than 50 letters.');
+  }
+    
+  if (validator.contains(request.body.date, 2015, 2016) === false) {
+    contextData.errors.push('Your year should be 2015 or 2016.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -87,18 +94,56 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {errors: [], event: ev};
+    //var lowerCaseEmail = request.body.email.toLowerCase();
+
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(validator.contains(request.body.email,'yale.edu')){
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }
+    else{
+      contextData.errors.push('Yale emails only');
+      response.render('event-detail.html', contextData);
+    }
+
   }
+  else{
+      contextData.errors.push('Not a valid email');
+      response.render('event-detail.html', contextData);
+  }
+
+}
+
+function donate (request, response){
+  var ev = events.getById(parseInt(request.params.id));
+  if (ev === null) {
+    response.status(404).send('No such event');
+  }
+
+  response.render('event-donate.html', {event: ev});    
+}
+
+function api (request, response){
+    var output = {events: []};
+    var search = request.query.search;
+    if(search){
+      for(var i = 0; i < events.all.length; i++){
+        if(events.all[i].title.indexOf(search) !== -1){
+          output.events.push(events.all[i]);
+        }
+      }
+    }
+    else{
+      output.events.push(events.all);
+    }
+    response.json(output);
+
+
 
 }
 
@@ -111,5 +156,7 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'donate': donate,
+  'api' : api
 };

@@ -4,9 +4,17 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #F8F8FF;
 }
 
 .form-errors {
 	color: red;
+}
+
+footer{
+  background-color: #99CCFF
+;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
 }
