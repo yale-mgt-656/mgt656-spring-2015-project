@@ -2,7 +2,6 @@
 
 var events = require('../models/events');
 
-
 /**
  * Controller that renders our index (home) page.
  */
