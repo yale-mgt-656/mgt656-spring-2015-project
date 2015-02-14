@@ -58,15 +58,39 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 1, 50) === false) {
-    contextData.errors.push('Your title should be less than 50 letters.');
+    contextData.errors.push('Your title should be greater than 0 and less than 50 letters.');
   }
   
   if (validator.isLength(request.body.location, 1, 50) === false) {
-    contextData.errors.push('Your location should be less than 50 letters.');
+    contextData.errors.push('Your location should be greater than 0 and less than 50 letters.');
   }
-    
-  if (validator.contains(request.body.date, 2015, 2016) === false) {
+  
+  if (request.body.image.indexOf('http://') !== 0 && request.body.image.indexOf('https://') !== 0) {
+    contextData.errors.push('Your image URL should start with http:// or https://');
+  }
+  
+  if (!validator.isIn(request.body.image.substring(request.body.image.length - 4, request.body.image.length),['.gif', '.png'])) {
+    contextData.errors.push('Your image URL should end with .gif or .png');
+  }
+  
+  if (request.body.year !== '2015' && request.body.year !== '2016') {
     contextData.errors.push('Your year should be 2015 or 2016.');
+  }
+  
+  if (parseInt(request.body.month) < 0 || parseInt(request.body.month) > 11) {
+    contextData.errors.push('Your month should be an actual month.  How did you evade the selector??');
+  }
+  
+  if (parseInt(request.body.day) < 0 || parseInt(request.body.day) > 31) {
+    contextData.errors.push('Your day should be between 1 and 31.  How did you evade the selector??');
+  }
+  
+  if (parseInt(request.body.hour) < 0 || parseInt(request.body.hour) > 23) {
+    contextData.errors.push('Your hour should be between 0 and 23.  How did you evade the selector??');
+  }
+  
+  if (parseInt(request.body.minute) < 0 || parseInt(request.body.minute) > 30) {
+    contextData.errors.push('Your minutes should be 0 or 30.  How did you evade the selector??');
   }
 
   if (contextData.errors.length === 0) {
