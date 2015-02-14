@@ -93,29 +93,27 @@ function saveEvent(request, response){
     contextData.errors.push('Invalid hour!');
   }else if(request.body.hour > 23 || request.body.hour < 0){
     contextData.errors.push('Invalid hour!');
-  }
-  
-    if (validator.isInt(request.body.minute) === false){ 
+  }if (validator.isInt(request.body.minute) === false){ 
     contextData.errors.push('Invalid minute!');
-  }else if(request.body.minute !== 0 || request.body.minute !== 30){
+  }else if(request.body.minute !== "0" && request.body.minute !== "30"){
     contextData.errors.push('Minute must be 0 or 30!');
   }
   
 
   if (contextData.errors.length === 0) {
-    var newEventNumber = events.all.length;
+    var newEventID = events.all.length + 1;
     var newEvent = {
+      id: newEventID,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(request.body.year, request.body.month, request.body.day, request.body.hour, request.body.minute),
       attending: []
     };
     events.all.push(newEvent);
-    
-    var redirectPath = '/events/' + newEventNumber;
-    
-    response.redirect(redirectPath );
+
+    var redirectPath = '/events/' + newEventID;
+    response.redirect(302, redirectPath);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -131,15 +129,23 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {errors: [], event: ev};
+  var checkDomain = request.body.email.toLowerCase();
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+    if(checkDomain.indexOf('yale.edu') === checkDomain.length - 'yale.edu'.length){
+      console.log(checkDomain);
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }else{
+      contextData.errors.push('Yale emails only!');
+      response.render('event-detail.html', contextData);    
+    }
+  
   }else{
-    var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }

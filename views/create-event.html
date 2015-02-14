@@ -16,11 +16,11 @@
 	<form id="create-event" method="POST">
     <div>
       <label for="title">Event title:</label>
-      <input type="text" name="title" required placeholder="Type Event Name" maxlength = "50" oninvalid = "this.setCustomValidity('Title should be between 1 and 50 char')">
+      <input type="text" name="title" required placeholder="Type Event Name">
     </div>
     <div>
       <label for="location">Event location:</label>
-      <input type="text" name="location" required placeholder="Type Event Location" maxlength = "50" oninvalid = "this.setCustomValidity('Max length is 50 char')">
+      <input type="text" name="location" required placeholder="Type Event Location">
     </div>
     <div>
       <label for="image">Event image:</label>
@@ -28,15 +28,15 @@
     </div>
     <div>
       <label for="year">Event year:</label>
-      <input type ="number" name="year" required placeholder="2015" min= "2015" max = "2016">
+      <input type ="number" name="year" required placeholder="2015">
       <label for="month">Event month:</label>
-      <input type="number" name="month" required min = "0" max = "11">
+      <input type="number" name="month" required>
       <label for="day">Event day:</label>
-      <input type="number" name="day" required min="1" max="31">
+      <input type="number" name="day" required>
       <label for="hour">Event hour:</label>
-      <input type="number" name="hour" required min="0" max="23">
+      <input type="number" name="hour" required>
       <label for="minute">Event minute:</label>
-      <input type="number" name="minute" required min="0" max="60">
+      <input type="number" name="minute" required>
     </div>
     <div>
       <input type="submit" value="Submit"</input>
