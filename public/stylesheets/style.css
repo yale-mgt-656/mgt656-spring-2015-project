@@ -12,9 +12,8 @@ a {
 }
 
 footer{
-  background-color: #99CCFF
-;
-  padding: 1em;
-  border: 1px solid #ddd;
-  margin: 2em 0;
+  background-color: none;
+  padding: none;
+  border: none;
+  margin: none;
 }
