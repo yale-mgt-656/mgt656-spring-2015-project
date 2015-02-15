@@ -22,11 +22,13 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016]
 };
 
 /**
@@ -45,7 +47,7 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event.html', contextData);
 }
 
@@ -67,7 +69,7 @@ function saveEvent(request, response){
 
   if (validator.isURL(request.body.image) === false){
     contextData.errors.push('Please provide valid url for image!');
-  }else if(validator.contains(request.body.image, "gif") === false && validator.contains(request.body.image, ".png") === false){
+  }else if(!request.body.image.match(/\.(gif|png)$/i)){
     contextData.errors.push('Image must be gif or png!');
   }
   
@@ -95,13 +97,13 @@ function saveEvent(request, response){
     contextData.errors.push('Invalid hour!');
   }if (validator.isInt(request.body.minute) === false){ 
     contextData.errors.push('Invalid minute!');
-  }else if(request.body.minute !== "0" && request.body.minute !== "30"){
+  }else if(request.body.minute !== '0' && request.body.minute !== '30'){
     contextData.errors.push('Minute must be 0 or 30!');
   }
   
 
   if (contextData.errors.length === 0) {
-    var newEventID = events.all.length + 1;
+    var newEventID = events.getMaxID() + 1;
     var newEvent = {
       id: newEventID,
       title: request.body.title,

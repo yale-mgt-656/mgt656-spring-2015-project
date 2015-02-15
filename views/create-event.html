@@ -14,31 +14,51 @@
   {% endif %}
 
 	<form id="create-event" method="POST">
-    <div>
+    <div class="form-group">
       <label for="title">Event title:</label>
       <input type="text" name="title" required placeholder="Type Event Name">
     </div>
-    <div>
+    <div class="form-group">
       <label for="location">Event location:</label>
       <input type="text" name="location" required placeholder="Type Event Location">
     </div>
-    <div>
+    <div class="form-group">
       <label for="image">Event image:</label>
       <input type="url" name="image" required placeholder="paste image url here">
     </div>
-    <div>
+    <divclass="form-group" >
       <label for="year">Event year:</label>
-      <input type ="number" name="year" required placeholder="2015">
+      <select name="year" id="year">
+        {% for year in allowedDateInfo.years %}
+        <option value="{{year}}">{{year}}</option>
+        {% endfor %}
+      </select>
       <label for="month">Event month:</label>
-      <input type="number" name="month" required>
+      <select name="month" id="month">
+        {% for monthNumber, monthName in allowedDateInfo.months %}
+        <option value="{{monthNumber}}">{{monthName}}</option>
+        {% endfor %}
+      </select>
       <label for="day">Event day:</label>
-      <input type="number" name="day" required>
+      <select name ="day" id="day">
+        {% for day in allowedDateInfo.days %}
+        <option value="{{day}}">{{day}}</option>
+        {% endfor %}
+      </select>
       <label for="hour">Event hour:</label>
-      <input type="number" name="hour" required>
+        <select name="hour" id="hour">
+        {% for hour in allowedDateInfo.hours %}
+        <option value="{{hour}}">{{hour}}</option>
+        {% endfor %}
+        </select>
       <label for="minute">Event minute:</label>
-      <input type="number" name="minute" required>
+        <select name="minute" id="minute">
+        {% for minute in allowedDateInfo.minutes %}
+        <option value="{{minute}}">{{minute}}</option>
+        {% endfor %}
+        </select>
     </div>
-    <div>
+    <div class="form-group">
       <input type="submit" value="Submit"</input>
     </div>
   </form>

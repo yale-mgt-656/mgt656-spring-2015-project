@@ -6,15 +6,7 @@
   </header>
 {% endblock %}
 
-{% if errors %}
-  <div class="form-errors">
-    <ul>
-      {% for error in errors %}
-        <li>{{error}}</li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
+
 
 {% block mainContent %}
   <p>
@@ -32,6 +24,14 @@
       </li>
     {% endfor %}
     </ul>
+    
+  {% if errors %}
+    <ul class="form-errors">
+    {% for error in errors %}
+      <li>{{error}}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
     
   <form id="rsvp" method="POST">
     <div>
