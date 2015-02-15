@@ -73,23 +73,33 @@ function saveEvent(request, response){
     contextData.errors.push('Your image URL should end with .gif or .png');
   }
   
-  if (request.body.year !== '2015' && request.body.year !== '2016') {
+  if(isNaN(parseInt(request.body.year))) {
+    contextData.errors.push('Your year should be an integer.');
+  } else if (parseInt(request.body.year) < 2015 || parseInt(request.body.year) > 2016) {
     contextData.errors.push('Your year should be 2015 or 2016.');
   }
   
-  if (parseInt(request.body.month) < 0 || parseInt(request.body.month) > 11) {
+  if(isNaN(parseInt(request.body.month))) {
+    contextData.errors.push('Your month should be an integer.');
+  } else if(parseInt(request.body.month) < 0 || parseInt(request.body.month) > 11) {
     contextData.errors.push('Your month should be an actual month.  How did you evade the selector??');
   }
   
-  if (parseInt(request.body.day) < 0 || parseInt(request.body.day) > 31) {
+  if(isNaN(parseInt(request.body.day))) {
+    contextData.errors.push('Your day should be an integer.');
+  } else if(parseInt(request.body.day) < 1 || parseInt(request.body.day) > 31) {
     contextData.errors.push('Your day should be between 1 and 31.  How did you evade the selector??');
   }
   
-  if (parseInt(request.body.hour) < 0 || parseInt(request.body.hour) > 23) {
+  if(isNaN(parseInt(request.body.hour))) {
+    contextData.errors.push('Your hour should be an integer.');
+  } else if (parseInt(request.body.hour) < 0 || parseInt(request.body.hour) > 23) {
     contextData.errors.push('Your hour should be between 0 and 23.  How did you evade the selector??');
   }
   
-  if (parseInt(request.body.minute) < 0 || parseInt(request.body.minute) > 30) {
+  if(isNaN(parseInt(request.body.minute))) {
+    contextData.errors.push('Your minute should be an integer.');
+  } else if (parseInt(request.body.minute) < 0 || parseInt(request.body.minute) > 30) {
     contextData.errors.push('Your minutes should be 0 or 30.  How did you evade the selector??');
   }
 
@@ -99,10 +109,11 @@ function saveEvent(request, response){
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
