@@ -97,13 +97,13 @@ function saveEvent(request, response){
     contextData.errors.push('Invalid hour!');
   }if (validator.isInt(request.body.minute) === false){ 
     contextData.errors.push('Invalid minute!');
-  }else if(request.body.minute !== "0" && request.body.minute !== "30"){
+  }else if(request.body.minute !== '0' && request.body.minute !== '30'){
     contextData.errors.push('Minute must be 0 or 30!');
   }
   
 
   if (contextData.errors.length === 0) {
-    var newEventID = events.all.length + 1;
+    var newEventID = events.getMaxID() + 1;
     var newEvent = {
       id: newEventID,
       title: request.body.title,
