@@ -1,25 +1,20 @@
 {% extends "layout.html" %}
-
-{% block header %}
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-{% endblock %}
-
+  
 {% block mainContent %}
-  <p>
-    {{tagline}}
-  </p>
-  <img id="logo" src="http://i1.wp.com/thesgem.com/wp-content/uploads/2014/03/Screen-Shot-2014-03-05-at-11.27.03-AM.png">
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p> Upcoming Events</p>
-    <div>
-    {% include "fragments/events-list.html" %}
-    </div>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+
+  <!-- Three columns of text -->
+  <div class="row">
+   
+    {% for event in events %}
+    <div class="col-lg-4">
+      <img class="img-rounded" src="{{event.image}}" style="max-width: 100%; max-height: 100%;">
+      <h3 class = "event" id = "event-{{event.id}}"><a href = "/events/{{event.id}}">{{event.title}}</a></h3>
+      <p><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></p>
+      <p>{{event.attending.length}} attending so far.</p>
+      <p><a class="btn btn-lg btn-primary" href="/events/{{event.id}}" role="button">RSVP &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    {% endfor %}
+   
+  </div><!-- /.row -->
+
 {% endblock %}
