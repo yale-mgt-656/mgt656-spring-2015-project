@@ -13,21 +13,22 @@
     </div>
   {% endif %}
   
-    <h1 id="title">{{event.title}}</h1>
+    <h2 id="title">{{event.title}}</h2>
     <img src="{{event.image}}" id="image"></img>
-    <span id="date">{{event.date}}</span>
-    <span id="location">{{event.location}}</span>
-    <ul id="attendees">
+    <p><h4>Event Date: </h4><span id="date">{{event.date}}</span></p>
+    <p><h4>Location: </h4><span id="location">{{event.location}}</span></p>
+    <p><h4>Who's Coming: </h4><ul id="attendees">
         {% for attendee in event.attending %}
           <li>{{attendee}}</li>
         {% endfor %}
-    </ul>
+    </ul></p>
     
+    <h4>RSVP:</h4>
     <form method="POST">
         <input type="email" name="email" id="email"/>
         <input type="submit" value="Submit"/>
     </form>
 
-<a href="/events/{{event.id}}/donate" class="donation">Donate!</a>
+<h3><a href="/events/{{event.id}}/donate" class="donation">Donate!</a></h3>
 
 {% endblock %}
