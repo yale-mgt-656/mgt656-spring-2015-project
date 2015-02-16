@@ -3,24 +3,35 @@
 
   {% block header %}
 <div class="row">
-  <div class="col">
-    <h1 id='title'>{{event.title}}</h1>
-    <span id='date'>{{month}} {{day}}, {{year}}</span>
-    <span id='location'>{{event.location}}</span>
- <p><h3>Attendees</h3></p>
-    <ul id='attendees'>
+  <div class="col-sm-12 well" style="background: rgba(230,18,172,.5)">
+    <h1 id='title'>
+      {{event.title}}
+    </h1>
+    <span id='date'>
+      {{month}} {{day}}, {{year}}
+    </span>
+    <span id='location'>
+      {{event.location}}
+    </span>
+    <p>
+      <h3>Attendees</h3>
+    </p>
+    <ul id='attendees' class="list-unstyled">
       {% for attendee in event.attending %}
         <li>
           {{attendee}}
         </li>
-      
       {% endfor %}
-        <form id="email" method="POST">
-          <label for="email">Your Email:</label>
-          <span class="inputcolor"><input type="email" name="email"></span>
-          <button type="submit" class="btn btn-default" name="Submit" id="Submit">RSVP</button>
-        </form>
     </ul>
+    <form id="email" method="POST">
+        <label for="email">Your Email:</label>
+        <span class="inputcolor"><input type="email" name="email"></span>
+        <button type="submit" class="btn btn-default" name="Submit" id="Submit">RSVP</button>
+      </form>
+    
+    <div class='text-center'>
+        <a class='donate btn btn-default' id='donate'></a>
+    </div>
   </div>
 </div>
    <div class="cols">
@@ -51,4 +62,32 @@
       </ul>
     </div>
   {% endif %}
+  
+          <!-- Load the Content Experiment JavaScript API client for the experiment -->
+  <script src="//www.google-analytics.com/cx/api.js?experiment=4iat-snORrSlOhDoxPqxDA"></script>
+   
+  <script>
+  // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {
+      $( 'a#donate' ).text( 'donate' );
+      
+    },  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: 
+      $( 'a#donate' ).text( 'support' );
+    }
+  ];
+   
+  // Wait for the DOM to load, then execute the view for the chosen variation.
+  $(document).ready(function(){
+    // Ask Google Analytics which variation to show the user.
+    var chosenVariation = cxApi.chooseVariation('4iat-snORrSlOhDoxPqxDA');
+    
+    console.log('chosenVariation =', chosenVariation);
+   
+    // Execute the chosen view
+    pageVariations[chosenVariation]();
+    
+  });
+  </script>
 {% endblock %}
