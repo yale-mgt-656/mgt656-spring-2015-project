@@ -48,7 +48,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navBar"><div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style='background:rgba(0,0,0,.6);box-shadow: 10px 10px 5px #000;'>
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -63,7 +63,7 @@
                         <a class="page-scroll" href="/about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="about/#about">Status Report</a>
+                        <a class="page-scroll" href="/about/#about">Status Report</a>
                     </li>
                 </ul>
             </div>
@@ -80,8 +80,10 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                       {% block header %}
-                        <h1 class="brand-heading">{{title}}</h1>
-                        <p class="intro-text">The world's most {{tagword}} Eventbrite clone</p>
+                        <div class='' style='border:6px solid #eefe8b; background:rgba(0,0,0,.6);padding-top:25px;border-radius:25px;'>
+                            <h1 class="brand-heading">{{title}}</h1>
+                            <p class="intro-text" style="font-family:helvetica;">The world's most {{tagword}} Eventbrite clone</p>
+                        </div>
                         {% endblock %}
                         {% block right%}
                         <a href="#about" class="btn btn-circle page-scroll">
@@ -108,8 +110,9 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer>
+    <footer style="height: 3000px;">
         <a href="/">Home</a> || <a href="/about">About</a>>
+        
     </footer>
 {% endblock %}
 
