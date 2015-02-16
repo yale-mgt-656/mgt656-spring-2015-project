@@ -16,5 +16,21 @@
     {% endfor %}
    
   </div><!-- /.row -->
-
+  
+  <hr class = "divider">
+  
+  <p>Upcoming Event List</p>
+  {% for event in events %}
+  <ul>
+  <li class = "event" id = "event-{{event.id}}">
+      <a href = "/events/{{event.id}}"> {{event.title}} </a>
+      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+      {{event.attending.length}} attending so far.
+  </li>
+  </ul>
+  {% endfor %}
+  <p><a href="/events/new">Create a new event!</a></p>
+  <img src="http://www.entertainmentearth.com/images/AUTOIMAGES/RB001lg.jpg" style="max-width: 10%; max-height: 10%;"></img>
+  
+  <hr class = "divider">
 {% endblock %}
