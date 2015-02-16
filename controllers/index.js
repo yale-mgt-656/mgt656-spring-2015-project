@@ -55,7 +55,7 @@ function original (req, res) {
       contextData.events.push(event);
     }
   }
-  res.render('layout.html', contextData);
+  res.render('index.html', contextData);
 }
 
 module.exports = {
