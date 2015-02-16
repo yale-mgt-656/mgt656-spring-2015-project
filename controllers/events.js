@@ -139,14 +139,17 @@ function rsvp (request, response){
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
+    var mail=request.body.email.toUpperCase();
+    if (mail.indexOf('@YALE.EDU')>-1){
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }
+   else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
+}
 }
 
 /**
