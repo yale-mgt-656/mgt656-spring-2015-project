@@ -14,14 +14,30 @@ function randomWord(arr) {
 }
 
 function index (request, response) {
-  var exp = 0.5;
+  var now = new Date();
+  var contextData = {
+    'title': 'MGT656',
+    'tagline': 'The world\'s best Eventbrite clone',
+    'events': [],
+    'tagword': randomWord(words),
+  };
+  for (var i=0; i < events.all.length; i++){
+    var event = events.all[i];
+    if(event.date > now) {
+      contextData.events.push(event);
+    }
+  }
+  response.render('index.html', contextData);
+/*
+var exp = 0.5;
   var r = Math.random();
   if (r<=exp) {
-    response.redirect('/original');
+    response.redirect(200,'/original');
   }
   else {
-    response.redirect('/experiment');
+    response.redirect(200,'/experiment');
   }
+  */
 }
 
 function experiment (request, response) {
