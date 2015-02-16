@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <p>This is the about us page</p>
-  <span id= "rich dragonfly"> </span>
-  <img id="{{rich dragonfly}}-headshot" scr = "http://upload.wikimedia.org/wikipedia/en/0/01/Sheriff_Woody.png" alt = "logo"/>
+  <p> <span style ="font-size: 150%;"> Meet our team: the talented and attractive Yoni Landau, Elaine Pan and Eric Plunkett.</span> </p>
+  
+  <p id= "rich dragonfly"> <span style = "color:black; font-weight: bold;"> Rich dragonfly</span>
+    <img id="{{rich dragonfly}}-headshot" src = "https://upload.wikimedia.org/wikipedia/en/0/01/Sheriff_Woody.png" alt = "rich dragonfly"/>
+  </p>
+  <br>
+  <p id= "outstanding snail"> <span style= "color:black;font-weight: bold;"> Outstanding Snail</span>
+    <img id="{{outstanding snail}}-headshot" src = "https://img1.wikia.nocookie.net/_cb20140107050744/disney/images/5/56/Slinky_dog.png" alt = "outstanding snail"/>
+  </p>
+  <br>
+  <span id="misty wolverine"> <span style= "color:black; font-weight: bold;"> Misty wolverine</span>
+    <img id="{{misty wolverine}}-headshot" src = "https://upload.wikimedia.org/wikipedia/en/b/b4/Buzz_Lightyear.png" alt="misty wolverine"/>
+  </p>
+  
 {% endblock %}
