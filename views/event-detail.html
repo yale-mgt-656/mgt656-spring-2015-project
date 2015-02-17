@@ -59,6 +59,11 @@
     <input type="submit" value="Submit">
 </form>
 
+<div class="donate">
+    <a id="new" class="donation" href="http://newhavensymphony.org/support-nhso/donate-online/">Donate</a>
+</div>
+{% endblock %}
+
 <!-- Load the JQuery library -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
    
@@ -67,7 +72,7 @@
   var pageVariations = [
     function() {},  // Original: Donate. This will render the default HTML.
     function() {    // Variation 1: replace Donate with SUPPORT 
-      $( "div.new" ).replaceWith( "<a id="new" class="donation" href="www.newhavensymphony.org/support-nhso/donate-online/">Support</a>" );
+      $( 'div.new' ).replaceWith( "<a id="new" class="donation" href="www.newhavensymphony.org/support-nhso/donate-online/">Support</a>" );
     }
   ];
    
@@ -83,11 +88,8 @@
     
   });
   </script>
-  
-  
-</script>
-
-<div class="donate">
-    <a id="new" class="donation" href="http://newhavensymphony.org/support-nhso/donate-online/">Donate</a>
-</div>
-{% endblock %}
+  {% block footer %}
+      <footer>
+        <a href="/" >Home</a> | <a href="/about">About Us</a>
+        </footer>
+    {% endblock %}
