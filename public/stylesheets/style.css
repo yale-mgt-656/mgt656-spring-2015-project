@@ -10,6 +10,11 @@ a {
   color: #337ab7;
 }
 
+ul {
+   list-style: none;
+   padding: 0;
+}
+
 .form-errors {
 	color: red;
 }
