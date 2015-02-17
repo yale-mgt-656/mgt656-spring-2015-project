@@ -14,33 +14,69 @@
   {% endif %}
 
 	<form id="create-event" method="POST">
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
     
-    <label for="location">Event location:</label>
-    <input type="text" name="location">
+    <div class="form-group">
+      <label for="title">Event title:</label>
+      <input type="text" name="title">
+    </div>
     
-    <label for="image">Event image:</label>
-    <input type="text" name="image">
+    <div class="form-group">
+      <label for="location">Event location:</label>
+      <input type="text" name="location">
+    </div>    
     
-    <label for="year">Event year:</label>
-    <input type="text" name="year">
+    <div class="form-group">
+      <label for="image">Event image:</label>
+      <input type="text" name="image">
+    </div>
     
-    <label for="month">Event month:</label>
-    <input type="text" name="month">
+    <div class="form-group">
+      <label for="year">Event year:</label>
+      <select name= "year" id="year">
+        {% for year in allowedDateInfo.years %}
+          <option value="{{year}}">{{year}}</option>
+        {% endfor %}
+      </select>
+    </div>
     
-    <label for="day">Event day:</label>
-    <input type="text" name="day">
+    <div class="form-group">
+      <label for="month">Event month:</label>
+      <select name= "month" id="month">
+        {% for monthNumber, monthName in allowedDateInfo.months %}
+          <option value="{{monthNumber}}">{{monthName}}</option>
+        {% endfor %}
+      </select>
+    </div>    
     
-    <label for="hour">Event hour:</label>
-    <input type="text" name="hour">
+    <div class="form-group">
+      <label for="day">Event day:</label>
+      <select name= "day" id="day">
+        {% for day in allowedDateInfo.days %}
+          <option value="{{day}}">{{day}}</option>
+        {% endfor %}
+      </select>
+    </div>    
     
-    <label for="minute">Event minute:</label>
-    <input type="text" name="minute">
+    <div class="form-group">
+      <label for="hour">Event hour:</label>
+      <select name= "hour" id="hour">
+        {% for hour in allowedDateInfo.hours %}
+          <option value="{{hour}}">{{hour}}</option>
+        {% endfor %}
+      </select>
+    </div>
     
-    <label for="submit">Submit:</label>
+    <div class="form-group">
+      <label for="minute">Event minute:</label>
+      <select name= "minute" id="minute">
+        {% for minute in allowedDateInfo.minutes %}
+          <option value="{{minute}}">{{minute}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    
     <input type="submit" name="submit">
-  
+    
   </form>
 {% endblock %}
 
