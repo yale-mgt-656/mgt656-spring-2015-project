@@ -177,7 +177,9 @@ function eventDetail (request, response) {
   }
   response.render('event-detail.html', {event: ev});
 }
-
+function donate (request,response){
+  response.render('donate.html', null);   
+}
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   var contextData = {errors: [], event: ev};
@@ -212,5 +214,6 @@ module.exports = {
   'saveEvent': saveEvent,
   'rsvp': rsvp,
   'showEvent': showEvent,
-  'listEventsJSON': listEventsJSON
+  'listEventsJSON': listEventsJSON,
+  'donate': donate
 };

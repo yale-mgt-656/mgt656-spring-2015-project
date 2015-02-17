@@ -21,6 +21,7 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/events/donate', eventControllers.donate);
 app.get('/api/events', eventControllers.listEventsJSON);
 
 app.get('/events/:id', eventControllers.showEvent);
