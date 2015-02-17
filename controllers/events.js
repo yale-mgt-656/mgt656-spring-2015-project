@@ -2,6 +2,7 @@
 
 var events = require('../models/events');
 var validator = require('validator');
+var lodash = require('lodash');
 
 // Date data that would be useful to you
 // completing the project These data are not
@@ -26,7 +27,9 @@ var allowedDateInfo = {
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016],
+  days: lodash.range(1, 32)
 };
 
 /**
@@ -45,7 +48,7 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event.html', contextData);
 }
 
@@ -92,7 +95,7 @@ function checkImage(request, picture, contextData){
  * our global list of events.
  */
 function saveEvent(request, response){
-  var contextData = {errors: []};
+  var contextData = {errors: [], allowedDateInfo: allowedDateInfo};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
@@ -104,12 +107,14 @@ function saveEvent(request, response){
   
   var year = checkIntRange(request,'year',2015,2016,contextData);
   var month = checkIntRange(request,'month',0,11,contextData);
-  var day = checkIntRange(request,'day',0,31,contextData);
-  var hour = checkIntRange(request,'hour',0,23,contextData);
   var imag = checkImage(request,'image',contextData);
-  
+  var day = checkIntRange(request,'day',1,31,contextData);
+  var hour = checkIntRange(request,'hour',0,23,contextData);
+
+
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.getMaxId() + 1,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -117,9 +122,8 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
-  }
-  else{
+    response.redirect('/events/' + newEvent.id);
+  }else{
     response.render('create-event.html', contextData);
   }
 }
@@ -152,6 +156,23 @@ function rsvp (request, response){
 }
 }
 
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if (search){
+    for(var i=0; i<events.all.length; i++){
+      if(events.all[i].title.indexOf(search)!==-1){
+        output.events.push(events.all[i]);
+      }
+    }
+  }else {
+    output.events = events.all;
+  }
+  response.json(output);
+}
+
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -161,5 +182,7 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api':api
 };
+
