@@ -69,14 +69,10 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 
 function checkImage(request, picture, contextData){
   var value = request.body[picture];
-  console.log('image value ' + value);
   if(value === ''){
-    console.log('got here??');
     contextData.errors.push('you need a image');
   }
   else{
-    console.log('got here?????');
-    
     if(value.indexOf(/https|http/)<0){
       console.log('has http ');
       contextData.errors.push('Your image does not begin with https or http.');
