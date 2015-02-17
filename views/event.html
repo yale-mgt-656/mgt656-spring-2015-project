@@ -2,17 +2,22 @@
 
 {% block mainContent %}
   <div>
+  <table class="table table-striped">  
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Who's attending?</th>
+      </tr>
+    </thead>
     {% include "fragments/events-list.html" %}
+  </table>
   </div>
   <div>
-    <a href="/events/new">Create a new event</a>
+    
+    <h3><a href="/events/new">Create a new event!</a></h3>
   </div>
 
 {% endblock %}
 
-{% block footer %}
-  <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
-  </footer>
-{% endblock %}
+

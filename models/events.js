@@ -6,38 +6,38 @@
 var allEvents = [
   {
     id: 0,
-    title: 'SOM House Party',
+    title: 'Replicator Dinner Party',
     // Note that JavaScript months are zero-indexed,
     // so, month zero is January. This is Jan 17th
     // 2013 at 4:30pm local time.
     date:   new Date(2016, 0, 17, 16, 30, 0),
-    image: 'http://i.imgur.com/pXjrQ.gif',
-    location: 'Kyle \'s house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    image: 'http://imgsrc.hubblesite.org/hu/db/images/hs-2006-01-a-640_wallpaper.jpg',
+    location: 'Ten Forward',
+    attending: ['jeanluc.picard@yale.edu', 'beverly.crusher@yale.edu']
   },
   {
     id: 1,
-    title: 'BBQ party for hackers and nerds',
+    title: 'Holodeck Trip to Risa',
     date:   new Date(2015, 8, 1, 19, 0, 0),
-    image: 'http://i.imgur.com/7pe2k.gif',
-    location: 'Miles\' house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    image: 'http://imgsrc.hubblesite.org/hu/db/images/hs-1995-01-a-640_wallpaper.jpg',
+    location: 'The Holodeck',
+    attending: ['will.riker@yale.edu', 'deanna.troi@yale.edu']
   },
   {
     id: 2,
-    title: 'BBQ for managers',
+    title: 'Dangerous Away Mission',
     date:   new Date(2015, 9, 20, 18, 0, 0),
-    image: 'http://i.imgur.com/CJLrRqh.gif',
-    location: 'Barry Nalebuff\'s house',
-    attending: ['kim.kardashian@yale.edu'],
+    image: 'http://imgsrc.hubblesite.org/hu/db/images/hs-2005-15-a-640_wallpaper.jpg',
+    location: 'Uninhabited Class M Planet',
+    attending: ['random.crewman@yale.edu', 'georgi.laforge@yale.edu', 'data@yale.edu']
   },
   {
-    id: 4,
-    title: 'Cooking lessons for the busy business student',
+    id: 3,
+    title: 'Party with Q',
     date:   new Date(2014, 8, 2, 19, 0, 0),
-    image: 'http://i.imgur.com/02KT9.gif',
-    location: 'Yale Farm',
-    attending: ['homer.simpson@yale.edu'],
+    image: 'http://imgsrc.hubblesite.org/hu/db/images/hs-2009-25-f-640_wallpaper.jpg',
+    location: 'The Continuum',
+    attending: ['q@yale.edu', 'jeanluc.picard@yale.edu'],
   }
 ];
 

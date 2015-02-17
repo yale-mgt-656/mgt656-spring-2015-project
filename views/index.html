@@ -1,20 +1,26 @@
 {% extends "layout.html" %}
-
-{% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
-{% endblock %}
-
+  
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+
+  <!-- Three columns of text -->
+  <div class="row">
+   
+    {% for event in events %}
+    <div class="col-lg-4">
+      <img class="img-rounded" src="{{event.image}}" style="max-width: 100%; max-height: 100%;">
+      <ul>
+        <li class = "event" id = "event-{{event.id}}">
+        <h3><a href = "/events/{{event.id}}">{{event.title}}</a></h3>
+        <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+        <p>{{event.attending.length}} attending so far.</p>
+        </li>
+      </ul>
+      <p><a class="btn btn-lg btn-primary" href="/events/{{event.id}}" role="button">RSVP &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    {% endfor %}
+   
+  </div><!-- /.row -->
+  
+  <hr class = "divider">
+
 {% endblock %}

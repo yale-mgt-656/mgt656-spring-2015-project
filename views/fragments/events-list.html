@@ -1,9 +1,17 @@
-<ul>
+<tbody>
   {% for event in events %}
-    <li>
-      {{event.title}}.
+    <tr class = "event" id = "event-{{event.id}}">
+      <td><a href = "/events/{{event.id}}">{{event.title}}</a></td>
+      <td><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></td>
+      <td>{{event.attending.length}} attending so far.</td>
+    </tr>
+  
+    <!--
+    <li class = "event" id = "event-{{event.id}}">
+      <a href = "/events/{{event.id}}"> {{event.title}} </a>
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
     </li>
+    -->
   {% endfor %}
-</ul>
+</tbody>

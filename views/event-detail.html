@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+    <h1 id="title">{{event.title}}</h1>
+    <img src="{{event.image}}" id="image" class ="img-rounded" style="max-width: 25%; max-height: 25%;">
+    <p><h4>Event Date: </h4><span id="date">{{event.date}}</span></p>
+    <p><h4>Location: </h4><span id="location">{{event.location}}</span></p>
+    <p><h4>Who's Coming: </h4><ul id="attendees">
+        {% for attendee in event.attending %}
+          <li>{{attendee}}</li>
+        {% endfor %}
+    </ul></p>
+    
+    <h4>RSVP:</h4>
+    <form method="POST">
+        <input type="email" name="email" id="email"/>
+        <input type="submit" value="Submit"/>
+    </form>
+
+<h3><a href="/events/{{event.id}}/donate" class="donation">Donate!</a></h3>
+
+{% endblock %}
