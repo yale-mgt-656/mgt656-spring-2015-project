@@ -177,8 +177,8 @@ function eventDetail (request, response) {
   }
   response.render('event-detail.html', {event: ev});
 }
-function donate (request,response){
-  response.render('donate.html', null);   
+function pay (request,response){
+  response.render('pay.html', null);   
 }
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
@@ -215,5 +215,5 @@ module.exports = {
   'rsvp': rsvp,
   'showEvent': showEvent,
   'listEventsJSON': listEventsJSON,
-  'donate': donate
+  'pay': pay
 };
