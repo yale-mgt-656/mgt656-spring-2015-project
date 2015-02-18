@@ -15,19 +15,35 @@
 
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
-    <input type="text" name="title">
-    
+    <input type="text" name="title" id="title" maxlength="50">
+  
     <label for="location">Event location:</label>
-    <input type="text" name="location">
-    
+    <input type="text" name="location" id="location" maxlength="50">
+  
     <label for="image">Event image:</label>
     <input type="text" name="image">
     
     <label for="year">Event year:</label>
-    <input type="text" name="year">
+        <SELECT>
+        <OPTION value="1">2015</OPTION>
+        <OPTION value="2">2016</OPTION>
+        </SELECT>
     
     <label for="month">Event month:</label>
-    <input type="text" name="month">
+        <SELECT>
+        <OPTION value="1">January</OPTION>
+        <OPTION value="2">February</OPTION>
+        <OPTION value="3">March</OPTION>
+        <OPTION value="4">April</OPTION>
+        <OPTION value="5">May</OPTION>
+        <OPTION value="6">June</OPTION>
+        <OPTION value="7">July</OPTION>
+        <OPTION value="8">August</OPTION>
+        <OPTION value="9">September</OPTION>
+        <OPTION value="10">October</OPTION>
+        <OPTION value="11">November</OPTION>
+        <OPTION value="12">December</OPTION>
+        </SELECT>
     
     <label for="day">Event day:</label>
     <input type="text" name="day">
@@ -38,6 +54,8 @@
     <label for="minute">Event minute:</label>
     <input type="text" name="minute">
     
+    <input type="submit" id="submit" value="Submit event">
+     
   </form>
 {% endblock %}
 
