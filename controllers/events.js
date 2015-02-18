@@ -178,7 +178,14 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
 }
 function pay (request,response){
-  response.render('pay.html', null);   
+  var contextData = {
+    'title': '',
+    'tagline': 'The world\'s best Eventbrite clone',
+    'events': [],
+    'tagword': 'monehz',
+  };
+  
+  response.render('pay.html', contextData);   
 }
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
