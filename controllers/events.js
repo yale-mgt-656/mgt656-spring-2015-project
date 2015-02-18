@@ -58,7 +58,11 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('The title must be less than 50 characters.');
+  }
+
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('The location must be less than 50 characters.');
   }
 
 
