@@ -1,6 +1,6 @@
 # MGT 645 Project
 
-I am testing this.
+Deleted
 
 This is the starter project for MGT 645. You'll fork this
 code in order to get started with your project. 
