@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+
+  {% block header %}
+<div class="row">
+  <div class="col-sm-12 well" style="border:6px solid #eefe8b; background:rgba(0,0,0,.6);padding-top:25px;border-radius:25px;">
+    <h1 id='title'>
+      {{event.title}}
+    </h1>
+    <span id='date'>
+      {{month}} {{day}}, {{year}}
+    </span>
+    <span id='location'>
+      {{event.location}}
+    </span>
+    <p>
+      <h3>Attendees</h3>
+    </p>
+    <ul id='attendees' class="list-unstyled">
+      {% for attendee in event.attending %}
+        <li>
+          {{attendee}}
+        </li>
+      {% endfor %}
+    </ul>
+    <form id="email" method="POST">
+        <label for="email">Your Email:</label>
+        <span class="inputcolor"><input type="email" name="email"></span>
+        <button type="submit" class="btn btn-default" name="Submit" id="Submit">RSVP</button>
+      </form>
+    
+    <div class='text-center'>
+        <a class='donate btn btn-default' id='donate' href='/pay'></a>
+    </div>
+  </div>
+</div>
+   <div class="cols">
+    <img src="{{event.image}}" class="img-responsive" id='image'/>
+  </div>
+
+{% endblock %}
+    {% block left %}
+     <div class="clickme">
+          <img src="http://fc08.deviantart.net/fs70/f/2012/096/4/d/__click_me___bubble_speech_by_kirankiran-d4v5zqq.png"/>
+       </div>
+    <div class="meows"> 
+    <a href="http://cat-bounce.com/">
+    <img class="meow" src="http://31.media.tumblr.com/13e820beeaec357bcd341256862235ba/tumblr_mkl0yecyeW1s97mfpo1_1280.png"/>
+       </a>        
+       </div>
+       </div>
+    {% endblock %}
+
+{% block right %}
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+          <!-- Load the Content Experiment JavaScript API client for the experiment -->
+  <script src="//www.google-analytics.com/cx/api.js?experiment=4iat-snORrSlOhDoxPqxDA"></script>
+   
+  <script>
+  // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {
+      $( 'a#donate' ).text( 'donate' );
+      
+    },  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: 
+      $( 'a#donate' ).text( 'support' );
+    }
+  ];
+   
+  // Wait for the DOM to load, then execute the view for the chosen variation.
+  $(document).ready(function(){
+    // Ask Google Analytics which variation to show the user.
+    var chosenVariation = cxApi.chooseVariation('4iat-snORrSlOhDoxPqxDA');
+    
+    console.log('chosenVariation =', chosenVariation);
+   
+    // Execute the chosen view
+    pageVariations[chosenVariation]();
+    
+  });
+  </script>
+{% endblock %}

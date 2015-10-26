@@ -1,5 +1,61 @@
 {% extends "layout.html" %}
 
-{% block mainContent %}
-  <p>This is the about us page</p>
+{% block header %}
+<h2> Our Team Members</h2>
+<h3><p class="names">
+<span id="clear sandpiper-name">Nicole Clark</span>
+<span id="ok jellyfish-name">Tugce Erten</span>
+<span id="nice pelican-name">Cameron Rout</span>
+</p></h3>
+<p>
+  <img class="pic" id="{{nickname}}-headshot" src="http://cdn.hiconsumption.com/wp-content/uploads/2013/03/Fashion-Zoo-Animals-1.jpeg"/>
+  <img class="pic" id="{{nickname}}-headshot" src="http://static.tumblr.com/482333d9f5a5164a94afb2ef7f388bbe/2i86ozs/1AXndryi5/tumblr_static_66uibugjci4ocwow4c48koowc.jpg"/>
+  <img class="pic" id="{{nickname}}-headshot" src="http://www.deathandtaxesmag.com/wp-content/uploads/2013/03/tumblr_mkd241kQgx1qzfsnio2_1280.jpg"/>
+</p>
 {% endblock %}
+{% block left %}
+<h3>Status Report</h3>
+<p>
+<img class="burndown" src="https://lh5.googleusercontent.com/_6Gk6A1Dp5CnMo9pt08mFARZwB42xZs9MPenyIbSkGQT9Wf3ToYwI2__jpdhNWXtsNPy_XjbL7abFhyhWhLLYzuaRLJQGRJxyc8OWAx5FgnVDo-XrsViyT0qvO9a2ojlLMs"/>
+</p>
+<p>Team Deep Thought holds sprint meeting every Wednesday from 4-5pm at the Center for Engineering, Innovation, and Design.
+In the first week we finished all of the assigned stories, and worked ahead on those we felt most important. This week we 
+assigned ourselves new stories to tackle. UX occured in iterations- first making it sleek, and then deciding to make it ironic.
+UX is now based off of "the most hipster" concept. Stories covered include changing of the design, changing of event titles,
+addition of new events, and tampering with attendees. About us photos also changed.
+</p>
+<p>Also created this week was a link to "new new" forms and the ability to RSVP. There was a bit of a stumbling block with 
+making sure that any capitalizations would still be accepted as the correct email address. We solved this with a bit of 
+javascript. We also had a bit of an issue because the bar to enter in the email was the same color as the text. This bug
+was resolved. We also coded such that users could retrieve API in JSON format. Also all issues with validation were clarified.
+</p>
+	<p> Team Deep Thought is now wrangling with the curveball of analytics and figuring out why certain mocha tests don't pass. We
+	learned that changing an html tag from "h1" to "h2" affected whether or not the test passed. Aesthetic changes are now tested
+	more carefully. All branches are tested at least once by another member of the team before merging. 
+	</p>
+<h3>Weekly Completed Stories</h3>
+<ul>
+<li>Link to "new new" events</li>
+<li>Search for events using GET request</li>
+<li>API and JSON</li>
+<li>User can retrieve events in JSON</li>
+<li>Allow Yalies only to RSVP</li>
+<li>If valid, take me to detail page with my email address and other attendees</li>
+<li>UX improvements</li>
+<li>Logo background made transparent</li>
+<li>Hiding gifs from events page</li>
+<li>Creating new events</li>
+</ul>
+<br>
+<h3>Product Backlog</h3>
+<ul>
+<li>Analytics tracking</li>
+<li>Figure out why mocha tests don't pass</li>
+</ul>
+
+{% endblock %}
+    {% block footer %}
+      <footer>
+        <a href="/">Home</a> || <a href="/about">About</a>
+      </footer>
+    {% endblock %}
