@@ -40,7 +40,6 @@ describe('The site, on all pages',function(){
 
   // See note above. Ghetto hack.
   setSite(this);
-
   before(function(done){
     this.port = PORT;
     this.server = app.listen(this.port, done);
@@ -110,10 +109,12 @@ describe('The home page',function(){
   });
 
   it('should be up and running', function(){
+    
     assert.ok(this.browser.success, 'Home page not found at ' + this.browser.location.pathname);
   });
 
   it('should have your team logo', function(){
+    //console.log(this.browser.location.pathname);
     assert.ok(this.browser.query('img#logo[src*=".png"]'), 'Expected logo .png on page at ' + this.browser.location.pathname);
   });
 
@@ -459,5 +460,3 @@ describe('The form for creating new events',function(){
     this.server.close(done);
   });
 });
-
-
