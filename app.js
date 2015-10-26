@@ -22,5 +22,10 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/Sprints', function (req, res) {
+  var contextData = {};
+  res.render('Reports/Sprint-Report-1.html', contextData)
+});
+
 
 module.exports = app;
