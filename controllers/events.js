@@ -80,7 +80,7 @@ function saveEvent(request, response){
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
   }
   response.render('event-detail.html', {event: ev});
 }
