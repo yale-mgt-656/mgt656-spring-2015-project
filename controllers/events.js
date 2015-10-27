@@ -33,13 +33,15 @@ var allowedDateInfo = {
  * Controller that renders a list of events in HTML.
  */
 function listEvents(request, response) {
+  console.log("list events")
   var currentTime = new Date();
   var contextData = {
     'events': events.all,
-    'time': currentTime
+    'time': currentTime,
   };
   response.render('event.html', contextData);
 }
+
 
 /**
  * Controller that renders a page for creating new events.
