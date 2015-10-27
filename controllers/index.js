@@ -8,8 +8,8 @@ var events = require('../models/events');
 function index (request, response) {
   var currentTime = new Date();
   var contextData = {
-    'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).',
+    'title': 'Half Mountain Events',
+    'tagline': 'Check out our upcoming events!',
     'events': events.all,
     'time': currentTime
   };
