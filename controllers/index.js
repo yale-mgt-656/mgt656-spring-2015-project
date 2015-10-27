@@ -5,8 +5,8 @@
  */
 function index (request, response) {
   var contextData = {
-    'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).'
+    'title': 'Epic Snowflake\'s Not-So-Epic Ticket Co.',
+    'tagline': 'Delivering tickets one sprint at a time.'
   };
   response.render('index.html', contextData);
 }
