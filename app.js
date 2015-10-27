@@ -20,12 +20,13 @@ configure(app);
 app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
-app.get('/events/:id', eventControllers.eventDetail)
+app.get('/events/:id', eventControllers.eventDetail);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
-app.get('/Sprints', function (req, res) {
+
+app.get('/sprints', function (req, res) {
   var contextData = {};
-  res.render('Reports/Sprint-Report-1.html', contextData)
+  res.render('reports/sprint-report-1.html', contextData)
 });
 
 
