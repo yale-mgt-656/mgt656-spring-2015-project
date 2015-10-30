@@ -54,14 +54,34 @@ function newEvent(request, response){
  * Validates the form and adds the new event to
  * our global list of events.
  */
+function validatIntInRange (request, fieldName, minVal, maxVal, contextData)
+{
+  var value = null;
+  if (validator.isInt(request.body[fieldName]) === false) {
+    contextData.errors.push('Your ' + fieldName + ' should be an intiger.');
+  }
+  else
+  {
+    value = parseInt(request.body[fieldName],10);
+    if (value>maxVal || value<minVal) {
+      contextData.errors.push('Your ' + fieldName + ' should be between ' + minVal + ' and ' + maxVal + '.');
+    }
+  }
+  return value;
+}
+ 
 function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
-
-
+  
+  var year = validatIntInRange(request, 'year', 2015, 2016, contextData);
+  var month = validatIntInRange(request, 'month', 0, 11, contextData);
+  var day = validatIntInRange(request, 'day', 1, 31, contextData);
+  var hour = validatIntInRange(request, 'hour', 0, 23, contextData);
+  
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,

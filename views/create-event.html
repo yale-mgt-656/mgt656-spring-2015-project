@@ -12,6 +12,7 @@
       </ul>
     </div>
   {% endif %}
+  
   <h3> Event Details </h3>
 	<form class="form-horizontal"  id="create-event" method="POST">
 	  <div class="form-group">
@@ -32,28 +33,29 @@
         <input type="text" name="image" class="form-control" placeholder="Event Image web address">
       </div>
     </div>
-  </form>
-  <h3> Date & Time </h3>
-  <form class="form-inline"  id="create-event" method="POST">
-      <div class="form-group">
-        <label for="year" class="sr-only">Event year:</label>
-        <input type="text" name="year" class="form-control" placeholder="Event year">
-      </div>
-      <div class="form-group">
-        <label for="month" class="sr-only">Event month:</label>
-        <input type="text" name="month" class="form-control" placeholder="Event month">
-      </div>
-      <div class="form-group">
-        <label for="day" class="sr-only">Event day:</label>
-        <input type="text" name="day" class="form-control" placeholder="Event day">
-      </div>
-      <div class="form-group">
-        <label for="hour" class="sr-only">Event hour:</label>
-        <input type="text" name="hour" class="form-control" placeholder="Event hour">
-      </div>
-      <div class="form-group">
-        <label for="minute" class="sr-only">Event minute:</label>
-        <input type="text" name="minute" class="form-control" placeholder="Event minute">
-      </div>      
+    <h3> Date & Time </h3>
+    <div class="form-group">
+      <label for="year" class="sr-only">Event year:</label>
+      <input type="text" name="year" class="form-control" placeholder="Event year">
+    </div>
+    <div class="form-group">
+      <label for="month" class="sr-only">Event month:</label>
+      <input type="text" name="month" class="form-control" placeholder="Event month">
+    </div>
+    <div class="form-group">
+      <label for="day" class="sr-only">Event day:</label>
+      <input type="text" name="day" class="form-control" placeholder="Event day">
+    </div>
+    <div class="form-group">
+      <label for="hour" class="sr-only">Event hour:</label>
+      <input type="text" name="hour" class="form-control" placeholder="Event hour">
+    </div>
+    <div class="form-group">
+      <label for="minute" class="sr-only">Event minute:</label>
+      <input type="text" name="minute" class="form-control" placeholder="Event minute">
+    </div>
+    
+    <input id="submit" type="submit" class="btn btn-default">
+    
   </form>
 {% endblock %}
