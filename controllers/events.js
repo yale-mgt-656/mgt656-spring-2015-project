@@ -29,30 +29,8 @@ var allowedDateInfo = {
   ]
 };
 
-/**
- * Controller that renders a list of events in HTML.
- */
-function listEvents(request, response) {
-  var currentTime = new Date();
-  var contextData = {
-    'events': events.all,
-    'time': currentTime
-  };
-  response.render('event.html', contextData);
-}
-
-/**
- * Controller that renders a page for creating new events.
- */
-function newEvent(request, response){
-  var contextData = {};
-  response.render('create-event.html', contextData);
-}
-
-/**
- * Controller to which new events are submitted.
- * Validates the form and adds the new event to
- * our global list of events.
+/*
+ * controller to check if an input is an integer and in a certain range
  */
 function validatIntInRange (request, fieldName, minVal, maxVal, contextData)
 {
@@ -69,9 +47,68 @@ function validatIntInRange (request, fieldName, minVal, maxVal, contextData)
   }
   return value;
 }
+
+/*
+ * to handle the form fields, if a filed is empty a place holder apears otherwise the previuos value
+ */
+
+function formHandler (contextData,request,fieldName)
+{
+  if (validator.isLength(request.body[fieldName], 1, 50) === true)
+  {
+    contextData.event_details[fieldName][0] = 'value';
+    contextData.event_details[fieldName][1] = request.body[fieldName];
+  }
+  else
+  {
+    contextData.event_details[fieldName][0] = 'placeholder';
+    contextData.event_details[fieldName][1] = 'Event ' + fieldName;
+  }
+}
+
+
+/**
+ * Controller that renders a list of events in HTML.
+ */
+function listEvents(request, response) {
+  var currentTime = new Date();
+  var contextData = {
+    'events': events.all,
+    'time': currentTime
+  };
+  response.render('event.html', contextData);
+}
+
+/**
+ * Controller that renders a page for creating new events.
+ */
+function newEvent(request, response){
+  var event_details = {title: [2], location: [2], image: [2],
+                       year: [2], month: [2], day: [2],
+                       hour: [2], minute: [2]};
+  var contextData = {event_details};
+  formHandler (contextData,request,'title');
+  formHandler (contextData,request,'location');
+  formHandler (contextData,request,'image');
+  formHandler (contextData,request,'year');
+  formHandler (contextData,request,'month');
+  formHandler (contextData,request,'day');
+  formHandler (contextData,request,'hour');
+  formHandler (contextData,request,'minute');
+  response.render('create-event.html', contextData);
+}
+
+/**
+ * Controller to which new events are submitted.
+ * Validates the form and adds the new event to
+ * our global list of events.
+ */
  
 function saveEvent(request, response){
-  var contextData = {errors: []};
+  var event_details = {title: [2], location: [2], image: [2],
+                       year: [2], month: [2], day: [2],
+                       hour: [2], minute: [2]};
+  var contextData = {errors: [], event_details};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
@@ -81,6 +118,15 @@ function saveEvent(request, response){
   var month = validatIntInRange(request, 'month', 0, 11, contextData);
   var day = validatIntInRange(request, 'day', 1, 31, contextData);
   var hour = validatIntInRange(request, 'hour', 0, 23, contextData);
+  
+  formHandler (contextData,request,'title');
+  formHandler (contextData,request,'location');
+  formHandler (contextData,request,'image');
+  formHandler (contextData,request,'year');
+  formHandler (contextData,request,'month');
+  formHandler (contextData,request,'day');
+  formHandler (contextData,request,'hour');
+  formHandler (contextData,request,'minute');
   
   if (contextData.errors.length === 0) {
     var newEvent = {
