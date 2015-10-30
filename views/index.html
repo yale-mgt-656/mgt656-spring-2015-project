@@ -12,6 +12,20 @@
   </p>
   <p><img id="logo" src="smallseateamlogo.png"></img></p>
   <p>
+    Here is our list of events
+  </p>
+  <div>
+    <ul>
+        {% for event in events %}
+            <li class="event" id="event-{{event.id}}">
+                <a href="/events/{{event.id}}">{{event.title}}</a>.
+                <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+                {{event.attending.length}} attending so far.
+            </li>
+        {% endfor %}
+    </ul>
+  </div>  
+  <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
