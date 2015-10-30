@@ -8,57 +8,57 @@
    
    The home page
      ✓ should be up and running
-     1) should have your team logo
-     2) should have a list of events
-     3) should have a time tag for each event
-     4) should have a link for each event
+     ✓ should have your team logo
+     1) should have a list of events
+     2) should have a time tag for each event
+     3) should have a link for each event
      ✓ should not show events that are over
      ✓ should have a link to create a new event
    
    The API
-     5) should return an array of upcoming events in JSON format
-     6) should allow for searching events by title
+     4) should return an array of upcoming events in JSON format
+     5) should allow for searching events by title
    
    The about page
      ✓ should have people on it
      ✓ should have a picture of each person
    
    The event detail pages
-     7) should exist for each event and should have title, image, etc
-     8) should allow Yale users to RSVP
-     9) should reject RSVPs from Yale addresses
+     6) should exist for each event and should have title, image, etc
+     7) should allow Yale users to RSVP
+     8) should reject RSVPs from Yale addresses
    
    The new event creation page
      ✓ should exist
      ✓ should have a form that can be posted back
-     10) should have appropriate form fields and labels
+     9) should have appropriate form fields and labels
    
    The form for creating new events
-     11) should display errors to the user when the year is not an integer
-     12) should display errors to the user when the year is more than 2016
-     13) should display errors to the user when the year is less than 2015
-     14) should display errors to the user when the month is not an integer
-     15) should display errors to the user when the month is more than 11
-     16) should display errors to the user when the month is less than 0
-     17) should display errors to the user when the day is not an integer
-     18) should display errors to the user when the day is more than 31
-     19) should display errors to the user when the day is less than 1
-     20) should display errors to the user when the hour is not an integer
-     21) should display errors to the user when the hour is more than 23
-     22) should display errors to the user when the hour is less than 0
-     23) should display errors to the user when the image is not a gif or png
-     24) should display errors to the user when the image is not a URL
-     25) should display errors to the user when the location is too long
-     26) should display errors to the user when the location is empty
-     27) should display errors to the user when the title is too long
-     28) should display errors to the user when the title is empty
-     29) should redirect the user to the event detail page if the form is valid
+     10) should display errors to the user when the year is not an integer
+     11) should display errors to the user when the year is more than 2016
+     12) should display errors to the user when the year is less than 2015
+     13) should display errors to the user when the month is not an integer
+     14) should display errors to the user when the month is more than 11
+     15) should display errors to the user when the month is less than 0
+     16) should display errors to the user when the day is not an integer
+     17) should display errors to the user when the day is more than 31
+     18) should display errors to the user when the day is less than 1
+     19) should display errors to the user when the hour is not an integer
+     20) should display errors to the user when the hour is more than 23
+     21) should display errors to the user when the hour is less than 0
+     22) should display errors to the user when the image is not a gif or png
+     23) should display errors to the user when the image is not a URL
+     24) should display errors to the user when the location is too long
+     25) should display errors to the user when the location is empty
+     26) should display errors to the user when the title is too long
+     27) should display errors to the user when the title is empty
+     28) should redirect the user to the event detail page if the form is valid
 
-   Executed 41 tests in 7 suites in 2s 856ms
-       12 passes
-       29 failed
+   Executed 41 tests in 7 suites in 2s 982ms
+       13 passes
+       28 failed
    
-   29) The form for creating new events should redirect the user to the event detail page if the form is valid
+   28) The form for creating new events should redirect the user to the event detail page if the form is valid
    
        Bad redirect location, it should look like events/4, events/5, etc: expected '/events' to match /events\/\d+\/?$/
        
@@ -88,7 +88,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   28) The form for creating new events should display errors to the user when the title is empty
+   27) The form for creating new events should display errors to the user when the title is empty
    
        Cannot read property 'document' of undefined
        
@@ -118,7 +118,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   27) The form for creating new events should display errors to the user when the title is too long
+   26) The form for creating new events should display errors to the user when the title is too long
    
        Cannot read property 'document' of undefined
        
@@ -148,7 +148,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   26) The form for creating new events should display errors to the user when the location is empty
+   25) The form for creating new events should display errors to the user when the location is empty
    
        Expected status code 200, but got302
        
@@ -178,7 +178,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   25) The form for creating new events should display errors to the user when the location is too long
+   24) The form for creating new events should display errors to the user when the location is too long
    
        Expected status code 200, but got302
        
@@ -208,7 +208,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   24) The form for creating new events should display errors to the user when the image is not a URL
+   23) The form for creating new events should display errors to the user when the image is not a URL
    
        Expected status code 200, but got302
        
@@ -238,7 +238,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   23) The form for creating new events should display errors to the user when the image is not a gif or png
+   22) The form for creating new events should display errors to the user when the image is not a gif or png
    
        Expected status code 200, but got302
        
@@ -268,7 +268,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   22) The form for creating new events should display errors to the user when the hour is less than 0
+   21) The form for creating new events should display errors to the user when the hour is less than 0
    
        Expected status code 200, but got302
        
@@ -298,7 +298,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   21) The form for creating new events should display errors to the user when the hour is more than 23
+   20) The form for creating new events should display errors to the user when the hour is more than 23
    
        Expected status code 200, but got302
        
@@ -328,7 +328,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   20) The form for creating new events should display errors to the user when the hour is not an integer
+   19) The form for creating new events should display errors to the user when the hour is not an integer
    
        Expected status code 200, but got302
        
@@ -358,7 +358,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   19) The form for creating new events should display errors to the user when the day is less than 1
+   18) The form for creating new events should display errors to the user when the day is less than 1
    
        Expected status code 200, but got302
        
@@ -388,7 +388,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   18) The form for creating new events should display errors to the user when the day is more than 31
+   17) The form for creating new events should display errors to the user when the day is more than 31
    
        Expected status code 200, but got302
        
@@ -418,7 +418,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   17) The form for creating new events should display errors to the user when the day is not an integer
+   16) The form for creating new events should display errors to the user when the day is not an integer
    
        Expected status code 200, but got302
        
@@ -448,7 +448,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   16) The form for creating new events should display errors to the user when the month is less than 0
+   15) The form for creating new events should display errors to the user when the month is less than 0
    
        Expected status code 200, but got302
        
@@ -478,7 +478,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   15) The form for creating new events should display errors to the user when the month is more than 11
+   14) The form for creating new events should display errors to the user when the month is more than 11
    
        Expected status code 200, but got302
        
@@ -508,7 +508,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   14) The form for creating new events should display errors to the user when the month is not an integer
+   13) The form for creating new events should display errors to the user when the month is not an integer
    
        Expected status code 200, but got302
        
@@ -538,7 +538,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   13) The form for creating new events should display errors to the user when the year is less than 2015
+   12) The form for creating new events should display errors to the user when the year is less than 2015
    
        Expected status code 200, but got302
        
@@ -568,7 +568,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   12) The form for creating new events should display errors to the user when the year is more than 2016
+   11) The form for creating new events should display errors to the user when the year is more than 2016
    
        Expected status code 200, but got302
        
@@ -598,7 +598,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   11) The form for creating new events should display errors to the user when the year is not an integer
+   10) The form for creating new events should display errors to the user when the year is not an integer
    
        Expected status code 200, but got302
        
@@ -628,7 +628,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   10) The new event creation page should have appropriate form fields and labels
+   9) The new event creation page should have appropriate form fields and labels
    
        Should have form label for minute at /events/new
        
@@ -639,7 +639,7 @@
        301 |       // Test for form fields
        
    
-   9) The event detail pages should reject RSVPs from Yale addresses
+   8) The event detail pages should reject RSVPs from Yale addresses
    
        No INPUT matching 'email'
        
@@ -713,7 +713,7 @@
        16 |     };
        
    
-   8) The event detail pages should allow Yale users to RSVP
+   7) The event detail pages should allow Yale users to RSVP
    
        No INPUT matching 'email'
        
@@ -787,7 +787,7 @@
        16 |     };
        
    
-   7) The event detail pages should exist for each event and should have title, image, etc
+   6) The event detail pages should exist for each event and should have title, image, etc
    
        Couldn't retreive all events at /events/:id.
        
@@ -896,7 +896,7 @@
        16 |     };
        
    
-   6) The API should allow for searching events by title
+   5) The API should allow for searching events by title
    
        API not found at /api/events
        
@@ -926,7 +926,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   5) The API should return an array of upcoming events in JSON format
+   4) The API should return an array of upcoming events in JSON format
    
        API not found at /api/events
        
@@ -956,7 +956,7 @@
        
        at endReadableNT (_stream_readable.js:893:12)
    
-   4) The home page should have a link for each event
+   3) The home page should have a link for each event
    
        Expected some events with links at / (found 0)
        
@@ -967,7 +967,7 @@
        134 |   });
        
    
-   3) The home page should have a time tag for each event
+   2) The home page should have a time tag for each event
    
        Expected some events with time tags at / (found 0)
        
@@ -978,7 +978,7 @@
        128 |   });
        
    
-   2) The home page should have a list of events
+   1) The home page should have a list of events
    
        Expected list (li) of events on page at /
        
@@ -987,15 +987,4 @@
        120 |   it('should have a list of events', function(){
        121 |     assert.ok(this.browser.query('li.event[id*="event-"]'), 'Expected list (li) of events on page at ' + this.browser.location.pathname);
        122 |   });
-       
-   
-   1) The home page should have your team logo
-   
-       Expected logo .png on page at /
-       
-       at Context.<anonymous> (test/test.js:117:12)
-       
-       116 |   it('should have your team logo', function(){
-       117 |     assert.ok(this.browser.query('img#logo[src*=".png"]'), 'Expected logo .png on page at ' + this.browser.location.pathname);
-       118 |   });
        
