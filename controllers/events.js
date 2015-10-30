@@ -54,6 +54,10 @@ function validatIntInRange (request, fieldName, minVal, maxVal, contextData)
 
 function formHandler (contextData,request,fieldName)
 {
+  validator.extend('isWhitespace', function (str) {
+    return /^\s+$/.test(str);
+  });
+  
   if (validator.isLength(request.body[fieldName], 1, 50) === true)
   {
     contextData.event_details[fieldName][0] = 'value';
@@ -114,10 +118,28 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
   
-  var year = validatIntInRange(request, 'year', 2015, 2016, contextData);
-  var month = validatIntInRange(request, 'month', 0, 11, contextData);
-  var day = validatIntInRange(request, 'day', 1, 31, contextData);
-  var hour = validatIntInRange(request, 'hour', 0, 23, contextData);
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be at least one letter and less than 50.');
+  }
+  
+  var year = validatIntInRange(request, 'year', 2015, 2016, contextData); // year validation nd error massage
+  var month = validatIntInRange(request, 'month', 0, 11, contextData);    // month validation nd error massage
+  var day = validatIntInRange(request, 'day', 1, 31, contextData);        // day validation nd error massage
+  var hour = validatIntInRange(request, 'hour', 0, 23, contextData);      // hour validation nd error massage
+  
+  {
+  var minute = null;
+  if (validator.isInt(request.body.minute) === false) {
+    contextData.errors.push('Your minutes should be an intiger.');
+  }
+  else
+  {
+    minute = parseInt(request.body.minute,10);
+    if (minute!==0 && minute!==30) {
+      contextData.errors.push('Your minutes should be either 30 or 00.');
+    }
+  }
+}
   
   formHandler (contextData,request,'title');
   formHandler (contextData,request,'location');
