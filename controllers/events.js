@@ -52,16 +52,12 @@ function validatIntInRange (request, fieldName, minVal, maxVal, contextData)
  * to handle the form fields, if a filed is empty a place holder apears otherwise the previuos value
  */
 
-function formHandler (contextData,request,fieldName)
+function formHandler (contextData,fieldData,fieldName)
 {
-  validator.extend('isWhitespace', function (str) {
-    return /^\s+$/.test(str);
-  });
-  
-  if (validator.isLength(request.body[fieldName], 1, 50) === true)
+  if (fieldData !== null)
   {
     contextData.event_details[fieldName][0] = 'value';
-    contextData.event_details[fieldName][1] = request.body[fieldName];
+    contextData.event_details[fieldName][1] = fieldData;
   }
   else
   {
@@ -91,14 +87,14 @@ function newEvent(request, response){
                        year: [2], month: [2], day: [2],
                        hour: [2], minute: [2]};
   var contextData = {event_details};
-  formHandler (contextData,request,'title');
-  formHandler (contextData,request,'location');
-  formHandler (contextData,request,'image');
-  formHandler (contextData,request,'year');
-  formHandler (contextData,request,'month');
-  formHandler (contextData,request,'day');
-  formHandler (contextData,request,'hour');
-  formHandler (contextData,request,'minute');
+  formHandler (contextData,null,'title');
+  formHandler (contextData,null,'location');
+  formHandler (contextData,null,'image');
+  formHandler (contextData,null,'year');
+  formHandler (contextData,null,'month');
+  formHandler (contextData,null,'day');
+  formHandler (contextData,null,'hour');
+  formHandler (contextData,null,'minute');
   response.render('create-event.html', contextData);
 }
 
@@ -114,12 +110,16 @@ function saveEvent(request, response){
                        hour: [2], minute: [2]};
   var contextData = {errors: [], event_details};
 
+  var title = request.body.title;
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
+    title = null;
   }
   
+  var location = request.body.location;
   if (validator.isLength(request.body.location, 1, 50) === false) {
     contextData.errors.push('Your location should be at least one letter and less than 50.');
+    location = null;
   }
   
   var year = validatIntInRange(request, 'year', 2015, 2016, contextData); // year validation nd error massage
@@ -127,7 +127,6 @@ function saveEvent(request, response){
   var day = validatIntInRange(request, 'day', 1, 31, contextData);        // day validation nd error massage
   var hour = validatIntInRange(request, 'hour', 0, 23, contextData);      // hour validation nd error massage
   
-  {
   var minute = null;
   if (validator.isInt(request.body.minute) === false) {
     contextData.errors.push('Your minutes should be an intiger.');
@@ -139,16 +138,26 @@ function saveEvent(request, response){
       contextData.errors.push('Your minutes should be either 30 or 00.');
     }
   }
-}
   
-  formHandler (contextData,request,'title');
-  formHandler (contextData,request,'location');
-  formHandler (contextData,request,'image');
-  formHandler (contextData,request,'year');
-  formHandler (contextData,request,'month');
-  formHandler (contextData,request,'day');
-  formHandler (contextData,request,'hour');
-  formHandler (contextData,request,'minute');
+  // Validate the image
+  var image = request.body.image;
+  var imageStart = new RegExp("^https://|^http://");
+  var imageEnd = new RegExp(".gif$|.png$");
+  
+  if ( (imageStart.test(image) === false) || (imageEnd.test(image) === false) )
+  {
+    contextData.errors.push('Your imgae should start with http:// or https:// and end with .gif or .png.');
+    image = null;
+  }
+  
+  formHandler (contextData,title,'title');
+  formHandler (contextData,location,'location');
+  formHandler (contextData,image,'image');
+  formHandler (contextData,year,'year');
+  formHandler (contextData,month,'month');
+  formHandler (contextData,day,'day');
+  formHandler (contextData,hour,'hour');
+  formHandler (contextData,minute,'minute');
   
   if (contextData.errors.length === 0) {
     var newEvent = {
