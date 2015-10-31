@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <img id="image" src="{{event.image}}" class="img-rounded center-block"></img>
+  <h1 id="title">{{event.title}}</h1>
+  <span id="location">it will all happen at {{event.location}}</span>
+  <span id="date">it's going down on: {{event.date}} </span>
+  <p>heres who's gonna be there:</p>
+  <ul id="attendees">
+      {% for person in event.attending %}
+        <li>
+          {{person}} is attending
+        </li>
+      {% endfor %}
+  </ul>
+{% endblock %}
