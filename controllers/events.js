@@ -164,22 +164,26 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(year,month,day,hour,minute),
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + events.all.length);
   }else{
     response.render('create-event.html', contextData);
   }
 }
 
 function eventDetail (request, response) {
-  var ev = events.getById(parseInt(request.params.id));
+  var ev = events.getById(parseInt(request.params.id,10));
   if (ev === null) {
     response.status(404).send('No such event');
   }
-  response.render('event-detail.html', {event: ev});
+  else
+  {
+    response.render('event-detail.html', {event: ev});
+  }
+    
 }
 
 function rsvp (request, response){
