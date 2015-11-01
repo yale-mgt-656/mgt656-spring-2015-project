@@ -2,7 +2,7 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>{{ title }}</h1>
   </header>
 {% endblock %}
 
@@ -10,10 +10,15 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+ <img id="logo" src="http://i68.tinypic.com/353593c.png">
   <p>
-    Check out the <a href="/about">About us</a> page
+    Check out the <a href="/about">About me</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
+  <p>Here is a list of all events:</p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
