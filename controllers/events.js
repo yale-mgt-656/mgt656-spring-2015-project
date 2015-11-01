@@ -5,7 +5,7 @@ var validator = require('validator');
 
 // Date data that would be useful to you
 // completing the project These data are not
-// used a first.
+// used at first.
 //
 var allowedDateInfo = {
   months: {
