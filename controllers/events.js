@@ -22,11 +22,17 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  monthsArray: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  days:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10,  11,
+        12, 13, 14, 15, 16, 17, 18, 19, 20, 
+        21, 22, 23, 24, 25, 26, 27, 28, 29,
+        30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016]
 };
 
 /*
@@ -84,17 +90,12 @@ function listEvents(request, response) {
  */
 function newEvent(request, response){
   var event_details = {title: [2], location: [2], image: [2],
-                       year: [2], month: [2], day: [2],
-                       hour: [2], minute: [2]};
-  var contextData = {event_details};
+                       year: null, month: null, day: null,
+                       hour: null, minute: null};
+  var contextData = {event_details , allowedDateInfo};
   formHandler (contextData,null,'title');
   formHandler (contextData,null,'location');
   formHandler (contextData,null,'image');
-  formHandler (contextData,null,'year');
-  formHandler (contextData,null,'month');
-  formHandler (contextData,null,'day');
-  formHandler (contextData,null,'hour');
-  formHandler (contextData,null,'minute');
   response.render('create-event.html', contextData);
 }
 
@@ -106,9 +107,9 @@ function newEvent(request, response){
  
 function saveEvent(request, response){
   var event_details = {title: [2], location: [2], image: [2],
-                       year: [2], month: [2], day: [2],
-                       hour: [2], minute: [2]};
-  var contextData = {errors: [], event_details};
+                       year: null, month: null, day: null,
+                       hour: null, minute: null};
+  var contextData = {errors: [], event_details, allowedDateInfo};
 
   var title = request.body.title;
   if (validator.isLength(request.body.title, 5, 50) === false) {
@@ -139,6 +140,18 @@ function saveEvent(request, response){
     }
   }
   
+  /*
+   * to keep the old values of the form
+   */
+   event_details.year = year.toString(10);
+   event_details.month = month.toString(10);
+   event_details.day = day.toString(10);
+   event_details.hour = hour.toString(10);
+   event_details.minute = minute.toString(10);
+  /*
+   * end of keeping data for the form
+  */
+  
   // Validate the image
   var image = request.body.image;
   var imageStart = new RegExp("^https://|^http://");
@@ -153,11 +166,6 @@ function saveEvent(request, response){
   formHandler (contextData,title,'title');
   formHandler (contextData,location,'location');
   formHandler (contextData,image,'image');
-  formHandler (contextData,year,'year');
-  formHandler (contextData,month,'month');
-  formHandler (contextData,day,'day');
-  formHandler (contextData,hour,'hour');
-  formHandler (contextData,minute,'minute');
   
   if (contextData.errors.length === 0) {
     var newEvent = {
