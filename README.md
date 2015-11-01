@@ -1,5 +1,7 @@
 # MGT 645 Project
 
+I am testing this.
+
 This is the starter project for MGT 645. You'll fork this
 code in order to get started with your project. 
 
