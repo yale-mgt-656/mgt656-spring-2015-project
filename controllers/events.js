@@ -61,7 +61,6 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
 
-
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
