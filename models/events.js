@@ -58,3 +58,4 @@ module.exports = exports = {
   all: allEvents,
   getById: getById
 };
+
