@@ -1,10 +1,12 @@
 <ul>
   {% for event in events %}
-    <li class="event" id="event-{{event.id}}">
-      {{event.title}}.
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
-      <a href="/events/{{event.id}}">Click here for more details</a>.
-    </li>
+      {% if event.date >= time %}
+          <li class="event" id="event-{{event.id}}">
+            {{event.title}}.
+            <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+            {{event.attending.length}} attending so far.
+            <a href="/events/{{event.id}}">Click here for more details</a>.
+          </li>
+      {% endif %}
   {% endfor %}
 </ul>
