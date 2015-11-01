@@ -42,6 +42,16 @@ function listEvents(request, response) {
 }
 
 /**
+ * Controller that renders a list of events in JSON.
+ */
+function apiListEvents(request, response) {
+  if (request.query.search)
+    response.json({events: events.getByTitle(request.query.search)});
+  else
+    response.json({events: events.all});
+}
+
+/**
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
@@ -108,8 +118,10 @@ function rsvp (request, response){
  */
 module.exports = {
   'listEvents': listEvents,
+  'apiListEvents': apiListEvents,
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp
+  
 };
