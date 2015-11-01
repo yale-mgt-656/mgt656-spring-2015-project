@@ -9,7 +9,12 @@
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+        <a href="/about">Home</a>
+        <a href="/about">About</a>
+        <a href="/events">Events</a>
+        <a href="/contact">Contact</a>
+      </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -18,8 +23,9 @@
 
     {% block footer %}
       <footer> 
-        <a href="http://dry-blessing-karencillare.c9.io/"> Homepage </a> 
+        <a href="http://dry-blessing-karencillare.c9.io/"> Home</a> 
         <a href="/about"> About </a>
+        <a href="/contact">Contact</a>
       </footer>
     {% endblock %}
 
