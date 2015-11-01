@@ -61,7 +61,6 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
 
-
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
@@ -80,7 +79,7 @@ function saveEvent(request, response){
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
   }
   response.render('event-detail.html', {event: ev});
 }
