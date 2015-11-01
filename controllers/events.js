@@ -143,11 +143,26 @@ function saveEvent(request, response){
   /*
    * to keep the old values of the form
    */
-   event_details.year = year.toString(10);
-   event_details.month = month.toString(10);
-   event_details.day = day.toString(10);
-   event_details.hour = hour.toString(10);
-   event_details.minute = minute.toString(10);
+   if (year !== null)
+   {
+     event_details.year = year.toString(10);
+   }
+   if (month !== null)
+   {
+     event_details.month = month.toString(10);
+   }
+   if (day !== null)
+   {   
+     event_details.day = day.toString(10);
+   }
+   if (hour !== null)
+   {
+     event_details.hour = hour.toString(10);
+   }
+   if (minute !== null)
+   {
+     event_details.minute = minute.toString(10);
+   }
   /*
    * end of keeping data for the form
   */

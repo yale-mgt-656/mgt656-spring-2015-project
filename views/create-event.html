@@ -79,7 +79,7 @@
 	  <div class="form-group">
       <label for="hour" class="col-sm-2 control-label">Event hour:</label>
       <div class="col-sm-10">
-        <select name="month" class="form-control" form="create-event">
+        <select name="hour" class="form-control" form="create-event">
           {% for hour in allowedDateInfo.hours %}
             {% if hour == event_details.hour %}
               <option value="{{hour}}" selected>{{hour}}</option>
