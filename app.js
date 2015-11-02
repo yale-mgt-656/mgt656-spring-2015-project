@@ -23,7 +23,7 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/Report', reportControllers.report);
-app.get('/Report2', reportControllers.report);
+app.get('/Report2', report2Controllers.report);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 
