@@ -3,64 +3,28 @@
   <head>
     <title>SPRING-GIANT</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
-  <style>
-    header {
-      text-align: center;
-      background: url('http://zenmarketinginc.com/wp-content/uploads/2015/06/Live-Concert-Event.jpg');
-      background-size: cover;
-      color: white;
-    }
-    a {
-      color: white;
-    }
-    h1 {
-      font-size: 70px;
-    }
-    img {
-      margin: 40px 0px 0px 0px;
-      border: 7px solid white;
-      border-radius: 20px;
-    }
-    ul {
-      padding: 10px;
-      background: rgba(0,0,0,0.5);
-    }
-    li {
-      display: inline;
-      padding: 0px 10px 0px 10px;
-    }
-    article{
-      max-width:500px;
-      padding:20px;
-      margin:0 auto;
-    }
-    
-      </style>
-</head>
-<body>
-  <header>
-    <img src="/assets/jeff.png">
-    <h1>EVENT-GIANT</h1>
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Browse Events</a></li>
-      <li><a href="#">Create Events</a></li>
-    </ul>
-  </header>
+  </head>
 
-	
+	<body class="container">
+
+    {% block header %}
+      <header>
+        <img src="/images/logo.png">
+        <ul>
+          
+        </ul>
+        
+        
+      </header>
     {% endblock %}
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
     {% block footer %},
-      <footer>
+      <footer></a>This be the footer.</a>
       <a href="/">Home </a>
-      <a href="/about">About | </a>
-      <a href= "/events">Events | </a>
-      <a href= "/careers">Work for us | </a>
-      <a href= "/help">Help</a>
+      <a href="/about">About</a>
       </footer>
     {% endblock %}
 
