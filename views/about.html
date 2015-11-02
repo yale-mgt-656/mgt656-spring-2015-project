@@ -2,42 +2,58 @@
 
 {% block mainContent %}
 
+<!--
+<p> <span id= "SusanaNickName-name">Susana Name</span></p>
+<p> <span id= "SusanaNickName-name">Susana Name</span></p>
+<p> <span id= "SusanaNickName-name">Susana Name</span></p>
+<p> <span id= "SusanaNickName-name">Susana Name</span></p>
+-->
 <head>
   <title>About</title>
   <style>
-    body {
-      text-align: center;
-      background: src="/images/eventbackground.png";
-      background-size: cover;
-      background-position: center;
-      color: black;
-      font-family: helvetica;
-    }
-    p {
-      font-size: 22px;
-    }
     
-    input { 
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
+body {
+      text-align: center;
+      background-image: url("/images/eventbackground.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
     }
-    input[type="submit"] {
-        background: red;
-        color: black;
-    }
+   
   </style>
 </head>
 <body>
   <p>Karen did not vote for Mezyad <span style="color:blue">Yale</span> OISS.</p>
   
-   <span id="myHeader">Gentle-Meerkat <img src="/images/GentleMeerkat.png"> </span>
-   <span id="myHeader">Brainy-Dinosaur <img src="/images/pigeon.png"> </span>
-   <span id="myHeader">Wonderful-Pigeon <img src="/images/smartdino.png"> </span>
-   <span id="myHeader">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png"> </span>
-  
-  
-<img src="/images/eventbackground.png">
+   <span id="gentle-meerkat-name">Gentle-Meerkat <img src="/images/GentleMeerkat.png" width="110" height="90" id="gentle-meerkat-headshot"> </span>
+   <span id="brainy-dinosaur-name">Brainy-Dinosaur <img src="/images/smartdino.png" width="110" height="90" id="brainy-dinosaur-headshot"> </span>
+   <span id="wonderful-pigeon-name">Wonderful-Pigeon <img src="/images/pigeon.png" width="110" height="90" id="wonderful-pigeon-headshot"> </span>
+   <span id="gleaming-dinosaur-name">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png" width="110" height="90" id="gleaming-dinosaur-headshot" > </span>
+
+  <!--
+     <span id="myHeader">Gentle-Meerkat <img src="/images/GentleMeerkat.png" width="110" height="90"> </span>
+   <span id="myHeader">Brainy-Dinosaur <img src="/images/smartdino.png" width="110" height="90"> </span>
+   <span id="myHeader">Wonderful-Pigeon <img src="/images/pigeon.png" width="110" height="90"> </span>
+   <span id="myHeader">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png" width="110" height="90" > </span>
+   
+   
+  <div class="img">
+  <img src="/images/GentleMeerkat.png" alt="GentleMeerkat" width="110" height="90"></a>
+ <div class="desc">Susana</div>
+</div>
+<div class="img">
+ <img src="/images/smartdino.png" alt="BrainiyDino" width="110" height="90"></a>
+ <div class="desc">Shadin</div>
+</div>
+<div class="img">
+ <img src="/images/pigeon.png" alt="Pigeon" width="110" height="90"></a>
+ <div class="desc">Mezyad</div>
+</div>
+<div class="img">
+ <img src="/images/gleamingdinosaur.png" alt="GealingDino" width="110" height="90"></a>
+ <div class="desc">Karen</div>
+</div>
+  -->
   <h1>About</h1>
   <p>Welcome to our RSVP, Events for Everyone. Hola!</p>
   <input type="Comments" placeholder="Your comments">
