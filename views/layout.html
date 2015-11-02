@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SPRING-GIANT</title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
   </head>
 
@@ -9,19 +10,20 @@
 
     {% block header %}
       <header>
-        <img src="http://zenmarketinginc.com/wp-content/uploads/2015/06/Live-Concert-Event.jpg">
-        <ul>
-          
-        </ul>
-        
-        
+        <img id="logo" src="/images/EventWire-logo.png" style="width: 200px">
+      <ul id="topofpage">        
+      <li><a href="/events">Browse Events</a></li>
+      <li><a href="/events/new">Create Events</a></li>
+      <li><a href="/Contact">Talk to us! </a></li>
+      </ul>
+     
       </header>
     {% endblock %}
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
-    {% block footer %},
+    {% block footer %}
       <footer></a>This be the footer.</a>
       <a href="/">Home </a>
       <a href="/about">About</a>

@@ -5,8 +5,8 @@
  */
 function index (request, response) {
   var contextData = {
-    'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).'
+    'title': 'Event Wire',
+    'tagline': 'The newest way to create events!!'
   };
   response.render('index.html', contextData);
 }
