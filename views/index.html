@@ -1,3 +1,7 @@
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 {% extends "layout.html" %}
 
 {% block header %}
@@ -20,3 +24,7 @@
     <a id="new" href="/events/new">Create a new event</a>
   </p>
 {% endblock %}
+<footer>
+    Look at me customize the footer. The time is now {{time}}.
+    <a href="/about">About us</a>.
+</footer>

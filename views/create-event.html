@@ -1,3 +1,7 @@
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 {% extends "layout.html" %}
 
 {% block mainContent %}
@@ -18,5 +22,8 @@
     <input type="text" name="title">
   </form>
 {% endblock %}
-
+<footer>
+    Look at me customize the footer. The time is now {{time}}.
+    <a href="/about">About us</a>.
+</footer>
 

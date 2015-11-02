@@ -1,5 +1,13 @@
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 {% extends "layout.html" %}
 
 {% block mainContent %}
   <p>This is the about us page</p>
 {% endblock %}
+<footer>
+    Look at me customize the footer. The time is now {{time}}.
+    <a href="/about">About us</a>.
+</footer>
