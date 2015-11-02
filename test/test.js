@@ -459,5 +459,3 @@ describe('The form for creating new events',function(){
     this.server.close(done);
   });
 });
-
-
