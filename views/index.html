@@ -8,29 +8,17 @@
 
 {% block mainContent %}
   <p>
-    Welcome to Hidden Smoke Event Management.
+    Welcome to Hidden Smoke Event Management..
   </p>
-  <img id="logo" src="http://postimg.org/image/uvu89zvd9/">
+  <img id="logo" src="http://i.imgur.com/tjOh4zv.png">
   <p>
-    Check out the <a href="/about">About us</a> page
+    Check out the <a href="https://hidden-smoke-project-deemalhajaj.c9.io/views/about.html">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
-  <p>  
-  <ul>
-    <li class="event" id="event-1">  
-    <time datetime="2014-11-12 09:30:0.0+07:00">
-    Wednesday, Nov 12 at 9:30AM
-    </time>
-    </li>
-    
-    <li class="event" id="event-2">
-    <time datetime="2014-11-12 09:30:0.0+07:00">
-    Wednesday, Nov 12 at 9:30AM
-    </time>
-    </li>
-  </ul>
-  </p>
-  
+  <p>Here is our list of events</p>
+  <div style="border: 3px solid green">
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
