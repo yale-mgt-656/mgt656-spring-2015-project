@@ -2,18 +2,35 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>Hidden Smoke FTW</h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Welcome to Hidden Smoke Event Management.
   </p>
+  <img id="logo" src="http://postimg.org/image/uvu89zvd9/">
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
+  <p>  
+  <ul>
+    <li class="event" id="event-1">  
+    <time datetime="2014-11-12 09:30:0.0+07:00">
+    Wednesday, Nov 12 at 9:30AM
+    </time>
+    </li>
+    
+    <li class="event" id="event-2">
+    <time datetime="2014-11-12 09:30:0.0+07:00">
+    Wednesday, Nov 12 at 9:30AM
+    </time>
+    </li>
+  </ul>
+  </p>
+  
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
