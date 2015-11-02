@@ -7,10 +7,10 @@
   <style>
     body {
       text-align: center;
-      background: url("https://flic.kr/p/qMKf3z");
+      background: src="/images/eventbackground.png";
       background-size: cover;
       background-position: center;
-      color: white;
+      color: black;
       font-family: helvetica;
     }
     p {
@@ -24,15 +24,23 @@
     }
     input[type="submit"] {
         background: red;
-        color: white;
+        color: black;
     }
   </style>
 </head>
 <body>
-<img src="/assets/anna.png">
+  <p>Karen did not vote for Mezyad <span style="color:blue">Yale</span> OISS.</p>
+  
+   <span id="myHeader">Gentle-Meerkat <img src="/images/GentleMeerkat.png"> </span>
+   <span id="myHeader">Brainy-Dinosaur <img src="/images/pigeon.png"> </span>
+   <span id="myHeader">Wonderful-Pigeon <img src="/images/smartdino.png"> </span>
+   <span id="myHeader">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png"> </span>
+  
+  
+<img src="/images/eventbackground.png">
   <h1>About</h1>
   <p>Welcome to our RSVP, Events for Everyone. Hola!</p>
-  <input type="email" placeholder="Your email">
+  <input type="Comments" placeholder="Your comments">
   <input type="submit">
 </body>
 {% endblock %}
