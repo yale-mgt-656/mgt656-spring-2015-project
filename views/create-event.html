@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <header>Create a new event</header>
+{% endblock %}
+
 {% block mainContent %}
 
   {% if errors %}
@@ -13,10 +17,39 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST">
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
-  </form>
+  <p>
+  	<form id="create-event" method="POST">
+      <label for="title">Event title:</label>
+      <input type="text" name="title">
+      
+      <label for="location">Event Location:</label>
+      <input type="text" name="location">
+      
+            <label for="image">Event Image:</label>
+      <input type="text" name="image">
+      
+            <label for="year">Event Year:</label>
+      <input type="text" name="year">
+      
+            <label for="month">Event Month:</label>
+      <input type="text" name="month">
+      
+            <label for="day">Event Day:</label>
+      <input type="text" name="day">
+      
+            <label for="hour">Event Hour:</label>
+      <input type="text" name="hour">
+      
+            <label for="minute">Event Minute:</label>
+      <input type="text" name="minute">
+      
+    </form>
+  </p>  
 {% endblock %}
 
-
+{% block footer %}
+  <footer>
+    <a href="/">Homepage</a>.
+    <a href="/about">About us</a>.
+  </footer>
+{% endblock %}
