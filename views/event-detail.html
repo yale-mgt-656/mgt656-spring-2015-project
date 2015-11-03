@@ -13,4 +13,11 @@
         </li>
       {% endfor %}
   </ul>
+	<form class="form-inline"  id="rsvp" method="POST">
+	  <div class="form-group">
+      <label for="email" class="sr-only">Enter your Yale email:</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="some.one@yale.edu">
+    </div>
+    <button id="Submit" type="Submit" class="btn btn-primary">Submit</button>
+  </form>
 {% endblock %}
