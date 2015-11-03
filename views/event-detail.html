@@ -4,7 +4,7 @@
   <img id="image" src="{{event.image}}" class="img-rounded center-block"></img>
   <h1 id="title">{{event.title}}</h1>
   <span id="location">it will all happen at {{event.location}}</span>
-  <span id="date">it's going down on: {{event.date|prettyDate}} </span>
+  <span id="date">it's going down on: {{event.date.getFullYear()}}, {{event.date|prettyDate}} </span>
   <p>here's who's gonna be there:</p>
   <ul id="attendees">
       {% for person in event.attending %}
