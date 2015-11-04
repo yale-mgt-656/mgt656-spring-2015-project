@@ -54,7 +54,23 @@ function getById (id) {
   return null;
 }
 
+/**
+ * Returns array of all events with titles that contain the string str.
+ */
+ 
+function getByTitle (str) {
+  var res = [];
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (allEvents[i].title.indexOf(str) >=0){
+      res.push(allEvents[i]);
+    }
+  }
+  return res;
+}
+
+
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+  getByTitle: getByTitle
 };
