@@ -41,7 +41,7 @@ router.route('/events')
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+    res.json({ message: 'hooray! welcome to our api!' });
 });
 
 // REGISTER OUR ROUTES -------------------------------
@@ -59,7 +59,7 @@ app.post('/events/new', eventControllers.saveEvent);
 
 app.get('/sprints', function (req, res) {
   var contextData = {};
-  res.render('reports/sprint-report-1.html', contextData)
+  res.render('reports/sprint-reports.html', contextData)
 });
 
 
