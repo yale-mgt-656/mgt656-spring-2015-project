@@ -215,16 +215,19 @@ function rsvp (request, response){
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email)){
+  var pos = request.body.email.indexOf('@');
+  var domain = request.body.email.substring(pos+1,request.body.email.length);
+  if ( (validator.isEmail(request.body.email)) && (domain.toLowerCase() === 'yale.edu') )
+  {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  }
+  else
+  {
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
 }
 
 /**
