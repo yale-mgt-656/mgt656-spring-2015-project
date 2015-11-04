@@ -26,6 +26,7 @@
     },
     "run": {
         "@path": "/.c9/runners",
+        "@runner": "node-gulp",
         "configs": {
             "@inited": "true",
             "json()": {}
