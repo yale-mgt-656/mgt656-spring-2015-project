@@ -60,7 +60,8 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
+  /** We have to include all possible kinds of errors in here (like the one above)--> */
+  
 
   if (contextData.errors.length === 0) {
     var newEvent = {
