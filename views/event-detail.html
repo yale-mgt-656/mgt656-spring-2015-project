@@ -1,6 +1,18 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
   <img id="image" src="{{event.image}}" class="img-rounded center-block"></img>
   <h1 id="title">{{event.title}}</h1>
   <span id="location">it will all happen at {{event.location}}</span>
