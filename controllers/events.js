@@ -41,6 +41,15 @@ function listEvents(request, response) {
   response.render('event.html', contextData);
 }
 
+function listEventsonHome(request, response) {
+  var currentTime = new Date();
+  var contextData = {
+    'events': events.all,
+    'time': currentTime
+  };
+  response.render('index.html', contextData);
+}
+
 /**
  * Controller that renders a page for creating new events.
  */

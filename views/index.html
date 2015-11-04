@@ -4,16 +4,15 @@
 <div class="jumbotron" style="margin-top:80px">
     <div class="container">
         <h1>Welcome to {{ title }}. {{tagline}}</h1>
-        <p>
-        Check out the <a href="/about">About us</a> page
-        as well as the <a href="/events">Events</a> page.
-        </p>
+          <div>
+          {% include "fragments/events-list.html" %}
+          </div>
         <p>
         <a id="new" href="/events/new">Create a new event</a>
         </p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
     </div>
   </div>
-  
+
   
 {% endblock %}
