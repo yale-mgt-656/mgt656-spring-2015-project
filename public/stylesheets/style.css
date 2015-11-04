@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://dl.dropboxusercontent.com/s/irs7jqso0adilox/Photo%20Nov%2004%2C%201%2027%2007%20PM.jpg?dl=0");
+  background-size: 100%;
 }
 
 a {
