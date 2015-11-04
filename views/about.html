@@ -1,71 +1,45 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-
-<!--
-<p> <span id= "SusanaNickName-name">Susana Name</span></p>
-<p> <span id= "SusanaNickName-name">Susana Name</span></p>
-<p> <span id= "SusanaNickName-name">Susana Name</span></p>
-<p> <span id= "SusanaNickName-name">Susana Name</span></p>
--->
 <head>
-  <title>About</title>
-  <style>
-    
-body {
-      text-align: center;
-      background-image: url("/images/eventbackground.png");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
+    <title>About</title>
+    <style>
+    body {
+            text-align: center;
+            background-image: url("/images/eventbackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        p {
+            color: white;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        span {
+            color: white;
+        }
     }
-  p {
-    color: white;
-  }
-  h1 {
-    color: white;
-    
-  }
-  span{
-    color:white;
-  }
-  }
-  </style>
+    </style>
 </head>
-<body>
-  
-   <span id="gentle-meerkat-name">Gentle-Meerkat <img src="/images/GentleMeerkat.png" width="110" height="90" id="gentle-meerkat-headshot"> </span>
-   <span id="brainy-dinosaur-name">Brainy-Dinosaur <img src="/images/smartdino.png" width="110" height="90" id="brainy-dinosaur-headshot"> </span>
-   <span id="wonderful-pigeon-name">Wonderful-Pigeon <img src="/images/pigeon.png" width="110" height="90" id="wonderful-pigeon-headshot"> </span>
-   <span id="gleaming-dinosaur-name">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png" width="110" height="90" id="gleaming-dinosaur-headshot" > </span>
 
-  <!--
-     <span id="myHeader">Gentle-Meerkat <img src="/images/GentleMeerkat.png" width="110" height="90"> </span>
-   <span id="myHeader">Brainy-Dinosaur <img src="/images/smartdino.png" width="110" height="90"> </span>
-   <span id="myHeader">Wonderful-Pigeon <img src="/images/pigeon.png" width="110" height="90"> </span>
-   <span id="myHeader">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png" width="110" height="90" > </span>
-   
-   
-  <div class="img">
-  <img src="/images/GentleMeerkat.png" alt="GentleMeerkat" width="110" height="90"></a>
- <div class="desc">Susana</div>
-</div>
-<div class="img">
- <img src="/images/smartdino.png" alt="BrainiyDino" width="110" height="90"></a>
- <div class="desc">Shadin</div>
-</div>
-<div class="img">
- <img src="/images/pigeon.png" alt="Pigeon" width="110" height="90"></a>
- <div class="desc">Mezyad</div>
-</div>
-<div class="img">
- <img src="/images/gleamingdinosaur.png" alt="GealingDino" width="110" height="90"></a>
- <div class="desc">Karen</div>
-</div>
-  -->
-  <h1>About</h1>
-  <p>Welcome to our RSVP, Events for Everyone. Hola!</p>
-  <input type="Comments" placeholder="Your comments">
-  <input type="submit">
+<body>
+    <div class="jumbotron" style="margin-top:80px; background-color: rgba(0,0,0,0.6);">
+        <div class="container">
+            <span id="gentle-meerkat-name">Gentle-Meerkat <img src="/images/GentleMeerkat.png" width="110" height="90" id="gentle-meerkat-headshot"> </span>
+            <span id="brainy-dinosaur-name">Brainy-Dinosaur <img src="/images/smartdino.png" width="110" height="90" id="brainy-dinosaur-headshot"> </span>
+            <span id="wonderful-pigeon-name">Wonderful-Pigeon <img src="/images/pigeon.png" width="110" height="90" id="wonderful-pigeon-headshot"> </span>
+            <span id="gleaming-dinosaur-name">Gleaming-Dinosaur <img src="/images/gleamingdinosaur.png" width="110" height="90" id="gleaming-dinosaur-headshot" > </span>
+
+            <h1>About</h1>
+            <p>Welcome to our RSVP, Events for Everyone. Hola!</p>
+            <input type="Comments" placeholder="Your comments">
+            <input type="submit">
+        </div>
+    </div>
 </body>
 {% endblock %}
