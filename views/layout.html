@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>SPRING-GIANT</title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+        <img id="logo" src="/images/EventWire-logo.png" style="width: 200px">
+      <ul id="topofpage">        
+      <li><a href="/events">Browse Events</a></li>
+      <li><a href="/events/new">Create Events</a></li>
+      <li><a href="/Contact">Talk to us! </a></li>
+      </ul>
+     
+      </header>
     {% endblock %}
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
-
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+      <a href="/">Home | </a>
+      <a href="/about">About |</a>
+      <a href= "/events">Events | </a>
+      <a href= "/careers">Work for us | </a>
+      <a href= "/help">Help</a>
+      </footer>
     {% endblock %}
 
   </body>
