@@ -59,6 +59,20 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+/*created a new function that we can use to validate numerical form inputs*/
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null;
+  if (validator.isInt(request.body[fieldName]) === false) {
+    contextData.errors.push('Your ' + fieldName +' should be an integer SUCKA!');
+  }else{
+    value = parseInt(request.body[fieldName], 10);
+    if (value > maxVal || value < minVal) {
+      contextData.errors.push('Your ' + fieldName + ' should be between ' + minVal + ' and ' + maxVal + ' SUCKA!');
+    }
+  }
+  return value;
+}
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -68,10 +82,29 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
+  //This runs the checkIntRange validator I created above
+  var year = checkIntRange(request, 'year', 2015, 2016, contextData)
+  var month = checkIntRange(request, 'month', 0, 11, contextData)
+  var day = checkIntRange(request, 'day', 1, 31, contextData)
+  var hour = checkIntRange(request, 'hour', 0, 23, contextData)
 
+//this makes sure the pictures are either gif or png
+  if (validator.matches(request.body.image, /\.(png|gif)$/) === false) {
+    contextData.errors.push('Your image should be either a gif or a png... SUCKA!');
+}
 
+//this makes sure the pictures are in URL format
+  if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be a URL... SUCKA!');
+}
+
+//makes sure there is a location entered and that it is less than 50 char long
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+      contextData.errors.push('Your location should be between 1 and 50 letters... Shortay');
+    }
+    
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
