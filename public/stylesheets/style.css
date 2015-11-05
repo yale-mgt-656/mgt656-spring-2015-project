@@ -15,3 +15,14 @@ footer a {
   
   padding: 10px;
 }
+
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+}
+
+.caption {
+    display: block;
+}
