@@ -1,8 +1,15 @@
-body {
+body {	
+	
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
+  text-align: center;
+  background: url("http://s.freshnewtracks.com/wp-content/uploads/2012/09/great_polar_bear-9513.jpeg");
+  background-size: 100%;
+  background-position: center;
+  margin: 0;
+  
+}
 a {
   color: #FBFEFF;
 }
@@ -11,9 +18,21 @@ a {
 	color: red;
 }
 
+header{
+   padding:10px;
+}
+
+mainContent{
+   padding:70px;
+   padding-bottom:20px;   /* Height of the footer */
+}
+
 footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
   background-color:#2F2728;
   padding: 1em;
-  border: 1px solid #ddd;
-  margin: 2em 0;
+  border: 1px solid;
 }
