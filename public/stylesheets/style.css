@@ -9,6 +9,11 @@ a {
   color: #00B7FF;
 }
 
+.same-size-img {
+  width: 300px;
+  height: 300px;
+}
+
 .form-errors {
 	color: red;
 }
