@@ -1,12 +1,24 @@
+
 body {
-  padding: 0;
+  text-align: center;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 a {
   color: #00B7FF;
 }
-
+.homecontainer
+{
+    background-image: url("/images/about.jpg")
+    text-align: center; 
+    color: inherit;
+    width: auto;
+}
 .form-errors {
 	color: red;
 }
@@ -14,4 +26,14 @@ a {
 footer a {
   
   padding: 10px;
+}
+
+.eventstyle{
+ background-color: #C0C0C0;
+ float:;
+ font: 20px "verdana";
+ color: red;
+ position: absolute;
+ left: 380px;
+ top: 0px;
 }
