@@ -34,7 +34,4 @@ app.get('/sprints', function (req, res) {
   res.render('reports/sprint-reports.html', contextData)
 });
 
-
-
-
 module.exports = app;
