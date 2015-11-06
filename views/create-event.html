@@ -10,22 +10,56 @@
       </ul>
     </div>
     {% endif %}
+
+<head>
+  <script type="text/javascript">
+  
     
+        function validateForm() {
+        var x = document.forms["eventForm"]["title"].value;
+          if (x == null || x == "") {
+            alert("Please, fill in the Event Title.");
+            return false;
+            }
+        var x = document.forms["eventForm"]["location"].value;
+          if (x == null || x == "") {
+            alert("Please, fill in the Location.");
+            return false;
+            }
+        
+          
+          else{
+            var eventTitle = document.getElementById('title');
+            var eventLocation = document.getElementById('location');
+            
+            var eventDate = document.getElementById('day').value;  
+            alert('Valor del campo: ' + eventDate.value);
+            
+            // alert('Valor del campo: ' + eventDate.value);
+          }
+          
+        }
+        </script>
+</head>
+
+<body>    
 <div class="jumbotron" style="margin-top:80px">
   <div class="container">
-    <form id="create-event" method="POST">
+    <form id="create-event" name="eventForm" method="POST" onsubmit="return validateForm()" action="">
+    <fieldset>
+      <legend>Create Event</legend>
       <label for="title">Event title:</label>
-      <input type="text" name="title">
+      <input type="text" name="title" id="title">
       
       <div>
-      <label for="location">Location:</label>
-      <input type="text" name="location">
+      <label for="location">Location:   </label>
+      <input type="text" name="location" id="location">
       </div>
       
       <div>
-      <label for="date">Date</label>
+      <label for="date">Date:</label>
       <!--//Day-->
-          <select name="day">
+          <select name="day" id="day">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -59,8 +93,8 @@
             <option value="31">31</option>
           </select>
         
-        <!--//Month-->
-          <select name="month">
+        <!--Month-->
+          <select name="month" id="month">
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -75,8 +109,8 @@
             <option value="12">December</option>
             </select>
           
-        <!--//Year-->
-          <select name="year">
+        <!--Year-->
+          <select name="year" id="year">
             <option value="2015">2015</option>
             <option value="2016">2016</option>
           </select>
@@ -86,7 +120,7 @@
       <div>
       <label for="time">Time:</label>
       
-      <!--//Hour-->
+      <!--Hour-->
           <select name="hour">
             <option value="00">00</option>
             <option value="01">01</option>
@@ -114,7 +148,7 @@
             <option value="23">23</option>
           </select>
       
-      <!--//Minutes-->
+      <!--Minutes-->
           <select name="minute">
             <option value="00">00</option>
             <option value="30">30</option>
@@ -126,8 +160,14 @@
       <input type="file" name="image">
       </div>
       
+      <div>
+      <input type="submit" name="submitevent">
+      </div>
+      
     </form>
-  </div>
+    </fieldset>
+      </div>
 </div>
 
+</body>
 {% endblock %}
