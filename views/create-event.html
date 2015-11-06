@@ -17,26 +17,52 @@
     <label for="title">Event title:</label>
     <input type="text" name="title">
     <br>
+    
     <label for="location">Event location:</label>
     <input type="text" name="location">
     <br>
+    
     <label for="image">Event image:</label>
     <input type="text" name="image">
     <br>
+    
     <label for="year">Event year:</label>
-    <input type="text" name="year">
+    <select type="text" name="year">
+      {% for year in allowedDateInfo.years %}
+      <option value='{{year}}'>{{year}}</option>
+      {% endfor %}
+    </select>
     <br>
+    
     <label for="month">Event month:</label>
-    <input type="text" name="month">
+    <select type="text" name="month">
+      {% for mNum, mName in allowedDateInfo.months %}
+      <option value='{{mNum}}'>{{mName}}</option>
+      {% endfor %}
+    </select>
+    
+    
     <br>
     <label for="day">Event day:</label>
-    <input type="text" name="day">
+    <select type="text" name="day">
+      {% for day in allowedDateInfo.days %}
+      <option value='{{day}}'>{{day}}</option>
+      {% endfor %}
+    </select>
     <br>
     <label for="hour">Event hour:</label>
-    <input type="text" name="hour">
+    <select type="text" name="hour">
+      {% for hour in allowedDateInfo.hours %}
+      <option value='{{hour}}'>{{hour}}</option>
+      {% endfor %}
+    </select>
     <br>
     <label for="minute">Event minute:</label>
-    <input type="text" name="minute">
+    <select type="text" name="minute">
+      <option value="0">:00</option>
+      <option value="30">:30</option>
+    </select>
+    
     <br>
     <input type ="submit" id="submit">
     
