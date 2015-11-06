@@ -15,8 +15,9 @@
 </head>
 
 <body>
-
+<div id="wrap">
   {% block header %}
+  <div>
   <header>
   <div id="top-menu" class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #f8f8f8;">
     <div class="container">
@@ -46,24 +47,26 @@
       </div>
     </div>
   </div>
-
-
   </header>
+  </div>
   {% endblock %} 
   
   
   {% block mainContent %}
   <section>Welcome to {{ title }}. {{tagline}}</section>
   {% endblock %} 
-  
+</div>  
   {% block footer %}
   <footer>
+    <div id="footer">
+      <div class="container">
     <a href="/"> Home</a>
     <a href="/about"> About </a>
     <a href="/contact">Contact</a>
+    </div>
+    </div>
   </footer>
   {% endblock %}
 
 </body>
-
 </html>
