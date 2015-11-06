@@ -24,10 +24,9 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/:id', eventControllers.eventDetail);
 app.get('/events/new', eventControllers.newEvent);
+app.post('/events/new', eventControllers.saveEvent);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);
-// app.get('/api/events?search=')
-app.post('/events/new', eventControllers.saveEvent);
 
 app.get('/sprints', function (req, res) {
   var contextData = {};
