@@ -10,6 +10,11 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+  <p>Here is our list of events</p>
+    <div style="border: 1px solid black"
+      {% include "fragments/events-list.html" %}
+    </div>
+  </p>
   <img id="logo" src= "http://pclosmag.com/html/Issues/201310/images/page08/TreeSilhouette.png">
   <p>
     Check out the <a href="/about">About us</a> page
