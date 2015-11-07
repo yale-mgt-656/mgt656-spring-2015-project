@@ -80,20 +80,20 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
   
- var year = checkIntRange(request, 'year', 2015, 2016, contextData);
- var month = checkIntRange(request, 'month', 0, 11, contextData);
- var day = checkIntRange(request, 'day', 1, 31, contextData);
- var hour = checkIntRange(request, 'hour', 0, 23, contextData);
- var urlOptions = {protocols: ['http','https','ftp'], require_tld: true, require_protocol: false, require_valid_protocol: true, allow_underscores: false, host_whitelist: false, host_blacklist: false, allow_trailing_dot: false, allow_protocol_relative_urls: false};
+  var year = checkIntRange(request, 'year', 2015, 2016, contextData);
+  var month = checkIntRange(request, 'month', 0, 11, contextData);
+  var day = checkIntRange(request, 'day', 1, 31, contextData);
+  var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var urlOptions = {protocols: ['http','https','ftp'], require_tld: true, require_protocol: false, require_valid_protocol: true, allow_underscores: false, host_whitelist: false, host_blacklist: false, allow_trailing_dot: false, allow_protocol_relative_urls: false};
  
- if (validator.isURL(request.body.image, urlOptions) === false) {
+  if (validator.isURL(request.body.image, urlOptions) === false) {
    contextData.errors.push('Your image should be a URL');
- }
+  }
 
-var modifier = (/\.(png|gif)$/);
-if (validator.matches(request.body.image, modifier) === false) {
+  var modifier = (/\.(png|gif)$/);
+  if (validator.matches(request.body.image, modifier) === false) {
   contextData.errors.push('Your image should be a gif or png');
-}
+  }
  
 
   if (contextData.errors.length === 0) {
@@ -105,7 +105,7 @@ if (validator.matches(request.body.image, modifier) === false) {
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect("/events/{{event.id}}");
   }else{
     response.render('create-event.html', contextData);
   }
@@ -117,9 +117,9 @@ function eventDetail (request, response) {
     response.status(404).send('No such event');
   }
   response.render('event-detail.html', {event: ev});
-}
+  }
 
-function rsvp (request, response){
+  function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
