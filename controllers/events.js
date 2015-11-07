@@ -79,7 +79,8 @@ function saveEvent(request, response){
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
+    // response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
+    response.render('event-detail.html', {event: ev});
   }
   response.render('event-detail.html', {event: ev});
 }
@@ -96,7 +97,7 @@ function rsvp (request, response){
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    response.render('event-detail.html', contextData);
   }
 
 }

@@ -22,9 +22,9 @@ configure(app);
 app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
-app.get('/events/:id', eventControllers.eventDetail);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/events/:id', eventControllers.eventDetail);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);
 
