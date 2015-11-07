@@ -6,7 +6,7 @@
 
 {% block mainContent %}
   <div>
-    {% include "fragments/events-list.html" %}
+    {% for event in events %}
   </div>
   <div>
     <a href="/events/new">Create a new event</a>

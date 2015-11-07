@@ -4,15 +4,10 @@
 </head>
 <ul>
   {% for event in events %}
-    <li>
+    <li class="event" id="event-{{event.id}}">
       {{event.title}}.
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
     </li>
   {% endfor %}
 </ul>
-<footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">Index</a>.
-    <a href="/about">About us</a>.
-</footer>
