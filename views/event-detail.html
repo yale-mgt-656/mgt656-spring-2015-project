@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+  <div>
+  <h1>
+    {{event.title}}
+  </h1>
+  {{event.date|prettyDate}}
+  <br>
+  <img src="{{event.image}}">
+  <br>
+  The event will be at {{event.location}}.
+  <br>
+  Attending:
+  <ul>
+    {% for address in event.attending %}
+      <li>{{address}}</li>
+    {% endfor %}
+  </ul>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  <footer>
+    <a href="/about">About us</a>
+    <a href="/events">Events</a> 
+  </footer>
+{% endblock %}
