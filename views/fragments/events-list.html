@@ -1,14 +1,7 @@
-<head>
-<link rel='stylesheet' href='/stylesheets/style.css'/>
-</head>
+
 <ul>
   {% for event in events %}
-    <li class="eventstyle">
-      {{event.title}}.
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
-    </li>
-    <li>
+    <li class="eventstyle" style="background-color: rgba(0,0,0,0.6);">
       {{event.title}}.
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.

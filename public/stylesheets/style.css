@@ -12,13 +12,6 @@ body {
 a {
   color: #00B7FF;
 }
-.homecontainer
-{
-    background-image: url("/images/about.jpg")
-    text-align: center; 
-    color: inherit;
-    width: auto;
-}
 .form-errors {
 	color: red;
 }
@@ -26,20 +19,14 @@ a {
 footer a {
   
   padding: 10px;
-}
-
-<<<<<<< HEAD
-.eventstyle{
- background-color: #C0C0C0;
- float:;
- font: 20px "verdana";
- color: red;
- position: absolute;
- left: 380px;
- top: 0px;
+  color: white;
+  box-sizing: border-box;
+  width: 100%;
+  float: inherit;
+  background-color: rgba(0,0,0,0.6);
 }
 =======
-div.item {
+.item {
     vertical-align: top;
     display: inline-block;
     text-align: center;
@@ -73,6 +60,32 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
-  background-color: #f5f5f5;
 }
->>>>>>> e3ff78fd3911717092b5806281494676f2ba7870
+
+.home {
+    background-image: url("/images/about.jpg")
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 100px;
+    color: white;
+}
+
+.homecontainer
+{
+    text-align: center; 
+    color: inherit;
+    width: auto;
+    padding-top: 50px;
+}
+.eventstyle{
+display: block;
+ font: 20px;
+ color: white;
+ background-color: #C0C0C0;
+ border: 1px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+.newevent{
+    color: white;
+}

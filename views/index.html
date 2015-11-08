@@ -1,15 +1,12 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-<div class="jumbotron" style="margin-top:80px">
-    <div class="homecontainer">
+<div class="home">
+     <div class="homecontainer" style="background-color: rgba(0,0,0,0.6);">
         <h1>Welcome to {{ title }}. {{tagline}}</h1>
           <div>
           {% include "fragments/events-list.html" %}
-          </div>
-          <p>Hello</p>
-        <p>
-        <a id="new" href="/events/new">Create a new event</a>
+          <a id="new" href="/events/new">Create a new event</a>
         </p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
     </div>
