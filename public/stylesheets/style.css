@@ -21,7 +21,6 @@ footer a {
   padding: 10px;
   color: white;
   box-sizing: border-box;
-  width: 100%;
   float: inherit;
   background-color: rgba(0,0,0,0.6);
 }
@@ -60,6 +59,11 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding:20px;
+  text-align: center;
 }
 
 .home {
@@ -82,9 +86,11 @@ display: block;
  font: 20px;
  color: white;
  background-color: #C0C0C0;
- border: 1px;
  padding-top: 10px;
  padding-bottom: 10px;
+ margin-bottom:5px;
+ margin-left:5px;
+ width:170px;
 }
 .newevent{
     color: white;
