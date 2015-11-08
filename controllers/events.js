@@ -2,6 +2,7 @@
 
 var events = require('../models/events');
 var validator = require('validator');
+var querystring= require('querystring');
 
 // Date data that would be useful to you
 // completing the project These data are not
@@ -40,6 +41,22 @@ function listEvents(request, response) {
     'time': currentTime,
   };
   response.render('event.html', contextData);
+}
+
+/**
+ * Controller that provides JSON, supports filtering by title useing the query param search
+ * 
+ */
+function eventJSON(request, response) {
+  var result = events.all;
+  var parsedURL = querystring.parse(request.url);
+  if (parsedURL.hasOwnProperty('/api/events?search')) {
+    var searchQuery = parsedURL["/api/events?search"]
+    result = events.all.filter(function(item) {
+      return item.title.toLowerCase().includes(searchQuery.toLowerCase());
+    })
+  }
+  response.send(result);
 }
 
 
@@ -113,5 +130,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'eventJSON': eventJSON
 };
