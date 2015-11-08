@@ -19,8 +19,17 @@ a {
 }
 
 .largep {
-  color:#610B21;
+  color: Maroon;
   font-size:40px;
   font-weight:bold;
   text-align:center;
 }
+
+.box {
+    background-color: #610B21;
+    width: 300px;
+    padding: 25px;
+    border: 25px solid navy;
+    margin: 25px;
+}
+
