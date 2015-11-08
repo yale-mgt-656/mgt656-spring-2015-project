@@ -1,20 +1,14 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <div>
+  <div class="home">
+  <div class="homecontainer">
     {% include "fragments/events-list.html" %}
   </div>
   <div>
-    <a href="/events/new">Create a new event</a>
+     <a href="/events/new" id="new">
+              <button type="button" class="btn btn-lg btn-warning">+ Create a new event</button>
+            </a>
   </div>
-
-{% endblock %}
-
-{% block footer %}
-  <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/"> Home</a> 
-    <a href="/about"> About </a>
-    <a href="/contact">Contact</a>
-  </footer>
+  </div>
 {% endblock %}
