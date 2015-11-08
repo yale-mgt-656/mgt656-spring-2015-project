@@ -10,3 +10,17 @@ a {
 .form-errors {
 	color: red;
 }
+
+.smallp {
+  color:#610B21;
+  font-size:29px;
+  font-weight:normal;
+  text-align:center;  
+}
+
+.largep {
+  color:#610B21;
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+}
