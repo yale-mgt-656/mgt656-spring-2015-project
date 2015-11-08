@@ -108,30 +108,8 @@
       <option value="00">00</option>
       <option value="30">30</option>
     </select>
-    
-    function getExtension(image) {
-    var parts = image.split('.');
-    return parts[parts.length - 1];
-}
-
-function isImage(image) {
-    var ext = getExtension(image);
-    switch (ext.toLowerCase()) {
-    case 'gif':
-    case 'png':
-
-        return true;
-    }
-    return false;
-
-
-}   
-
-function isUrl(image) {
-
-return true;
-}
   </form>
+    
 
 {% endblock %}
 
