@@ -11,9 +11,21 @@ function viewApi(request, response) {
 
 /**
  * Controller that renders a list of events in JSON.
+ * Controller also handles searching for list of events using query string.
  */
 function listEventsJSON(request, response) {
-  response.json({ events: events.all });
+  var search = request.query.search;
+  var allEvents = events.all
+  
+  if (search == null) {
+    response.json({ events: allEvents });  
+  }
+  else {
+    response.json({ events: allEvents.filter(function(event) {
+        return event.title.toLowerCase().indexOf(search.toLowerCase()) > -1;
+      }) 
+    });
+  }
 }
 
 /**
