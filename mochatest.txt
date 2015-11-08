@@ -54,7 +54,7 @@
      ✓ should display errors to the user when the title is empty
      25) should redirect the user to the event detail page if the form is valid
 
-   Executed 41 tests in 7 suites in 3s 749ms
+   Executed 41 tests in 7 suites in 5s 585ms
        16 passes
        25 failed
    
