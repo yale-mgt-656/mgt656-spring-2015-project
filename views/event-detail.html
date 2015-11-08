@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <img id="image" src="{{event.image}}" class="img-rounded center-block"></img>
+  <h1 id="title">{{event.title}}</h1>
+  <span id="location">it will all happen at {{event.location}}</span>
+  <span id="date">it's going down on: {{event.date.getFullYear()}}, {{event.date|prettyDate}} </span>
+  <p>here's who's gonna be there:</p>
+  <ul id="attendees">
+      {% for person in event.attending %}
+        <li>
+          {{person}} is attending
+        </li>
+      {% endfor %}
+  </ul>
+	<form class="form-inline"  id="rsvp" method="POST">
+	  <div class="form-group">
+      <label for="email" class="sr-only">Enter your Yale email:</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="some.one@yale.edu">
+    </div>
+    <button id="Submit" type="Submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
