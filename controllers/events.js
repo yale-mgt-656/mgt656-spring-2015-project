@@ -60,11 +60,6 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-<<<<<<< Updated upstream
-  /** We have to include all possible kinds of errors in here (like the one above)--> */
-  
-
-=======
   
   //check that year is an integer
   if (validator.isInt(request.body.year) === false) {
@@ -130,7 +125,6 @@ function saveEvent(request, response){
     contextData.errors.push('Your location name cannot be empty and must be less than 50 characters.');  
   }
   
->>>>>>> Stashed changes
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
