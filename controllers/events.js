@@ -85,14 +85,19 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
 }
 
+
+// what is called when someone rsvps to an event
 function rsvp (request, response){
+  // takes the incoming params id and identifies the event user wants to RSVP to and then stores in variable "ev"
   var ev = events.getById(parseInt(request.params.id));
+  // if it doesn't find the event, it says 'No such event'
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
+    // Need to add a directive to save the event here.
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};

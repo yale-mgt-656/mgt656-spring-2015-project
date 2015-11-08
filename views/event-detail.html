@@ -2,16 +2,23 @@
 
 {% block mainContent %}
 
-<h1 id="title"> TITLE </h1>
-<span id="date"> DATE </span>
-<span id="location"> LOCATION </span>
+<h1 id="title"> {{ event.title }} </h1>
+<span id="date"> {{ event.date }} </span>
+<span id="location"> {{ event.location }} </span>
 <img id="image" src="/images/yale_college_logo.png">
-<ul id="attendees"></ul>
+<ul id="attendees">
+<div>
+{{ event.attending }}
+</div>
+</ul>
 
-<form id="email" method="POST">
+<form action="{{ '/events/' + event.id + '/rsvp'}}" method="POST" id="email">
   <label for="email">RSVP to this event:</label>
   <input type="email" name="email">
   <input type="submit" value="Submit">
 </form>
+
+
+
 
 {% endblock %}

@@ -29,6 +29,9 @@ app.get('/api/events', apiControllers.listEventsJSON);
 // app.get('/api/events?search=')
 app.post('/events/new', eventControllers.saveEvent);
 
+// action for RSVPing
+app.post('/events/:id/rsvp', eventControllers.rsvp);
+
 app.get('/sprints', function (req, res) {
   var contextData = {};
   res.render('reports/sprint-reports.html', contextData)
