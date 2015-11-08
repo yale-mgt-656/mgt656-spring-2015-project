@@ -126,12 +126,12 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.match(/([a-z0-9\.-_])+@yale.edu/i)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  } else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
+    contextData.errors.push('Invalid email or non-yale email address');
     response.render('event-detail.html', contextData);    
   }
 
