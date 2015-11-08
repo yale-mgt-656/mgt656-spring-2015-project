@@ -6,7 +6,7 @@
 var allEvents = [
   {
     id: 0,
-    title: 'SOM House Party',
+    title: 'SOM House Party for all the cool peeps',
     // Note that JavaScript months are zero-indexed,
     // so, month zero is January. This is Jan 17th
     // 2013 at 4:30pm local time.

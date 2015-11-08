@@ -2,9 +2,9 @@
 <ul>
   {% for event in events %}
     <li class="eventstyle" style="background-color: rgba(0,0,0,0.6);">
-      {{event.title}}.
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
+      <a href="/events/{{event.id}}">{{event.title}}</a><br>
+      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time><br>
+      {{event.attending.length}} attending so far.<br>
     </li>
   {% endfor %}
 </ul>
