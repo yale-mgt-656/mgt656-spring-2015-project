@@ -2,11 +2,7 @@
 body {
   text-align: center;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("/images/about.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+
 }
 
 a {
@@ -54,6 +50,7 @@ body {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
+  position: relative;
 }
 
 /* Set the fixed height of the footer here */
@@ -63,18 +60,15 @@ body {
   padding:20px;
   text-align: center;
   background-color: rgba(0,0,0,0.6);
+  position:fixed;
 }
 
 .home {
-    background-image: url("/images/about.jpg");
-    padding-top: 48px;
-    padding-bottom: 48px;
-    margin-top: 100px;
+
+    padding-top: 100px;
     color: white;
-    background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
+    
+
 }
 
 .homecontainer
