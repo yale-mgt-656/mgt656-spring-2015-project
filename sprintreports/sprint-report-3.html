@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Sprint Report - Dry Blessing</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    
+        <div class="row" style="margin-top: 10px; text-align: right;">
+        <ul>
+          <li style="margin-bottom:0"><a href="mailto:Karen.RamirezEstrada@yale.edu">Karen Ramirez-Estrada</a></li>
+          <li style="margin-bottom:0"><a href="mailto:Mezyad.AlMasoud@yale.edu">Mezyad AlMasoud</a></li>
+          <li style="margin-bottom:0"><a href="mailto:shadin.cornelioa@yale.edu">Shadin Cornelio</a></li>
+          <li style="margin-bottom:0"><a href="mailto:susana.arriaga@yale.edu">Susana Arriaga</a></li>
+        </ul>
+        
+    </div>
+    <div class="row" style="text-align: center">
+        <h1>MGT 656 Dry Blessing Coding Team</h1>
+        <h2>Project Status Report</h2>
+        <h3>November 9, 2015</h3>
+        
+    </div>
+    <div class="row">
+      <p>Link to live working project on Heroku: <a href="http://mgt-656-dry-blessing.herokuapp.com" target="_blank">RSVPd</a>
+      <br>Link to Waffle IO: <a href="https://waffle.io/dry-blessing/mgt656-spring-2015-project" target="_blank">Dry Blessing issues</a></p>
+    </div>
+     <div class="row">
+       <b style="text-decoration:underline">Sprint 2 update</b><br>
+        <p>In Sprint 3, we completed the following activities:</p>
+        <ol>
+          <li>Every page has HTML5 header and footer elements</li> 
+          <li>Each list element displays pertinent information about the event: title, date, and how many people are RSVPd etc. It should include the default events that come with the project.</li>
+          <li>Every event li element should have an HTML5 time tag that has a datetime attribute equal to the time in ISO 8601 format. The text of the tag should be the datetime in natural language, including the time.</li>
+          <li>Adding a link to /events/new with id="new"</li>
+          <li>The title for each event is a clickable link to the "detail page" for that event, which should be at /events/, where id refers to the id of the event, e.g. /events/0 would take me to the event with id zero.</li>
+          <li>Getting the API at /api/events and retrieve an object with key events containing all events in JSON format.</li>
+          <li>The about page has your names, each in a span tag with id attribute set to your class nickname</li>
+          <li>The home page has some styling (partially completed activity)</li>
+        </ol>
+    </div>
+         <div class="row" style="margin-top: 25px">
+          We did the following scrum activities as a part of this sprint: <br>
+          We had a <b>15 min scrum meeting</b> while in class on Wednesday (11/4) to understand what what everyone has done till now, what they will be doing then onwards and if anyone is facing obstacles. Through this meeting, we were able to resolve impediments such as not knowing how to add new events and styling of elements on the homepage.<br>
+          We also did a sprint retrospective and released working code to Heroku.
+          
+       <b style="text-decoration:underline">Sprint 3 Retrospective</b><br><br>
+        <b><i>What went well during the sprint cycle?</i></b>
+        <ol>
+<li>Everyone finished their user stories and did a wonderful job! The website looks very neat.</li>
+<li>Team work helped us a lot in focusing our efforts together to solve very tough problems without needing to wait any further for TA help. </li>
+<li>We finished and successfully ran tests on each additional story we worked on this week.</li>
+<li>Online resources through Google were very helpful all the way to support us finish our objectives on time.</li>
+<li>Besides, every team member had a better understanding of the assignment we had to perform, which helped in the planning of our project.</li>
+<li>We faced a critical error that crashed the server many times whenever Mezyad tried to add a route for the API search function. Shadin put a lot of effort to track the problem and managed to find a solution, which we were missing to add API in the module route as well. </li>
+    </ol>
+    </div>
+    
+    <div class="row">
+        <b><i>What went wrong during the sprint cycle?</i></b>
+        <ol>
+          <li>Trying to fix many problems such as the application crashing, losing data when merging contents, and not finding a solution on time caused us to waste more time than we planned.</li>
+<li>We should have used branches more (we started using some) and that led to merging issues and confusion within the team. We also should have used pull requests as that would make it easier for one person to merge all the code.</li>
+<li>Also, the style of the home page is not completely done because it was harder than expected plus the merging conflicts.</li>
+
+        </ol>
+    </div>
+
+  
+  
+<div class="row">
+        <b><i>What could we do differently to improve?</i></b>
+        <ol>
+          <li>We will always use branches with pull requests in sprint 4. We should also be using waffle.io more to track what everyone is doing (especially since it is getting difficult to meet in person)</li>
+<li>We need to actively communicate with the TAs in our issues because we have not followed up to solve the issues that we faced during Sprint 3.  </li>
+   </ol>
+    </div>
+  
+
+<div class="row">
+  <b style="text-decoration:underline">Stories to be completed in Sprint 4</b>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>#No</th>
+      <th>Story</th>
+      <th>Estimate</th>
+      <th>Responsible</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>Events that are over are not shown</td>
+      <td>3</td>
+      <td>Mezyad</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>When submitted, the form should be validated.</td>
+      <td>5</td>
+      <td>Mezyad/Karen</td>
+    </tr>
+     <tr>
+      <td>5</td>
+      <td>An unordered list of events, including their details (LOOK AND FEEL)</td>
+      <td>4</td>
+      <td>Susana</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>It should have a form for creating events. The form should have attribute method="POST".</td>
+      <td>1</td>
+      <td>Karen</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>If the form was not valid, I am taken back the form and the errors are shown on the form.</td>
+      <td>3</td>
+      <td>Karen</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>As an attendee, I can visit the event detail page to RSVP for an event</td>
+      <td>3</td>
+      <td>Shadin</td>
+    </tr>
+     <tr>
+      <td>20</td>
+      <td>I submit my email address by filling in a form. The form has method="POST" and contains an input element with attributes type, id, and name all set to "email".</td>
+      <td>3</td>
+      <td>Shadin</td>
+    </tr>
+     
+  </tbody>
+</table>
+</div>
+
+<div class="row">
+  <b style="text-decoration:underline">Burndown chart</b>
+
+<p>We completed a total of 12 story points this sprint against the 14 that we had planned. We intend to catch up on the remaining 2 story points in the next sprint.</p>
+<img src="burndown2.png" style="width:300px">
+</div>
+
+<div class="row">
+  <b style="text-decoration:underline">Next steps</b>
+
+<p>We will be running team meetings on Tuesday and Friday to discuss our progress on the sprint and have time for feedback.</p>
+
+</div>
+
+<div class="row" id="mockups">
+  <b style="text-decoration:underline">Mockups</b><br>
+  <p>These mockups were created using the <a href="http://www.balsamiq.com" target="_blank">Balsamiq</a> tool.</p>
+<img src="Homepage.png" style="width:300px">
+<img src="About.png" style="width:300px">
+</div>
+
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
