@@ -56,7 +56,7 @@ function eventJSON(request, response) {
       return item.title.toLowerCase().includes(searchQuery.toLowerCase());
     })
   }
-  response.send(result);
+  response.send({"events" : result});
 }
 
 
