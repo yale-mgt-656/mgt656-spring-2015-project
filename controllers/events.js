@@ -116,6 +116,7 @@ if (hour > 23 || hour < 0) {
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.getMaxId() + 1,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -123,7 +124,7 @@ if (hour > 23 || hour < 0) {
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect(302,'/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
