@@ -28,6 +28,7 @@ app.get('/reports/4', reportsControllers.scrum4);
 app.get('/reports/5', reportsControllers.scrum5);
 app.get('/reports/6', reportsControllers.scrum6);
 app.get('/events', eventControllers.listEvents);
+app.get('/api/events', eventControllers.api);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 
