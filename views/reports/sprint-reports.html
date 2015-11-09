@@ -1,19 +1,36 @@
-<p>Jessica Yang (jessica.yang@yale.edu) |
- April Koh (april.koh@yale.edu) |
- Jeremy Liu (jeremy.liu@yale.edu) |
- Diane Kim (diane.kim@yale.edu) |
- Lucia Chen (lucia.chen@yale.edu)</p>
-
+<head>
+  <title>Half Mountain Sprint Report</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+<body>
+<center>
 <h1>Half Mountain</h1>
+<p>Jessica Yang (jessica.yang@yale.edu)
+  <br>
+ April Koh (april.koh@yale.edu)
+ <br>
+ Jeremy Liu (jeremy.liu@yale.edu)
+ <br>
+ Diane Kim (diane.kim@yale.edu)
+ <br>
+ Lucia Chen (lucia.chen@yale.edu)</p>
+ <br>
+<h3>Half Mountain Events</h3>
+
+</center>
+<p>Half Mountain specializes in helping social, fun-loving Yalies organize once-in-a-lifetime experiences, like hosting a fancy dinner party halfway up a mountain. Users can browse upcoming events, RSVP using their Yale e-mail addresses, and create new events to display on the website. We hope you will consider Half Mountain your go-to events website!</p>
+<br>
+
+
+<hr>
 
 <h2>Sprint Report 3</h2>
 
 <p>November 9, 2015</p>
 
-<h3>Half Mountain Events</h3>
-
-<p>Half Mountain specializes in helping social, fun-loving Yalies organize once-in-a-lifetime experiences, like hosting a fancy dinner party halfway up a mountain. Users can browse upcoming events, RSVP using their Yale e-mail addresses, and create new events to display on the website. We hope you will consider Half Mountain your go-to events website!</p>
-
+<br>
 <h3>Burn-Up Chart</h3>
 
 <p>Instead of using a burndown chart, we have decided to use the burn-up chart because it is integrated with Waffle, our primary method of tracking our workflow. The x-axis is time passed week-by-week, where each column represents one sprint. The y-axis is the number of story points completed during each sprint. Note that throughput is measured by the number of story points completed rather than the number of stories completed. The number of story points associated with each story is documented on our Waffle story cards, so closing those issues on Waffle adds those story points automatically to our burn-up chart.</p>
@@ -21,7 +38,7 @@
 <p>The below burn-up chart can also be found at the following link: https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics/throughput</p>
 
 <p><b>Sprint 3 Burn-up Chart:</b></p>
-<p><img src='/images/Images for Reports/burnupSprint3.png'></p>
+<center><img src='/images/Images for Reports/burnupSprint3.png' style="width: 800px"></center>
 
 <h3>Completed Stories in Sprint 3</h3>
 
@@ -45,20 +62,21 @@
 
 <p>We emulated the agile methodology of having a daily standup through two team coding sessions, two in-person meetings during class, and our team chat on Slack. On Monday and Wednesday, we had our standup meeting during the team project work time in class. On Friday and Sunday, we organized a team coding sessions during which we took the time to code individually, bounce questions off of each other, work through our blockers, and talk through our vision and ideas for the project and how we could implement them. On the days where we did not meet in person, we had our daily standup through Slack. As an example, here is a screenshot of the beginning of a team discussion we had on Slack about logo designs. We went through five iterations of the logo, adjusting the design based on team feedback after each iteration. These five versions of the logo are also included below.</p>
 
-<p><b>Sample Slack Conversation:</b></p>
-<p><img src='/images/Images for Reports/sampleSlackStandup.jpg' height='75%' width='25%'></p>
-
+<center><b>Sample Slack Conversation:</b>
+<p><img src='/images/Images for Reports/sampleSlackStandup.jpg' height='500px'></p>
+<br><br>
 <p><b>Logo Design Drafts:</b></p>
-<p><img src='/images/Images for Reports/logoDraft1-3.png'></p>
-<p><img src='/images/Images for Reports/logoDraft4.png'></p>
-<p><img src='/images/Images for Reports/logoDraft5.png'></p>
-
+<span><img src='/images/Images for Reports/logoDraft1-3.png' style="width:200px; margin-right: 20px"><img src='/images/Images for Reports/logoDraft4.png' style="width:200px; margin-right: 20px"><img src='/images/Images for Reports/logoDraft5.png' style="width:200px"></span>
+</center>
+<br>
 <p>One development challenge we faced was dealing with bugs that were remnant from past sprints. This was our first substantial encounter with bugs in the project. When we wrote the code for the header and footer elements, footer links, and bootstrapping every page, we found that the tests for these elements all failed. Originally assigned a single story point each, these stories ended up cumulatively taking over 2.5 hours to diagnose and fix the bug. It turned out that the code we had written in layout.html was not executing on all the pages. We realized it was because some of the code written in the prior sprint by another teammate had been blocking the layout.html code from executing on the event detail pages. We were able to identify this issue during our last coding session, and ultimately, we were able to work collectively as a group to fix the error and pass the tests for the header, footer, and bootstrap elements. Enabling the API to search for events also posed a technical challenge: one of our team members had to set up a separate controller for the API without having any template to follow. That aside, we were able to figure out the filtering / querying aspect of the API searching function in less than an hour.</p>
 
-<p>Another challenge we faced was one we actually saw earlier in class, during the session on UX/design with Heather Cassano from Google. Much like the "design a stop sign" video we watched where stakeholders continually made suggestions to the designer based on their own ideas of what a good design was, we also faced a conflict when the first logos our designer proposed were met with team opinions like "looks too 90s", "but gradients are coming back into style", "can it be more fun?" etc. These comments ended up being constructive feedback that allowed us to iterate on the design of the logo, and we were able to unanimously agree on one design as the one we wanted to move forward with. The design we voted on as a team is the one below:</p>
+<p>Another challenge we faced was one we actually saw earlier in class, during the session on UX/design with Heather Cassano from Google. Much like the "design a stop sign" video we watched where stakeholders continually made suggestions to the designer based on their own ideas of what a good design was, we also faced a conflict when the first logos our designer proposed were met with team opinions like "looks too 90s", "but gradients are coming back into style", "can it be more fun?" etc. These comments ended up being constructive feedback that allowed us to iterate on the design of the logo, and we were able to unanimously agree on one design as the one we wanted to move forward with. The design we voted on as a team is the one below (note that the design is still not finalized):</p>
 
+<center>
 <p><img src='/images/Images for Reports/logoDraft5.png'></p>
-
+</center>
+<br>
 <p>A final challenge we confronted was the result of a misunderstanding of what the stakeholders wanted (as expressed in the user stories) and how the developers interpreted those requirements. When working on the About page, we misinterpreted correctly tagging each photo as tagging it with our team name (half-mountain) rather than each person’s individual class nickname. The team member working on this user story committed without running the test, and ultimately had to rewrite the code once we realized what the tagging requirement truly meant. This experience solidified the practice of frequently testing our code before we committed any changes we made.</p>
 
 <p>In this sprint, we were able to accomplish several stories in five different categories: Header/Footer, Event Details page, About page, API, and overall Design. All pages now include a header with the new team logo, and a footer with links to the Homepage and the About page. When an event is clicked on the Homepage, a new Event Details page loads giving the title, date, number of attendees, and a photo of the event. We now have a fleshed-out About page with profile pictures and each team member’s name. The API now allows searching for events by title. Finally, we have added Bootstrap to all pages, and have designed a new team logo and added a favicon.</p>
@@ -103,6 +121,7 @@
 </ol>
 
 
+<hr>
 
 <h2>Sprint Report 2</h2>
 
@@ -161,6 +180,8 @@ https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics</p>
 
 
 
+<hr>
+
 
 <h2>Sprint Report 1</h2>
 
@@ -210,3 +231,4 @@ Create product backlog and perform Fibonacci costing exercise</p>
 <li>The homepage should have an unordered list of events, correctly tagged, each with a link, and no outdated events should be shown.</li>
 <li>The homepage should have a link to create a new event (this link does not yet have to be working).</li>
 </ol>
+</body>
