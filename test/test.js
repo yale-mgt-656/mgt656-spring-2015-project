@@ -371,7 +371,26 @@ describe('The form for creating new events',function(){
     },
   ];
   var rangedIntCases = [
- git
+  {		
+      field: 'year',		
+      min: 2015,		
+      max: 2016		
+    },		
+    {		
+      field: 'month',		
+      min: 0,		
+      max: 11		
+    },		
+    {		
+      field: 'day',		
+      min: 1,		
+      max: 31		
+    },		
+    {		
+      field: 'hour',		
+      min: 0,		
+      max: 23		
+    },
   ];
   for (var i = rangedIntCases.length - 1; i >= 0; i--) {
     var ri = rangedIntCases[i];
