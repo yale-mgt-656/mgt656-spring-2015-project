@@ -1,7 +1,11 @@
 <ul>
   {% for event in events %}
     <li class="event" id="event-{id}">
+<<<<<<< HEAD
      <a href="/events/{{event.id}}"> {{event.title}}</a>.
+=======
+      {{event.title}}.
+>>>>>>> 1d2c165b2762a247124b10a7d052a3639d85f484
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
     </li>
