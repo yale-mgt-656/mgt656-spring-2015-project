@@ -78,7 +78,7 @@ function saveEvent(request, response){
 }
 
 function eventDetail (request, response) {
-  var ev = events.getById(parseInt(request.params.id));
+  var ev = events.getById(parseInt(request.params.id,10));
   if (ev === null) {
     response.status(404).send('No such event');
   }
