@@ -3,17 +3,17 @@
 {% block mainContent %}
 
   <div>
-  <h1>
-    {{event.title}}
+  <h1 id="title">
+    <span id="date">{{event.title}}</span>
   </h1>
   {{event.date|prettyDate}}
   <br>
-  <img src="{{event.image}}">
+  <img id="image" src="{{event.image}}">
   <br>
-  The event will be at {{event.location}}.
+  The event will be at <span id="location">{{event.location}}</span>.
   <br>
   Attending:
-  <ul>
+  <ul id="attendees">
     {% for address in event.attending %}
       <li>{{address}}</li>
     {% endfor %}
