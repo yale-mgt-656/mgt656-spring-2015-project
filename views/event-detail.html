@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+<ul>
+    <li class = "event" id="event-{{event.id}}">
+      <a href="/events/{{event.id}}">{{event.title}}</a>. 
+      <p>{{event.date|prettyDate}}</p>
+      {{event.attending.length}} attending so far.
+    </li>
+</ul>
+
+{% endblock %}
