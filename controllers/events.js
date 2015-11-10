@@ -64,6 +64,11 @@ function saveEvent(request, response){
   if (validator.isInt(request.body.year) === false) {
     contextData.errors.push('Your year should be an integer.');
   }
+  
+  var year = parseInt(request.body.year,10)
+  if ((year >2016 || year <2015) === false) {
+    contextData.errors.push('Your year should be in the range 2015-2016.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
