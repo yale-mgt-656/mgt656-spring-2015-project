@@ -32,7 +32,7 @@ var allEvents = [
     attending: ['kim.kardashian@yale.edu'],
   },
   {
-    id: 4,
+    id: 3,
     title: 'Cooking lessons for the busy business student',
     date:   new Date(2014, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
@@ -54,7 +54,19 @@ function getById (id) {
   return null;
 }
 
+// establish maximum event id
+function eventHighID(events) {
+  var highEventID = null;
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (highEventID < allEvents[i].id || highEventID === null) {
+      highEventID = allEvents[i].id;
+    }
+  }
+  return highEventID;
+}
+
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+  eventHighID: eventHighID
 };
