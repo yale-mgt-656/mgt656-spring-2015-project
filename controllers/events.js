@@ -96,7 +96,7 @@ var hour = checkIntRange(request, 'hour',0,23,contextData);
 
 //sends all events JSON data to page
 function api(request, response){
-  var output = {events: []};
+ var output = {events: []};
   var search = request.query.search;
   
   if(search){

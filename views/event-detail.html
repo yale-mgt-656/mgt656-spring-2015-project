@@ -4,9 +4,13 @@
 
 <ul>
     <li class = "event" id="event-{{event.id}}">
-      <a href="/events/{{event.id}}">{{event.title}}</a>. 
-      <p>{{event.date|prettyDate}}</p>
-      {{event.attending.length}} attending so far.
+      <h1 id="title">{{event.title}}</h1>. 
+      <span id="date">{{event.date|prettyDate}}</span>
+      <span id="location">{{event.location}}</span>
+      
+      <ul id="attendees">{{event.attending}} </ul>
+       
+      <img id="image" src = "{{event.image}}">
     </li>
 </ul>
 
