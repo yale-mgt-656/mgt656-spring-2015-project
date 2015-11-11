@@ -60,7 +60,9 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
+if (validator.isLength(request.body.title, 5, 50) === false) {
+    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -102,6 +104,11 @@ function rsvp (request, response){
 
 }
 
+function api(request, response){
+  var output= {events: events.all};
+  response.send(output);
+}
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +118,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
