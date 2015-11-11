@@ -1,6 +1,34 @@
+html {
+  background: url("https://farm6.staticflickr.com/5640/21759511704_c7d8454d3d_o_d.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 800px;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+}
+
 body {
+  position: relative;
+  top: 200px;
+  left: 400px;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "DIN","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.event-list {
+  width: 300px;
+  padding: 25px;
+  border: 4px solid rgba(150,150,150,0.75);
+  border-radius: 10px;
+  margin: 25px;
+  background-color: rgba(255,255,255,0.85);
 }
 
 a {
@@ -10,3 +38,4 @@ a {
 .form-errors {
 	color: red;
 }
+

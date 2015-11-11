@@ -3,12 +3,18 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/about-style.css' />
   </head>
 
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+        <ul>
+          <li><a href="/"><img src="https://cdn3.iconfinder.com/data/icons/water-sports-and-recreation-tours/512/Water_sports_and_recreation_tours_Surfing-128.png"/></a></li>
+          <li><a href="/about">About Us</a></li>
+        </ul>
+      </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -16,7 +22,7 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>Insert footer here</footer>
     {% endblock %}
 
   </body>
