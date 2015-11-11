@@ -24,13 +24,15 @@
     </div>
     <div>
         <label for="image">Event image:</label>
-    <input type="file" name="image">
+    <input type="text" name="image">
     </div>
   <div>
   <label for="year">Event Year</label>
 <select name="year" id="year" form="create-event">
+  <option value="" disabled selected>Choose year</option>
   <option value="2015">2015</option>
   <option value="2016">2016</option>
+  <option value="2017">2017</option>
 </select>
     </div>
 <div>
@@ -54,6 +56,7 @@
   <label for="day">Event Day:</label>
 <select name="day" id="day" form="create-event">
   <option value="1">1</option>
+  <option value="1.5">1.5</option>
   <option value="2">2</option>
   <option value="3">3</option> 
   <option value="4">4</option>
@@ -122,7 +125,7 @@
   <option value="30">:30</option>
 </select>
     </div>
-    
+    <input type="submit" value="Submit">
   </form>
 {% endblock %}
 
