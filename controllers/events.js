@@ -106,14 +106,15 @@ function saveEvent(request, response){
   }
   
   //check whether image is gif or png
-  function getFileExtension(filename){
-    return filename.split('.').pop();
-  }
+  //function getFileExtension(filename){
+    //return filename.split('.').pop();
+    //console.log(filename.split('.').pop());
+  //}
   
-  var image = getFileExtension(toString(request.body.image));
-  if (!(image == "gif") || !(image == "png")) {
-    contextData.errors.push('Your image must be either a gif or png.')
-  }
+  //var image = getFileExtension(toString(request.body.image));
+  //if ((image != "gif") || (image != "png")) {
+    //contextData.errors.push('Your image must be either a gif or png.')
+  //}
   
   //check that image is a URL
   if (validator.isURL(request.body.image) === false) {
