@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+    <h1 id="title"></h1>{{event.title}}</h1>
+    <p>When:<span id="date">{{event.date}}</span></p>
+    <p>Where:<span id="location">{{event.location}}</span></p>
+    <p>Who:</p>
+    <ul id="attendees">
+        {% for person in event.attending %}
+            <li>{{person}}</li>
+        {% endfor %}
+    </ul>
+    <img src="{{event.image}}" id="image">
+  <p>Please come!</p>
+  {% if errors %}
+  <div>
+    <ul class="form-errors">
+         {% for error in errors%}
+             <li>{{error}}</li>
+         {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <form method="POST">
+      <input type="text" name="email" id="email" placeholder="Your email"/>
+      <input type="submit" value="Submit"/>
+  </form>
+  
+{% endblock %}
