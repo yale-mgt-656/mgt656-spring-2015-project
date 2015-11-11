@@ -1,7 +1,5 @@
  {% extends "layout.html" %}
- 
-  {% block header %}
-    {% endblock %}
+
  
  {% block mainContent %}
       <h1>{{ event.title }}</h1>
@@ -11,4 +9,7 @@
       <p3><ul>{{ event.attending }}</ul></p3>
       <br></br>
       <img src='{{event.image}}' align="middle">
-    {% endblock %}
+ {% endblock %}
+ 
+ {% block footer %}
+ {% endblock %}

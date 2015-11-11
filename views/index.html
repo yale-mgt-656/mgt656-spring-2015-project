@@ -2,14 +2,20 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <div class = "row">
+      <div class="col-md-12">
+        <h1>
+          <span>{{ title }}</span>
+        </h1>
+        <h4>
+          <span>Welcome to {{ title }}'s event booking website. Your only choice for celestial aquatic event bookings. {{tagline}}</span>
+        </h4>
+      </div>
+    </div>
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
   <img id="logo" src="http://anabolicminds.com/forum/attachments/92286d1384802814-using-drugs-treat-terratantra_cosmic_tree.png"></img>
   <p>Check out our list of events</p>
    <div style="border: 1px solid black">
