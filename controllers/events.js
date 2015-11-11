@@ -78,6 +78,15 @@ var month = checkIntRange(request, 'month',0,11,contextData);
 var day = checkIntRange(request, 'day',1,31,contextData);
 var hour = checkIntRange(request, 'hour',0,23,contextData);
 
+if(validator.isURL(request.body.image) === false) {
+  contextData.errors. push('Your image should be a URL');
+}
+
+if(request.body.image.match(/\.(png|gif)$/) === null) {
+  contextData.errors. push('Your image should be a .png or .gif');
+
+}
+
 
   if (contextData.errors.length === 0) {
     var newEvent = {
