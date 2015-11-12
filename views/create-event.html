@@ -16,6 +16,54 @@
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
+    <br>
+    <label for="location">Event location:</label>
+    <input type="text" name="location">
+    <br>
+    <label for="image">Event image URL:</label>
+    <input type="text" name="image">
+    <br>
+    <label for="year">Year:</label>
+    <select name="year">
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+    </select>
+    <br>
+    <label for="month">Month:</label>
+    <select name="month">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    <br>
+    <label for="day">Day:</label>
+    <select name="day">
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+    </select>
+    <br>
+    <label for="hour">Hour:</label>
+    <select name="hour">
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+    </select>
+    <br>
+    <label for="minute">Minute:</label>
+    <select name="minute">
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+    </select>
+    <br>
+    <input id="submit" type="submit" value="Submit">
   </form>
 
 {% endblock %}
