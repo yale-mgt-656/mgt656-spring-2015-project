@@ -8,6 +8,7 @@ var validator = require('validator');
 // used a first.
 //
 var allowedDateInfo = {
+  years: [2015, 2016],
   months: {
     0: 'January',
     1: 'February',
@@ -22,6 +23,10 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+    14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+    25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
@@ -55,7 +60,9 @@ function apiListEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {
+    'allowedDateInfo': allowedDateInfo
+  };
   response.render('create-event.html', contextData);
 }
 
@@ -92,21 +99,32 @@ function saveEvent(request, response){
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var minute = parseInt(request.body.minute);
+  if (isNaN(minute) || (minute !== 0 && minute !== 30)) {
+    contextData.errors.push('Your event\'s minute is not acceptable.');
+  }
   
   if (validator.isURL(request.body.image) === false) {
     contextData.errors.push('Your image should be a URL.');
   }
+  if (validator.matches(request.body.image, /http(s?):\/\/([a-z,0-9,.,\/,\?,=]+)(.gif|.png)/i) === false) {
+    contextData.errors.push('Your image url is not valid. '+request.body.image);
+  }
 
   if (contextData.errors.length === 0) {
+    var newid = parseInt(events.nextId());
+    var date = new Date(year, month, day, hour, minute, 0,0);
+    var datestr = date.toDateString();
     var newEvent = {
+      id: newid,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date:datestr,
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/'+newid);
   }else{
     response.render('create-event.html', contextData);
   }
