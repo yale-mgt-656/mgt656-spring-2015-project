@@ -68,9 +68,19 @@ function getByTitle (str) {
   return res;
 }
 
+function nextId () {
+  var j=0;
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (j < allEvents[i].id){
+      j=allEvents[i].id
+    }
+  }
+  return j+1;
+}
 
 module.exports = exports = {
   all: allEvents,
   getById: getById,
-  getByTitle: getByTitle
+  getByTitle: getByTitle,
+  nextId: nextId
 };
