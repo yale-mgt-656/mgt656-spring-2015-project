@@ -134,16 +134,21 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) 
+  && request.body.email.toLowerCase().indexOf('yale') !== -1){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+    }else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
+      contextData.errors.push('Invalid email, punk');
+    }else{
+      contextData.errors.push('Invalid email');
+    }
+    response.render('event-detail.html', contextData);
+    }
   }
 
-}
 /*add api search controller*/
 function api (request, response){
   var output = {events: []};
