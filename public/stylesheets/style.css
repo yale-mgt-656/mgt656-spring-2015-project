@@ -1,6 +1,14 @@
+html {
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQb05AJM5pso5Ty8rtyVH04FNR9EzcP4lWM6w37FUFDSHyxFctiNw) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 a {
