@@ -6,7 +6,7 @@ var events = require('../models/events');
  * Controller that renders the API splash page
  */
 function viewApi(request, response) {
-  response.json({ message: 'API Landing Page' });  
+  response.json({ message: 'API Landing Page' });
 }
 
 /**
@@ -16,14 +16,14 @@ function viewApi(request, response) {
 function listEventsJSON(request, response) {
   var search = request.query.search;
   var allEvents = events.all
-  
+
   if (search == null) {
-    response.json({ events: allEvents });  
+    response.json({ events: allEvents });
   }
   else {
     response.json({ events: allEvents.filter(function(event) {
         return event.title.toLowerCase().indexOf(search.toLowerCase()) > -1;
-      }) 
+      })
     });
   }
 }
