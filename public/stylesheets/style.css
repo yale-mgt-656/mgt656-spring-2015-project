@@ -32,4 +32,10 @@ a {
     border: 25px solid navy;
     margin: 25px;
 }
+footer{
+  background-color: #eee;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
+}
 
