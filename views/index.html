@@ -4,19 +4,19 @@
 {% block header %}
   <header>
     <h1>
-       <p style="color:Maroon;font-size:40px;font-weight:bold;text-align:center;">Sababa FTW</p>
-     <div style="text-align: center"> <img src="http://i64.tinypic.com/r8ht29.jpg" id="logo" height="300" width="300"  style="align:middle" />
+       <p style="color:#FF8000;font-size:40px;font-weight:bold;text-align:center;">Sababa FTW</p>
+     <div style="text-align: center"> <img src="http://i64.tinypic.com/r8ht29.jpg" id="logo" height="200" width="200"  style="align:middle" />
        </h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
 <body bgcolor="white">
-  <p style="color:Maroon;font-size:25px;font-weight:bold;text-align:left">Welcome to Sababa!</p>
-    <p style=”color:#000;font-size:25px;font-weight:normal;text-align:left;”>
+  <p style="color:#FF8000;font-size:25px;font-weight:bold;text-align:center">Welcome to Sababa!</p>
+    <p style=”color:#000;font-size:25px;font-weight:normal;text-align:center;”>
      Your one stop shop for the best events on the Yale Campus!
   </p>
-  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:left;”>
+  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:center;”>
     Check out the <a href="/about">About us</a> page to learn more about our team!
     
     <br>
@@ -24,6 +24,7 @@
     <br>
     Some of the things we are working on are: 
    <br> 
+<<<<<<< HEAD
 <ul>
     <li> <a  href="/events/0"> SOM House Party</a> 
    <id="event-0" class="event"/> 
@@ -50,9 +51,14 @@
   </time>
     </li>
 </ul>
+=======
+
+{% include "fragments/events-list.html" %}
+
+>>>>>>> ef829ad0fe9091486331b4cf6d8381dcf71b4fe7
   <br>
   </p>
-  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:left;”>
+  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:center;”>
    Feeling inspired? You can also <a id="new" href="/events/new">create a new event simply click here!</a>
   </p>
 </body>
