@@ -61,7 +61,6 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
 
-
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
@@ -80,24 +79,34 @@ function saveEvent(request, response){
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    // response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
+    response.render('event-detail.html', {event: ev});
   }
   response.render('event-detail.html', {event: ev});
 }
 
+
+// what is called when someone rsvps to an event
 function rsvp (request, response){
+  // takes the incoming params id and identifies the event user wants to RSVP to and then stores in variable "ev"
   var ev = events.getById(parseInt(request.params.id));
+  // if it doesn't find the event, it says 'No such event'
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
     ev.attending.push(request.body.email);
+    // Need to add a directive to save the event here.
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
+      contextData.errors.push('Harvard not allowed!');
+    }else{
+      contextData.errors.push('Invalid email! Are you a Yale student?');
+    }
+    response.render('event-detail.html', contextData);
   }
 
 }

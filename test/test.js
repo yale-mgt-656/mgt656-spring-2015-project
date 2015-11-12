@@ -226,7 +226,7 @@ describe('The event detail pages',function(){
       });
     };
     async.map(testedEventUrls, fetchEventDetail, function(err, results){
-      assert.ok(_.every(results, 'success'), 'Couldn\'t retreive all events at /events/:id.');
+      assert.ok(_.every(results, 'success'), 'Couldn\'t retrieve all events at /events/:id.');
       for (var i = results.length - 1; i >= 0; i--) {
         var b = results[i];
         assert.ok(b.query('h1#title'), 'No title for event '  + i);
@@ -253,6 +253,7 @@ describe('The event detail pages',function(){
         });
     });
   });
+
 
   it('should reject RSVPs from non-Yale addresses', function(done){
     var browser = new Browser();

@@ -1,0 +1,234 @@
+<head>
+  <title>Half Mountain Sprint Report</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+<body>
+<center>
+<h1>Half Mountain</h1>
+<p>Jessica Yang (jessica.yang@yale.edu)
+  <br>
+ April Koh (april.koh@yale.edu)
+ <br>
+ Jeremy Liu (jeremy.liu@yale.edu)
+ <br>
+ Diane Kim (diane.kim@yale.edu)
+ <br>
+ Lucia Chen (lucia.chen@yale.edu)</p>
+ <br>
+<h3>Half Mountain Events</h3>
+
+</center>
+<p>Half Mountain specializes in helping social, fun-loving Yalies organize once-in-a-lifetime experiences, like hosting a fancy dinner party halfway up a mountain. Users can browse upcoming events, RSVP using their Yale e-mail addresses, and create new events to display on the website. We hope you will consider Half Mountain your go-to events website!</p>
+<br>
+
+
+<hr>
+
+<h2>Sprint Report 3</h2>
+
+<p>November 9, 2015</p>
+
+<br>
+<h3>Burn-Up Chart</h3>
+
+<p>Instead of using a burndown chart, we have decided to use the burn-up chart because it is integrated with Waffle, our primary method of tracking our workflow. The x-axis is time passed week-by-week, where each column represents one sprint. The y-axis is the number of story points completed during each sprint. Note that throughput is measured by the number of story points completed rather than the number of stories completed. The number of story points associated with each story is documented on our Waffle story cards, so closing those issues on Waffle adds those story points automatically to our burn-up chart.</p>
+
+<p>The below burn-up chart can also be found at the following link: https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics/throughput</p>
+
+<p><b>Sprint 3 Burn-up Chart:</b></p>
+<center><img src='/images/Images for Reports/burnupSprint3.png' style="width: 800px"></center>
+
+<h3>Completed Stories in Sprint 3</h3>
+
+<ol>
+<li>API allows for searching events by title (size = 13).</li>
+<li>About page has headshots, tagged with the id=“-headshot” (size = 5).</li>
+<li>About page has each of the team’s names, tagged with the class nickname for each team member (size = 5).</li>
+<li>A team logo was designed (size = 5).</li>
+<li>All pages are using Bootstrap CSS (size = 1).</li>
+<li>All pages have a link to the about page (where a user would be directed from the /about path) in the footer (size = 1).</li>
+<li>All pages have a header element (size = 1).</li>
+<li>All pages have a footer element (size = 1).</li>
+<li>Event details (title, date, number of people attending, and photo) is displayed on a separate page when an event is clicked on the homepage (size = 3).</li>
+<li>Events allow users to RSVP (size = 5).</li>
+<li>A favicon (shortcut icon) was created so that the team logo could be displayed in the website’s browser bar (size = 3). </li>
+</ol>
+
+<h3>Accomplishments, Challenges, and Roadblocks</h3>
+
+<p>In our sprint planning meeting, we collectively sized each of the stories we sought to accomplish during Sprint 3, moving them from the product backlog to the “ready” workflow in Waffle.io. We assigned story points to the stories we planned to complete in this sprint through planning poker. From there, we assigned each of these stories amongst all five members of our team. Each member took ownership of one of the following categories: Header/Footer, Event Details page, About page, API, and overall Design. Our Waffle board with our full product backlog and the stories we completed so far can be found at the following link: https://waffle.io/half-mountain/mgt656-fall-2015-project.</p>
+
+<p>We emulated the agile methodology of having a daily standup through two team coding sessions, two in-person meetings during class, and our team chat on Slack. On Monday and Wednesday, we had our standup meeting during the team project work time in class. On Friday and Sunday, we organized a team coding sessions during which we took the time to code individually, bounce questions off of each other, work through our blockers, and talk through our vision and ideas for the project and how we could implement them. On the days where we did not meet in person, we had our daily standup through Slack. As an example, here is a screenshot of the beginning of a team discussion we had on Slack about logo designs. We went through five iterations of the logo, adjusting the design based on team feedback after each iteration. These five versions of the logo are also included below.</p>
+
+<center><b>Sample Slack Conversation:</b>
+<p><img src='/images/Images for Reports/sampleSlackStandup.jpg' height='500px'></p>
+<br><br>
+<p><b>Logo Design Drafts:</b></p>
+<span><img src='/images/Images for Reports/logoDraft1-3.png' style="width:200px; margin-right: 20px"><img src='/images/Images for Reports/logoDraft4.png' style="width:200px; margin-right: 20px"><img src='/images/Images for Reports/logoDraft5.png' style="width:200px"></span>
+</center>
+<br>
+<p>One development challenge we faced was dealing with bugs that were remnant from past sprints. This was our first substantial encounter with bugs in the project. When we wrote the code for the header and footer elements, footer links, and bootstrapping every page, we found that the tests for these elements all failed. Originally assigned a single story point each, these stories ended up cumulatively taking over 2.5 hours to diagnose and fix the bug. It turned out that the code we had written in layout.html was not executing on all the pages. We realized it was because some of the code written in the prior sprint by another teammate had been blocking the layout.html code from executing on the event detail pages. We were able to identify this issue during our last coding session, and ultimately, we were able to work collectively as a group to fix the error and pass the tests for the header, footer, and bootstrap elements. Enabling the API to search for events also posed a technical challenge: one of our team members had to set up a separate controller for the API without having any template to follow. That aside, we were able to figure out the filtering / querying aspect of the API searching function in less than an hour.</p>
+
+<p>Another challenge we faced was one we actually saw earlier in class, during the session on UX/design with Heather Cassano from Google. Much like the "design a stop sign" video we watched where stakeholders continually made suggestions to the designer based on their own ideas of what a good design was, we also faced a conflict when the first logos our designer proposed were met with team opinions like "looks too 90s", "but gradients are coming back into style", "can it be more fun?" etc. These comments ended up being constructive feedback that allowed us to iterate on the design of the logo, and we were able to unanimously agree on one design as the one we wanted to move forward with. The design we voted on as a team is the one below (note that the design is still not finalized):</p>
+
+<center>
+<p><img src='/images/Images for Reports/logoDraft5.png'></p>
+</center>
+<br>
+<p>A final challenge we confronted was the result of a misunderstanding of what the stakeholders wanted (as expressed in the user stories) and how the developers interpreted those requirements. When working on the About page, we misinterpreted correctly tagging each photo as tagging it with our team name (half-mountain) rather than each person’s individual class nickname. The team member working on this user story committed without running the test, and ultimately had to rewrite the code once we realized what the tagging requirement truly meant. This experience solidified the practice of frequently testing our code before we committed any changes we made.</p>
+
+<p>In this sprint, we were able to accomplish several stories in five different categories: Header/Footer, Event Details page, About page, API, and overall Design. All pages now include a header with the new team logo, and a footer with links to the Homepage and the About page. When an event is clicked on the Homepage, a new Event Details page loads giving the title, date, number of attendees, and a photo of the event. We now have a fleshed-out About page with profile pictures and each team member’s name. The API now allows searching for events by title. Finally, we have added Bootstrap to all pages, and have designed a new team logo and added a favicon.</p>
+
+<h3>Product Backlog (in the order they will be completed)</h3>
+
+<ol>
+<li>API: Should fail elegantly if searched event does not exist</li>
+<li>Design: Wireframe for home page</li>
+<li>404 Page: For nonexisting event should contain event information and a return to home</li>
+<li>RSVP: should reject RSVPs from non-Yale addresses</li>
+<li>New: should redirect the user to the event detail page if the form is valid</li>
+<li>New: should display errors to the user when the title is empty</li>
+<li>New: should display errors to the user when the title is too long</li>
+<li>New event form should display errors to the user when the hour is not an integer</li>
+<li>New: should display errors to the user when the location is empty</li>
+<li>New: should display errors to the user when the location is too long</li>
+<li>New event form should display errors to the user when the day is less than 1</li>
+<li>New event form should display errors to the user when the day is more than 31</li>
+<li>New: should display errors to the user when the image is not a URL</li>
+<li>New event form should display errors to the user when the day is not an integer</li>
+<li>New: should display errors to the user when the image is not a gif or png</li>
+<li>New event form should display errors to the user when the month is less than 0</li>
+<li>New: should display errors to the user when the hour is less than 0</li>
+<li>New event form should display errors to the user when the month is more than 11</li>
+<li>New event form should display errors to the user when the month is not an integer</li>
+<li>New event form should display errors to the user when the year is less than 2015</li>
+<li>New event form should display errors to the user when the year is more than 2016</li>
+<li>New: should display errors to the user when the hour is more than 23</li>
+<li>New event form should display errors to the user when the year is not an integer</li>
+<li>New event creation page should have appropriate form fields and labels</li>
+</ol>
+
+<h3>Progress Expected by Next Sprint</h3>
+
+<ol>
+<li>API: Should fail elegantly if searched event does not exist</li>
+<li>Design: Wireframe for home page</li>
+<li>404 Page: For nonexisting event should contain event information and a return to home</li>
+<li>RSVP: should reject RSVPs from non-Yale addresses</li>
+<li>New: should redirect the user to the event detail page if the form is valid</li>
+</ol>
+
+
+<hr>
+
+<h2>Sprint Report 2</h2>
+
+<p>November 2, 2015</p>
+
+<h3>Burndown Chart</h3>
+
+<p>Burn-Up chart available at the following link:
+https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics</p>
+
+<h3>Completed Stories in Sprint 2</h3>
+
+<ol>
+<li>As any user, I can visit the url at ‘/’ and see the homepage (size = 1).</li>
+<li>The homepage should have an unordered list of events (size = 5).</li>
+<li>The homepage should have a time tag for each event (size = 3).</li>
+<li>The homepage should have a link for each event (size = 2).</li>
+<li>The homepage should not show outdated events (size = 2).</li>
+<li>The homepage should have a link to create a new event (this link does not yet have to be working) (size = 2).</li>
+<li>The homepage should have a team logo (size = 1).</li>
+<li>As a user, I can use your API at /api/events (size = 6).  </li>
+</ol>
+
+<h3>Accomplishments, Challenges, and Roadblocks</h3>
+
+<p>In our sprint planning meeting, we collectively sized each of the stories we sought to accomplish during Sprint 2, moving them from the product backlog to the “ready” workflow in Waffle.io. From there, we assigned each of these stories amongst all five members of our team. Some team members took ownership of one large story (e.g. “API should return an array of upcoming events in JSON format”), while other team members were assigned several smaller stories (e.g. many components of the homepage stories). This gave us a clear sense of what code we were each responsible for writing over the course of the week.</p>
+
+<p>Throughout the sprint, we communicated using a team chat on Slack. By documenting our work in Waffle.io, we each received e-mail updates of the stories that our teammates had moved from “in progress” to “done” in the workflow. All of us were able to set up our Cloud9 environments, familiarize ourselves with the starter code, and run working applications on our computers. </p>
+
+<p>One challenge we did not take into account at the beginning of the sprint the set-up time necessary for everyone to get on the same page in terms of familiarity with the models-views-controllers structure and the code contained within each of components. We mistakenly frontloaded the project with a heavy size of stories without accounting for this initial time of getting our feet wet in the code. In order to work through questions and bugs, we utilized both the Slack group chat and short in-person meetings to identify our blockers and help each other get unblocked. </p>
+
+<p>Through this process, we were able to accomplish several small stories that summed up to a functional homepage. After running the tests, the code at the end of this sprint was able to pass all tests related to the homepage. The path at ‘/’ led to the homepage, which displayed an unordered list of events with correct time tags and a link for further details. The homepage excluded events that had already passed, and included a placeholder team logo (until a new one is designed) and a link to create a new event.</p>
+
+<h2>Product Backlog (in the order they will be completed)</h2>
+
+<ol>
+<li>API: As a user, I can use your API at /api/events.</li>
+<li>About: As a user, I can learn about the company through an About page.</li>
+<li>Design: As any user, I can visit the url at / and see a website that looks good.</li>
+<li>Details: As any user, I can see event details on a separate page when I click on an event.</li>
+<li>RSVP: As an attendee, I can visit the event detail page to RSVP for an event.</li>
+<li>New: As a user I can create new events.</li>
+</ol>
+
+<h3>Progress Expected by Next Sprint</h3>
+
+<ol>
+<li>API should allow for searching events by title.</li>
+<li>About page should have headshots, tagged correctly.</li>
+<li>About page should have each of our names, tagged correctly.</li>
+<li>A team logo should be designed.</li>
+<li>All pages should be using Bootstrap CSS.</li>
+<li>All pages should have a link to /about in the footer</li>
+<li>Event details (title, date, # of people, photo) should be displayed on a separate page when an event is clicked on the homepage.</li>
+</ol>
+
+
+
+<hr>
+
+
+<h2>Sprint Report 1</h2>
+
+<p>October 27, 2015</p>
+
+<h3>Burndown Chart</h3>
+
+<p>Burn-Up chart available at the following link:
+https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics</p>
+
+<h3>Stories Completed</h3>
+
+<p>Assign (fluid) team roles - front-end, back-end, design, “PM”, Scrum Master
+Set up team organization on Github
+Set up team on Waffle
+Set up team on Slack for group communication
+Create product backlog and perform Fibonacci costing exercise</p>
+
+<h3>Stuff We Did Since Last Time</h3>
+
+<p>We created an organization for our team and got the repo working. We also signed up for associated services (Waffle and Slack because we wanted to have a team chat). Most of us got the Cloud9 environments up and running as well and we looked at the starter code to determine what to do. </p>
+
+<p>The main exercise we did this sprint was first to determine what our user stories were. This was not as easy as thought as we had to decide on a level of granularity that would give us enough to work with, but not overwhelm us with small technical details like which tags to assign to which elements. We arrived at this based on the project description, but we also made some changes to make the stories more user-focused (e.g. “As a user, I can learn about the company“ instead of the original description which was more focused on the technical aspect of it). Next we performed the Fibonacci costing exercise, which showed large disparities in the relative difficulty each of us felt should be assigned to design vs. code, for example. In addition, we added a user story focusing on the design of the webpage, such that any user visiting the url at / can see a website that looks good. This necessitates styling work that is decoupled from the content of the webpage, which deserves its own story points. </p>
+
+<p>We are going to use Waffle to help with making the burndown chart and have assigned sizes to every issue. We assigned a default cost of 1 to everything in our backlog that was not immediately scheduled for the next sprint because we felt that we would have a better sense of how long things will take after we have completed a sprint, and can evaluate our progress in the sprint retrospective.</p>
+
+<h3>Product Backlog (in the order they will be completed)</h3>
+
+<ol>
+<li>Homepage: As any user, I can view an unordered list of the events and their details on your homepage.</li>
+<li>API: As a user, I can use your API at /api/events.</li>
+<li>About: As a user, I can learn about the company through an About page.</li>
+<li>Design: As any user, I can visit the url at / and see a website that looks good.</li>
+<li>Details: As any user, I can see event details on a separate page when I click on an event.</li>
+<li>RSVP: As an attendee, I can visit the event detail page to RSVP for an event.</li>
+<li>New: As a user I can create new events.</li>
+</ol>
+
+<h3>Progress Expected by Next Sprint</h3>
+
+<ol>
+<li>API should allow for searching events by title.</li>
+<li>API should return an array of upcoming events in JSON format.</li>
+<li>About page should have headshots, tagged correctly.</li>
+<li>About page should have each of our names, tagged correctly.</li>
+<li>/ should go to the homepage.</li>
+<li>The homepage should have an unordered list of events, correctly tagged, each with a link, and no outdated events should be shown.</li>
+<li>The homepage should have a link to create a new event (this link does not yet have to be working).</li>
+</ol>
+</body>
