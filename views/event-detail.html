@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  
+  <header>
+      <h1>{{event.title}}</h1>
+  </header>
+  
+{% endblock %}
+
+
+
+{% block mainContent %}
+
+<p>
+    <img id="image" src="{{event.image}}" title="source: imgur.com">
+</p>
+
+<p>
+   Hope you have a good time at {{event.title}}! 
+</p>
+
+<p>   
+   <span id="location">{{event.location}}</span> 
+</p>
+
+<p>
+   <span id="date"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
+</p>
+
+<p>
+    <ul>
+        <li><span id="attendees">{{event.attending}}</span></li>
+    </ul>
+</p>
+
+{% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+{% endif %}
+  
+<p>
+  	<form id="email" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" name="email">
+          <input type="Submit" id="Submit">
+    </form>
+</p>
+
+{% endblock %}
+
+
+  
+{% block footer %}
+  <footer>
+    <a href="/">Homepage</a>.
+    <a href="/about">About us</a>.
+  </footer>
+{% endblock %}
