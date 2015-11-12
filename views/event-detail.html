@@ -11,8 +11,16 @@
 {{ event.attending }}
 </div>
 </ul>
-
-<form action="{{ '/events/' + event.id + '/rsvp'}}" method="POST" id="email">
+{% if errors%}
+<div>
+<ul class="form-errors">
+  {% for error in errors %}
+    <li> {{ error }} </li>
+  {% endfor%}
+</ul>
+</div>
+{% endif %}
+<form action="{{ '/events/' + event.id + '/rsvp'}}" method="POST" id="email" placeholder="Enter your email here!">
   <label for="email">RSVP to this event:</label>
   <input type="email" name="email">
   <input type="submit" value="Submit">
