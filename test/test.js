@@ -254,7 +254,8 @@ describe('The event detail pages',function(){
     });
   });
 
-  it('should reject RSVPs not from Yale addresses', function(done){
+
+  it('should reject RSVPs from non-Yale addresses', function(done){
     var browser = new Browser();
     var email = 'foobar@harvard.edu';
 
@@ -301,6 +302,54 @@ describe('The new event creation page',function(){
       // Test for form fields
       assert.ok(this.browser.query('[name="' + requiredFields[i] + '"]'), 'Should have form name for ' + requiredFields[i] + ' at ' + this.browser.location.pathname);
     }
+  });
+
+  it('should use select inputs for year, month, day, hour and minute form elements.', function () {
+    var requiredFields = ['year', 'month', 'day', 'hour', 'minute'];
+    for (var i = 0; i < requiredFields.length; i++) {
+      assert.ok(this.browser.query('select[name="' + requiredFields[i] + '"]'), 'Should have select input for ' + requiredFields[i] + ' at ' + this.browser.location.pathname);
+    }
+  });
+
+  it('should have the appropriate options for select elements', function () {
+      var requiredFieldValues = {
+        'year' : [2015, 2016],
+        'month' : _.range(12),
+        'hour' : _.range(24),
+        'minute' : [0, 30]
+      };
+
+      _.forOwn(requiredFieldValues, function (expectedOptionValues, fieldName) {
+          var select = this.browser.query('select[name="' + fieldName + '"]');
+          assert.ok(select, 'Should have select input for ' + fieldName);
+          assert.deepEqual(
+            _.map(select.getElementsByTagName('option'),
+                  function (el) { return el.getAttribute('value'); }),
+            _.map(expectedOptionValues, function (v) { return v.toString(); }),
+          'Should have options ' + expectedOptionValues.join(', ') + ' for select input with name ' + fieldName);
+      }, this);
+
+      var months = this.browser.query('select[name="month"]');
+      var names = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ];
+
+      _.forEach(_.zip(months.getElementsByTagName('option'), names, _.range(12)), _.spread(function (child, text, value) {
+          assert.equal(child.getAttribute('value').toString(), value.toString(),
+            'Month option value is not as expected. ' + child.getAttribute('value').toString() + ' != ' + value.toString());
+          assert.equal(child.text, text, 'Month options are not as expected. ' + child.text + ' != ' + text);
+      }), this);
   });
 
   after(function(done){
