@@ -6,7 +6,7 @@
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -14,21 +14,26 @@
     </div>
   {% endif %}
 
-<h1> {{event.title}} </h1>
-<img src="{{event.image}}" >
+<h1 id="title"> {{event.title}} </h1>
+<img id="image" src="{{event.image}}" >
 
 <dl class="dl-horizontal">
   <dt>Location: </dt>
-  <dd>{{ event.location }}</dd>
+  <dd><span id="location">{{ event.location }}</span></dd>
   <dt>Date: </dt>
-  <dd><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></dd>
+  <dd><span id="date"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span></dd>
    <dt>Attending: </dt>
-  <dd>{{event.attending.length}} attending so far.</dd>
+  <dd>
+    <div>
+      {% include "fragments/attendees-list.html" %}
+    </div>
+    {{event.attending.length}} attending so far.
+  </dd>
 </dl>
 
 <form id="RSVP" method="POST">
     <label for="email">Input your Yale email to RSVP:</label>
-    <input type="email" name="email" id="email">
+    <input type="text" name="email" id="email">
   
   <button type=submit>Submit</button>
 {% endblock %}
