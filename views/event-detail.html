@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <div class="home">
+    <h1 style="color:black">{{event.title}}</h1>
+    <h3 style="color:black">{{event.date}}</h3>
+    <h3 style="color:black">{{event.location}}</h3>
+    <img src="{{event.image}}" style="width:500px"></img>
+    <p style="color:black">The cool peeps coming are: {{event.attending}}</p>
+  <div>
+  </div>
+  </div>
+{% endblock %}
