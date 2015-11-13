@@ -19,3 +19,20 @@ ul#topofpage li{
    display: inline;
    padding: 0px 10px 0px 10px;
 }
+/*styling using about_image class */
+.about_image img{
+    float:left;
+    height:200px;
+    margin: 10px 0px 0px 0px;
+    border: 7px solid grey;
+    border-radius: 20px;
+}
+
+.about_image {
+    display:block;
+    margin:0 0 100px 0;
+}
+
+.about_description {
+    padding:20px 0 0 0;
+}
