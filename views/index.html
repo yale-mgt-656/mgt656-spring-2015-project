@@ -4,33 +4,27 @@
 {% block header %}
   <header>
     <h1>
-       <p style="color:#FF8000;font-size:40px;font-weight:bold;text-align:center;">Sababa FTW</p>
-     <div style="text-align: center"> <img src="http://i64.tinypic.com/r8ht29.jpg" id="logo" height="200" width="200"  style="align:middle" />
+       <p style="color:#FF8000;font-size:45px;font-weight:bold;text-align:center;">Sababa FTW</p>
+     <div style="text-align: center"> <img src="http://i64.tinypic.com/r8ht29.jpg" id="logo" height="150" width="150"  style="align:middle" />
        </h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
-<body bgcolor="white">
-  <p style="color:#FF8000;font-size:25px;font-weight:bold;text-align:center">Welcome to Sababa!</p>
-    <p style=”color:#000;font-size:25px;font-weight:normal;text-align:center;”>
-     Your one stop shop for the best events on the Yale Campus!
-  </p>
-  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:center;”>
-    Check out the <a href="/about">About us</a> page to learn more about our team!
-    
-    <br>
+ <br>
+ <br>
+ <body bgcolor="white">
+  <p style="color:#FF8000;font-size:25px;font-weight:bold;text-align:left">Welcome to Sababa!</p>
+  <p style=”color:#000;font-size:18px;font-weight:normal;text-align:left;”>  Your one stop shop for the best events on the Yale Campus! </p>
+  <p style="color:#000;font-size:18px;font-weight:normal;text-align:left;"> Check out the <a href="/about">About us</a> page to learn more about our team!
     You can also visit our <a href="/events">Events</a> page to learn about what's happening next!
-    <br>
     Some of the things we are working on are: 
-   <br> 
-
+   <br>
 {% include "fragments/events-list.html" %}
-
   <br>
   </p>
-  <p style=”color:#000;font-size:20px;font-weight:normal;text-align:center;”>
-   Feeling inspired? You can also <a id="new" href="/events/new">create a new event simply click here!</a>
+  <p style=”color:#000;font-size:18px;font-weight:normal;text-align:left;”>
+   Feeling inspired? You can also create a new event. Simply<a id="new" href="/events/new"> click here!</a>
   </p>
 </body>
 {% endblock %}
