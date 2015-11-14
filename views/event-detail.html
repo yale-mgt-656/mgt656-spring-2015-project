@@ -8,9 +8,18 @@
 <p>Location: <span>{{event.location}}</span></p>
 <p>Date and Time: <span>{{event.date}}</span></p>
 <p>Attendees: <ul>{{event.attending}}</ul></p>
+RSVP through your Yale e-mail:<br>
+{% if errors %}
+<div>
+    <ul class="form-errors">
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
 <form id="email" method="post">
- RSVP to this event by submitting your e-mail:<br>
-  <input type="email" name="email">
+   <input type="email" name="email" required>
   <br><br>
   <input type="submit" value="Submit">
 </form>
