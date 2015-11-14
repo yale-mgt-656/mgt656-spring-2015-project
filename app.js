@@ -23,8 +23,8 @@ app.get('/about', aboutControllers.about);
 app.get('/sprint-report4', sprintControllers.sprintreport);//change this
 app.get('/events', eventControllers.listEvents);
 app.get('/events', eventControllers.listEvents);
-app.get('/events/new', eventControllers.newEvent);
-app.get('/events/:id', eventControllers.eventDetail);
+app.post('/events/new', eventControllers.newEvent);
+app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
 app.get('/api/events', eventControllers.api);
 app.post('/events/:id([0-9]+)', eventControllers.rsvp);
 module.exports = app;
