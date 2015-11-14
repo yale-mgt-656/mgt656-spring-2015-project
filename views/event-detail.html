@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-<h1>{{event.title}}</h1> 
+<h1 id="title">{{event.title}}</h1> 
 <p>
-    <img src={{event.image}}>
+    <img id="image" src={{event.image}}>
     </p>
-<p>Location: <span>{{event.location}}</span></p>
-<p>Date and Time: <span>{{event.date}}</span></p>
-<p>Attendees: <ul>{{event.attending}}</ul></p>
+<p>Date and Time: <span id="date">{{event.date}}</span></p>
+<p>Location: <span id="location">{{event.location}}</span></p>
+<p>Attendees:</p>
+<ul id="attendees">
+    {% for person in event.attending %}
+    <li>{{person}}</li>
+    {% endfor %}
 RSVP through your Yale e-mail:<br>
 {% if errors %}
 <div>
@@ -16,11 +20,12 @@ RSVP through your Yale e-mail:<br>
         <li>{{error}}</li>
         {% endfor %}
     </ul>
-    </div>
+</div>
 {% endif %}
-<form id="email" method="post">
-   <input type="email" name="email" required>
+<form  method="post">
+   <input id="email" type="email" name="email" required>
   <br><br>
   <input type="submit" value="Submit">
-</form>
+</input>
 {% endblock %}
+
