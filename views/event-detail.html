@@ -8,4 +8,10 @@
 <p>Location: <span>{{event.location}}</span></p>
 <p>Date and Time: <span>{{event.date}}</span></p>
 <p>Attendees: <ul>{{event.attending}}</ul></p>
+<form id="email" method="post">
+ RSVP to this event by submitting your e-mail:<br>
+  <input type="email" name="email">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
 {% endblock %}
