@@ -2,4 +2,22 @@
 
 {% block mainContent %}
   <p>This is the about us page</p>
+  <ul>
+      <li>
+          <span id="funny-squirrel-name">Alex Kogan</span>
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/9a/bf/1f/9abf1facfab751ac84780e4a4aef04a2.jpg" id="funny-squirrel-headshot"></img>
+      </li>
+      <li>
+          <span id="strange-alpaca-name">Kevin Elliott</span>
+          <img src="https://www.openherd.com/userPhotos/Large/2014_635357076595910932.jpg" id="strange-alpaca-headshot"></img>
+      </li>
+      <li>
+          <span id="inquisitive-alligator-name">Trent Tolley</span>
+           <img src="http://watermarked.cutcaster.com/cutcaster-photo-100464725-Nerdy-Alligator.jpg" id="inquisitive-alligator-headshot"></img>
+      </li>
+  </ul>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
 {% endblock %}
+g

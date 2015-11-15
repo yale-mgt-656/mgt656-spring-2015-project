@@ -13,10 +13,97 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST">
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
+  <h3> Event Details </h3>
+	<form class="form-horizontal"  id="create-event" method="POST">
+	  <div class="form-group">
+      <label for="title" class="col-sm-2 control-label">Event title:</label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" {{event_details.title[0]}}="{{event_details.title[1]}}">
+      </div>
+    </div>
+	  <div class="form-group">
+      <label for="location" class="col-sm-2 control-label">Event location:</label>
+      <div class="col-sm-10">
+        <input type="text" name="location" class="form-control" {{event_details.location[0]}}="{{event_details.location[1]}}">
+      </div>
+    </div>
+	  <div class="form-group">
+      <label for="image" class="col-sm-2 control-label">Event image:</label>
+      <div class="col-sm-10">
+        <input type="text" name="image" class="form-control" {{event_details.image[0]}}="{{event_details.image[1]}}">
+      </div>
+    </div>
+    <h3> Date & Time </h3>
+	  <div class="form-group">
+      <label for="year" class="col-sm-2 control-label">Event year:</label>
+      <div class="col-sm-10">
+        <select name="year" class="form-control" form="create-event">
+          {% for year in allowedDateInfo.years %}
+            {% if year == event_details.year %}
+              <option value="{{year}}" selected>{{year}}</option>
+            {% else %}
+              <option value="{{year}}">{{year}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>  
+	  <div class="form-group">
+      <label for="month" class="col-sm-2 control-label">Event month:</label>
+      <div class="col-sm-10">
+        <select name="month" class="form-control" form="create-event">
+          {% for month in allowedDateInfo.monthsArray %}
+            {% if month == event_details.month %}
+              <option value="{{month}}" selected>{{allowedDateInfo.months[month]}}</option>
+            {% else %}
+              <option value="{{month}}">{{allowedDateInfo.months[month]}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>      
+	  <div class="form-group">
+      <label for="day" class="col-sm-2 control-label">Event day:</label>
+      <div class="col-sm-10">
+        <select name="day" class="form-control" form="create-event">
+          {% for day in allowedDateInfo.days %}
+            {% if day == event_details.day %}
+              <option value="{{day}}" selected>{{day}}</option>
+            {% else %}
+              <option value="{{day}}">{{day}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+	  <div class="form-group">
+      <label for="hour" class="col-sm-2 control-label">Event hour:</label>
+      <div class="col-sm-10">
+        <select name="hour" class="form-control" form="create-event">
+          {% for hour in allowedDateInfo.hours %}
+            {% if hour == event_details.hour %}
+              <option value="{{hour}}" selected>{{hour}}</option>
+            {% else %}
+              <option value="{{hour}}">{{hour}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+	  <div class="form-group">
+      <label for="minute" class="col-sm-2 control-label">Event minute:</label>
+      <div class="col-sm-10">
+        <select name="minute" class="form-control" form="create-event">
+          {% for minute in allowedDateInfo.minutes %}
+            {% if minute == event_details.minute %}
+              <option value="{{minute}}" selected>{{minute}}</option>
+            {% else %}
+              <option value="{{minute}}">{{minute}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <input id="submit" type="submit" class="btn btn-primary">
   </form>
 {% endblock %}
-
-
