@@ -1,9 +1,9 @@
 
 <ul>
   {% for event in events %}
-    <li class="eventstyle" id="event-{{event.id}}" style="background-color: rgba(0,0,0,0.6);">
-      <img class="eventimage" src= {{event.image}}>
-      <a href="/event/{{event.id}}">{{event.title}}</a>
+    <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
+      <img class="eventimage" src="{{event.image}}">
+      <a href="/events/{{event.id}}">{{event.title}}</a>
         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       <br>
          {{event.attending.length}} attending so far.
