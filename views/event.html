@@ -1,6 +1,19 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+<head>
+<style>
+    body {
+            text-align: center;
+            background-image: url("/images/home.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+</style>
+</head>
+
   <div class="home">
   <div class="homecontainer">
     {% include "fragments/events-list.html" %}

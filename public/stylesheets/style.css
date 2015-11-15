@@ -92,3 +92,18 @@ body {
 .newevent{
     color: white;
 }
+
+/* Event detail page formatting */
+#attendees li {
+    color:black;
+}
+
+.eventlist {
+color:black;
+text-align:left;
+}
+
+#title {
+    font-size:30px;
+}
+
