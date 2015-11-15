@@ -1,25 +1,16 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-<<<<<<< HEAD
-<p> Title: {{event.title}} </p>
-<p> Attendees: {{ event.attending }}</p>
+<h1 id= "title" >{{event.title}} </h1>
+<br>
 <img src=  {{event.image}} />
+<br>
+<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "location"> Where: {{event.location}}  </span>
+<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "date"> When: {{event.date}} </span>
+<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
 
 <form method="POST">
     <input type="text" name="email" id="email" placeholder="Your Email" />
     <input type="Submit" value="Submit" />
 </form>
 {% endblock %}
-=======
-<h1  id="title">{{event.title}}</h1>
-<img src=  {{event.image}} id= "image" />
-<br> 
-  <br>
- <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "location"> Where: {{event.location}}  </span>
-<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "date"> When: {{event.date}} </span>
-<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
-{% endblock %}
-
-
->>>>>>> 6a4851f5f81d9414d561f1f2ccae501eb9095ec2
