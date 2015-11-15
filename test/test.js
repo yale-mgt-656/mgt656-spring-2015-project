@@ -313,7 +313,7 @@ describe('The new event creation page',function(){
   it('should have the appropriate options for select elements', function () {
       var requiredFieldValues = {
         'year' : [2015, 2016],
-        'month' : _.range(12),
+        'month' : _.range(1, 13),
         'hour' : _.range(24),
         'minute' : [0, 30]
       };
@@ -344,7 +344,7 @@ describe('The new event creation page',function(){
         'December'
       ];
 
-      _.forEach(_.zip(months.getElementsByTagName('option'), names, _.range(12)), _.spread(function (child, text, value) {
+      _.forEach(_.zip(months.getElementsByTagName('option'), names, _.range(1, 13)), _.spread(function (child, text, value) {
           assert.equal(child.getAttribute('value').toString(), value.toString(),
             'Month option value is not as expected. ' + child.getAttribute('value').toString() + ' != ' + value.toString());
           assert.equal(child.text, text, 'Month options are not as expected. ' + child.text + ' != ' + text);
