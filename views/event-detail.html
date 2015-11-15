@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-<p> {{event.title}} </p>
+<p> Title: {{event.title}} </p>
+<p> Attendees: {{ event.attending }}</p>
 <img src=  {{event.image}} />
+
+<form method="POST">
+    <input type="text" name="email" id="email" placeholder="Your Email" />
+    <input type="Submit" value="Submit" />
+</form>
 {% endblock %}
