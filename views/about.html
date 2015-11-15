@@ -1,21 +1,12 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-
-<head>
-
-  <link href="/bootstrap.css" rel="stylesheet">
-  <title>About Us</title>
-  
   <style>
-  {  
-  
-    body
+  body
      {
       text-align: left;
-      background: url("https://pixabay.com/get/e95aa25a3efa072c7407/1446920831/sky-232000_1920.jpg?direct");
+      background: url("http://jenruhman.com/freshjen/ninjas.jpg");
       background-size: cover;
-      color: black;
+      color: #fff;
       font-family: arial;
       font-size: 18;
      }
@@ -24,48 +15,45 @@
      {
       display: inline;
      }
-     
-  }
   </style>
-  
-</head>
 
 <body>
-
+{% block header %}  
   <header>
-    <img src="https://pixabay.com/get/e95aa25a3efa072c7407/1446920831/sky-232000_1920.jpg?direct" width="700" height="150">
     <h1>About Us</h1>
     <ul>
-      <li><a href="#">RSVP</a></li>
-      <li><a href="#">New Event</a></li>
-      <li><a href="#">Browse Events</a></li>
+      <li><a href="/events/new">New Event</a></li>
+      <li><a href="/events">Browse Events</a></li>
     </ul>
   </header>
-
+{% endblock %}
+{% block mainContent %}
   <h2>Story</h2>
   <p>Hi! We are Fragrant Sierra - code ninjas [hence - 'fragrant-ninja'!] who offer you the world's best event organizing app!</p>
   <h2>People</h2>
   <p>
   <ul>
-     <div> 
-     <li> Shaun </li> 
-     <p> <img src="https://pixabay.com/get/fb163c16a9f6f8deb3d5/1446889335/ninja-149435_1280.png?direct" width="90" height="120" padding:25 class="img-rounded"> </p>
+     <div>
+     <span id="shaun-name">Shaun </span> 
+     <span id="shaun-headshot"> <img id="shaun-headshot" src="https://bjjafter40blog.files.wordpress.com/2014/09/9izem9e4t.jpeg" width="90" height="120" class="img-rounded">
+     </span>
      </div>
      <div> 
-     <li> Matthew </li>
-     <p> <img src="https://pixabay.com/get/e3e51fb5303d761708dc/1446918658/ninja-149287_1280.png?direct" width="120" height="120" padding:25 class="img-rounded"> </p>
+     <span id="matt-name">Matthew </span>
+     <span id="matt-headshot"> <img id="matt-headshot" src="http://1.viki.io/d/1863c/8b75dc48c9.gif" width="120" height="120" class="img-rounded">
+     </span>
      </div>
      <div> 
-     <li> Lily </li>
-     <p> <img src="https://pixabay.com/get/da0c8971aec628475c47/1446918728/ninja-1015494_1920.jpg?direct" width="120" height="120" padding:25 class="img-rounded"> </p>
+     <span id="lily-name">Lily </span>
+     <span id="lily-headshot"> <img id="lily-headshot" src="https://raw.githubusercontent.com/reviewninja/review.ninja/master/src/client/assets/images/review-ninja-250.png" width="120" height="120" class="img-rounded"> </span>
      </div>
      <div> 
-     <li> Arjit </li>
-     <p> <img src="https://pixabay.com/get/00d2c32fecd73e894d72/1446918786/warrior-149098_1280.png?direct" width="120" height="90" padding:25 class="img-rounded"> </p>
-     </div>
+     <span id="arjit-name">Arjit </span>
+     <span id="arjit-headshot"> <img id="arjit-headshot" src="http://www.another71.com/wp-content/uploads/2014/04/MCQ_NINJA.png" width="120" height="90" class="img-rounded">
+    </span>
+    </div>
   </ul>
   </p>
 
 </body>
-
-</html>
+{% endblock %}
