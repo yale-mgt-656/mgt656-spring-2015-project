@@ -94,7 +94,8 @@ if(request.body.image.match(/\.(png|gif)$/) === null) {
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
     response.redirect('/events');
