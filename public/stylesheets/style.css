@@ -13,12 +13,10 @@ a {
 }
 
 footer a {
-  
   padding: 10px;
   color: white;
   box-sizing: border-box;
   float: inherit;
-  
 }
 
 .item {
@@ -107,3 +105,6 @@ text-align:left;
     font-size:30px;
 }
 
+.eventimage{
+    width:170px;
+}
