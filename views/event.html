@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+  <h1> Upcomming Events</h1>
+  
   <div>
     {% include "fragments/events-list.html" %}
   </div>
   <div>
-    <a href="/events/new">Create a new event</a>
+    <p syle ="smallp"> Feeling creative? Simple <a href="/events/new">click here</a> to create a new event</p>
   </div>
 
 {% endblock %}
