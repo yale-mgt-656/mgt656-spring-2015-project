@@ -71,7 +71,7 @@ if (validator.isLength(request.body.title, 5, 50) === false) {
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attendees: []
     };
     events.all.push(newEvent);
     response.redirect('/events/' + newEvent.id);
@@ -95,7 +95,7 @@ function rsvp (request, response){
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
+    ev.attendees.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};

@@ -13,7 +13,7 @@ var allEvents = [
     date:   new Date(2016, 0, 17, 16, 30, 0),
     image: 'http://i.imgur.com/pXjrQ.gif',
     location: 'Kyle \'s house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    attendees: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ var allEvents = [
     date:   new Date(2015, 12, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Miles\' house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    attendees: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ var allEvents = [
     date:   new Date(2015, 11, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
-    attending: ['kim.kardashian@yale.edu'],
+    attendees: ['kim.kardashian@yale.edu'],
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ var allEvents = [
     date:   new Date(2014, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
-    attending: ['homer.simpson@yale.edu'],
+    attendees: ['homer.simpson@yale.edu'],
   }
 ];
 
