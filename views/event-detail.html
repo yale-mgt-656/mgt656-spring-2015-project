@@ -2,14 +2,51 @@
 
  
  {% block mainContent %}
+<<<<<<< HEAD
       <h1>{{ event.title }}</h1>
       <p1> <span>{{ event.date}}</span></p1>
       <br></br>
       <p2><span>{{ event.location }}</span></p2>
       <p3><ul>{{ event.attending }}</ul></p3>
+=======
+      <h1 id="title"> {{event.title}}</h1>
+      <p>When: <span id="date">{{event.date}}</span></p>
+
+      <p>Where: <span id="location">{{ event.location }}</span></p>
+      
+      <p3> Who:</p3>
+      <ul id="attendees">
+         {% for person in event.attending %}
+          <li>{{person}}</li>
+         {% endfor %}
+      </ul>
+      <p> Please come! </p>
+      
+      {% if errors %}
+      <div>
+        <ul class="form-errors">
+           {% for error in errors %}
+              <li>{{error}}</li>
+           {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      
+      <form method="POST">
+        <input type="text" name="email" id="email" placeholder="Your email"/>
+        <input type="Submit" value="Submit"/>
+      </form>
+>>>>>>> 5e078761c7fb6a151a50d4c8b6f89747c4ce2ead
       <br></br>
-      <img src='{{event.image}}' align="middle">
+      <img src='{{event.image}}' id="image"> </event><align="middle">
+ 
  {% endblock %}
  
+<<<<<<< HEAD
  {% block footer %}
  {% endblock %}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a98c7ac5ff52a0aa6173c8e83edc564677647922
+>>>>>>> 5e078761c7fb6a151a50d4c8b6f89747c4ce2ead
