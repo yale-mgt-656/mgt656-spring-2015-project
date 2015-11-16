@@ -23,6 +23,115 @@
 <p>Half Mountain specializes in helping social, fun-loving Yalies organize once-in-a-lifetime experiences, like hosting a fancy dinner party halfway up a mountain. Users can browse upcoming events, RSVP using their Yale e-mail addresses, and create new events to display on the website. We hope you will consider Half Mountain your go-to events website!</p>
 <br>
 
+<hr>
+
+<h2> Spring Report 4 </h2>
+<p> November 16, 2015 </p>
+
+<h2>Who Brings What</h2>
+
+<p>The Half Mountain team has rebranded to Who Bring What-- an application that not only helps Yalies create and RSVP to events, but also includes a “potluck” function to decide who brings what, seamlessly. This added function is crucial to event coordination for the organizers and those attending the event so that everyone will have the best event experience possible. </p>
+
+<h2>Burn-Up Chart</h2>
+<p>The below burn-up chart can also be found at the following link: https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics/throughput</p>
+<center><img src='/images/Images for Reports/sprintreport4.png' style="width: 800px"></center>
+
+
+<h2>Completed Stories in Sprint 4</h2>
+
+<ol>
+<li>Brand: Rebrand to an events page around potlucks</li>
+<li>Design: Wireframe and design for home page </li>
+<li>Design: Wireframe and design for create events page</li>
+<li>RSVP: should reject RSVPs from non-Yale addresses</li>
+<li>New: should redirect the user to the event detail page if the form is valid</li>
+<li>New: should display errors to the user when the title is empty</li>
+<li>New: should display errors to the user when the title is too long</li>
+<li>New: event form should display errors to the user when the hour is not an integer</li>
+<li>New: should display errors to the user when the location is empty</li>
+<li>New: should display errors to the user when the location is too long</li>
+<li>New: event form should display errors to the user when the day is less than 1</li>
+<li>New: event form should display errors to the user when the day is more than 31</li>
+<li>New: should display errors to the user when the image is not a URL</li>
+<li>New: event form should display errors to the user when the day is not an integer</li>
+<li>New: should display errors to the user when the image is not a gif or png</li>
+<li>New: event form should display errors to the user when the month is less than 0</li>
+<li>New: should display errors to the user when the hour is less than 0</li>
+<li>New: event form should display errors to the user when the month is more than 11</li>
+<li>New: event form should display errors to the user when the month is not an integer</li>
+<li>New: event form should display errors to the user when the year is less than 2015</li>
+<li>New: event form should display errors to the user when the year is more than 2016</li>
+<li>New: should display errors to the user when the hour is more than 23</li>
+<li>New: event form should display errors to the user when the year is not an integer</li>
+<li>New: event creation page should have appropriate form fields and labels</li>
+</ol>
+
+<h2>Accomplishments, Challenges, and Roadblocks</h2>
+
+<p><b>The Sprint Process</b></p>
+
+<p>We had our first discussion in class to determine which of the stories we wanted to move forward with. While we were having this discussion, one of our members brought up the idea to brand our events page to something more interesting than generic events. (This is why our Half Mountain description is different this week.) This idea gained momentum as other members agreed that this would differentiate our app from other teams and provide inspiration for a unique design. We finally settled on an idea in a sprint planning meeting later that week. </p>
+
+<p>We continued with the agile methodology that has worked best for us: using Slack on a daily basis and meeting in-person a few times during the week. Slack, this week, was a useful platform for quickly sharing prototypes for design ideas, keeping each other updated and accountable, alerting others of emergency problems in the codebase, and recognizing the success of each member’s work. Even though these daily interactions are small, they were powerful this week in keeping everyone motivated and focused on their tasks, especially because we were tackling passing all of the tests and the rebrand. During the two in-person meetings, we met to code together, create new tasks for the potluck function, and had higher level discussions on the vision for our project. </p>
+
+<p>Below is a snapshot of our conversations on Slack. </p>
+
+<p>
+   <center><img id="slack-1" img src= "https://imgur.com/tNJfoSd.jpg" style="width: 300px"></center>
+   <br>
+   <center><i>Jessica bounces design ideas off of the team</i></center>
+   <center><img id="slack-2" img src= "https://imgur.com/ajbQj2c.jpg" style="width: 300px"></center>
+   <br>
+   <center><i>April quickly addresses our Heroku problem and fixes it</i></center>
+
+<p><b>Accomplishments</b></p>
+
+<p>As seen in the burnup chart, our team had an extremely productive week, both in terms of creating a strategic vision and finishing up all of the coding work to pass our tests. We accomplished DOUBLE the stories we had accomplished last week and came up with an innovative idea from collective discussions. Go team!</p>
+
+<p>In particular, we were successful in the “new events” page. This page was too large in scope to allocate to one team member alone,  yet we wanted to complete this page and have it pass all its associated tests within this sprint period. As a result, we allocated different issues within the "New Events" page to three team members during our in-person sprint planning meeting and group coding session on Thursday. One team member worked on creating the new event page with form elements and pushed his code to our Github repository as a branch. Another team member then pulled that branch into her local Cloud9 environment and added code to display errors to the user when incorrect date, time, and location elements were given. She pushed this updated branch to Github, where yet another team member pulled the branch and finished the coding to display errors to the user when an incorrect image format was given, and to redirect the user to the event detail page if no errors were found. We were able to effectively divide up these small tasks within a larger user story through in-person communication, scheduling a meeting to code together in one room, and clearly assigning tasks and moving issues when they were in progress or completed on our Waffle board. In short, we decided to do much more than we expected to give more time to the design and overall UX of our new brand.  </p>
+
+<p>Also, we were successful in collectively deciding to rebrand Half Mountain to an events app that facilitates potlucks. We wrestled with whether this rebrand was necessary, but it was evident from our initial Half Mountain designs and discussions that we felt disconnected from the name and the nature of the app. We ultimately chose to rebrand, because while it was not “necessary”, the lack of cohesiveness and originality from the provided idea lowered team morale. So, as a group, we brainstormed several different ideas from a protest app to a special events app, but when we began discussing the prevalent confusion in documenting “who brings what” at events, we knew this was the idea we wanted to go with. We wanted a beautiful design that would make assigning items to bring an easy process for both the organizer and the user. Once this was settled, our team was energized by this new idea which led to one member completing two rough wireframes for the site in one night (using a Balsamiq team account to edit and collaborate) and another member promptly designing higher-level mockups to eventually code. One member ran an impromptu UX test by having a lay person go through the mockup, determining what were actionable items and polished the design accordingly. In this way, we worked as a team, and came up with a better product in a faster process as a result. </p>
+
+<p> The wireframes and new designs are below.</p>
+<img id="wireframe-1" img src= "https://i.imgur.com/mqGdhMb.jpg" style="width: 300px"> 
+<img id="landing-page" img src= "https://imgur.com/XaCWjbB.jpg" style="width: 300px">
+<img id="wireframe-2" img src="https://imgur.com/FT2IPbo.jpg" style="width: 300px">
+<img id ="create-events-page" img src="https://imgur.com/8cEJgJG.jpg" style="width: 300px"> 
+<br>
+<br>
+<p> The new landing page is below. </p>
+<img id ="new-landing-page" img src ="https://imgur.com/Wv8V8yM.jpg" style="width: 300px"> 
+<br>
+<br>
+<p><b>Roadblocks</b></p>
+
+<p>We didn’t have too many roadblocks this week. One big technical issue was when our Heroku app crashed over the weekend. Slack was very useful in this case because all of the team members stepped in to try to resolve the issue. We tried to figure out who pushed to master last and all checked to see if the app also did not run locally (which it did). In the end, one of the team members who had worked on getting many of the tests to pass realized the error and it was resolved quickly, in part, to the fast communication of the team. Another roadblock was when we were deciding to rebrand, one of our team members was not present for the actual meeting, and we had to coordinate differently to make sure her opinions were included since it was such a large scale decision that needed everyone’s input. Another problem was when the person assigned to the wireframes could not finish the task early enough in the week. Because the designs could not be made without the wireframes, someone else stepped in to quickly do the work so that our team could move forward without waiting for one person. </p>
+
+<h2>Product Backlog (in the order they will be completed)</h2>
+
+<ol>
+<li>New Project: Creating and assigning new tasks for the traffic inflow in our sprint meeting this week</li>
+<li>404 Page: For nonexisting event should contain event information and a return to home</li>
+<li>Design: Wireframe and design for About page</li>
+<li>Design: Wireframe and design for Events listing page </li>
+<li>Design: Code Landing page</li>
+<li>Design: Code Create events page</li>
+<li>Create Events: Code the “assign things to bring” function</li>
+<li>Events Listing: Code the “claim things to bring”</li>
+<li>Design: Code About page </li>
+<li>Design: Code Events listing page </li>
+</ol>
+
+<h2>Progress Expected by Next Sprint</h2>
+
+<ol>
+<li>New Project: Creating and assigning new tasks for the traffic inflow in our sprint meeting this week</li>
+<li>404 Page: For nonexisting event should contain event information and a return to home </li>
+<li>Design: Wireframe and design for About page</li>
+<li>Design: Wireframe and design for Events listing page </li>
+<li>Design: Code Landing page</li>
+<li>Design: Code Create events page</li>
+</ol>
 
 <hr>
 
