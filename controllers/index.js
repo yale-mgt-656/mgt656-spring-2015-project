@@ -5,8 +5,8 @@ var events = require('../models/events');
  */
 function index (request, response) {
   var contextData = {
-    'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).',
+    'title': 'SOM class of 2016 & 2017',
+    'tagline': 'Lets get ready to party.',
     'events': events.all
   };
   response.render('index.html', contextData);
