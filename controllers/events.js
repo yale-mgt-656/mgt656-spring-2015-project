@@ -34,22 +34,25 @@ var allowedDateInfo = {
  * Controller that renders a list of events in HTML.
  */
 function listEvents(request, response) {
-  var currentTime = new Date();
+  var now = new Date();
   var contextData = {
-    'events': events.all,
-    'time': currentTime
+    'title': 'RSVPd',
+    'events': []
+   
+   /** 'time': currentTime */
   };
+  for(var i=0; i < events.all.length; i++){
+    var event = events.all[i];
+    
+    if(event.date > now){
+      contextData.events.push(event);
+    }
+  }
+  /**var currentTime = new Date(); */
   response.render('event.html', contextData);
 }
 
-function listEventsonHome(request, response) {
-  var currentTime = new Date();
-  var contextData = {
-    'events': events.all,
-    'time': currentTime
-  };
-  response.render('index.html', contextData);
-}
+
 
 /**
  * Controller that renders a page for creating new events.
@@ -139,7 +142,7 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") != -1 ){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
