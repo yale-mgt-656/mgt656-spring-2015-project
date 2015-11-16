@@ -5,9 +5,9 @@
     <div class = "row">
       <div class="col-md-12">
         <h1>
-          <span>{{ title }}</span>
+          <span><u><center>{{ title }}</center></u></span>
         </h1>
-        <h4>
+        <h4 class="text-center">
           <span>Welcome to {{ title }}'s event booking website. Your only choice for celestial aquatic event bookings. {{tagline}}</span>
         </h4>
       </div>
@@ -16,16 +16,18 @@
 {% endblock %}
 
 {% block mainContent %}
-  <img id="logo" src="http://anabolicminds.com/forum/attachments/92286d1384802814-using-drugs-treat-terratantra_cosmic_tree.png"></img>
-  <p>Check out our list of events</p>
+  <center><img id="logo" src="http://anabolicminds.com/forum/attachments/92286d1384802814-using-drugs-treat-terratantra_cosmic_tree.png"></img></center>
+  <p><b><u>Check out our list of events</u></b></p>
    <div style="border: 1px solid black">
     {% include "fragments/events-list.html" %}
   </div>
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
+    <div class="row">
+    <div class="col-md-12">
+      <a href="/events/new" role="button" class="btn btn-primary btn-lg">
+      <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Create a new event
+      </a>
+    </div>
+  </div> 
   </p>
 {% endblock %}
