@@ -1,10 +1,10 @@
 html {
-  background: url("https://farm6.staticflickr.com/5640/21759511704_c7d8454d3d_o_d.jpg") no-repeat center center fixed;
+  background: url("https://s-media-cache-ak0.pinimg.com/originals/1d/f7/81/1df78147c4a8f5f19867a1a0cd0ea3c1.gif") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 800px;
+  height: 600px;
 }
 
 header {
@@ -12,19 +12,18 @@ header {
   top: 0px;
   left: 0px;
   padding: 10px;
+  background-color: rgba(255,255,255,0.50);
 }
 
 body {
-  position: relative;
-  top: 200px;
-  left: 400px;
-  padding: 50px;
-  font: 14px "DIN","Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: center;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.85);
+  font: 12px "DIN","Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .event-list {
   width: 300px;
-  padding: 25px;
   border: 4px solid rgba(150,150,150,0.75);
   border-radius: 10px;
   margin: 25px;
