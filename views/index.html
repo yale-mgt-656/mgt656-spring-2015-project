@@ -4,6 +4,13 @@
   <header>
     <h1>{{ title }} FTW</h1>
   </header>
+    <style>
+    h1 {text-align: center;
+    }
+    p {text-align: center;
+    }
+  </style>
+  
 {% endblock %}
 
 {% block mainContent %}
@@ -11,11 +18,9 @@
     Welcome to {{ title }}. {{tagline}}
   </p>
   <p>Here is our list of events</p>
-    <div style="border: 1px solid black"
-      {% include "fragments/events-list.html" %}
-    </div>
+    
   </p>
-  <img id="logo" src= "http://pclosmag.com/html/Issues/201310/images/page08/TreeSilhouette.png">
+
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
@@ -23,4 +28,13 @@
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+<style> body { 
+  background: url(http://kenmclane.org/images/party_bg.jpg);
+  text-align: center;
+
+
+color: black;
+font-family: helvetica;
+}
+</style>
 {% endblock %}
