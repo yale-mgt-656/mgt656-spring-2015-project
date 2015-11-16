@@ -1,18 +1,22 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <div>
-    {% include "fragments/events-list.html" %}
+  <h3 class="text-center"><u>List of All Events</u></h3>
+<body>
+  <div class ="row">
+    <div class="col-md-12" style="border: 1px solid black">
+      {% include "fragments/events-list.html" %}
+    </div>
   </div>
-  <div>
-    <a href="/events/new">Create a new event</a>
-  </div>
-
+</body>
+<br>
+  <div class="row">
+    <div class="col-md-12">
+      <a href="/events/new" role="button" class="btn btn-primary btn-lg">
+      <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Create a new event
+      </a>
+    </div>
+  </div> 
+  <br>
 {% endblock %}
 
-{% block footer %}
-  <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
-  </footer>
-{% endblock %}
