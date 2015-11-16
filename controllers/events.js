@@ -81,6 +81,16 @@ var year = checkIntRange(request, 'year',2015,2016,contextData);
 var month = checkIntRange(request, 'month',0,11,contextData);
 var day = checkIntRange(request, 'day',1,31,contextData);
 var hour = checkIntRange(request, 'hour',0,23,contextData);
+var minute = checkIntRange(request, 'minute',0,30,contextData);
+
+if(validator.isURL(request.body.image) === false) {
+  contextData.errors. push('Your image should be a URL');
+}
+
+if(request.body.image.match(/\.(png|gif)$/) === null) {
+  contextData.errors. push('Your image should be a .png or .gif');
+
+}
 
 
   if (contextData.errors.length === 0) {
@@ -88,8 +98,9 @@ var hour = checkIntRange(request, 'hour',0,23,contextData);
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
-      attending: []
+      date: new Date(year, month, day, hour, minute, 0),
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
     response.redirect('/events');
