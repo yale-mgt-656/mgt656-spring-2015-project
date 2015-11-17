@@ -47,7 +47,7 @@
     <div class="row" style="text-align: center">
       <h1>MGT 656 Dry Blessing Coding Team</h1>
       <h2>Project Status Report</h2>
-      <h3>November 9, 2015</h3>
+      <h3>November 16, 2015</h3>
 
     </div>
     <div class="row">
@@ -55,48 +55,47 @@
         <br>Link to Waffle IO: <a href="https://waffle.io/dry-blessing/mgt656-spring-2015-project" target="_blank">Dry Blessing issues</a></p>
     </div>
     <div class="row">
-      <b style="text-decoration:underline">Sprint 3 update</b>
+      <b style="text-decoration:underline">Product backlog</b>
       <br>
-      <p>In Sprint 3, we completed the following activities:</p>
+      <p>In Sprint 4, we completed the following activities:</p>
       <ol>
-        <li>Every page has HTML5 header and footer elements</li>
-        <li>Each list element displays pertinent information about the event: title, date, and how many people are RSVPd etc. It should include the default events that come with the project.</li>
-        <li>Every event li element should have an HTML5 time tag that has a datetime attribute equal to the time in ISO 8601 format. The text of the tag should be the datetime in natural language, including the time.</li>
-        <li>Adding a link to /events/new with id="new"</li>
-        <li>The title for each event is a clickable link to the "detail page" for that event, which should be at /events/, where id refers to the id of the event, e.g. /events/0 would take me to the event with id zero.</li>
-        <li>Getting the API at /api/events and retrieve an object with key events containing all events in JSON format.</li>
-        <li>The about page has your names, each in a span tag with id attribute set to your class nickname</li>
-        <li>The home page has some styling (partially completed activity)</li>
+        <li>The events in the home page have links</li>
+        <li>The home page has a list of events</li>
+        <li>The events have an image</li>
+        <li>Events that are over are not shown</li>
+        <li>Event detail pages created</li>
+        <li>RSVPd form on each event detail page created and tested to allow only Yale email addresses</li>
+        <li>Coded form for creating new events</li>
+        <li>Created the functions for validation (they work but the tests is yet to pass)</li>
+        <li>If the form is not valid it will show the errors</li>
+        <li>Added Google Analytics to page</li>
+        
       </ol>
     </div>
     <div class="row" style="margin-top: 25px">
       <b style="text-decoration:underline">Scrum activities</b>
       <br> We did the following scrum activities as a part of this sprint:
-      <br> We had a <b>15 min scrum meeting</b> while in class on Wednesday (11/4) to understand what what everyone has done till now, what they will be doing then onwards and if anyone is facing obstacles. Through this meeting, we were able to resolve impediments
-      such as not knowing how to add new events and styling of elements on the homepage.
+      <br> We had a <b>15 min scrum meeting</b> while in class on Monday (11/9) to understand what what everyone has done till now, what they will be doing then onwards and if anyone is facing obstacles. Through this meeting, we were able to resolve big issue in integrating the validation branch as app was crashing everytime.
       <br> We also did a sprint retrospective and released working code to Heroku.
       <br><br>
-      <b style="text-decoration:underline">Sprint 3 Retrospective</b>
+      <b style="text-decoration:underline">Sprint 4 Retrospective</b>
       <br>
       <br>
       <b><i>What went well during the sprint cycle?</i></b>
       <ol>
-        <li>Everyone finished their user stories and did a wonderful job! The website looks very neat.</li>
-        <li>Team work helped us a lot in focusing our efforts together to solve very tough problems without needing to wait any further for TA help. </li>
-        <li>We finished and successfully ran tests on each additional story we worked on this week.</li>
-        <li>Online resources through Google were very helpful all the way to support us finish our objectives on time.</li>
-        <li>Besides, every team member had a better understanding of the assignment we had to perform, which helped in the planning of our project.</li>
-        <li>We faced a critical error that crashed the server many times whenever Mezyad tried to add a route for the API search function. Shadin put a lot of effort to track the problem and managed to find a solution, which we were missing to add API in
-          the module route as well. </li>
+        <li>We fixed several home and about pages codes so the tests pass because we were focusing more on just coding without testing</li>
+        <li>We worked on branches</li>
+        <li>We managed to finish some tasks in less time than expected such as (deleting old events) and we used this time to meet the unexpected new tasks</li>
+        
       </ol>
     </div>
 
     <div class="row">
       <b><i>What went wrong during the sprint cycle?</i></b>
       <ol>
-        <li>Trying to fix many problems such as the application crashing, losing data when merging contents, and not finding a solution on time caused us to waste more time than we planned.</li>
-        <li>We should have used branches more (we started using some) and that led to merging issues and confusion within the team. We also should have used pull requests as that would make it easier for one person to merge all the code.</li>
-        <li>Also, the style of the home page is not completely done because it was harder than expected plus the merging conflicts.</li>
+        <li>We spent more time on making the tests pass than on coding new things</li>
+        <li>We are having trouble and feeling desperate because some functions are working but still the test doesn’t pass and we don’t know why </li>
+        <li>The new tasks added in the middle of our workload created a disruption to the plans we already had. As you can see in the graph the expectation is that we will not be able to finish the project on time (Pessimistic estimation)</li>
 
       </ol>
     </div>
@@ -106,8 +105,11 @@
     <div class="row">
       <b><i>What could we do differently to improve?</i></b>
       <ol>
-        <li>We will always use branches with pull requests in sprint 4. We should also be using waffle.io more to track what everyone is doing (especially since it is getting difficult to meet in person)</li>
-        <li>We need to actively communicate with the TAs in our issues because we have not followed up to solve the issues that we faced during Sprint 3. </li>
+        <li>From the beginning of our coding we should make sure that tests pass so we don’t lose extra time fixing code</li>
+        <li>Create more pull requests even if they are small commits </li>
+        <li>Agree on meeting at least once a week</li>
+        <li>We should be better prepared to receive more unexpected tasks from the owners during our process</li>
+
       </ol>
     </div>
 
@@ -125,27 +127,15 @@
         </thead>
         <tbody>
           <tr>
-            <td>9</td>
-            <td>Events that are over are not shown</td>
-            <td>3</td>
-            <td>Mezyad</td>
-          </tr>
-          <tr>
             <td>16</td>
-            <td>When submitted, the form should be validated.</td>
-            <td>5</td>
-            <td>Mezyad/Karen</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>An unordered list of events, including their details (LOOK AND FEEL)</td>
+            <td>When submitted, the form should be validated. (testing)</td>
             <td>4</td>
-            <td>Susana</td>
+            <td>Karen</td>
           </tr>
           <tr>
-            <td>14</td>
-            <td>It should have a form for creating events. The form should have attribute method="POST".</td>
-            <td>1</td>
+            <td>18</td>
+            <td>If the submitted form is valid, I am redirected to the detail page for that new event. This redirect is accomplished using a "302" HTTP response. (See the documentation for the Express.js response redirect method)</td>
+            <td>2</td>
             <td>Karen</td>
           </tr>
           <tr>
@@ -155,16 +145,64 @@
             <td>Karen</td>
           </tr>
           <tr>
-            <td>22</td>
-            <td>As an attendee, I can visit the event detail page to RSVP for an event</td>
-            <td>3</td>
+            <td>24</td>
+            <td>Make the AB testing code</td>
+            <td>8</td>
             <td>Shadin</td>
           </tr>
           <tr>
-            <td>20</td>
-            <td>I submit my email address by filling in a form. The form has method="POST" and contains an input element with attributes type, id, and name all set to "email".</td>
+            <td>22</td>
+            <td>Analyze the traffic</td>
+            <td>2</td>
+            <td>Mezyad</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>Create and link to the event an RSVP button in the event box on home</td>
+            <td>1.5</td>
+            <td>Mezyad</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>Integrate to AB test code the RSVP button and test it vs not having it</td>
             <td>3</td>
-            <td>Shadin</td>
+            <td>Mezyad</td>
+          </tr>
+          <tr>
+            <td>32</td>
+            <td>Analyze the RSVP button vs no button</td>
+            <td>2</td>
+            <td>Mezyad</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Create a donation button</td>
+            <td>1</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Link the donation button to the donation page</td>
+            <td>0.5</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>Create the donation page</td>
+            <td>3</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>Integrate to AB test code the word donate vs support on the donation button</td>
+            <td>3</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td>Analyze the donate vs support button</td>
+            <td>2</td>
+            <td>Susana</td>
           </tr>
 
         </tbody>
@@ -174,14 +212,14 @@
     <div class="row">
       <b style="text-decoration:underline">Burndown chart</b>
 
-      <p>We completed a total of 16 story points this sprint against the 20 that we had planned. As our intended velocity is 12 story points a week, we are ahead of that and on track to complete.</p>
-      <img src="burndown3.png" style="width:300px">
+      <p>We completed all planned storypoints this sprint were ahead of our plan until we received new tasks with new 27 story point that can be clearly seen on the spike of the burndown chart.</p>
+      <img src="burndown4.png" style="width:300px">
     </div>
 
     <div class="row">
       <b style="text-decoration:underline">Next steps</b>
 
-      <p>We will be running team meetings on Wednesday and Friday to discuss our progress on the sprint and have time for feedback.</p>
+      <p>We will be running team meetings on Thursday and Friday to discuss our progress on the sprint and have time for feedback.</p>
 
     </div>
 
