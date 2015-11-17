@@ -10,6 +10,11 @@ body {
   list-style-type: none;
 }
 
+.front-title .front-p{
+  text-align: center;
+}
+
+
 .form-errors {
 	color: red;
 }
