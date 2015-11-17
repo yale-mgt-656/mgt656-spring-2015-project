@@ -5,9 +5,9 @@ var events = require('../models/events');
  */
 function index (request, response) {
   var contextData = {
-    'title': 'SOM class of 2016 & 2017',
-    'tagline': 'Lets get ready to party.',
-    'events': events.all
+    title: 'SOM class of 2016 & 2017 Party Central',
+    tagline: 'Lets get ready to party.',
+    events: events.futures()
   };
   response.render('index.html', contextData);
 }

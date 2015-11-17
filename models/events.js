@@ -57,7 +57,6 @@ function getById (id) {
 /**
  * Returns array of all events with titles that contain the string str.
  */
- 
 function getByTitle (str) {
   var res = [];
   for (var i = allEvents.length - 1; i >= 0; i--) {
@@ -68,6 +67,9 @@ function getByTitle (str) {
   return res;
 }
 
+/**
+ * Returns the highest existing id + 1.
+ */
 function nextId () {
   var j=0;
   for (var i = allEvents.length - 1; i >= 0; i--) {
@@ -78,9 +80,24 @@ function nextId () {
   return j+1;
 }
 
+/**
+ * Returns array of all events with date later than today's date.
+ */
+function futureEvents() {
+  var res = [];
+  var today_date = new Date();
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (allEvents[i].date > today_date){
+      res.push(allEvents[i]);
+    }
+  }
+  return res;
+}
+
 module.exports = exports = {
   all: allEvents,
   getById: getById,
   getByTitle: getByTitle,
-  nextId: nextId
+  nextId: nextId,
+  futures: futureEvents
 };
