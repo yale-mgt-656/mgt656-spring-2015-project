@@ -112,11 +112,12 @@ function saveEvent(request, response){
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      id: 6
     };
     events.all.push(newEvent);
-    var event_id = events.getById(parseInt(newEvent.id));
-    response.redirect('/events/' + event_id.id);
+    var savedEvent = events.getById(newEvent.id)
+    response.redirect('/events/' + savedEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
