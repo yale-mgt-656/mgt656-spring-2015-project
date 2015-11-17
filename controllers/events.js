@@ -52,11 +52,11 @@ function newEvent(request, response){
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
   if(validator.isInt(request.body[fieldName]) === false){
-    contextData.errors.push('Your' + fieldName + 'shoud be an integrer.');
+    contextData.errors.push('Your ' + fieldName + ' shoud be an integrer.');
     } else {
       value = parseInt(request.body[fieldName], 10);
       if (value > maxVal || value < minVal) {
-      contextData.errors.push('Your' + fieldName + 'shoud be in a range between' + minVal + 'and' + maxVal);  
+      contextData.errors.push('Your ' + fieldName + ' shoud be in a range between ' + minVal + ' and ' + maxVal);  
       }
     } return value;
 }
