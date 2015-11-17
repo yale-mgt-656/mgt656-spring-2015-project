@@ -52,6 +52,14 @@ var allReports = [
         [
           "Since this sprint was primarily dedicated to formatting and improving site aesthetics, the functionality of the site did not improve during this sprint. This was our goal going into the sprint, and collectively, we were all happy and impressed with how much better our site looks.",
           "For instance, our homepage went from a bland, unorganized page to a page that seemed like it would be linked to a good time."
+        ],
+        image: "/images/frontpage.png"
+      },
+      {
+        title: "Moved Sprint Reports to Version Control",
+        paragraphs: 
+        [
+          "Instead of using Google Docs to write Sprint Reports as before, this Sprint we have started doing Sprint Reports in HTML and save in Git version control as part of the app. Reports will be accessible at https://mgt-656-wandering-wood.herokuapp.com/reports/:id, where \":id\" is the report number. This practice will continue from now on. There is no plan to move previous reports to Git at this time."
         ]
       },
       {
@@ -63,28 +71,38 @@ var allReports = [
       },
       {
         title: "Completed Stories During Sprint",
-        paragraphs: 
+        list: 
         [
+          "Formatted home page",
+          "Added new photos for each team member", 
+          "Added logo to header so it appears on every page", 
+          "Only display future events on the homepage",
+          "Updated browser tab info",
+          "Event detail page corrected to have the the right ids and classes for each field",
+          "Revised new event page, all tests passed",
+          "Created version-controlled html sprint report",
+          "Added sprint report to the app"
         ]
       },
       {
         title: "Burndown Chart",
         paragraphs: 
-        [
+        ["The majority of work completed was finished early in the sprint following our planning meeting and assistance from Cheng. The uptick in story points at day 5 of the burndown chart is related to us recognizing the need to move our sprint reports to html format. This had not been included in the original sprint plan, but was deemed necessary based on review of recent feedback from management on our previous sprint reports."
         ],
-        image: "http://i.imgur.com/pXjrQ.gif"
+        image: "/images/bd4.png"
       },
       {
-        title: "Backlog",
-        paragraphs: 
+        title: "Backlog for Next Sprint",
+        list: 
         [
-        ]
-      },
-      {
-        title: "Moving Sprint Reports to Version Control",
-        paragraphs: 
-        [
-          "Instead of using Google Docs to write Sprint Reports as before, this Sprint we have started doing Sprint Reports in HTML and save in Git version control as part of the app. Reports will be accessible at https://mgt-656-wandering-wood.herokuapp.com/reports/:id, where \":id\" is the report number. This practice will continue from now on. There is no plan to move previous reports to Git at this time."
+          "Format event detail page",
+          "Clean up headers and footers on all pages",
+          "Format About page",
+          "Format event creation form",
+          "Format Events page",
+          "Gain understanding of Google analytics to analyze traffic to site",
+          "Set up donate button on Events Detail page",
+          "Conduct A/B testing to maximize donation"
         ]
       }
       ]

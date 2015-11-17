@@ -7,20 +7,18 @@ var reports = require('../models/reports');
 /**
  * Controller that renders a list of events in HTML.
  */
-// function listEvents(request, response) {
-//   var currentTime = new Date();
-//   var contextData = {
-//     'events': events.all,
-//     'time': currentTime
-//   };
-//   response.render('event.html', contextData);
-// }
+function listReports(request, response) {
+   var contextData = {
+     'reports': reports.all
+   };
+   response.render('reports.html', contextData);
+}
 
 
 /**
  * Controller that renders a single report in HTML.
  */
-function eventDetail (request, response) {
+function reportDetail (request, response) {
   var rpt = reports.getById(parseInt(request.params.id));
   if (rpt === null) {
     response.status(404).send('No such report');
@@ -34,5 +32,6 @@ function eventDetail (request, response) {
  * handles requests and render responses).
  */
 module.exports = {
-  'reportDetail': eventDetail
+  'reportDetail': reportDetail,
+  'listReports': listReports
 };

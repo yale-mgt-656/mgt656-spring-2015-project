@@ -18,20 +18,33 @@
 
 <div class="report-main">
     {% for section in report.sections %}
+    
     <div class="report-section">
       {% if section.title %}
         <h3>{{section.title}}</h3>
       {% endif %}
+      
       {% for p in section.paragraphs %}
-      <p>{{p}}</p>
+        <p>{{p}}</p>
       {% endfor %}
+      
+      {% if section.list %}
+        <ul>
+        {% for item in section.list %}
+          <li>{{item}}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      
       {% if section.image %}
         <img id="image" src="{{section.image}}">
       {% endif %}
+      
       {% if section.link %}
-      <a href="{{section.link}}">{{section.link}}</a>
+        <a href="{{section.link}}">{{section.link}}</a>
       {% endif %}
     </div>
+    
   {% endfor %}
 </div>
 
