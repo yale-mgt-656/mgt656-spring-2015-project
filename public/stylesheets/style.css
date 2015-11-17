@@ -3,8 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.event-list {
+  border: 1px solid black;
+}
+.event-list ul {
+  list-style-type: none;
 }
 
 .form-errors {
@@ -16,4 +19,21 @@ footer{
   padding: 1em;
   border: 1px solid #ddd;
   margin: 2em 0;
+}
+
+.report-members{
+  text-align: right;
+  list-style-type: none;
+}
+
+.member-name{
+  font-weight: bold;
+}
+
+.member-name{
+  font-weight: bold;
+}
+
+.report-heading{
+  text-align: center;
 }

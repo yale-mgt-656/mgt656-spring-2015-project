@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+{% block mainContent %}
+<ul class="report-members">
+  {% for member in report.teammembers %}
+    <li class=member-list-item>
+      <span class="member-name">{{member.name}}</span> <span class="member-email"><a href="mailto:{{member.email}}">{{member.email}}</a></span>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="report-heading">
+  <h1>Wandering Wood Coding Team</h1>
+  <h2>Sprint Report #{{report.id}}</h2>
+  <span id="date"><time datetime="{{report.date}}">{{report.date|prettyDate}}</time></span>
+</div>
+
+<div class="report-main">
+    {% for section in report.sections %}
+    <div class="report-section">
+      {% if section.title %}
+        <h3>{{section.title}}</h3>
+      {% endif %}
+      {% for p in section.paragraphs %}
+      <p>{{p}}</p>
+      {% endfor %}
+      {% if section.image %}
+        <img id="image" src="{{section.image}}">
+      {% endif %}
+      {% if section.link %}
+      <a href="{{section.link}}">{{section.link}}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
