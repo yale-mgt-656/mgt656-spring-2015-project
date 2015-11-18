@@ -111,8 +111,23 @@ function saveEvent(request, response){
     //console.log(filename.split('.').pop());
   //}
   
+  //function to validate file extension
+    function validateFileExtension(fld) 
+      {
+       if(!/(\.gif|\.png)$/i.test(fld)) 
+         {
+           //contextData.errors.push('Your image must be either a gif or png.')
+           return false;
+          }
+        return true;
+       }
+       
+     if (!(validateFileExtension(request.body.image))) {
+       contextData.errors.push('Your image must be either a gif or png.')
+     }
+  
   //var image = getFileExtension(toString(request.body.image));
-  //if ((image != "gif") || (image != "png")) {
+  //if ((request.body.image != "gif") || (image != "png")) {
     //contextData.errors.push('Your image must be either a gif or png.')
   //}
   
@@ -126,16 +141,20 @@ function saveEvent(request, response){
     contextData.errors.push('Your location name cannot be empty and must be less than 50 characters.');  
   }
   
+  var minute = parseInt(request.body.minute, 10);
+  
   if (contextData.errors.length === 0) {
+    var newId = events.all.length + 1;
     var newEvent = {
+      id: newId,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(year), //will follow the same for the rest after the validations are done
+      date: new Date(year,month,day,hour,minute,0), //will follow the same for the rest after the validations are done
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newId);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -155,7 +174,7 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") != -1){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
