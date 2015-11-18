@@ -120,12 +120,18 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
   }
 
-  function rsvp (request, response){
+
+function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
+  var modifier = (/\.(@yale.edu)$/);
+  if (validator.matches(request.body.image, modifier) === false) {
+  contextData.errors.push('Your email must be a @yale.edu');
+  }
+ 
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
