@@ -21,22 +21,54 @@
 
 	<body class="container">
 
-    {% block header %}
-      <header>
-        <ul>
-          <li><a href="/"><img src="https://cdn3.iconfinder.com/data/icons/water-sports-and-recreation-tours/512/Water_sports_and_recreation_tours_Surfing-128.png"/></a></li>
-          <li><a href="/about">About Us</a></li>
-        </ul>
-      </header>
-    {% endblock %}
-
-    {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
-    {% endblock %}
-
-    {% block footer %}
-      <footer>Insert footer here</footer>
-    {% endblock %}
+    <div class="row">
+      {% block header %}
+        <header>
+          <div class="col-md-1">
+            <p><a href="/"><img src="https://cdn3.iconfinder.com/data/icons/water-sports-and-recreation-tours/512/Water_sports_and_recreation_tours_Surfing-128.png"/></a></p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-1">
+            <ul>
+              <li></li><a href="/about">About Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+          <div class="col-md-1">.col-md-1</div>
+        </header>
+      {% endblock %}
+    </div>
+    
+    <div class="row">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">
+        {% block mainContent %}
+          <section>Welcome to {{ title }}. {{tagline}}</section>
+        {% endblock %}
+      </div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+  
+    <div class="row">
+      {% block footer %}
+        <div class="col-md-6">
+          <footer>Insert footer here</footer>
+        </div>
+        <div class="col-md-6">.col-md-6</div>
+      {% endblock %}
+    </div>
 
   </body>
 </html>
