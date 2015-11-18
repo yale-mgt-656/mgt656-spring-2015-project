@@ -116,8 +116,7 @@ function saveEvent(request, response){
       id: 6
     };
     events.all.push(newEvent);
-    var savedEvent = events.getById(newEvent.id)
-    response.redirect('/events/' + savedEvent.id);
+    response.redirect('/events/' + events.all.indexOf(newEvent));
   }else{
     response.render('create-event.html', contextData);
   }
