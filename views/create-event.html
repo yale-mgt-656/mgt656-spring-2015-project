@@ -1,6 +1,7 @@
 {% extends "layout.html" %} 
 {% block mainContent %} 
 
+
    
  <div class="jumbotron" style="margin-top:80px">
   <div class="container">
@@ -119,9 +120,6 @@
           <option value="23">23</option>
         </select>
 
-      </div>
-      
-      <div>
       <!--Event Minute-->
       <label for="minute">Event minute:</label>
         <select name="minute" type="integer">
@@ -141,7 +139,10 @@
     <!--</fieldset>-->
     </form>
     
-    {% if errors %}
+    
+</div>
+
+{% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
       <ul>
@@ -151,7 +152,4 @@
       </ul>
     </div>
     {% endif %}
-</div>
-
-
 {% endblock %}

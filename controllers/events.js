@@ -96,15 +96,14 @@ function saveEvent(request, response){
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var minute = request.body.minute;
   
   var image = request.body.image;
   if (validator.isURL(request.body.image) === false ){
     contextData.errors.push('Your image should be an URL.');
   }
   else {
-    // if (validator.image.match(/\.(png|gif)$/) === false){
-    // contextData.errors.push('Your image should be png or gif.');
-    if (request.body.image.match(/\.(png|gif)$/) === null) {
+      if (request.body.image.match(/\.(png|gif)$/) === null) {
       contextData.errors.push('Your image should be png or gif.');
   }
     
