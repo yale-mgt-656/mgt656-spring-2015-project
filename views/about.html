@@ -1,16 +1,94 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <p>This is the about us page</p>
-  
-  <h1> <span id="perfect-octopus-name">Jeremy Foo</span></h1>
-  <a href="http://imgur.com/MtsUy00"><img id="perfect-octopus-headshot" src="http://i.imgur.com/MtsUy00.jpg" title="Jeremy" /></a>
-  <h1> <span id="talented-eagle-name">Daniel Kent</span></h1>
-  <a href="http://imgur.com/m90iJhM"><img id="talented-eagle-headshot" src="http://i.imgur.com/m90iJhM.jpg" title="Dan" /></a>
-  <h1> <span id="lucky-gerbil-name">Cian O'Dowd</span></h1>
-  <a  href="http://imgur.com/sgBTwzL"><img id="lucky-gerbil-headshot" src="http://i.imgur.com/sgBTwzL.jpg" title="Cian" /></a>
-  <h1> <span id="excited-falcon-name">Fabio Sarti</span></h1>
-  <a href="http://imgur.com/ieFIfeU"><img id="excited-falcon-headshot" src="http://i.imgur.com/ieFIfeU.jpg" title="Fabio" /></a>
-  <h1> <span id="muddy-scorpion-name">Jacques van Tonder</span></h1>
-  <a href="http://imgur.com/hUVtSgs"><img id="muddy-scorpion-headshot" src="http://i.imgur.com/hUVtSgs.jpg" title="Jacques" /></a>
+
+  <h1> <center>The Dream Team:</center></h1>
+
+      <!-- This is the Content Framework for the Profiles -->
+      <div class="row">
+        <div class="col-lg-2">
+          <img class="img-circle" id="perfect-octopus-headshot" src="http://i.imgur.com/MtsUy00.jpg" alt="Jeremy" width="140" height="140">
+          <h2><span id="perfect-octopus-name">Jeremy Foo</span></h2>
+          <p>Jeremy is the harbinger of doom that enjoys the occasional cup of tea. He is a gamer extraordinaire and can sort of ballroom dance without falling too often. He is looking for foosball and settlers of catan challengers.</p>
+          <p><a class="btn btn-default" href="mailto:jeremy.foo@yale.edu?Subject=MGT&20656%20Final%20Project" role="button">E-mail Jeremy &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-circle" id="talented-eagle-headshot" src="http://i.imgur.com/m90iJhM.jpg?1" alt="Dan" width="140" height="140">
+          <h2><span id="talented-eagle-name">Daniel Kent</span></h2>
+          <p>Dan is an affable guy who hails from the great state of Indiana.  Enjoying birding and hiking, his bowtie colleciton is second to none. Dan has worked for 12 years with his startup, <a href="http://www.netliteracy.org">Net Literacy</a>, and enjoys teaching senior citizens how to use computers & the Internet.</p>
+          <p><a class="btn btn-default" href="mailto:daniel.kent@yale.edu?Subject=MGT&20656%20Final%20Project" role="button">E-mail Dan &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-circle"  id="lucky-gerbil-headshot" src="http://i.imgur.com/sgBTwzL.jpg" alt="Cian" width="140" height="140">
+          <h2><span id="lucky-gerbil-name">Cian O'Dowd</span></h2>
+          <p>Cian has worked for six years in retail and e-commerce management. He is a law graduate from his native Ireland and holds an MBA from Renmin University of China in Beijing. He is a current Yale MAM candidate.</p>
+          <p><a class="btn btn-default" href="mailto:cian.odowd@yale.edu?Subject=MGT&20656%20Final%20Project" role="button">E-mail Cian &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-circle" img id="excited-falcon-headshot" src="http://i.imgur.com/ieFIfeU.jpg" alt="Fabio" width="140" height="140">
+          <h2><span id="excited-falcon-name">Fabio Sarti</span></h2>
+          <p>Fábio Sarti is currently a Master of Advanced Management Candidate at the Yale School of Management. Before that, he worked as a Marketing Consultant for Telefonica Vivo in Brazil where he redesigned the customer registration model for Small and Medium Business customers, increasing the correct access to contact center and online channels by 35%. Prior to that role, Mr. Sarti served as Process Improvement Manager at Itau Unibanco, where he was responsible for executing and advising dozens of projects that generated millions of dollars in cost and expense reductions.</p>
+          <p><a class="btn btn-default" href="mailto:fabio.sarti@yale.edu?Subject=MGT&20656%20Final%20Project" role="button">E-mail Fabio &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-circle" id="muddy-scorpion-headshot" src="http://i.imgur.com/hUVtSgs.jpg" alt="Jacques" width="140" height="140">
+          <h2><span id="muddy-scorpion-name">Jacques van Tonder</span></h2>
+          <p>Awake by day, asleep by night - Jacques is the quintessential normal guy. Hailing from Cape Town, he began life as a conflicted engineer who figured out that he loves the operating at intersection of technology and people (and wine). He thus joined a large wine company, serving in their IT department as an internal business facing consultant.</p>
+          <p><a class="btn btn-default" href="mailto:jacques.vantonder@yale.edu?Subject=MGT&20656%20Final%20Project" role="button">E-mail Jacques &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-circle" src="http://i.imgur.com/uAvZzIc.png" alt="Mocha" width="140" height="140">
+          <h2>Mocha</h2>
+          <p>Mocha is a feature-rich JavaScript test framework running on Node.js and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases. Hosted on GitHub.</p>
+          <p><a class="btn btn-default" href="https://mochajs.org/" role="button">Check out Mocha &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+  <h1>Thanks and gratitude</h1>
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Thanks be to <a href="http://www.pivotaltracker.com">Pivotal Tracker</a></h2>
+          <p class="lead">Agile Scrum requires a lot of overhead.  Fortunately Pivotal Tracker comes to the rescue with it's inuitive UI and automatic reporting.  They also gave us a free academic license for our project!</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="http://i.imgur.com/jXbnJHv.png?1" alt="Pivotal Tracker Logo">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">We run thanks to <a href="http://www.getbootstrap.com">Bootstrap</a></h2>
+          <p class="lead">Bootstrap is amazingly easy to implement and has fantastic libraries.  Nifty!  If you aren't using Bootstrap, you're doing it wrong. </p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="http://bmdm.com/wp-content/uploads/bootstrap.png" alt="Bootstrap FTW">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, thanks to Kyle & the MGT 656 TA Team - <span class="text-muted"> 'Cause we'd still be coding those embarassing 1996-era websites without your help.</span></h2>
+          <p class="lead">Holy smokes.  If we gave you a nickle for everytime our team had a question... you'd probably be able to retire.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block img-thumbnail" src="http://i.imgur.com/X0uaWcH.jpg?1" alt="Handsome Kyle" >
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
 {% endblock %}

@@ -2,16 +2,48 @@
 <html>
   <head>
     <title>{{ title }}</title>
+<<<<<<< HEAD
+ <link rel='stylesheet' href='/stylesheets/style.css' />
+ <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+=======
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+>>>>>>> 6ee67bdda1ccea4ab6f9e7ee06e5b9d272e33ecc
   </head>
 
 	<body class="container">
 
     {% block header %}
       <header>
-	<p> Hey, I'm in the header</p>
-	</header>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="logo" class="navbar-brand" href="/">
+        <img alt="Brand" src="http://i.imgur.com/h2QjixB.png?1">
+      </a>
+      <a class="navbar-brand" href="/">Still-Snowflake Events</a>
+      
+    </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="/about">About</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  	</header>
     {% endblock %}
 
     {% block mainContent %}
@@ -19,10 +51,15 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>
-        <a href="/">Home</a>
-        <a href="/about">About</a> 
-      </footer>
+    <footer class="footer">
+      <div class="container">
+
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        
+        <p>Yale School of Management <a href="https://mgt656.som.yale.edu/">MGT 656</a> &middot; Still-Snowflake &middot;  <a href="/">Home</a> &middot; <a href="/about">About</a></p>
+      </div>
+    </footer>
+
     {% endblock %}
 
   </body>
