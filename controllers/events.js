@@ -81,7 +81,7 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
   if (validator.isURL(request.body.image) === false) { 
-    contextData.errors.push('Your image should be between an URL');
+    contextData.errors.push('Your image should be an URL');
   }
   if (validator.isGifOrPng(request.body.image) === true) {
     contextData.errors.push('Your image should be a GIF or PNG URL');
