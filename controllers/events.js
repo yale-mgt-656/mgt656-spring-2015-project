@@ -103,7 +103,7 @@ function saveEvent(request, response){
     };
     events.all.push(newEvent);
     response.redirect('/events/' + newEvent.id);
-  }else{
+  } else {
     response.render('create-event.html', contextData);
   }
 }
@@ -111,10 +111,11 @@ function saveEvent(request, response){
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    // response.status(404).send('No such event'); // 404 PAGE NEEDS TO BE BETTER DEFINED
+    response.status(404).send('404 Error: No such event');
+  }
+  else {
     response.render('event-detail.html', {event: ev});
   }
-  response.render('event-detail.html', {event: ev});
 }
 
 
@@ -124,14 +125,14 @@ function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   // if it doesn't find the event, it says 'No such event'
   if (ev === null) {
-    response.status(404).send('No such event');
+    response.status(404).send('404 Error: No such event');
   }
 
-  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
+  if (validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
     ev.attending.push(request.body.email);
     // Need to add a directive to save the event here.
     response.redirect('/events/' + ev.id);
-  }else{
+  } else{
     var contextData = {errors: [], event: ev};
     if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
       contextData.errors.push('Harvard not allowed!');
