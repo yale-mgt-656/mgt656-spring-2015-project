@@ -81,10 +81,10 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
   if (validator.isURL(request.body.image) === false) { 
-    contextData.errors.push('Your image should be between an URL and must be a GIF or PNG');
+    contextData.errors.push('Your image should be between an URL');
   }
   if (validator.isGifOrPng(request.body.image) === true) {
-    contextData.errors.push('blahblahblah');
+    contextData.errors.push('Your image should be a GIF or PNG URL');
   }
   
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
