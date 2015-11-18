@@ -3,18 +3,46 @@
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
+    	<a href="http://imgur.com/XtUvVG8"><img id="logo" src="http://i.imgur.com/XtUvVG8.png" title="source: imgur.com" width="10%" height="10%" /></a>
   </header>
-{% endblock %}
-
+  <body>
+    <!-- #### Facebook Code javascript code starts #### -->
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) 
+      {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+      }
+      (document, 'script', 'facebook-jssdk'));</script>
+    <!-- #### Facebook Code javascript code ends #### -->
+    <!-- #### Google Code javascript code starts #### -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- #### Google Code javascript code ends #### -->
+    {% endblock %}
 {% block mainContent %}
   <p>
     Welcome to {{ title }}. {{tagline}}
+  </p>
+  
+  <div class="fb-follow" data-href="https://www.facebook.com/stillsnowflakers" data-layout="standard" data-show-faces="true"></div> <!-- #### Facebook page link #### --> 
+  <g:follow href="https://plus.google.com/u/0/111800629253092046389/" rel="publisher"></g:follow> <!-- #### Google+ page link #### -->
+  <a href="https://twitter.com/stillsnowflakes" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @stillsnowflakes</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> <!-- #### Twitter page link #### --> 
+  <p>
+<a href="/events/new" class="btn btn-primary" id="new" role="button">Check out our newest events</a>
   </p>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
   <p>
+<a href="/events/new" class="btn btn-primary" id="new" role="button">Check out our newest events</a>
+  </p>
+  <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+  
 {% endblock %}
