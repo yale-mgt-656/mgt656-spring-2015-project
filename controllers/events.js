@@ -61,6 +61,10 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
     } return value;
 }
 
+validator.extend('isGifOrPng', function (imagepath){
+  var find = imagepath.match(/\.(png|gif)$/);
+  return find == null;
+});
 
 /**
  * Controller to which new events are submitted.
@@ -75,6 +79,12 @@ function saveEvent(request, response){
   }
   if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+  if (validator.isURL(request.body.image) === false) { 
+    contextData.errors.push('Your image should be between an URL and must be a GIF or PNG');
+  }
+  if (validator.isGifOrPng(request.body.image) === true) {
+    contextData.errors.push('blahblahblah');
   }
   
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
