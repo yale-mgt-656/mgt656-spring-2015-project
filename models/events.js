@@ -29,7 +29,7 @@ var allEvents = [
     date:   new Date(2015, 9, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
-    attending: ['kim.kardashian@yale.edu'],
+    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu'],
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ var allEvents = [
     date:   new Date(2014, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
-    attending: ['homer.simpson@yale.edu'],
+    attending: ['kyle.jensen@yale.edu', 'homer.simpson@yale.edu'],
   }
 ];
 
@@ -54,7 +54,17 @@ function getById (id) {
   return null;
 }
 
+function getMaxId () {
+  var i = allEvents.length;
+    if (i === allEvents.length){
+    return allEvents.length + 1;
+  }
+}
+
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+  getMaxId: getMaxId,
 };
+
+
