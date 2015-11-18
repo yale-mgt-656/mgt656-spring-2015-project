@@ -17,14 +17,14 @@
 
 {% block mainContent %}
   <center><img id="logo" src="http://anabolicminds.com/forum/attachments/92286d1384802814-using-drugs-treat-terratantra_cosmic_tree.png"></img></center>
-  <p><b><u>Check out our list of events</u></b></p>
+  <p><b><u>Check out our list of future events</u></b></p>
    <div style="border: 1px solid black">
     {% include "fragments/events-list.html" %}
   </div>
   <p>
     <div class="row">
     <div class="col-md-12">
-      <a href="/events/new" role="button" class="btn btn-primary btn-lg">
+      <a id=new href="/events/new" role="button" class="btn btn-primary btn-lg">
       <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Create a new event
       </a>
     </div>
