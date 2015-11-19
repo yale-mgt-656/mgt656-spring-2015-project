@@ -34,6 +34,7 @@
 
 // Wait for the DOM to load, then execute the view for the chosen variation.
 $(document).ready(function() {
-  pageVariations[chosenVariation]
+  var chosenfxn = pageVariations[chosenVariation];
+  chosenfxn();
 });
 </script>
