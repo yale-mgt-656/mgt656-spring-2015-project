@@ -6,7 +6,8 @@
     "start": "./node_modules/.bin/gulp"
   },
   "engines": {
-    "node": "4.1.x"
+    "node": "4.2.x",
+    "npm": "2.14.x"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
