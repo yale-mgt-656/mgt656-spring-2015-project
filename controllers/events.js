@@ -120,7 +120,10 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 29af52b70de093fd1b0be403fccc04848657d667
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
@@ -138,6 +141,21 @@ function rsvp (request, response){
 
 }
 
+function api (request, response) {
+  var search = request.query.search;
+  var output = { events: [] };
+  if (search) {
+    for (var i = 0; i < events.all.length; i++) {
+      if (events.all[i].title.toLowerCase().indexOf(search.toLowerCase()) !== -1){
+        output.events.push(events.all[i]); 
+      }
+    }
+  } else {
+    output.events = events.all;
+  }
+  response.json(output);
+}
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -147,5 +165,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api,
 };
