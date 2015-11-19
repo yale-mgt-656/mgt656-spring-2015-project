@@ -120,6 +120,10 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
   }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 29af52b70de093fd1b0be403fccc04848657d667
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
@@ -132,7 +136,7 @@ function rsvp (request, response){
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    response.render('event-detail.html', contextData);
   }
 
 }
