@@ -127,18 +127,13 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  var modifier = (/\.(@yale.edu)$/);
-  if (validator.matches(request.body.image, modifier) === false) {
-  contextData.errors.push('Your email must be a @yale.edu');
-  }
- 
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    response.render('event-detail.html', contextData);
   }
 
 }

@@ -3,7 +3,7 @@
 {% block header %}
   
   <header>
-      <h1>"{{event.title}}"</h1>
+      <h1 id="title">{{event.title}}</h1>
   </header>
   
 {% endblock %}
@@ -27,8 +27,8 @@
 </p>
 
 <p>
-    <ul>
-        <li><span id="attendees">{{event.attending}}</span></li>
+    <ul id="attendees">
+        <li><span>{{event.attending}}</span></li>
     </ul>
 </p>
 
@@ -47,7 +47,7 @@
   	<form id="email" method="POST">
           <label for="email">Email:</label>
           <input type="email" name="email">
-          <input type="Submit" id="Submit">
+          <input type="submit" name="Submit">
     </form>
 </p>
 
