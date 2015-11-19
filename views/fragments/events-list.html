@@ -4,12 +4,13 @@
       
       <img class="eventimage" src="{{event.image}}">
       <br>
-      <a href="/events/{{event.id}}"><h3 id="event-title"></h3>{{event.title}}</a>
+      <a href="/events/{{event.id}}">{{event.title}}</a>
       <br>
         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       <br>
          {{event.attending.length}} attending so far
       </br>
+      <a href="/events/{{event.id}}"><h3 class="event-title"></h3></a>
     </li>
   {% endfor %}
 </ul>
@@ -25,10 +26,10 @@
   // Define JavaScript for each page variation of this experiment.
   var pageVariations = [
     function() {
-      document.getElementById('event-title').innerHTML = '';
+      $(".event-title").html('');
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
-      document.getElementById('event-title').innerHTML = 'RSVP';
+      $(".event-title").html('RSVP');
     }
   ];
 
