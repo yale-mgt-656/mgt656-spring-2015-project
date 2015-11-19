@@ -1,7 +1,7 @@
-
 <ul>
   {% for event in events %}
     <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
+      <h1 id="event-title"></h1>
       <img class="eventimage" src="{{event.image}}">
       <br>
       <a href="/events/{{event.id}}">{{event.title}}</a>
@@ -13,3 +13,27 @@
     </li>
   {% endfor %}
 </ul>
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="http://www.google-analytics.com/cx/api.js?experiment=Svl-7skSSKaJt6GLT_9Olg"></script>
+
+<!-- Load the JQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+  var chosenVariation = cxApi.chooseVariation();
+  // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {
+      document.getElementById('event-title').innerHTML = 'Random Text';
+    },  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: add RSVP text
+      document.getElementById('event-title').innerHTML = 'RSVP';
+    }
+  ];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function() {
+  pageVariations[chosenVariation]
+});
+</script>
