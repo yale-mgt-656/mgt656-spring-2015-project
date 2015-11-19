@@ -1,12 +1,30 @@
 body {
+  text-align: center;
+      background: url("https://yale.app.box.com/representation/file_version_44738248445/image_2048/1.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-family: helvetica; 
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+p {
+      font-size: 12px;
+      color: white;
+    }
+    
 a {
   color: #00B7FF;
 }
-
+input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+    }
+    input[type="submit"] {
+      background: maroon;
+      color: white;
+    }
 .form-errors {
 	color: red;
 }
