@@ -24,5 +24,6 @@ app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
 app.post('/events/:id', eventControllers.rsvp);
+app.get('/api/events', eventControllers.api);
 
 module.exports = app;
