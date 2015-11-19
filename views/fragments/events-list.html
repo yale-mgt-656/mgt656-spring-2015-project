@@ -1,14 +1,14 @@
 <ul>
   {% for event in events %}
     <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
-      <h1 id="event-title"></h1>
+      
       <img class="eventimage" src="{{event.image}}">
       <br>
-      <a href="/events/{{event.id}}">{{event.title}}</a>
+      <a href="/events/{{event.id}}"><h3 id="event-title"></h3>{{event.title}}</a>
       <br>
         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       <br>
-         {{event.attending.length}} attending so far.
+         {{event.attending.length}} attending so far
       </br>
     </li>
   {% endfor %}
@@ -25,7 +25,7 @@
   // Define JavaScript for each page variation of this experiment.
   var pageVariations = [
     function() {
-      document.getElementById('event-title').innerHTML = 'Random Text';
+      document.getElementById('event-title').innerHTML = '';
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
       document.getElementById('event-title').innerHTML = 'RSVP';

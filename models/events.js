@@ -18,7 +18,7 @@ var allEvents = [
   {
     id: 1,
     title: 'BBQ party for hackers and nerds',
-    date:   new Date(2015, 8, 1, 19, 0, 0),
+    date:   new Date(2016, 8, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Miles\' house',
     attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
@@ -26,7 +26,7 @@ var allEvents = [
   {
     id: 2,
     title: 'BBQ for managers',
-    date:   new Date(2015, 9, 20, 18, 0, 0),
+    date:   new Date(2016, 9, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
     attending: ['kim.kardashian@yale.edu'],
@@ -34,7 +34,7 @@ var allEvents = [
   {
     id: 4,
     title: 'Cooking lessons for the busy business student',
-    date:   new Date(2014, 8, 2, 19, 0, 0),
+    date:   new Date(2016, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
     attending: ['homer.simpson@yale.edu'],
@@ -42,7 +42,7 @@ var allEvents = [
     {
     id: 5,
     title: 'Beach party for hackers and nerds',
-    date:   new Date(2015, 8, 1, 19, 0, 0),
+    date:   new Date(2016, 8, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Shady\' house',
     attending: ['susana.arriage@yale.edu', 'karen@yale.edu', 'mezyad@yale.edu']
