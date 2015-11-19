@@ -92,6 +92,10 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
   
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('lkahdf');
+  }
+  
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
@@ -121,7 +125,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events/' + newId);
+    response.redirect(302, '/events/' + newId);
   }else{
     response.render('create-event.html', contextData);
   }
