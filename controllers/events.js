@@ -100,7 +100,7 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(request.body.year, request.body.month, request.body.day, request.body.hour, request.body.minute),
       attending: []
     };
     events.all.push(newEvent);
