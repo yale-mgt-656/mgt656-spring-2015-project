@@ -28,6 +28,6 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/api/events', eventControllers.api);
 app.get('/sprint-report-4', sprintreportControllers.sprintreport);
 app.get('/donate', donateControllers.donate);
-app.post('/donate', donateControllers.thankyou);
+app.get('/donate/thankyou', donateControllers.thankyou);
 
 module.exports = app;
