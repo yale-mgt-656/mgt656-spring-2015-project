@@ -42,8 +42,8 @@
     <div class="form-group">
       <label for="month">Event month:</label>
       <select name="month" id="month">
-        {% for monthNumber, monthName in <allowedDateInfo class="months"></allowedDateInfo> %}
-          <option value="{{month}}">{{month}}</option>
+        {% for monthNumber, monthName in allowedDateInfo.months %}
+          <option value="{{monthNumber}}">{{monthName}}</option>
         {% endfor %}
       </select>
     </div>
