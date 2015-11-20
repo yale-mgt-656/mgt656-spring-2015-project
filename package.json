@@ -27,7 +27,6 @@
     "gulp-nodemon": "^2.0.4",
     "jsdom": "^7.0.2",
     "jshint-stylish": "^2.0.1",
-    "lodash": "^3.10.1",
     "mocha": "^2.3.3",
     "mocha-better-spec-reporter": "^3.0.0",
     "nodemon": "^1.8.0",
