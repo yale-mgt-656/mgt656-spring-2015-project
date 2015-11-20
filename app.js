@@ -9,6 +9,7 @@ var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var reportControllers = require('./controllers/reports.js');
+var donateControllers = require('./controllers/donate.js');
 
 
 // Create our express app
@@ -28,5 +29,6 @@ app.post('/events/:id', eventControllers.rsvp);
 app.get('/api/events', eventControllers.apiListEvents);
 app.get('/reports/:id', reportControllers.reportDetail);
 app.get('/reports', reportControllers.listReports);
+app.get('/donate/:id', donateControllers.donate);
 
 module.exports = app;
