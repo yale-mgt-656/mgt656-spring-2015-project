@@ -20,7 +20,11 @@ function index (request, response) {
   }
   response.render('index.html', contextData);
 }
-
+function donatecontrol (request, response) {
+  var contextData = {};
+  response.render('donation.html', contextData);
+}
 module.exports = {
-  index: index
+  index: index,donatecontrol:donatecontrol
 };
+

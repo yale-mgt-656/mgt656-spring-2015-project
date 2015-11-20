@@ -19,6 +19,7 @@ configure(app);
 
 // Add routes mapping URLs to controllers
 app.get('/', indexControllers.index);
+app.get('/donate', indexControllers.donatecontrol);
 app.get('/about', aboutControllers.about);
 app.get('/sprint-report4', sprintControllers.sprintreport);//change this
 app.get('/events', eventControllers.listEvents);
