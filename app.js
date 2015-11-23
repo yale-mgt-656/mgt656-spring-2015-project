@@ -28,6 +28,7 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);
+app.get('/api/events/:id', apiControllers.eventDetailJSON);
 app.get('/donation', donationControllers.donation);
 
 // action for RSVPing

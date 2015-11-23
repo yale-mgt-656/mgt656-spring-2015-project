@@ -15,17 +15,37 @@ function viewApi(request, response) {
  */
 function listEventsJSON(request, response) {
   var search = request.query.search;
-  var allEvents = events.all
+  var output = {events: []};
+  var allEvents = events.all;
 
-  if (search == null) {
-    response.json({ events: allEvents });
+  if (search) {
+    for (var i = 0; i < allEvents.length; i++) {
+      var curEvent = allEvents[i];
+      if(curEvent.title.indexOf(search) !== -1) {
+        output.events.push(curEvent);
+      }
+      else {
+        for (var j = 0; j < curEvent.attending.length; j++) {
+          if(curEvent.attending[j].indexOf(search) !== -1) {
+            output.events.push(curEvent);
+          }
+        }
+      }
+    }
   }
   else {
-    response.json({ events: allEvents.filter(function(event) {
-        return event.title.toLowerCase().indexOf(search.toLowerCase()) > -1;
-      })
-    });
+    output.events = allEvents;
   }
+  
+  response.json(output);
+}
+
+/**
+ * Controller that renders a specified event in JSON.
+ */
+function eventDetailJSON(request, response) {
+  var ev = events.getById(parseInt(request.params.id));
+  response.json({ event: ev });
 }
 
 /**
@@ -35,4 +55,5 @@ function listEventsJSON(request, response) {
 module.exports = {
   'viewApi': viewApi,
   'listEventsJSON': listEventsJSON,
+  'eventDetailJSON': eventDetailJSON
 };

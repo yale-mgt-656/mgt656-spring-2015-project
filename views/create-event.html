@@ -52,7 +52,7 @@
     </select>
     <br>
     <label for="minute">Minute:</label>
-    <select name="minute">
+    <select name="minute" id="minute">
       {% for minute in allowedDateInfo.minutes %}
         <option value={{minute}}>{{minute}}</option>
       {% endfor %}

@@ -40,7 +40,9 @@ var allowedDateInfo = {
 function listEvents(request, response) {
   var currentTime = new Date();
   var contextData = {
-    'events': events.all,
+    'events': events.all.sort(function(a, b) {
+      return b.date - a.date;
+    }),
     'time': currentTime
   };
   response.render('event.html', contextData);
@@ -98,7 +100,7 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(request.body.year, request.body.month, request.body.day, request.body.hour, request.body.minute),
       attending: []
     };
     events.all.push(newEvent);
