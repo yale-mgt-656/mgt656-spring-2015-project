@@ -11,6 +11,7 @@ var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var apiControllers = require('./controllers/api.js');
+var donationControllers = require('./controllers/donation.js');
 
 // Create our express app
 var app = express();
@@ -27,6 +28,7 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);
+app.get('/donation', donationControllers.donation);
 
 // action for RSVPing
 app.post('/events/:id/rsvp', eventControllers.rsvp);
