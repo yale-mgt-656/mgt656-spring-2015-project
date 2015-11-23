@@ -1,21 +1,22 @@
 <ul>
   {% for event in events %}
     <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
-      <h1 id="event-title"></h1>
+      
       <img class="eventimage" src="{{event.image}}">
       <br>
       <a href="/events/{{event.id}}">{{event.title}}</a>
       <br>
         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       <br>
-         {{event.attending.length}} attending so far.
+         {{event.attending.length}} attending so far
       </br>
+      <a href="/events/{{event.id}}"><h3 class="event-title"></h3></a>
     </li>
   {% endfor %}
 </ul>
 
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="http://www.google-analytics.com/cx/api.js?experiment=Svl-7skSSKaJt6GLT_9Olg"></script>
+<script src="http://www.google-analytics.com/cx/api.js?experiment=8TjaBDUETBi_7DZx27qJeA"></script>
 
 <!-- Load the JQuery library -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -25,10 +26,10 @@
   // Define JavaScript for each page variation of this experiment.
   var pageVariations = [
     function() {
-      document.getElementById('event-title').innerHTML = 'Random Text';
+      $(".event-title").html('');
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
-      document.getElementById('event-title').innerHTML = 'RSVP';
+      $(".event-title").html('RSVP');
     }
   ];
 
