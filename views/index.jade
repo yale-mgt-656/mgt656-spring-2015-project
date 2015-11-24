@@ -5,13 +5,13 @@ block mainContent
   p
     Welcome to #{ title }. #{tagline}
   p
-    Check out the
-    a(href='/about') About us
-    page as well as the
-    a(href='/events') Events
-    page.
+    Check out the 
+    a(href='/about') About us 
+    | page as well as the 
+    a(href='/events') Events 
+    | page.
   h2 Upcoming Events
   div
-    include fragments/events-list.html
+    include fragments/events-list
   p
     a#new(href='/events/new') Create a new event

@@ -90,57 +90,95 @@ function isRangedInt(number, name, min, max, errors){
 }
 
 
-/**
- * Controller to which new events are submitted.
- * Validates the form and adds the new event to
- * our global list of events.
- */
-function saveEvent(request, response){
-  var contextData = {errors: [], allowedDateInfo: allowedDateInfo};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
-  }
+function saveEvent(req, res){
 
-  if (validator.isLength(request.body.location, 5, 50) === false) {
-    contextData.errors.push('Your location should be less than 50 characters.');
-  }
+    // Set our internal DB variable
+    var db = req.db;
 
-  isRangedInt(request.body.year, "year", allowedDateInfo.years[0], allowedDateInfo.years[allowedDateInfo.years.length-1], contextData.errors);
-  isRangedInt(request.body.day, "day", allowedDateInfo.days[0], allowedDateInfo.days[allowedDateInfo.days.length-1], contextData.errors);
-  isRangedInt(request.body.hour, "hour", allowedDateInfo.hours[0], allowedDateInfo.hours[allowedDateInfo.hours.length-1], contextData.errors);
-  isRangedInt(request.body.minute, "minute", allowedDateInfo.minutes[0], allowedDateInfo.minutes[allowedDateInfo.minutes.length-1], contextData.errors);
-  isRangedInt(request.body.month, "month", 0, 11, contextData.errors);
+    // Set our collection
+    var collection = db.get('eventlist');
 
-  if (!validator.isURL(request.body.image) || (request.body.image.match(/\.(gif|png)$/i) === null )){
-    contextData.errors.push('Your image should be a png or gif');
-  }
 
-  if (contextData.errors.length === 0) {
+    var thingsToBring = [];
+    thingsToBring.push(req.body.items);
+
     var newEvent = {
       id: events.getMaxId() + 1,
-      title: request.body.title,
-      location: request.body.location,
-      image: request.body.image,
+      title: req.body.title,
+      location: req.body.location,
+      image: req.body.image,
       date: new Date(),
       attending: [],
-      items: []
+      items: thingsToBring
     };
-    events.all.push(newEvent);
-    response.redirect('/events/' + newEvent.id);
-  } else {
-    response.render('create-event.jade', contextData);
-  }
-}
 
-function eventDetail (request, response) {
-  var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
-    response.status(404).send('404 Error: No such event');
-  }
-  else {
-    response.render('event-detail', {event: ev});
-  }
+
+
+    var contextData = {errors: [], allowedDateInfo: allowedDateInfo};
+
+      if (validator.isLength(req.body.title, 5, 50) === false) {
+        contextData.errors.push('Your title should be between 5 and 100 letters.');
+      }
+
+      if (validator.isLength(req.body.location, 5, 50) === false) {
+        contextData.errors.push('Your location should be less than 50 characters.');
+      }
+
+      isRangedInt(req.body.year, "year", allowedDateInfo.years[0], allowedDateInfo.years[allowedDateInfo.years.length-1], contextData.errors);
+      isRangedInt(req.body.day, "day", allowedDateInfo.days[0], allowedDateInfo.days[allowedDateInfo.days.length-1], contextData.errors);
+      isRangedInt(req.body.hour, "hour", allowedDateInfo.hours[0], allowedDateInfo.hours[allowedDateInfo.hours.length-1], contextData.errors);
+      isRangedInt(req.body.minute, "minute", allowedDateInfo.minutes[0], allowedDateInfo.minutes[allowedDateInfo.minutes.length-1], contextData.errors);
+      isRangedInt(req.body.month, "month", 0, 11, contextData.errors);
+
+      if (!validator.isURL(req.body.image) || (req.body.image.match(/\.(gif|png)$/i) === null )){
+        contextData.errors.push('Your image should be a png or gif');
+      }
+
+    if (contextData.errors.length === 0) {
+      collection.insert( newEvent , function (err, doc) {
+          if (err) {
+              // If it failed, return error
+              res.status(404).send("There was a problem adding the information to the database.");
+          }
+          else {
+              // And forward to success page
+              console.log(newEvent);
+              res.redirect('/events/' + newEvent.id);
+          }
+      });
+    } else {
+      res.render('create-event', contextData);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+function eventDetail (req, res) {
+
+  var db = req.db;
+  var collection = db.get('eventlist');
+  collection.findOne({'id':parseInt(req.params.id)},{},function(e,docs){
+      var currentTime = new Date();
+
+      if (docs) {
+        res.render('event-detail', {
+            "event" : docs,
+            "time": currentTime
+        });
+      } else {
+        res.status(404).send('404 Error: No such event');
+      };
+
+  });
+
 }
 
 
@@ -178,5 +216,5 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
 };
