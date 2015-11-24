@@ -3,6 +3,11 @@
 var events = require('../models/events');
 var validator = require('validator');
 var lodash = require('lodash');
+var express = require('express');
+
+
+
+
 // Date data that would be useful to you
 // completing the project These data are not
 // used a first.
@@ -31,27 +36,46 @@ var allowedDateInfo = {
   years: [2015, 2016]
 };
 
+
+
+
+
 /**
  * Controller that renders a list of events in HTML.
  */
 
 
+function listEvents(req, res) {
 
-function listEvents(request, response) {
+  // var db = req.db;
+  // var collection = db.get('eventlist');
+  // var events = collection.find({},{},function(e,docs){
+  //       res.json(docs);
+  // });
+
+  // console.log(events);
+
   var currentTime = new Date();
   var contextData = {
     'events': events.all,
     'time': currentTime
   };
-  response.render('event.html', contextData);
+  res.render('event', contextData);
 }
+
+
+
+
+
+
+
 
 /**
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
   var contextData = {allowedDateInfo: allowedDateInfo};
-  response.render('create-event.html', contextData);
+  response.render('create-event.jade', contextData);
 }
 
 
@@ -99,12 +123,13 @@ function saveEvent(request, response){
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      items: []
     };
     events.all.push(newEvent);
     response.redirect('/events/' + newEvent.id);
   } else {
-    response.render('create-event.html', contextData);
+    response.render('create-event.jade', contextData);
   }
 }
 
@@ -114,7 +139,7 @@ function eventDetail (request, response) {
     response.status(404).send('404 Error: No such event');
   }
   else {
-    response.render('event-detail.html', {event: ev});
+    response.render('event-detail', {event: ev});
   }
 }
 
@@ -139,7 +164,7 @@ function rsvp (request, response){
     }else{
       contextData.errors.push('Invalid email! Are you a Yale student?');
     }
-    response.render('event-detail.html', contextData);
+    response.render('event-detail', contextData);
   }
 
 }

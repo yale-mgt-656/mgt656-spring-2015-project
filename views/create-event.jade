@@ -1,0 +1,52 @@
+body
+  extend layout
+  block mainContent
+
+    //- {% if errors %}
+    //-   <div class="form-errors">
+    //-     <p>Please correct the following errors!</p>
+    //-     <ul>
+    //-       {% for error in errors %}
+    //-         <li>{{error}}</li>
+    //-       {% endfor %}
+    //-     </ul>
+    //-   </div>
+    //- {% endif %}
+
+
+    form#create-event(method='POST')
+      label(for='title') Event title:
+      input(type='text', name='title')
+      br
+      label(for='location') Event location:
+      input(type='text', name='location')
+      br
+      label(for='image') Event image URL:
+      input(type='text' name='image')
+      br
+      label(for='year') Year:
+      select(name='year' id='year')
+        for year in allowedDateInfo.years
+          option(value='#{year}') #{year}
+      label(for='month') Month:
+      select(name='month', id='month')
+        for monthNumber, monthName in allowedDateInfo.months
+          option(value='#{monthNumber}') #{monthName}
+      br
+      label(for='day') Day:
+      select(name='day', id='day')
+        for day in allowedDateInfo.days
+          option(value='#{day}') #{day}
+      br
+      label(for='hour') Hour:
+      select(name='hour', id='hour')
+        for hour in allowedDateInfo.hours
+          option(value="#{hour}") #{hour}
+      br
+      label(for='minute') Minute:
+      select(name='minute')
+        for minute in allowedDateInfo.minutes
+          option(value='#{minute}') #{minute}
+      br
+      input(id='submit', type='submit', value='Submit')
+   

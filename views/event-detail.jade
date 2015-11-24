@@ -1,0 +1,20 @@
+extend layout
+
+block mainContent
+
+h1#title #{event.title}
+  span#date #{event.date}
+  span#location #{event.location}
+  img#image(src='/images/yale_college_logo.png')
+  ul#attendees
+    div
+      #{event.attending}
+  if errors
+  div
+    ul.form-errors
+      for error in errors
+        li #{error}
+  form#email(action="#{'/events/' + event.id + '/rsvp'}", method='POST', placeholder='Enter your email here!')
+    label(for='email') RSVP to this event:
+    input(type='email', name='email')
+    input(type='submit', value='Submit')

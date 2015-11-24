@@ -5,15 +5,13 @@
  */
 var allEvents = [
   {
-    id: 0,
-    title: 'SOM House Party',
-    // Note that JavaScript months are zero-indexed,
-    // so, month zero is January. This is Jan 17th
-    // 2013 at 4:30pm local time.
-    date:   new Date(2016, 0, 17, 16, 30, 0),
-    image: 'http://i.imgur.com/pXjrQ.gif',
-    location: 'Kyle \'s house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    "id": 0,
+    "title": 'SOM House Party',
+    "date":   new Date(2016, 0, 17, 16, 30, 0),
+    "image": 'http://i.imgur.com/pXjrQ.gif',
+    "location": 'Kyle \'s house',
+    "attending": ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu'],
+    "items": ['pizza', 'cups', 'beer', 'lollipops']
   },
   {
     id: 1,
@@ -21,7 +19,8 @@ var allEvents = [
     date:   new Date(2015, 8, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Miles\' house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu'],
+    items: ['blanket', 'sonos', 'pizza', 'salad']
   },
   {
     id: 2,

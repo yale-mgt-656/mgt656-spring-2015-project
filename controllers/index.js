@@ -1,6 +1,9 @@
 'use strict';
 
 var events = require('../models/events');
+var express = require('express');
+var router = express.Router();
+
 
 /**
  * Controller that renders our index (home) page.
@@ -13,7 +16,7 @@ function index (request, response) {
     'events': events.all,
     'time': currentTime
   };
-  response.render('index.html', contextData);
+  response.render('index', contextData);
 }
 
 module.exports = {
