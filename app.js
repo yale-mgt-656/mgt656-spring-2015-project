@@ -9,7 +9,7 @@ var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var sprintreportControllers = require('./controllers/sprint-report.js');
-
+var donateControllers = require('./controllers/donate.js');
 
 // Create our express app
 var app = express();
@@ -27,5 +27,7 @@ app.post('/events/:id([0-9]+)', eventControllers.rsvp);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/api/events', eventControllers.api);
 app.get('/sprint-report-4', sprintreportControllers.sprintreport);
+app.get('/donate', donateControllers.donate);
+app.get('/donate/thankyou', donateControllers.thankyou);
 
 module.exports = app;
