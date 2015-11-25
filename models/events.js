@@ -13,17 +13,11 @@ events.each(function(x){allEvents.push(x)});
  * Returns the first event that has a particular id.
  */
 function getById (id) {
-
-  collection.findOne({'id':parseInt(req.params.id)},{},function(e,docs){
-      var currentTime = new Date();
-
-      if (docs) {
-        return docs
-      } else {
-        return null;
-      };
-
-  });
+  for (var i = allEvents.length - 1; i >= 0; i--) {
+    if (id === allEvents[i].id){
+      return allEvents[i];
+    }
+  }
   return null;
 }
 

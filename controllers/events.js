@@ -163,23 +163,18 @@ function saveEvent(req, res){
 
 function eventDetail (req, res) {
 
-  var db = req.db;
-  var collection = db.get('eventlist');
-  collection.findOne({'id':parseInt(req.params.id)},{},function(e,docs){
-      var currentTime = new Date();
-
-      if (docs) {
-        res.render('event-detail', {
-            "event" : docs,
-            "time": currentTime
-        });
-      } else {
-        res.status(404).send('404 Error: No such event');
-      };
-
-  });
+    var ev = events.getById(parseInt(req.params.id));
+    if (ev === null) {
+      res.status(404).send('404 Error: No such event');
+    }
+    else {
+      console.log(req.params.id);
+      res.render('event-detail', {event: ev});
+    }
 
 }
+
+
 
 
 // what is called when someone rsvps to an event
