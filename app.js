@@ -62,7 +62,6 @@ app.post('/events/new', eventControllers.saveEvent);
 // app.post('/events/new', eventControllers.toDatabase);
 
 
-
 app.get('/events/:id', eventControllers.eventDetail);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);

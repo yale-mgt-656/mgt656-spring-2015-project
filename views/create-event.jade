@@ -25,7 +25,7 @@ body
           option(value='#{year}') #{year}
       label(for='month') Month:
       select(name='month', id='month')
-        for monthNumber, monthName in allowedDateInfo.months
+        for monthName, monthNumber in allowedDateInfo.months
           option(value='#{monthNumber}') #{monthName}
       br
       label(for='day') Day:
