@@ -31,7 +31,7 @@
 {% endblock %}
 
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=Yn0nY2dweTTWqdo7oRKbYFw"></script>
+<script src="//www.google-analytics.com/cx/api.js?experiment=n0nY2dweTTWqdo7oRKbYFw"></script>
 
 <!-- Load the JQuery library -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -49,7 +49,7 @@ var pageVariations = [
 // Wait for the DOM to load, then execute the view for the chosen variation.
 $(document).ready(function(){
   // Ask Google Analytics which variation to show the user.
-  var chosenVariation = cxApi.chooseVariation(n0nY2dweTTWqdo7oRKbYFw);
+  var chosenVariation = cxApi.chooseVariation();
 
   // Execute the chosen view
   pageVariations[chosenVariation]();
