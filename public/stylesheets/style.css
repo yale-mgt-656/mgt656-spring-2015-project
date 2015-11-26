@@ -1,10 +1,12 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,500);
+
+#bootstrap-override body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Roboto" !important;
 }
 
-a {
-  color: #00B7FF;
+#bootstrap-override h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
 }
 
 .form-errors {
@@ -15,4 +17,23 @@ a {
   color: red;
 }
 
+.btn { /* Makes ghost buttons */
 
+	background: transparent;
+	color: #F2F2F2;
+	border-width: 2px;
+	font-family: "Oswald", sans-serif;
+
+	-webkit-border-radius: 0;
+	-moz-border-radius:    0;
+	border-radius:         0;
+	
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+	
+}

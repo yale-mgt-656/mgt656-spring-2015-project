@@ -1,10 +1,40 @@
 {% extends "layout.html" %}
 
+{% block jumbotron %}
+
+ <div class="jumbotron">
+  <div class="container">
+    <h1>I thought you were bringing the sandwiches.</h1>
+    <h2>No, I thought <em>you</em> were!</h2>
+    <p class="lead">Make sure your guests know what to bring.</p>
+    <p><a class="btn btn-lg btn-default" href="/events/new" role="button">Plan a better event now &rarr;</a></p>
+   </div>
+ </div>
+ 
+{% endblock %}
 
 {% block mainContent %}
-  <div>
-    <img id="logo" src="/images/hm_logo_1.png" />
+
+ 
+<div class="row">
+    <div class="col-lg-6">
+      <h4>A better way to organize events</h4>
+      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+    </div>
+
+    <div class="col-lg-6">
+      <h4>Subheading</h4>
+      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+      <h4>Subheading</h4>
+      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+      <h4>Subheading</h4>
+      <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    </div>
   </div>
+
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>

@@ -2,17 +2,32 @@
 <html>
   <head>
     <title>{{ title }}</title>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
+   <link rel="stylesheet" href="/stylesheets/bootstrap-custom-full.css" />
+    <!-- Don't forget to include our styles AFTER bootstrap so they'll override properly -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
-	<body class="container">
+	<body id="bootstrap-override">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+       <nav>
+         <img id="logo" src="/images/hm_logo_1.png" height="40"/>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation"><a href="/">home</a></li>
+          <li role="presentation"><a href="/about.html">about</a></li>
+          <li role="presentation"><a href="/events.html">listings</a></li>
+          <li role="presentation"><a href="/api.html">API</a></li>
+        </ul>
+      </header>
+    {% endblock %}
+    
+    {% block jumbotron %}
     {% endblock %}
 
+    <div class="container">
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
@@ -20,6 +35,7 @@
     {% block footer %}
       <footer>Check out upcoming events and post your own at our <a href="/">Homepage</a>. Find out more at <a href="/about">About Us</a>.</footer>
     {% endblock %}
-
+  </div>
+  
   </body>
 </html>
