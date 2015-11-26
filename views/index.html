@@ -2,17 +2,102 @@
 
 
 {% block mainContent %}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+                </a>
+            </div>
 
-  <div class="jumbotron">
-    <h3>Welcome to {{title}}'s homepage.</h3>
-    <h4>{{tagline}}</h4>
-  </div>
-  <div class="event-list">
-    <ul>
-      <li><a href="/events/new">Create New Event</a></li>
-    </ul>
-    <p> This will be where the events will be listed</p>
-  </div>
-  <p>Check out the <a href="/events">events</a> page.</p>
-  <p><a id="new" href="/events/new">Create a new event</a></p>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Download</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    {% endblock %}
+    
+    {% block mainContent %}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Life = &sum; All Events</h1>
+                        <p class="intro-text">Don't fuck it up.<br>Plan your event with us.</p>
+                        <a href="#events" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Events Section -->
+    <section id="events" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Here's what's up:</h2>
+                <p>[insert event list here]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="aboutUs" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Wherefore Art Thou Divine Surf?</h2>
+                    <p>You can get to know the team, read our bios, and shoot us an email.  If you want.</p>
+                    <a href="/about" class="btn btn-default btn-lg">About Us Page Through Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Divine Surf</h2>
+                <p>If this is an emergency, please call 911.  Otherwise, press the any key.</p>
+                <p><a href="http://www.mlbtraderumors.com/2014/12/dodgers-designate-kyle-jensen-for-assignment.html">kyle.jensen@yale.edu</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="http://49.media.tumblr.com/tumblr_mefgsqeMHY1rp68cjo12_r2_250.gif" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twit About It</span></a>
+                    </li>
+                    <li>
+                        <a href="http://horseproducts101.com/" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Gity-up Hub</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.reddit.com/r/asmr/" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Are you one of us?</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock %}
