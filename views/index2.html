@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <h1 class="front-title">{{ title }} FTW</h1>
+  <p class="front-p">
+    Welcome to {{ title }}. {{tagline}} {{events.nextId}}
+  </p>
+  <p>Here is our list of events</p>
+    <div class="event-list">
+      {% include "fragments/events-list2.html" %}
+    </div>
+  </p>
+
+  <p>
+    Check out the <a href="/about">About us</a> page
+    as well as the <a href="/events">Events</a> page.
+  </p>
+  <p>
+    <a id="new" href="/events/new">Create a new event</a>
+  </p>
+<style> body { 
+  background: url(http://kenmclane.org/images/party_bg.jpg);
+  text-align: center;
+
+
+color: black;
+font-family: helvetica;
+}
+</style>
+{% endblock %}
