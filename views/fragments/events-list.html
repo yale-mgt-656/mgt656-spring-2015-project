@@ -11,9 +11,9 @@
          {{event.attending.length}} attending so far
       </br>
       <div>
-          <a class="btn btn-primary btn-lg" href="/events/{{event.id}}" role="button">RSVP</a></p><br>
+          
     </div>
-      <a href="/events/{{event.id}}"><h3 class="event-title"></h3></a>
+      <a href="/events/{{event.id}}"><div class="event-title"></div></a>
     </li>
   {% endfor %}
 </ul>
@@ -32,7 +32,7 @@
       $(".event-title").html('');
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
-      $(".event-title").html('RSVP');
+      $(".event-title").html('<div class="btn btn-danger">RSVP</div>');
     }
   ];
 
