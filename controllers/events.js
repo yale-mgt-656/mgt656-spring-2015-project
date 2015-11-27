@@ -1,5 +1,6 @@
 'use strict';
 
+
 var events = require('../models/events');
 var validator = require('validator');
 var lodash = require('lodash');
@@ -162,16 +163,16 @@ function saveEvent(req, res){
 
 
 function eventDetail (req, res) {
-
-    var ev = events.getById(parseInt(req.params.id));
-    if (ev === null) {
-      res.status(404).send('404 Error: No such event');
-    }
-    else {
-      console.log(req.params.id);
-      res.render('event-detail', {event: ev});
-    }
-
+    events.getById(parseInt(req.params.id)).success(function(ev) {
+        if (ev === null) {
+          res.status(404).send('404 Error: No such event');
+        }
+        else {
+          res.render('event-detail', {event: ev});
+        }
+      }).error(function(err) {
+        console.log(err);
+      });
 }
 
 
