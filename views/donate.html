@@ -1,14 +1,19 @@
-{% extends "layout.html" %} <!--{% block mainContent %}-->
+{% extends "layout.html" %}
+<!--{% block mainContent %}-->
 
-<div class="home">
-     <div class="homecontainer" style="background-color: rgba(0,0,0,0.6);">
-        <h1>Support our events by donating</h1>
-        <div>
-             <input type="integer" value="quantity">
-             <a href="/donate/thankyou" id="donate" class="btn btn-primary btn-lg">Donate</a>
-        </div>
-          <div>
-    </div>
-  </div>
-  
-{% endblock %}
+<div class="container home">
+        <h1 style="color:black">Support our events by donating</h1>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-addon">.00</span>
+                </div>
+            </div></div><br>
+            <div class="row">
+                <a href="/donate/thankyou" id="donate" class="btn btn-primary btn-lg">Donate</a>
+            </div>
+        
+</div>
+    {% endblock %}
