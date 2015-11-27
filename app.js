@@ -20,6 +20,8 @@ configure(app);
 
 // Add routes mapping URLs to controllers
 app.get('/', indexControllers.index);
+app.get('/var1', indexControllers.var1);
+app.get('/var2', indexControllers.var2);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
