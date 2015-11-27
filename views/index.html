@@ -4,10 +4,10 @@
 
  <div class="jumbotron">
   <div class="container">
-    <h1>I thought you were bringing the sandwiches.</h1>
-    <h2>No, I thought <em>you</em> were!</h2>
-    <p class="lead">Make sure your guests know what to bring.</p>
-    <p><a class="btn btn-lg btn-default" href="/events/new" role="button">Plan a better event now &rarr;</a></p>
+    <h1 class="jumbo-text">I thought you were bringing the sandwiches.</h1>
+    <h2 class="jumbo-text pad-after">No, I thought <em>you</em> were!</h2>
+    <h3 class="jumbo-text pad-after">Know who's bringing what.</h3>
+    <p><a class="btn btn-lg btn-default jumbo-text" href="/events/new" role="button">Plan a better event now &rarr;</a></p>
    </div>
  </div>
  
@@ -18,37 +18,16 @@
  
 <div class="row">
     <div class="col-lg-6">
-      <h4>A better way to organize events</h4>
+      <h1>A better way to organize events</h1>
       <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
       <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
     </div>
 
     <div class="col-lg-6">
-      <h4>Subheading</h4>
-      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-      <h4>Subheading</h4>
-      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-      <h4>Subheading</h4>
-      <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <h1><a href="/events/new">Create an event</a>, join one below or <a href="/events">view all</a>...</h1>
+     {% include "fragments/events-list.html" %}
     </div>
   </div>
 
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-
-  <h2>Upcoming Events</h2>
-  <div>
-    {% include "fragments/events-list.html" %}
-  </div>
-
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+  
 {% endblock %}

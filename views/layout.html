@@ -14,12 +14,14 @@
     {% block header %}
       <header>
        <nav>
-         <img id="logo" src="/images/hm_logo_1.png" height="40"/>
-        <ul class="nav nav-pills pull-right">
+         <!-- TODO: Pad and style this logo out properly once finalized -->
+         <img id="logo" class="navbar-brand" src="/images/hm_logo_1.png" height="50"/>
+         
+        <ul class="nav pull-right nav-pills">
           <li role="presentation"><a href="/">home</a></li>
-          <li role="presentation"><a href="/about.html">about</a></li>
-          <li role="presentation"><a href="/events.html">listings</a></li>
-          <li role="presentation"><a href="/api.html">API</a></li>
+          <li role="presentation"><a href="/about">about</a></li>
+          <li role="presentation"><a href="/events">listings</a></li>
+          <li role="presentation"><a href="/api">API</a></li>
         </ul>
       </header>
     {% endblock %}
@@ -33,7 +35,7 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>Check out upcoming events and post your own at our <a href="/">Homepage</a>. Find out more at <a href="/about">About Us</a>.</footer>
+      <footer>&copy; 2015 {{ title }}</footer>
     {% endblock %}
   </div>
   
