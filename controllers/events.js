@@ -42,16 +42,13 @@ var allowedDateInfo = {
  */
 
 
-function listEvents(req, res) {
-  var db = req.db;
-  var collection = db.get('eventlist');
-  collection.find({},{},function(e,docs){
-      var currentTime = new Date();
-      res.render('event', {
-          "events" : docs,
-          "time": currentTime
-      });
-  });
+function listEvents(request, response) {
+  var contextData = {
+    'events': events.all.sort(function(a, b) {
+      return b.date - a.date;
+    }),
+  };
+  response.render('event', contextData);
 }
 
 

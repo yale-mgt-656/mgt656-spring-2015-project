@@ -1,6 +1,5 @@
 ul(class="eventlist")
   for event in events
-    //- if event.date >= time
     li(class="event" id="event-#{event.id}")
       | #{event.title}.
       time(datetime="#{event.date}") #{event.date|prettyDate}

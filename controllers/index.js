@@ -14,9 +14,10 @@ function index (request, response) {
     'title': 'Half Mountain',
     'tagline': 'Check out our upcoming events!',
     'events': events.all.sort(function(a, b) {
-      return b.date - a.date;
-    }),
-    'time': currentTime
+        return b.date - a.date;
+      }).filter(function(x) {
+        return x.date > currentTime;
+      }),
   };
   response.render('index', contextData);
 }
