@@ -3,7 +3,7 @@
     <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
       
       <img class="eventimage" src="{{event.image}}">
-      <br>
+      <br><h3 class="event-title"></h3>
       <a href="/events/{{event.id}}">{{event.title}}</a>
       <br>
         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
@@ -13,7 +13,7 @@
       <div>
           
     </div>
-      <a href="/events/{{event.id}}"><div class="event-title"></div></a>
+    
     </li>
   {% endfor %}
 </ul>
@@ -32,7 +32,7 @@
       $(".event-title").html('');
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
-      $(".event-title").html('<div class="btn btn-danger">RSVP</div>');
+      $(".event-title").html('RSVP');
     }
   ];
 

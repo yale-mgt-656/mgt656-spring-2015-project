@@ -34,7 +34,7 @@ var allEvents = [
   {
     id: 4,
     title: 'Cooking lessons for the busy business student',
-    date:   new Date(2016, 8, 2, 19, 0, 0),
+    date:   new Date(2015, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
     attending: ['homer.simpson@yale.edu'],
