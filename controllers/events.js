@@ -7,8 +7,6 @@ var lodash = require('lodash');
 var express = require('express');
 
 
-
-
 // Date data that would be useful to you
 // completing the project These data are not
 // used a first.
@@ -39,36 +37,22 @@ var allowedDateInfo = {
 
 
 
-
-
 /**
  * Controller that renders a list of events in HTML.
  */
 
 
 function listEvents(req, res) {
-
-  // var db = req.db;
-  // var collection = db.get('eventlist');
-  // var events = collection.find({},{},function(e,docs){
-  //       res.json(docs);
-  // });
-
-  // console.log(events);
-
-  var currentTime = new Date();
-  var contextData = {
-    'events': events.all,
-    'time': currentTime
-  };
-  res.render('event', contextData);
+  var db = req.db;
+  var collection = db.get('eventlist');
+  collection.find({},{},function(e,docs){
+      var currentTime = new Date();
+      res.render('event', {
+          "events" : docs,
+          "time": currentTime
+      });
+  });
 }
-
-
-
-
-
-
 
 
 /**
@@ -163,16 +147,17 @@ function saveEvent(req, res){
 
 
 function eventDetail (req, res) {
-    events.getById(parseInt(req.params.id)).success(function(ev) {
-        if (ev === null) {
-          res.status(404).send('404 Error: No such event');
-        }
-        else {
-          res.render('event-detail', {event: ev});
-        }
-      }).error(function(err) {
-        console.log(err);
-      });
+
+  events.getById(parseInt(req.params.id)).success(function(ev) {
+      if (ev === null) {
+        res.status(404).send('404 Error: No such event');
+      }
+      else {
+        res.render('event-detail', {event: ev});
+      }
+    }).error(function(err) {
+      console.log(err);
+    });
 }
 
 

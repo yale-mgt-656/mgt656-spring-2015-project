@@ -19,6 +19,7 @@ var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
 var apiControllers = require('./controllers/api.js');
+var donationControllers = require('./controllers/donation.js');
 
 // Create our express app
 var app = express();
@@ -43,18 +44,7 @@ app.get('/about', aboutControllers.about);
 
 app.get('/events', eventControllers.listEvents);
 
-app.get('/eventlist', function(req, res) {
-    var db = req.db;
-    var collection = db.get('eventlist');
-    collection.find({},{},function(e,docs){
-        var currentTime = new Date();
-        res.render('event', {
-            "events" : docs,
-            "time": currentTime
-        });
-    });
-});
-
+app.get('/eventlist', eventControllers.listEvents);
 
 app.get('/events/new', eventControllers.newEvent);
 
@@ -65,6 +55,8 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
 app.get('/api', apiControllers.viewApi);
 app.get('/api/events', apiControllers.listEventsJSON);
+app.get('/api/events/:id', apiControllers.eventDetailJSON);
+app.get('/donation', donationControllers.donation);
 
 // action for RSVPing
 app.post('/events/:id/rsvp', eventControllers.rsvp);
