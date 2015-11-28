@@ -7,15 +7,15 @@ block mainContent
     span#location #{event.location}
     img#image(src='/images/yale_college_logo.png')
     ul#attendees
-      div
-        #{event.attending}  
+      div #{event.attending}  
     p
       a.donation(href='/donation') Donate
       |  to this event!
-    //- div
-      //- ul.form-errors
-      //-   for error in errors
-      //-     li #{error}
+    div
+      ul.form-errors
+        if errors
+          for error in errors
+            li #{error}
     form#email(action="#{'/events/' + event.id + '/rsvp'}", method='POST', placeholder='Enter your email here!')
       label(for='email') RSVP to this event:
       input(type='email', name='email')

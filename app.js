@@ -41,11 +41,8 @@ app.use(function(req,res,next){
 // Add routes mapping URLs to controllers
 app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
-
 app.get('/events', eventControllers.listEvents);
-
 app.get('/eventlist', eventControllers.listEvents);
-
 app.get('/events/new', eventControllers.newEvent);
 
 app.post('/events/new', eventControllers.saveEvent);

@@ -21,6 +21,7 @@
     "monk": "~1.0.1",
     "morgan": "^1.6.1",
     "nunjucks": "^2.1.0",
+    "randexp": "^0.4.1",
     "serve-favicon": "~2.2.1",
     "strftime": "^0.9.2",
     "validator": "^4.2.0"

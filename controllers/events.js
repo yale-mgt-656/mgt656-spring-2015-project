@@ -162,27 +162,38 @@ function eventDetail (req, res) {
 
 // what is called when someone rsvps to an event
 function rsvp (request, response){
+  var db = request.db;
+  var collection = db.get('eventlist');
+
   // takes the incoming params id and identifies the event user wants to RSVP to and then stores in variable "ev"
-  var ev = events.getById(parseInt(request.params.id));
-  // if it doesn't find the event, it says 'No such event'
-  if (ev === null) {
-    response.status(404).send('404 Error: No such event');
-  }
-
-  if (validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
-    ev.attending.push(request.body.email);
-    // Need to add a directive to save the event here.
-    response.redirect('/events/' + ev.id);
-  } else{
-    var contextData = {errors: [], event: ev};
-    if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
-      contextData.errors.push('Harvard not allowed!');
-    }else{
-      contextData.errors.push('Invalid email! Are you a Yale student?');
+  events.getById(parseInt(request.params.id)).success(function(ev){
+    if (ev === null) {
+      response.status(404).send('404 Error: No such event');
     }
-    response.render('event-detail', contextData);
-  }
+    if (validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
+      ev.attending.push(request.body.email);
+      // JW: Is this anyway you can modify an object instead of querying for it again?
+      collection.findAndModify(
+        {"_id": ev._id}, // query
+        {$set: {attending: ev.attending}},
+        function(err, object) {
+            if (err){
+                console.warn("oops");  // returns error if no matching object found
+            }else{
+                response.redirect('/events/' + ev.id);
+            }
+        });
 
+    } else{
+      var contextData = {errors: [], event: ev};
+      if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
+        contextData.errors.push('Harvard not allowed!');
+      }else{
+        contextData.errors.push('Invalid email! Are you a Yale student?');
+      }
+      response.render('event-detail', contextData);
+    }
+  });
 }
 
 /**
