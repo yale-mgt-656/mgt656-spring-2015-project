@@ -132,11 +132,13 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var normalized = validator.normalizeEmail(request.body.email);
+  var domain = normalized.split("@")[1];
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && validator.equals(domain, "yale.edu")) {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
@@ -144,7 +146,6 @@ function rsvp (request, response){
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
 }
 
 /**
