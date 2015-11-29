@@ -13,6 +13,13 @@ var eventControllers = require('./controllers/events.js');
 // Create our express app
 var app = express();
 
+function renderView (view) {
+    return function (request, response) {
+        var contextData = {};
+        response.render(view, contextData);  
+    }
+}
+
 // Configure it
 configure(app);
 
@@ -23,5 +30,8 @@ app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/api/events/', eventControllers.api);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/faq', renderView('faq.html'));
+app.get('/terms', renderView('terms.html'));
+app.get('/contact', renderView('contact.html'))
 
 module.exports = app;
