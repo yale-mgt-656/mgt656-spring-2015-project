@@ -26,7 +26,7 @@ var allEvents = [
   {
     id: 2,
     title: 'BBQ for managers',
-    date:   new Date(2015, 9, 20, 18, 0, 0),
+    date:   new Date(2016, 9, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
     attending: ['kim.kardashian@yale.edu'],
