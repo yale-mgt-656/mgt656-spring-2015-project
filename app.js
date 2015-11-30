@@ -8,7 +8,10 @@ var configure = require('./config.js');
 var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
+var donationControllers = require('./controllers/donation.js');
 
+// Import events
+var events = require('./models/events');
 
 // Create our express app
 var app = express();
@@ -21,6 +24,10 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/events/:id' , eventControllers.eventDetail);
+app.get('/api/events' , eventControllers.api);
+app.get('/donate/:id' , donationControllers.donationPage);
 app.post('/events/new', eventControllers.saveEvent);
+app.post('/events/:id', eventControllers.rsvp);
 
 module.exports = app;
