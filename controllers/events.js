@@ -52,7 +52,7 @@ function newEvent(request, response){
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
    if (validator.isInt(request.body[fieldName]) === false) {
-    contextData.errors.push('Your year should be an integer, yo!');
+    contextData.errors.push('Your '+ fieldName +' should be an integer, yo!');
    }else{
       value = parseInt(request.body[fieldName], 10);
       if (value > minVale || valve < maxVal) {
