@@ -60,7 +60,7 @@ app.post('/events/:id/rsvp', eventControllers.rsvp);
 
 app.get('/sprints', function (req, res) {
   var contextData = {};
-  res.render('reports/sprint-reports.html', contextData)
+  res.render('reports/sprint-reports', contextData)
 });
 
 

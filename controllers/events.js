@@ -57,7 +57,7 @@ function listEvents(request, response) {
  */
 function newEvent(request, response){
   var contextData = {allowedDateInfo: allowedDateInfo};
-  response.render('create-event.jade', contextData);
+  response.render('create-event', contextData);
 }
 
 
