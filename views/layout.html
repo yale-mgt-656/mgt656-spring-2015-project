@@ -3,7 +3,7 @@
   <head>
     
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
     <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
     <!-- Google Analytics snipet -->
     <script>
@@ -21,7 +21,7 @@
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header><h3>MGT 656</h3></header>
     {% endblock %}
 
     {% block mainContent %}
@@ -29,10 +29,9 @@
     {% endblock %}
 
     {% block footer %}
-      <footer><br>FOOTER START.<br>
-      <a href="/about">Visit the ABOUT Page</a><br>
-      <a href="/">Visit the HOME Page</a><br>
-      FOOTER END
+      <footer>
+        <p><a href="/about">Visit the ABOUT Page</a></p>
+        <p><a href="/">Visit the HOME Page</a></p>
       </footer>
     {% endblock %}
 
