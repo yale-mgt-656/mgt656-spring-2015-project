@@ -32,7 +32,7 @@
     function() {},  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
       //document.getElementById('event-0').innerHTML = 'Look, a Bridge!';
-      $( 'li.event-title' ).prepend( 'RSVP ' );
+      $( 'li > a' ).prepend( 'RSVP ' );
     }
   ];
   
