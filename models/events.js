@@ -41,7 +41,7 @@ var allEvents = [
   }
 ];
 
-
+var nextId = 5;
 /**
  * Returns the first event that has a particular id.
  */
@@ -56,5 +56,6 @@ function getById (id) {
 
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+  nextId: nextId
 };
