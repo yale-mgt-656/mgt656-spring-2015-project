@@ -36,7 +36,7 @@
   // Wait for the DOM to load, then execute the view for the chosen variation.
   $(document).ready(function(){
     // Ask Google Analytics which variation to show the user.
-    var chosenVariation = cxApi.chooseVariation(fIkUqo9gRbS-NjGmKo8ipQ);
+    var chosenVariation = cxApi.chooseVariation();
   
     // Execute the chosen view
     pageVariations[chosenVariation]();
