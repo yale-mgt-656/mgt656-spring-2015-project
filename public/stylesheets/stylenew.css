@@ -1,0 +1,37 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, Arial, sans-serif;
+  color: #535353;
+}
+
+a {
+  font: 14px Helvetica, Arial, sans-serif;
+  color: #428BCA;
+}
+
+p {
+  font: 14px Helvetica, Arial, sans-serif;
+  color: #428BCA;
+  back
+}
+
+div {
+  font: 14px Helvetica, Arial, sans-serif;
+  color: #428BCA;
+}
+
+li {
+  font: 14px Courier New, Arial, sans-serif;
+  color: #428BCA;
+}
+
+.form-errors {
+	color: red;
+}
+
+.center-block {
+  display: block;
+  font: 12px Helvetica, Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
