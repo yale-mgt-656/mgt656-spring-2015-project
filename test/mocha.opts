@@ -1,2 +1,3 @@
 --reporter mocha-better-spec-reporter
 --ui bdd
+--timeout 4000
