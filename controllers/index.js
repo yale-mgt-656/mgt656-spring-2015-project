@@ -14,7 +14,7 @@ function index (request, response) {
     'events': events.all,
     'time': currentTime
   };
-  response.render('index.html', contextData);
+  response.render('index.html', contextData)
 }
 
 module.exports = {

@@ -24,4 +24,30 @@
   <p><br><br>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+  
+  <!-- Load the Content Experiment JavaScript API client for the experiment -->
+  <script src="//www.google-analytics.com/cx/api.js?experiment=fIkUqo9gRbS-NjGmKo8ipQ"></script>
+  
+  <!-- Load the JQuery library -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  
+  <script> var chosenVariation = cxApi.chooseVariation(); </script>
+  
+  <script>
+  // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {},  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: add RSVP text
+      //document.getElementById('event-0').innerHTML = 'Look, a Bridge!';
+      $( 'li > a' ).prepend( 'RSVP ' );
+    }
+  ];
+  
+  // Wait for the DOM to load, then execute the view for the chosen variation.
+  $(document).ready(
+  // Execute the chosen view
+  pageVariations[chosenVariation]
+  );
+  
+  </script>
 {% endblock %}
