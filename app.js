@@ -22,6 +22,7 @@ app.get('/', indexControllers.index);
 app.get('/donate', indexControllers.donatecontrol);
 app.get('/about', aboutControllers.about);
 app.get('/sprint-report4', sprintControllers.sprintreport);//change this
+app.get('/sprint-report5', sprintControllers.sprintreport5);
 app.get('/events', eventControllers.listEvents);
 app.get('/events', eventControllers.listEvents);
 app.post('/events/new', eventControllers.newEvent);
