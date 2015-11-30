@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Spring-giant Sprint 5 report</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/skeleton.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center">Spring-Giant Team | Project Status Report: Sprint #5 | November 30, 2015</h1>
+            <h2 style="text-align: center; font-size: 20px">Jeff McHugh (jeff.mchugh@yale.edu) | Megha Ghildyal (megha.ghildyal@yale.edu) | Lea Lupkin (lea.lupkin@yale.edu) | Jared MacLane (jared.maclane@yale.edu)</h2>
+            <h4>Quick Snapshot: Where the Project Stands at the End of Sprint #5</h4>
+            <p><b>What we’re doing: </b> Our team is creating a website that is essentially a clone of Eventbrite. The site allows users to create new events and post them to the site. It also allows users to view upcoming events and RSVP to those that interest them, provided they have a Yale e-mail address. We have launched our website on Yale’s campus and different Yale schools are using it. We have been able to analyze the traffic through google analytics and plan to further do A/B testing using certain controls. <br><br>
+              Our team walked in with confidence into this sprint due to the their enhanced coding capabilities and experience with using analytics before. Of the 43 tests we run for the site, only 1 is not yet passing (should redirect the user to the event detail page if the form is valid).  <br><br>Here is a  <a href="https://mgt656-spring-giant.herokuapp.com/">link</a> to the home page. You’ll notice that:<Br>
+                  - We have a new logo and name, created by our brand specialist <Br>
+                  - This logo, clicked on any page, leads the user back to the homepage <Br>
+                  - We have developed a search function that enables us to <a href="https://mgt656-spring-giant.herokuapp.com/api/events?search=BBQ"> search by keyword (API) </a>that includes pertinent information about the event. <Br>
+                  - When a user clicks on <a href="https://mgt656-spring-giant.herokuapp.com/events/new">'Create New Events'</a>, the form now provides selectable options for date and time (see figure 1). It also allows the user to submit the form. <Br>
+                  - Each existing event that is being viewed now has a <a href="https://mgt656-spring-giant.herokuapp.com/events/1">donation button</a> on its page (see figure 2)<Br>
+                  - We have done quite a lot on the background analytics. Through our newly created <a href="https://analytics.google.com/analytics/web/?authuser=0#report/visitors-overview/a70405968w107634085p112131998/">google analytics page</a>, we are now able to monitor:<br>
+                  - How our <a href="https://analytics.google.com/analytics/web/#report/visitors-flow/a70405968w107634085p112131998/">traffic</a> breaks down across different segments and how they flow through our "funnel" from landing to donation (figure 3)<br>
+                  - From which of the various schools are people visiting our page through <a href ="https://analytics.google.com/analytics/web/#report/acquisition-channels/a70405968w107634085p112131998/%3F_r.drilldown%3Danalytics.trafficChannel%3AReferral/">referrals</a> and how many visitors we are getting from each school (figure 4)<br>
+<br>
+                  <b>Figure 1: Create events dropdown option</b><br><img src="/images/s5i1.PNG"></img><br><br>
+                  <b>Figure 2: Donation button associated with each event</b><br><img src="/images/s5i2.PNG"></img><br><br>
+                  <b>Figure 3: Traffic Funnel (google analytics)</b><br><img src="/images/s5i3.PNG"></img><br>
+                  <i>Note: We see from this page that out of the 1.7K users from the U.S. that have visited us, 1.6K have dropped off after the first page. 43 have viewed event #0, 41 event #3 and 3 have viewed the ‘create events’ page. The traffic further flows back into either the landing page (2nd interaction) or event #0 again (3rd interaction). Somehow, till now, no one has clicked on the ‘donate’ button that exists on every event’s page. We need to investigate why this is happening.</i><br><br>
+                  <b>Figure 4: Traffic referral-wise (google analytics)</b><br><img src="images/s5i4.PNG"></img><br>
+                  <i>Note: From this we realize that in the past one month, total number of visitors has been 1.66K out of which 54% are from Yale SOM, 9% from the school of medicine and 5% from the law school. 30% traffic has come from the search.yale.edu page and we need to look into this further for better understanding. Also, this page gives a detailed analysis of new users, bounce rate etc. for each of these customer segments.</i><br>
+                  <br>You’ll also notice some things that aren’t quite up to snuff yet:<br>
+                  - With the exception of the “About” page, the format of the site is still pretty basic. This was a strategic decision on the part of the team, as we wanted to get the functionality of the site down before we expand on its visual appeal. We had a training session on CSS in this sprint and plan to use what we’ve learned in the final sprint this week to make our pages look beautiful.<br>
+                  - The team is still working to setup A/B tests for a) understanding if making the events links on the home page include the word “RSVP” would increase click-through rate and b) if asking people to “donate” or “support” an event in the donation link increases conversion. We have set up an Optimizely account to perform this step.<br><br>
+                  <b>Burn Down Chart:</b><br><img src="/images/s5i5.PNG"></img><br>
+                  <b>**Legend: Each red diamond marks the end of a sprint</b><br>
+                  <i>Note: The burndown chart has a relatively small number of stories because we kept our stories general enough to encapsulate several smaller “tasks” or “user points”. The number of stories increased again this time due to new requirements coming in from management. At the end of this sprint, we completed 2 out of 6 user stories left. In the 4 remaining stories, we have completed several sub tasks or user story points which make some of those stories  90% complete (not included in the burndown chart)! For the next sprint, we plan to depict the burndown chart more accurately by showing user points (and not stories) against days.</i><br>
+                  <h4>Sprint #5 Completed Stories</h4><img src="/images/s5i6.PNG"  width="600" height="600"></img>
+                  <h4>Project Backlog</h4><img src="/images/s5i7.PNG"  width="600" height="600"></img><br><br>
+                 <h4>Recap of the week’s sprint</h4>
+                  Scrum meetings: <br>
+                  - Tuesday, November 17<br>
+                  - Thursday, November 19<br>
+                  - Monday, November 30<br><br>
+                  The team met several times the week before thanksgiving to list down the user stories remaining (plus new ones added by Kyle), divide each one of them into user points and assign reasonable weights to all the user points. In our Tuesday meeting we spent 25% of the time reviewing the previous week’s sprint. We decided to continue to write our report in google doc format so everyone can review and comment before the product owner puts it in the HTML format we have created on cloud 9. We also decided to mention actual hours each task took (vs. planned hours) on <a href="https://waffle.io/spring-giant/mgt656-spring-2015-project">Waffle.io</a>. We devoted 75% of the time to go over our plans for the upcoming sprint but could not dole out individual assignments.Majority of our time was spent in understanding the new Google Analytics/ Optimizely functionalities we have to connect to our website to understand user behavior.  Our communication was much better, and every member of the team contributed to the brainstorming session during the sprint. For the past week, Lea was the scrum master and Megha was the product owner.  <br><br>
+                  We treated the next meeting as further planning for sprint-5. The user stories were heavy and we broke them down into further sub-tasks or user points after much deliberation. We also laid down our vision for the site’s visual style and user experience. At the end of the meeting, we reaffirmed our commitment to follow deadlines religiously for this sprint, as one can easily lose focus during a long break. We also decided to check our waffle.io page actively for helping each other on troubleshooting. As a result, we were able to complete 80% of the sub-tasks planned.<br><br>
+                  In our last meeting before this sprint, we discovered that we had not been doing our burn down chart exactly the way we should be because we had been including in it User Stories vs. Number of Days when in fact, it should be User Points (i.e. subtasks) vs. Number of Days. Since it will take us some time to go back to all our completed user stories to find out how what user points and days they refer to, we have decided to include this in our next report. Our sprint-6 report will therefore be a graph of ideal vs actual time taken for our User Points.<br><br>
+                  <br>
+                  
+                  <h4>Focus for Sprint #6</h4>These are the User Stories and Points we will aim to complete for the upcoming week. We should not need to add any more stories to the backlog as we made sure we covered all remaining tasks in the planning for this sprint:<br>
+                  <img src="/images/s5i8.PNG"  width="600" height="600"></img><br><br>
+                  </p>
+      </div>
+    </div>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
