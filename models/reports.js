@@ -115,7 +115,7 @@ var allReports = [
       {name: "Nilofer Ahmed", email: "nilofer.ahmed@yale.edu"},
       {name: "Stefan Bauer", email: "stefan.bauer@yale.edu"}
     ],
-    date:   new Date(2015, 11, 30, 23,59, 59),
+    date:   new Date(2015, 10, 30, 23,59, 59),
     sections:[
       {
         title: "Application Description and Purpose",
