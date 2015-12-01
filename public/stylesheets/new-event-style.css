@@ -1,0 +1,42 @@
+.introcreate-event {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(https://bodydivineyoga.files.wordpress.com/2013/10/handofgod1.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.introcreate-event .create-event-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.introcreate-event .create-event-body .brand-heading {
+    font-size: 40px;
+}
+
+.introaboutus .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .introcreate-event {
+        height: 100%;
+        padding: 0;
+    }
+
+    .introcreate-event .create-event-body .brand-heading {
+        font-size: 90px;
+    }
+
+    .introcreate-event .create-event-body .intro-text {
+        font-size: 26px;
+    }
+}
