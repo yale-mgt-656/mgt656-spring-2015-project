@@ -14,8 +14,31 @@
   {% endif %}
 
 	<form id="create-event" method="POST">
+    <div>
     <label for="title">Event title:</label>
     <input type="text" name="title">
+    </div>
+     <div>
+     <label for="location">Location:</label>
+    <input type="text" name="location"> 
+    </div>
+    <div>
+    <label for="image">Image:</label>
+    <input type="img" name="image">
+    </div>
+    <div>
+    <label for="year">Year:</label>
+    <input type="text" name="yearear"> 
+    <label for="month">Month:</label>
+    <input type="text" name="month"> 
+    </div>
+    <div>
+    <label for="day">Day:</label>
+    <input type="text" name="day"> 
+    <label for="hour">Hour:</label>
+      <input type="text" name="hour"> 
+     <label for="minute">Minute:</label>
+    <input type="text" name="minute"> 
   </form>
 {% endblock %}
 
