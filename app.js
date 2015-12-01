@@ -24,6 +24,7 @@ app.get('/sprintreports', sprintreportsControllers.sprintreports);
 app.get('/sprint1', sprint1Controllers.sprint1);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/api/events', eventControllers.api);
 app.post('/events/new', eventControllers.saveEvent);
 
 module.exports = app;
