@@ -47,7 +47,7 @@
     <div class="row" style="text-align: center">
       <h1>MGT 656 Dry Blessing Coding Team</h1>
       <h2>Project Status Report</h2>
-      <h3>November 16, 2015</h3>
+      <h3>November 30, 2015</h3>
 
     </div>
     <div class="row">
@@ -57,72 +57,61 @@
     <div class="row">
       <b style="text-decoration:underline">Product backlog</b>
       <br>
-      <p>In Sprint 4, we completed the following activities:</p>
+      <p>In Sprint 5, we completed the following activities:</p>
       <ol>
-        <li>The home page has a list of events</li>
-        <li>The events in the home page have links to event detail pages</li>
-        <li>The events have an image</li>
-        <li>Events that are over are not shown</li>
-        <li>Event detail pages created</li>
-        <li>RSVP form on each event detail page created and tested to allow only Yale email addresses</li>
-        <li>Coded form for creating new events</li>
-        <li>Created the functions for validation (they work but the tests are yet to pass)</li>
-        <li>If the form entries are not valid, it will show the errors</li>
-        <li>Added Google Analytics tracking code to pages</li>
+        <li>Created a donation button on the event detail page which links to a donation page</li>
+        <li>Created a thank you page after a person enters an amount in the donation page</li>
+        <li>The new event form is validated</li>
+        <li>If the form is validated it is redirected with a 302 response</li>
+        <li>Added RSVP text in the event box</li>
+        <li>Made A/B testing code using Google Analytics</li>
+        <li>Tested and analyzed the RSVP text</li>
+        <li>Tested the donation button v/s support button</li>
         
       </ol>
     </div>
-    <div class="row" style="margin-top: 25px">
-      <b style="text-decoration:underline">Scrum activities</b><br>
-      <br> We did the following scrum activities as a part of this sprint:<br>
-      <br> We had a <b>15 min scrum meeting</b> while in class last Monday (11/9) to understand what what everyone has done till now, what they will be doing then onwards and if anyone is facing obstacles. Through this meeting, we were able to resolve big issue in integrating the validation branch as app was crashing everytime.<br>
-      <br> We had a <b>sprint planning meeting</b> this Monday (11/16) to understand the additional requirements that were made part of the project:
-        <ul>
-          <li>We looked at the user stories in the email by Prof Kyle Jensen and then broke those down into smaller stories to follow the <b>INVEST</b> criteria. </li>
-          <li>We then estimated the size of each of these stories through a round of <b>planning poker</b>.</li>
-          <li>Each of us took up the tasks we want to work on for the next sprint</li>
-          <li>All the stories for this feature has been uploaded to Waffle.io so that we can keep a track of where we are.</li>
-        </ul>
-      <br> We also did a sprint retrospective and released working code to Heroku.
-      <br><br>
-      <b style="text-decoration:underline">Sprint 4 Retrospective</b>
+    
+    <div class="row">
+      <b style="text-decoration:underline">Sprint Retrospective</b>
       <br>
-      <br>
-      <b><i>What went well during the sprint cycle?</i></b>
+      <p>What went well during the sprint cycle?:</p>
       <ol>
-        <li>We fixed several pieces of code on the Home and About pages so the tests pass. This was because we were more focused on coding up the features rather than checking every single test.</li>
-        <li>We used branches and pull requests and thus had no issues with merging code, unlike the previous sprint.</li>
-        <li>We managed to finish some tasks in less time than expected such as (deleting old events) and we used this time to start the unexpected new tasks (Google Analytics tracking code).</li>
+        <li>We finished the required project!</li>
+        <li>We finished all the stories and passed all the mocha test</li>
+        <li>We worked on our own branches for each story and created pull requests which made it much easier to manage the project without merge conflicts</li>
+        <li>We were able to implement Google Analytics A/B tests using documentation on its website, though it took up a lot of time and was not very straightforward to implement and test</li>
+        
         
       </ol>
     </div>
+    
+    
 
     <div class="row">
       <b><i>What went wrong during the sprint cycle?</i></b>
       <ol>
-        <li>We spent more time on making tests pass than on coding new things</li>
-        <li>We are having trouble and feeling a bit desperate because some functions are working but still the test doesn’t pass and we don’t know why (form validation). We have had to give more time to this task in the next sprint which was unplanned. </li>
-        <li>The new tasks added in the middle of our workload created a disruption to the plans we already had. As you can see in the graph the expectation is that we will not be able to finish the project on time (Pessimistic estimation)</li>
-
+        <li>The Google analytics were a challenge because we didn’t know how to use them and the documentation was not very straightforward</li>
+        <li>The RSVP button added in each event box in the homepage could not be a button with a link. Whenever we added a link, it would fail the mocha tests. So we had to change the RSVP to plain text (refer to Experiment 1 images below)</li>
+        <li>The Thanksgiving holiday prevented us from meeting as usual during the week, but we managed to work virtually from different locations</li>
+        <li>We were very close to finishing all the tasks down to 6 story points, but we decided to add more tasks (as seen in the spike on the burndown chart) such as the style for the donation and the event detail pages etc.</li>
       </ol>
     </div>
-
 
 
     <div class="row">
       <b><i>What could we do differently to improve?</i></b>
       <ol>
-        <li>From the beginning of our coding we should make sure that tests pass so we don’t lose extra time fixing code later</li>
-        <li>Create more pull requests even if they are small commits instead of committing a whole chunk of code at the end</li>
-        <li>Agree on meeting at least once a week</li>
-        <li>We should be better prepared to receive more unexpected tasks from the stakeholders during our process</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
 
       </ol>
     </div>
 
 
-    <div class="row">
-      <b style="text-decoration:underline">Stories to be completed in Sprint 4</b>
+    <div cla  ss="row">
+      <b style="text-decoration:underline">Stories to be completed in Sprint 6</b>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -134,84 +123,60 @@
         </thead>
         <tbody>
           <tr>
-            <td>16</td>
-            <td>When submitted, the form should be validated. (testing)</td>
-            <td>4</td>
-            <td>Karen</td>
+            <td>1</td>
+            <td>Analyze traffic </td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
           </tr>
           <tr>
-            <td>18</td>
-            <td>If the submitted form is valid, I am redirected to the detail page for that new event. This redirect is accomplished using a "302" HTTP response. (See the documentation for the Express.js response redirect method)</td>
+            <td>2</td>
+            <td>Analyze the RSVP test</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Analyze the Donate vs Support button</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            Style the donation page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Style the event detail page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Style the thankyou page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Footer sticks to the bottom of screen</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Validate the donation</td>
             <td>2</td>
             <td>Karen</td>
           </tr>
           <tr>
-            <td>19</td>
-            <td>If the form was not valid, I am taken back the form and the errors are shown on the form.</td>
-            <td>3</td>
-            <td>Karen</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>Make the AB testing code</td>
-            <td>8</td>
+            <td>9</td>
+            <td>Add Database</td>
+            <td>9</td>
             <td>Shadin</td>
           </tr>
-          <tr>
-            <td>22</td>
-            <td>Analyze the traffic</td>
-            <td>2</td>
-            <td>Mezyad</td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>Create and link to the event an RSVP button in the event box on home</td>
-            <td>1.5</td>
-            <td>Mezyad</td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>Integrate to AB test code the RSVP button and test it vs not having it</td>
-            <td>3</td>
-            <td>Mezyad</td>
-          </tr>
-          <tr>
-            <td>32</td>
-            <td>Analyze the RSVP button vs no button</td>
-            <td>2</td>
-            <td>Mezyad</td>
-          </tr>
-          <tr>
-            <td>25</td>
-            <td>Create a donation button</td>
-            <td>1</td>
-            <td>Susana</td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>Link the donation button to the donation page</td>
-            <td>0.5</td>
-            <td>Susana</td>
-          </tr>
-          <tr>
-            <td>27</td>
-            <td>Create the donation page</td>
-            <td>3</td>
-            <td>Susana</td>
-          </tr>
-          <tr>
-            <td>30</td>
-            <td>Integrate to AB test code the word donate vs support on the donation button</td>
-            <td>3</td>
-            <td>Susana</td>
-          </tr>
-          <tr>
-            <td>31</td>
-            <td>Analyze the donate vs support button</td>
-            <td>2</td>
-            <td>Susana</td>
-          </tr>
-
+          
         </tbody>
       </table>
     </div>
@@ -219,20 +184,52 @@
     <div class="row">
       <b style="text-decoration:underline">Burndown chart</b>
 
-      <p>We completed all planned storypoints this sprint were ahead of our plan until we received new tasks with new 27 story point that can be clearly seen on the spike of the burndown chart.</p>
-      <img src="/images/burndown4.png" style="width:300px">
+      <p>We completed all planned story points this sprint and managed to finish the project. Therefore, in this srpint we will keep working to improve our work.</p>
+      <img src="/images/burndown5.png" style="width:300px">
     </div>
 
 <div class="row">
-      <b style="text-decoration:underline">Mockup for event detail page</b>
+      <b style="text-decoration:underline">RSVP Text on Homepage</b>
 <br>
-      <img src="/images/EventDetail.png" style="width:300px">
+      <p>Original: Show nothing</p>
+      <img src="/images/HomePage.png" style="width:300px">
+      <p>Variation 1: Show RSVP text</p>
+      <img src="/images/HomePage2.png" style="width:300px">
     </div>
-    
-    <div class="row">
-      <b style="text-decoration:underline">Next steps</b>
 
-      <p>We will be running team meetings on Wednesday and Friday to discuss our progress on the sprint and have time for feedback.</p>
+<div class="row">
+      <b style="text-decoration:underline">Donate/Support text on event pages</b>
+<br>
+      <p>Original: Support this event</p>
+      <img src="/images/support-experiment1-original.png" style="width:300px">
+      <p>Variation 1: Donate to this event</p>
+      <img src="/images/donate-experiment1-variation1.png" style="width:300px">
+    </div>
+  
+<div class="row">
+      <b style="text-decoration:underline">Data Analysis</b>
+<br>
+      <p>Experiment 1</p>
+      <img src="/images/experiment1-googleanalytics.png" style="width:300px">
+      <p>Experiment 2</p>
+      <img src="/images/experiment1-googleanalytics.png" style="width:300px">
+      <p>User Flow</p>
+      <img src="/images/userflow.png" style="width:300px">
+    </div>
+  
+<div class="row">
+      <b style="text-decoration:underline">Mocha Tests</b>
+<br>
+      <img src="/images/MochaTests.png" style="width:300px">
+      </div>
+
+    <div class="row">
+      <!--<b style="text-decoration:underline">Next steps</b>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+
+      <p>We will be running team meetings on Wednesday and Friday to discuss our final progress on the sprint and do team feedback.</p>
 
     </div>
 
