@@ -28,14 +28,15 @@ html
 		
 		h2 Sprint Report 5
 		p November 30, 2015
-		br
 		h3 Burn-Up Chart
 		p
-			| The below burn-up chart can also be found 
+			| The below burn-up charts can be found in clickable format 
 			a(href='https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics/throughput') here
-			| . SUMMARIZE THIS WEEKS VELOCITY
+			| . As you can tell, our velocity has decreased from our peak velocity two weeks ago. This is mainly due
+			| to the conscious efforts to work on fewer but larger, more difficult stories this week. In addition, work was 
+			| split over two weeks due to the effect of Thanksgiving Break.
 		center
-			| IMAGE HERE
+			img(src='/images/Images for Reports/burnupSprint5.png', style='width: 600px')
 		h3 Completed Stories in Sprint 5
 		ol
 			li 404 Page: For nonexisting event should give 404 alert
@@ -49,32 +50,99 @@ html
 			li Design: Code Landing page
 			li Design: Upgraded project to use jade instead of html for better readability
 			li Create Events: Code the “assign things to bring” function
-			li Events Listing: Code the “claim things to bring”
+			li Events Listing: Code the “claim things to bring” function
 			li Events Listing: Events should be sorted by descending dates
 			li Homepage: should show upcoming events, /events should show all events
 		ol
-		em ONE SENTENCE SUMMARY
+		em As we had already finished the basic requirements for the project and passed all the tests, this week was devoted to working on databases, design, and extra features.
 		h3 Accomplishments, Challenges, and Roadblocks
 		p
 			b The Sprint Process
-		ul
+		p
 			em  SCRUM Ceremonies 
-			p
+		p
+			ul
 				li  Sprint Planning Meeting - Mon, Nov 16 during class 
 				li  Daily Scrum - Every day over slack, with a few breaks due to holidays
 				li  Sprint Review / Demonstration Meeting - Fri, Nov 20 @ 1 in the CEID 
-				li  Sprint Retrospection Meeting - Mon, Nov 30 during class
+				li  Sprint Demonstration / Retrospection Meeting - Mon, Nov 30 during class
+			| We had our first discussion in class to determine which of the stories we wanted to move forward with. 
+			| We collectively decided that we wanted to continue rolling out our new brand and also tackle some of the challenge tasks that were presented by Kyle in lecture.
+		p 
+			| We still continued with the agile methodology that has worked best for us: using Slack on a daily basis and meeting in-person a few times during the week. 
+			| During the break, Slack was especially useful for communicating with the team. We were able to quickly disseminate info about the most
+			| recent changes that we had made, what we were currently working on, and working one on one with individual members of the team to solve problems.
+			| This daily standup continued, along with a coding session / demonstration meeting on the Friday before break.
+		center
+			img(src='/images/Images for Reports/slack_standup_sprint_5.png', width='600px')
+			p
+				b Over the break, Lucia, Jeremy, and April discusses their current efforts on Slack and how to merge them all.
+		p
+			| After the break, we had our retrospective, where we also gave a quick demonstration of the progress that we had made
+			| over the course of the extended break. This was very useful in getting everyone up to speed and reorienting the team after a significant haitus.
 		p
 			b Accomplishments
-		p Google Analytics work
-		p Design work
-		p Upgaded to MongoDB and Jade
-		p Added functionality for things to bring
+		p
+			| The first stories that were accomplished this week were the additional requirements passed down by Kyle for project
+			| groups of size 5 and added to our backlog. One team member quickly took on these tasks, which were to add additional listing and search functionality
+			| for the API and to display events in descending date order. Additionally, we drew up stories to write up automated
+			| tests for these additional features, to be completed in a later sprint.
+		p 
+			| In addition, our backlog grew this week with the addition of the Google Analytics component of the project. 
+			| After discussing the stakeholder requirements as a group, we identified 4 user stories to be completed this 
+			| week: adding Google Analytics tracking code to all pages (3 story points), adding a donation link to the 
+			| event detail page (3 story points), creating an A/B test for making links on the homepage include 
+			| the word "RSVP" (8 story points), and creating an A/B test for changing the donation link text 
+			| (8 story points). Originally, these user stories were all assigned to one team member. However, after adding
+			| the Google Analytics tracking code and a donation link, this team member encountered bugs and technical 
+			| challenges when attempting to code both A/B tests. Another team member stepped in to take over the user story 
+			| for one A/B test. Both worked off of the Google Developers documentation in order to serve two experimental 
+			| views with the same URL (instead of the Google Analytics default strategy of creating two different URLs)
+			| and were able to complete the coding through daily communication via Slack and frequent progress updates to 
+			| the entire team.
+		center
+			img(src='/images/Images for Reports/ga_expt1_RSVP_sprint_5.png', width='400px')
+			img(src='/images/Images for Reports/ga_expt2_donation_sprint_5.png', width='400px')
+			p
+				b Screenshot of Google Analytics Report for Experiment 1 (Left) and Experiment 2 (Right)
+		p 
+			| At our scrum planning meeting, our team decided to begin coding up the design wireframes that we had already made
+			| and transitioning to making our site look presentable without sacrificing functionality. One team member took a 
+			| few days to style and code up the landing page as well as modify Bootstrap to make the site look distinctive.
+			| Once these design changes were coded up, another team member pulled down the changes, merged and tested the 
+			| code before pushing the final product up to master. Work on the site design is ongoing and will be continued to
+			| be deployed through the next sprints.
+		center
+			img(src='/images/Images for Reports/landing_page_sprint_5.jpg', width='400px')
+			p
+				b The New Landing Page
+		p 
+			| In order to fully transition from our original Half Mountain brand to our new Who Brings What brand, we spent
+			| significant time this sprint adding the models and controllers to allow for users to add things to bring to their
+			| events and to RSVP to events with things that they will bring. This work was taken up by one teammate who productively
+			| got the bare bones version of the things to bring models up and running.
+		p
+			| Finally, after finishing the new models for requesting and agreeing on things to bring, the teammate decided to take
+			| on the additional database challenge. After running this by the team, who agreed that this was a productive effort,
+			| the team member successfully upgraded our backend systems to run with MongoDB. While she was at it, she also upgraded
+			| our views to use the Jade package, which lets us write rich HTML pages without an overflow of closing tags.
+			| She, with the help of another team member, translated each HTML page to Jade and then ensured that the automated
+			| tests still passed.
 		p
 			b Roadblocks
-		p Google Analytics
-		p Integration issues with MongoDB and testing
-		p Difficulty coordinating over holidays
+		p 
+			| We had a few roadblocks this week, some of which we are still working through. The first was in configuring and running
+			| the Google Analytics experiments. it was difficult to tell whether we had set up the experiment properly.
+			| Once the traffic started arriving, it appeared that we had set up Experiment 1 (RSVP Text) properly and that it
+			| was collecting session data. However, Experiment 2, which we had set up similarly, did not seem to be 
+			| encountering any traffic at all. We have enlisted the help of the TAs and hopefully we can get this resolved soon.
+		p 
+			| The second major area of difficulty was in integrating our database changes and making sure our project still passed the
+			| automated test suite. We stumbled a bit in the dark here, setting up mongodb to work with our project. One of the team
+			| members got the database working and all the tests passing on her local computer, but was unable to achieve full functionality
+			| on the Heroku production instance and in the rest of the teammate's development instances. This was mainly due to 
+			| differences in the dependencies versions that were being set as part of our new deployment and we are still working
+			| through the bug fixes for full database functionality.
 		h3 Product Backlog (in the order they will be completed)
 		ol
 			li Database: debug and test mongodb setup
@@ -106,11 +174,9 @@ html
 			li Design: Code event detail pages
 			li Analytics: complete and write up Experiment 1: RSVP text
 			li Analytics: complete and write up Experiment 2: donate vs support text
-			li Test: Add tests for the added API functionality
-			li Test: Add tests for the added event list functionality
 		ol
 		p 
-			em As this next week is the final sprint, we plan to finish all our remaining stories this week.
+			em As this next week is the final sprint, we plan to finish most, if not all of our remaining stories this week.
 		br
 		hr
 		br
@@ -124,7 +190,7 @@ html
 			a(href='https://waffle.io/half-mountain/mgt656-fall-2015-project/metrics/throughput') here
 			| . As you can tell, our velocity has increased from past weeks; this is due to the fact that our agile workflow has been nearly perfected, and our communication is much more efficient and comprehensive.
 		center
-			img(src='/images/Images for Reports/sprintreport4.png', style='width: 800px')
+			img(src='/images/Images for Reports/sprintreport4.png', style='width: 600px')
 		h3 Completed Stories in Sprint 4
 		ol
 			li Brand: Rebrand to an events page around potlucks
@@ -155,16 +221,17 @@ html
 		h3 Accomplishments, Challenges, and Roadblocks
 		p
 			b The Sprint Process
-		ul
+		p
 			em  SCRUM Ceremonies 
-			p
+		p
+			ul
 				li  Sprint Planning Meeting - Mon, Nov 9 during class 
 				li  Daily Scrum - Every day over slack 
 				li  Sprint Review / Demonstration Meeting - Thu, Nov 12 @ 2:30 in Bass 
 				li  Sprint Retrospection Meeting - Sun, Nov 12 @ 2:30 in Bass 
-			p We had our first discussion in class to determine which of the stories we wanted to move forward with. While we were having this discussion, one of our members brought up the idea to brand our events page to something more interesting than generic events. (This is why our Half Mountain description is different this week.) This idea gained momentum as other members agreed that this would differentiate our app from other teams and provide inspiration for a unique design. We finally settled on an idea in a sprint planning meeting later that week.
-			p We continued with the agile methodology that has worked best for us: using Slack on a daily basis and meeting in-person a few times during the week. Slack, this week, was a useful platform for quickly sharing prototypes for design ideas, keeping each other updated and accountable, alerting others of emergency problems in the codebase, and recognizing the success of each member’s work. Even though these daily interactions are small, they were powerful this week in keeping everyone motivated and focused on their tasks, especially because we were tackling passing all of the tests and the rebrand. During the two in-person meetings, we met to code together, create new tasks for the potluck function, and had higher level discussions on the vision for our project.
-			p Below is a snapshot of our conversations on Slack. 
+		p We had our first discussion in class to determine which of the stories we wanted to move forward with. While we were having this discussion, one of our members brought up the idea to brand our events page to something more interesting than generic events. (This is why our Half Mountain description is different this week.) This idea gained momentum as other members agreed that this would differentiate our app from other teams and provide inspiration for a unique design. We finally settled on an idea in a sprint planning meeting later that week.
+		p We continued with the agile methodology that has worked best for us: using Slack on a daily basis and meeting in-person a few times during the week. Slack, this week, was a useful platform for quickly sharing prototypes for design ideas, keeping each other updated and accountable, alerting others of emergency problems in the codebase, and recognizing the success of each member’s work. Even though these daily interactions are small, they were powerful this week in keeping everyone motivated and focused on their tasks, especially because we were tackling passing all of the tests and the rebrand. During the two in-person meetings, we met to code together, create new tasks for the potluck function, and had higher level discussions on the vision for our project.
+		p Below is a snapshot of our conversations on Slack. 
 			p
 				center
 					img#slack-1(img='', src='https://imgur.com/tNJfoSd.jpg', style='width: 300px')
@@ -231,7 +298,7 @@ html
 			p
 				b Sprint 3 Burn-up Chart:
 			center
-				img(src='/images/Images for Reports/burnupSprint3.png', style='width: 800px')
+				img(src='/images/Images for Reports/burnupSprint3.png', style='width: 600px')
 			h3 Completed Stories in Sprint 3
 			ol
 				li API allows for searching events by title (size = 13).
@@ -283,8 +350,7 @@ html
 			ol
 				li API: Should fail elegantly if searched event does not exist
 				li Design: Wireframe for home page
-				li
-					| 404 Page: For nonexisting event should contain event information and a return to home
+				li 404 Page: For nonexisting event should contain event information and a return to home
 				li RSVP: should reject RSVPs from non-Yale addresses
 				li New: should redirect the user to the event detail page if the form is valid
 				li New: should display errors to the user when the title is empty
@@ -300,8 +366,7 @@ html
 				li New event form should display errors to the user when the month is less than 0
 				li New: should display errors to the user when the hour is less than 0
 				li New event form should display errors to the user when the month is more than 11
-				li
-					| New event form should display errors to the user when the month is not an integer
+				li New event form should display errors to the user when the month is not an integer
 				li New event form should display errors to the user when the year is less than 2015
 				li New event form should display errors to the user when the year is more than 2016
 				li New: should display errors to the user when the hour is more than 23
@@ -311,8 +376,7 @@ html
 			ol
 				li API: Should fail elegantly if searched event does not exist
 				li Design: Wireframe for home page
-				li
-					| 404 Page: For nonexisting event should contain event information and a return to home
+				li 404 Page: For nonexisting event should contain event information and a return to home
 				li RSVP: should reject RSVPs from non-Yale addresses
 				li New: should redirect the user to the event detail page if the form is valid
 			br
