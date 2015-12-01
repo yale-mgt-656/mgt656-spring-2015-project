@@ -105,7 +105,82 @@ var allReports = [
           "Conduct A/B testing to maximize donation"
         ]
       }
-      ]
+    ]
+  },
+  {
+    id: 5,
+    teammembers: [
+      {name: "Cheng Zhao", email: "cheng.zhao@yale.edu"},
+      {name: "David Mowat", email: "david.mowat@yale.edu"},
+      {name: "Nilofer Ahmed", email: "nilofer.ahmed@yale.edu"},
+      {name: "Stefan Bauer", email: "stefan.bauer@yale.edu"}
+    ],
+    date:   new Date(2015, 11, 30, 23,59, 59),
+    sections:[
+      {
+        title: "Application Description and Purpose",
+        paragraphs: ["The Wandering Wood Code team is creating an event management platform that will allow users to create and RSVP for upcoming events. Our goal is to create a more intuitive and user friendly version of of event management platforms than those currently on the market."],
+      },
+      {
+        title: "Coding Team Composition and Approach",
+        paragraphs: ["The code .team is comprised of four second year MBA students at Yale SOM who have been immersed in coding for the semester. Cheng Zhao has extensive coding expertise and is leading our technical efforts with Nilofer Ahmed, Stefan Bauer and David Mowat contributing to the project. The Team is utilizing scrum methodology to ensure we deploy changes quickly and collaborate effectively.",
+        "The team is using waffle.io as our kanban board to track progress and manage our backlog.",
+        "Current backlog with completed stories listed: "],
+        link: "https://waffle.io/wandering-wood/mgt656-spring-2015-project/join"
+      },
+      {
+        paragraphs: ["The platform will be deployed on Heroku - a current work-in-progress version of the website can be viewed at: "],
+        link: "https://mgt-656-wandering-wood.herokuapp.com/"
+      },
+      {
+        title: "Meetings Held and Outcomes",
+        paragraphs: ["At the onset of the Sprint, we met to discuss the upcoming Sprint and possible ways in which we could complete tasks in a manner that fit our individual coding abilities and time constraints. Since we were done with most of the stories that were initially outlined at the beginning of the project, we had a certain degree of latitude in deciding which stories to focus on in this sprint. Ultimately, we decided to focus our efforts on adding the Donate button to the Events Details page and the Google Analytics capabilities to the site. We estimated that each story would require a heavy amount of work and both of the stories required more effort than any one of our team members could exert. We debated on splitting the team into two groups of two, and having each group work on one story, but ultimately decided on meeting together twice throughout the week to work on both of the stories as one group. ",
+        "For the first meeting, we decided to just focus on adding the Donate Button to the Events Details page. We all discussed how we thought we should go about completing this task, and Cheng facilitated the conversation. We used a main screen in a breakout room and slowly but surely, made progress and eventually were successful in adding the link to the Events Details page.",
+        "The second meeting proved to be more troublesome, as we were unsure about how to insert the Google analytics functionality into our site. In a similar manner to the first meeting, we all discussed/googled how to insert the functions into our code and Cheng facilitated the conversation. While there were some roadblocks along the way, we ultimately were successful in adding the analytics function."]
+      },
+      {
+        title: "Method of Point Estimation",
+        paragraphs: ["We initially decided that we wanted to focus on adding the Donate Button and Google Analytics function. We played a quick game of planning poker to see if we thought that this was too lofty of a goal or if it would be too easy and should therefore target more stories. The results of our planning poker were that adding the Donate Button would be 30 points and that the Google Analytics would be 50 points (we should note that none of us had any previous history with implementing Google Analytics, so it was a relatively wide dispersion of estimates)."]
+      },
+      {
+        title: "What is currently functioning",
+        paragraphs: ["Our site is currently functioning from a technical standpoint where it meets all critical functionality tests. We have also added some formatting elements to the homepage and created a logo to make the page more customized, but we have continued work to do on the look and feel of the site. We also have Google Analytics now functioning on the site. This enables us to analyze traffic coming to the site and will also enable us to see where the donations to events come from. This information will be valuable as as better understanding of what schools the majority of our target customers are affiliated with will enable more effective and targeted marketing. "],
+        image: "/images/ga5.png"
+      },
+      {
+        paragraphs: ["Next steps include using Analytics to view how our traffic breaks down across varying segments and the associated click-through rate to donation as well as some preliminary A/B testing (using the word “RSVP” to potentially drive click-through rate as well as verifying whether the words “donate” or “support” result in statistically significant differences in conversions)."]
+      },
+      {
+        title: "Work Load",
+        paragraphs: ["Our workload remains manageable in large part to a strong sprint planning process. Despite not having a high degree of experience with Google Analytics on the team, we were able to complete our targeted stories in the time we had allotted as a team.  We continue to find that working together as a group remains the most effective way of tackling larger and more unfamiliar tasks. Our team continues to collaborate well with each other and Cheng’s experience has been extremely valuable in guiding our the technical components of each our tasks."]
+      },
+      {
+        title: "Completed Stories During Sprint",
+        list: [
+          "Gain understanding of Google analytics to analyze traffic to site",
+          "Set up donate button on Events Detail page",
+          "Set up Google analytics on project app",
+          "Started AB testing for home page: RSVP vs original"]
+      },
+      {
+        title: "Burndown Chart",
+        paragraphs: ["The Burndown chart below reflects the fact that our Sprint was the length of only 5 days (we wanted to finish the sprint before the break) and that all of the work for the Sprint was completed in two meetings."],
+        image: "/images/bd5.png"
+      },
+      {
+        title: "Current Backlog",
+        list: [
+          "Format event detail page",
+          "Clean up headers and footers on all pages",
+          "Format About page",
+          "Format event creation form",
+          "Format Events page",
+          "Migrate data from being memory-stored to being database-stored stored",
+          "Set up AB testing for event detail page",
+          "Analyze traffic breakdown across segments and flow from landing to donation",
+          "Optimize app based on GA results"]
+      }
+    ]
   }
 ];
 
