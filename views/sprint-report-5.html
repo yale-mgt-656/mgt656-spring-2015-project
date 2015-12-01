@@ -54,6 +54,12 @@
       <p>Link to live working project on Heroku: <a href="http://mgt-656-dry-blessing.herokuapp.com" target="_blank">RSVPd</a>
         <br>Link to Waffle IO: <a href="https://waffle.io/dry-blessing/mgt656-spring-2015-project" target="_blank">Dry Blessing issues</a></p>
     </div>
+     <div class="row">
+       <b style="text-decoration:underline">Executive summary</b>
+    <p>RSVPd is an event platform where users can create their own events, RSVP using their Yale email addresses and browse through events which will be happening in the future. </p>
+
+    <p>In sprint 5, we finished all the required user stories for our project and ensured the following - i) all mocha tests are passing, ii) we have implemented the extra user stories on A/B testing, and iii) we added extra user stories to make our project and web page better (in terms of aesthetics and database connectivity) in the final sprint.</p>
+    </div>
     <div class="row">
       <b style="text-decoration:underline">Product backlog</b>
       <br>
@@ -76,11 +82,11 @@
       <br>
       <p>What went well during the sprint cycle?:</p>
       <ol>
-        <li>We finished the required project!</li>
-        <li>We finished all the stories and passed all the mocha test</li>
+        <li>We finished implementing all the user stories for the project!</li>
+        <li>We ensured all the mocha tests pass.</li>
         <li>We worked on our own branches for each story and created pull requests which made it much easier to manage the project without merge conflicts</li>
         <li>We were able to implement Google Analytics A/B tests using documentation on its website, though it took up a lot of time and was not very straightforward to implement and test</li>
-        
+        <li>We discovered a bug in the donation class name (in Professor Kyle's code) due to which we weren't seeing conversions on our donate/support buttons.</li>
         
       </ol>
     </div>
@@ -101,11 +107,7 @@
     <div class="row">
       <b><i>What could we do differently to improve?</i></b>
       <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-
+        <li>We had created a user story for the RSVP button and implemented it without checking if all the tests run. We should have been more careful in understanding test case requirements by going through the test.js code.</li>
       </ol>
     </div>
 
@@ -142,7 +144,7 @@
           </tr>
           <tr>
             <td>4</td>
-            Style the donation page</td>
+            <td>Style the donation page</td>
             <td>2</td>
             <td>Susana</td>
           </tr>
@@ -173,7 +175,7 @@
           <tr>
             <td>9</td>
             <td>Add Database</td>
-            <td>9</td>
+            <td>6</td>
             <td>Shadin</td>
           </tr>
           
@@ -184,43 +186,45 @@
     <div class="row">
       <b style="text-decoration:underline">Burndown chart</b>
 
-      <p>We completed all planned story points this sprint and managed to finish the project. Therefore, in this srpint we will keep working to improve our work.</p>
-      <img src="/images/burndown5.png" style="width:300px">
+      <p>We completed all planned story points this sprint and managed to finish the project. Therefore, in this sprint we will keep working to improve our work.</p>
+      <img src="/images/burndown5.png" style="width:500px">
     </div>
 
 <div class="row">
-      <b style="text-decoration:underline">RSVP Text on Homepage</b>
+      <b style="text-decoration:underline">Experiment 1: RSVP Text on Homepage</b>
 <br>
       <p>Original: Show nothing</p>
-      <img src="/images/HomePage.png" style="width:300px">
+      <img src="/images/HomePage.png" style="width:800px">
       <p>Variation 1: Show RSVP text</p>
-      <img src="/images/HomePage2.png" style="width:300px">
+      <img src="/images/HomePage2.png" style="width:800px">
     </div>
-
+<br><br>
 <div class="row">
-      <b style="text-decoration:underline">Donate/Support text on event pages</b>
+      <b style="text-decoration:underline">Experiment 2: Donate/Support text on event pages</b>
 <br>
       <p>Original: Support this event</p>
-      <img src="/images/support-experiment1-original.png" style="width:300px">
+      <img src="/images/support-experiment1-original.png" style="width:800px">
       <p>Variation 1: Donate to this event</p>
-      <img src="/images/donate-experiment1-variation1.png" style="width:300px">
+      <img src="/images/donate-experiment1-variation1.png" style="width:800px">
     </div>
   
 <div class="row">
-      <b style="text-decoration:underline">Data Analysis</b>
+      <b style="text-decoration:underline">Experiments on Google Analytics for Data Analysis</b>
 <br>
-      <p>Experiment 1</p>
-      <img src="/images/experiment1-googleanalytics.png" style="width:300px">
-      <p>Experiment 2</p>
-      <img src="/images/experiment1-googleanalytics.png" style="width:300px">
-      <p>User Flow</p>
-      <img src="/images/userflow.png" style="width:300px">
+      <p>Experiment 1: RSVP test on the homepage:</p>
+      <img src="/images/experiment1-googleanalytics.png" style="width:800px">
+      <p>Experiment 2: Donate/support link on event detail pages:</p>
+      <img src="/images/experiment2-googleanalytics.png" style="width:800px">
+      <p>User Flow through the RSVPd website:</p>
+      <img src="/images/userflow.png" style="width:800px">
+      <p>Referral sources leading to the RSVPd website:</p>
+      <img src="/images/referrals.png" style="width:800px">
     </div>
   
 <div class="row">
-      <b style="text-decoration:underline">Mocha Tests</b>
+      <b style="text-decoration:underline">Mocha Tests - All pass!</b>
 <br>
-      <img src="/images/MochaTests.png" style="width:300px">
+      <img src="/images/MochaTests.png" style="width:800px">
       </div>
 
     <div class="row">
@@ -229,7 +233,7 @@
       <!--<li></li>-->
       <!--<li></li>-->
 
-      <p>We will be running team meetings on Wednesday and Friday to discuss our final progress on the sprint and do team feedback.</p>
+      <p>We will be running team meetings on Wednesday and Friday to discuss our final progress on the sprint and prepare for our final demo.</p>
 
     </div>
 
