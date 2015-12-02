@@ -10,8 +10,9 @@ var router = express.Router();
 // DB
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/halfmountain');
 var jade = require('jade');
+
+
 
 
 // Import our controllers
@@ -27,6 +28,15 @@ var app = express();
 
 // Configure it
 configure(app);
+
+
+if (app.get('env') === 'development') {
+  var db = monk("mongodb://localhost:27017/halfmountain")
+}
+if (app.get('env') === 'production') {
+  var db = monk(MONGOLAB_URI);
+}
+
 
 // Make our db accessible to our router aka adding middleware to all paths
 app.use(function(req,res,next){

@@ -36,7 +36,7 @@ function listEventsJSON(request, response) {
   else {
     output.events = allEvents;
   }
-  
+
   response.json(output);
 }
 

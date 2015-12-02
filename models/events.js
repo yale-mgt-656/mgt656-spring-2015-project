@@ -2,7 +2,20 @@
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/halfmountain');
+var app = require('../app.js');
+// var mongoUri = process.env.MONGOLAB_URI;
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+if (process.env.NODE_ENV === 'development') {
+  var db = monk("mongodb://localhost:27017/halfmountain")
+}
+if (process.env.NODE_ENV === 'production') {
+  var db = monk(process.env.MONGOLAB_URI);
+}
+
+console.log(process.env.MONGOLAB_URI);
+
 var collection = db.get('eventlist');
 var events = collection.find();
 var allEvents = [];

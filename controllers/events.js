@@ -43,6 +43,11 @@ var allowedDateInfo = {
 
 
 function listEvents(request, response) {
+  // Set our internal DB variable
+  var db = req.db;
+
+  // Set our collection
+  var collection = db.get('eventlist');
   var contextData = {
     'events': events.all.sort(function(a, b) {
       return b.date - a.date;
@@ -56,8 +61,14 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
+  // Set our internal DB variable
+  var db = request.db;
+
+  // Set our collection
+  var collection = db.get('eventlist');
   var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event', contextData);
+
 }
 
 
@@ -144,6 +155,12 @@ function saveEvent(req, res){
 
 
 function eventDetail (req, res) {
+
+  // Set our internal DB variable
+  var db = req.db;
+
+  // Set our collection
+  var collection = db.get('eventlist');
 
   events.getById(parseInt(req.params.id)).success(function(ev) {
       if (ev === null) {
