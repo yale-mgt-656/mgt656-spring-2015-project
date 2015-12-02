@@ -22,11 +22,14 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [    
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015,2016]
 };
 
 /**
@@ -45,10 +48,11 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event.html', contextData);
 }
 
+<<<<<<< HEAD
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
    if (validator.isInt(request.body[fieldName]) === false) {
@@ -62,6 +66,20 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 return value;
 }
 
+=======
+function checkIntRange(request,fieldName, minVal, maxVal, contextData){
+    var value = null;
+    if (validator.isInt(request.body[fieldName]) === false) {
+      contextData.errors.push('Your '+ fieldName +' should be an integer.');
+    } else{
+      value = parseInt(request.body[fieldName], 10);
+    if (value > maxVal || value < minVal) {
+      contextData.errors.push('Your '+ fieldName +  'should be in the range '+ minVal + '-'+ maxVal + '.');
+    }
+  }
+  return value; 
+}
+>>>>>>> add-formatting-to-event-creation
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -70,17 +88,39 @@ return value;
 function saveEvent(request, response){
   var contextData = {errors: []};
 
+
+<<<<<<< HEAD
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
-  }
-if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
-  }
+    }
 var year = checkIntRange(request, year, 2015, 2016, contextData)
 var month = checkIntRange(request, year, 0, 11, contextData)
 var day = checkIntRange(request, year, 1, 31, contextData)
 var hour = checkIntRange(request, year, 0, 23, contextData)
 
+=======
+    
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location must be less than 50 letters.');
+  }
+  
+  if (validator.isLength(request.body.location, 0, 0)) {
+    contextData.errors.push('Your location must not be empty.');
+  }
+  
+  var year = checkIntRange(request,'year', 2015, 2016, contextData);
+  var month = checkIntRange(request,'month', 0, 11, contextData);
+  var day = checkIntRange(request,'day', 1, 31, contextData);
+  var hour = checkIntRange(request,'hour', 0, 23, contextData);
+  
+  if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be a URL link.');
+  }
+    
+  if (request.body.image.toLowerCase().match(/\.(png|gif)/g) === null) {
+    contextData.errors.push('Your image should be a .png or .gif format.');
+  }
+>>>>>>> add-formatting-to-event-creation
 
   if (contextData.errors.length === 0) {
     var newEvent = {
