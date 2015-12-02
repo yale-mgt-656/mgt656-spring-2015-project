@@ -1,5 +1,16 @@
  {% extends "layout.html" %}
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70771760-1', 'auto');
+  ga('send', 'pageview');
+/*need to define ga here; this may help https://raventools.com/gaconfig/google-analytics-event-tracking/contact-form/*/
+
+</script>
  
  {% block mainContent %}
       <h1 id="title"> {{event.title}}</h1>
@@ -14,7 +25,7 @@
          {% endfor %}
       </ul>
       <p> Please come! </p>
-      
+
       {% if errors %}
       <div>
         <ul class="form-errors">
@@ -31,6 +42,8 @@
       </form>
       <br></br>
       <img src='{{event.image}}' id="image"> </event><align="middle">
+          
  <br>
  {% endblock %}
  <br></br>
+
