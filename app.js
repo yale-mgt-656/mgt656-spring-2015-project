@@ -34,7 +34,7 @@ if (app.get('env') === 'development') {
   var db = monk("mongodb://localhost:27017/halfmountain")
 }
 if (app.get('env') === 'production') {
-  var db = monk(MONGOLAB_URI);
+  var db = monk(process.env.MONGOLAB_URI);
 }
 
 
