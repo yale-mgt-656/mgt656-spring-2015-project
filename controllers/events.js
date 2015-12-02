@@ -52,7 +52,7 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
-
+<<<<<<< HEAD
 function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   var value = null;
    if (validator.isInt(request.body[fieldName]) === false) {
@@ -66,7 +66,7 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 return value;
 }
 
-
+=======
 function checkIntRange(request,fieldName, minVal, maxVal, contextData){
     var value = null;
     if (validator.isInt(request.body[fieldName]) === false) {
@@ -98,7 +98,7 @@ var month = checkIntRange(request, year, 0, 11, contextData)
 var day = checkIntRange(request, year, 1, 31, contextData)
 var hour = checkIntRange(request, year, 0, 23, contextData)
 
-
+=======
     
   if (validator.isLength(request.body.location, 1, 50) === false) {
     contextData.errors.push('Your location must be less than 50 letters.');
@@ -120,6 +120,7 @@ var hour = checkIntRange(request, year, 0, 23, contextData)
   if (request.body.image.toLowerCase().match(/\.(png|gif)/g) === null) {
     contextData.errors.push('Your image should be a .png or .gif format.');
   }
+>>>>>>> add-formatting-to-event-creation
 
   if (contextData.errors.length === 0) {
     var newEvent = {
