@@ -1,7 +1,13 @@
+header{
+        background: url("http://www.northshorestriders.com/wp-content/uploads/2013/12/Holiday_BlogBanner_PNG_04.png");
+        background-size: 100% 100%;
+        color: white;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  background-color: grey;
+   }
 
 a {
   color: #00B7FF;
@@ -9,4 +15,38 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+ul#topofpage{
+   padding: 10px;
+   background: rgba(255,0,0,0.3);
+}
+ul#topofpage li{
+   display: inline;
+   padding: 0px 10px 0px 10px;
+}
+ul#bottomofpage{
+   padding: 10px;
+   background: rgba(0,0,250,0.3);
+}
+ul#bottomofpage li{
+   display: inline;
+   padding: 0px 10px 0px 10px;
+}
+/*styling using about_image class */
+.about_image img{
+    float:left;
+    height:200px;
+    margin: 10px 0px 0px 0px;
+    border: 7px solid grey;
+    border-radius: 20px;
+}
+
+.about_image {
+    display:block;
+    margin:0 0 100px 0;
+}
+
+.about_description {
+    padding:20px 0 0 0;
 }
