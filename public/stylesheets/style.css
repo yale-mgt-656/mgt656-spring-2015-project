@@ -6,6 +6,7 @@ header{
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: grey;
    }
 
 a {
@@ -21,6 +22,14 @@ ul#topofpage{
    background: rgba(255,0,0,0.3);
 }
 ul#topofpage li{
+   display: inline;
+   padding: 0px 10px 0px 10px;
+}
+ul#bottomofpage{
+   padding: 10px;
+   background: rgba(0,0,250,0.3);
+}
+ul#bottomofpage li{
    display: inline;
    padding: 0px 10px 0px 10px;
 }

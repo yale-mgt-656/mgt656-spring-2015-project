@@ -18,7 +18,7 @@
 </script>
     {% block header %}
       <header>
-        <a href="/"><img id="logo" src="/images/evently_logo.png" style="width: 200px"></a>
+      <a href="/"><img id="logo" src="/images/evently_logo.png" style="width: 200px"></a>
       <ul id="topofpage">        
       <li><a href="/events">Browse Events</a></li>
       <li><a href="/events/new">Create Events</a></li>
@@ -32,11 +32,12 @@
     {% endblock %}
     {% block footer %}
       <footer>
-      <a href="/">Home | </a>
-      <a href="/about">About |</a>
-      <a href= "/events">Events | </a>
-      <a href= "/careers">Work for us | </a>
-      <a href= "/help">Help</a>
+      <ul id="bottomofpage"> 
+      <li><a href="/">Home | </a></li>
+      <li></li><a href="/about">About |</a></li>
+      <li><a href= "/events">Events | </a></li>
+      <li><a href= "/careers">Work for us | </a></li>
+      <li></li><a href= "/help">Help</a></li>
       </footer>
     {% endblock %}
 
