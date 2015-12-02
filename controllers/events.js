@@ -79,7 +79,7 @@ function checkIntRange(request,fieldName, minVal, maxVal, contextData){
   }
   return value; 
 }
-
+>>>>>>> add-formatting-to-event-creation
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -89,7 +89,7 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
 
-
+<<<<<<< HEAD
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
     }
