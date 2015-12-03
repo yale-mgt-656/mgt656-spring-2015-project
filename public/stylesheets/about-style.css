@@ -1,0 +1,90 @@
+.introaboutus {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(http://images.vanityfair.it/Storage/Assets/Crops/341376/53/172836/california-on-the-road_980x571.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.introaboutus .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.introaboutus .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.introaboutus .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .introaboutus {
+        height: 100%;
+        padding: 0;
+    }
+
+    .introaboutus .intro-body .brand-heading {
+        font-size: 90px;
+    }
+
+    .introaboutus .intro-body .intro-text {
+        font-size: 26px;
+    }
+}
+
+#spacer1 {
+    width: 100%;
+    padding: 100px 0;
+    background: url(http://i.imgur.com/gSPPd1h.gif) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#spacer2 {
+    width: 100%;
+    padding: 100px 0;
+    background: url(http://cdn.lifebuzz.com/images/16931/lifebuzz-b5404d5af1da98a17869519661ea31aa-limit_2000.gif) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#spacer3 {
+    width: 100%;
+    padding: 100px 0;
+    background: url(http://i.imgur.com/5OsqTua.gif) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media(min-width:768px) {
+    #spacer1 {
+        height: 100%;
+        padding: 0;
+    }
+    #spacer2 {
+        height: 100%;
+        padding: 0;
+    }
+    #spacer3 {
+        height: 100%;
+        padding: 0;
+    }
+}
