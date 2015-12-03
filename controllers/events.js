@@ -83,7 +83,7 @@ function saveEvent(request, response){
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
-  
+  var minute = checkIntRange(request, 'minute', 0, 30, contextData);
  
   if (validator.isURL(request.body.image) === false) {
     contextData.errors.push('Your image must be a URL');
@@ -99,7 +99,7 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(request.body.year, request.body.month, request.body.day, request.body.hour, request.body.minute),
       attending: []
     };
     events.all.push(newEvent);
