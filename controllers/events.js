@@ -82,6 +82,14 @@ function saveEvent(request, response){
     contextData.errors.push('Your location must not be empty.');
   }
   
+  if (validator.isLength(request.body.title, 5, 50) === false) {
+    contextData.errors.push('Your title must be between 5 and 50 letters.');
+  }
+  
+  if (validator.isLength(request.body.title, 0, 0)) {
+    contextData.errors.push('Your title must not be empty.');
+  }
+  
   var year = checkIntRange(request,'year', 2015, 2016, contextData);
   var month = checkIntRange(request,'month', 0, 11, contextData);
   var day = checkIntRange(request,'day', 1, 31, contextData);
