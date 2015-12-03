@@ -1,12 +1,96 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,500);
+
+#bootstrap-override body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Roboto" !important;
 }
 
-a {
-  color: #00B7FF;
+#bootstrap-override h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
 }
 
-.form-errors {
-	color: red;
+.navbar-inner {
+    background:transparent;
+}
+
+.btn { /* Makes ghost buttons */
+
+	border-width: 2px;
+	font-family: "Oswald", sans-serif;
+
+	-webkit-border-radius: 0;
+	-moz-border-radius:    0;
+	border-radius:         0;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.jumbotron .btn {
+  
+	background: transparent;
+	color: #FFFFFF;
+  
+}
+
+/* TODO: The nav link = white should only load on homepage */
+nav a {
+  color: white;
+}
+
+.pad-after {
+  padding-bottom: 1em;
+}
+
+.jumbotron {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.3)
+    ), url('/images/cole-picnic-crop.jpg');
+  background-size: cover;
+  min-height: 450px;
+  text-align: center;
+
+}
+
+.jumbotron .btn-default:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.jumbo-text {
+  color: white !important;
+  border-color: white !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.top-offset {
+  margin-top: 50px;
+}
+
+#create-event input {
+  margin-bottom: 1em;
+}
+
+#create-event label {
+  display:none;
+}
+
+#create-event input[name="items"] {
+  min-height: 150px;
+}
+
+#create-event input[name="submit"] {
+  margin-top: 20px;
+}
+
+.giant {
+  font-size: 250%;
+  text-align: center;
 }

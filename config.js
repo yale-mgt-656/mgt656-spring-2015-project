@@ -5,6 +5,9 @@ var nunjucks = require('nunjucks');
 var bodyParser = require('body-parser');
 var strftime = require('strftime');
 var express = require('express');
+var jade = require('jade');
+var monk = require ('monk');
+
 
 /*
  * Function that configures an application
@@ -12,12 +15,14 @@ var express = require('express');
  */
 module.exports = exports = function(yourApp){
   // Configure our templating engine: nunjucks
-  nunjucks.configure('views', {
-      autoescape: true,
-      express: yourApp
-  }).addFilter('prettyDate', function(dateObject) {
-      return strftime('%A, %b. %e at %l:%M%P', dateObject);
-  });
+  // nunjucks.configure('views', {
+  //     autoescape: true,
+  //     express: yourApp
+  // }).addFilter('prettyDate', function(dateObject) {
+  //     return strftime('%A, %b. %e at %l:%M%P', dateObject);
+  // });
+
+  yourApp.set('view engine', 'jade');
 
   // Use 'development' level of logging, ie. verbose
   if (process.env.NODE_ENV !== 'testing') {
@@ -33,6 +38,3 @@ module.exports = exports = function(yourApp){
   // forms and such.
   yourApp.use(bodyParser.urlencoded({extended: true}));
 };
-
-
-

@@ -1,7 +1,11 @@
 'use strict';
 
+
 var events = require('../models/events');
 var validator = require('validator');
+var lodash = require('lodash');
+var express = require('express');
+
 
 // Date data that would be useful to you
 // completing the project These data are not
@@ -23,83 +27,167 @@ var allowedDateInfo = {
     11: 'December'
   },
   minutes: [0, 30],
+  days: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016]
 };
+
+
 
 /**
  * Controller that renders a list of events in HTML.
  */
+
+
 function listEvents(request, response) {
-  var currentTime = new Date();
+
   var contextData = {
-    'events': events.all,
-    'time': currentTime
+    'events': events.all.sort(function(a, b) {
+      return b.date - a.date;
+    }),
   };
-  response.render('event.html', contextData);
+  response.render('event', contextData);
 }
+
 
 /**
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
-  response.render('create-event.html', contextData);
+
+  var contextData = {allowedDateInfo: allowedDateInfo};
+  response.render('create-event', contextData);
+
 }
 
-/**
- * Controller to which new events are submitted.
- * Validates the form and adds the new event to
- * our global list of events.
- */
-function saveEvent(request, response){
-  var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+function isRangedInt(number, name, min, max, errors){
+  if(validator.isInt(number)){
+    var numberAsInt = parseInt(number);
+    if(number >= min && number <= max){
+      return;
+    }
   }
+  errors.push(name + " should be an int in the range " + min + " to " + max);
+}
 
 
-  if (contextData.errors.length === 0) {
+
+function saveEvent(req, res){
+
+    var thingsToBring = [];
+    thingsToBring.push(req.body.items);
+
     var newEvent = {
-      title: request.body.title,
-      location: request.body.location,
-      image: request.body.image,
+      id: events.getMaxId() + 1,
+      title: req.body.title,
+      location: req.body.location,
+      image: req.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      items: thingsToBring
     };
-    events.all.push(newEvent);
-    response.redirect('/events');
-  }else{
-    response.render('create-event.html', contextData);
-  }
+
+
+
+    var contextData = {errors: [], allowedDateInfo: allowedDateInfo};
+
+      if (validator.isLength(req.body.title, 5, 50) === false) {
+        contextData.errors.push('Your title should be between 5 and 100 letters.');
+      }
+
+      if (validator.isLength(req.body.location, 5, 50) === false) {
+        contextData.errors.push('Your location should be less than 50 characters.');
+      }
+
+      isRangedInt(req.body.year, "year", allowedDateInfo.years[0], allowedDateInfo.years[allowedDateInfo.years.length-1], contextData.errors);
+      isRangedInt(req.body.day, "day", allowedDateInfo.days[0], allowedDateInfo.days[allowedDateInfo.days.length-1], contextData.errors);
+      isRangedInt(req.body.hour, "hour", allowedDateInfo.hours[0], allowedDateInfo.hours[allowedDateInfo.hours.length-1], contextData.errors);
+      isRangedInt(req.body.minute, "minute", allowedDateInfo.minutes[0], allowedDateInfo.minutes[allowedDateInfo.minutes.length-1], contextData.errors);
+      isRangedInt(req.body.month, "month", 0, 11, contextData.errors);
+
+      if (!validator.isURL(req.body.image) || (req.body.image.match(/\.(gif|png)$/i) === null )){
+        contextData.errors.push('Your image should be a png or gif');
+      }
+
+    if (contextData.errors.length === 0) {
+      events.collection.insert( newEvent , function (err, doc) {
+          if (err) {
+              // If it failed, return error
+              res.status(404).send("There was a problem adding the information to the database.");
+          }
+          else {
+              // And forward to success page
+              console.log(newEvent);
+              res.redirect('/events/' + newEvent.id);
+          }
+      });
+    } else {
+      res.render('create-event', contextData);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+function eventDetail (req, res) {
+
+  events.getById(parseInt(req.params.id)).success(function(ev) {
+      if (ev === null) {
+        res.status(404).send('404 Error: No such event');
+      }
+      else {
+        res.render('event-detail', {event: ev});
+      }
+    }).error(function(err) {
+      console.log(err);
+    });
 }
 
-function eventDetail (request, response) {
-  var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
-    response.status(404).send('No such event');
-  }
-  response.render('event-detail.html', {event: ev});
-}
 
+
+
+// what is called when someone rsvps to an event
 function rsvp (request, response){
-  var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
-    response.status(404).send('No such event');
-  }
 
-  if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
-    var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
-  }
+  // takes the incoming params id and identifies the event user wants to RSVP to and then stores in variable "ev"
+  events.getById(parseInt(request.params.id)).success(function(ev){
+    if (ev === null) {
+      response.status(404).send('404 Error: No such event');
+    }
+    if (validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
+      ev.attending.push(request.body.email);
+      // JW: Is this anyway you can modify an object instead of querying for it again?
+      events.collection.findAndModify(
+        {"_id": ev._id}, // query
+        {$set: {attending: ev.attending}},
+        function(err, object) {
+            if (err){
+                console.warn("oops");  // returns error if no matching object found
+            }else{
+                response.redirect('/events/' + ev.id);
+            }
+        });
 
+    } else{
+      var contextData = {errors: [], event: ev};
+      if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
+        contextData.errors.push('Harvard not allowed!');
+      }else{
+        contextData.errors.push('Invalid email! Are you a Yale student?');
+      }
+      response.render('event-detail', contextData);
+    }
+  });
 }
 
 /**
@@ -111,5 +199,5 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
 };

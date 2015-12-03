@@ -4,6 +4,7 @@
 // Set the NODE_ENV environment variable to testing
 process.env.NODE_ENV = 'testing';
 
+var RandExp = require('randexp').randexp;
 var assert = require('assert');
 var app = require('../app.js');
 var Browser = require('zombie');
@@ -226,7 +227,7 @@ describe('The event detail pages',function(){
       });
     };
     async.map(testedEventUrls, fetchEventDetail, function(err, results){
-      assert.ok(_.every(results, 'success'), 'Couldn\'t retreive all events at /events/:id.');
+      assert.ok(_.every(results, 'success'), 'Couldn\'t retrieve all events at /events/:id.');
       for (var i = results.length - 1; i >= 0; i--) {
         var b = results[i];
         assert.ok(b.query('h1#title'), 'No title for event '  + i);
@@ -241,7 +242,7 @@ describe('The event detail pages',function(){
 
   it('should allow Yale users to RSVP', function(done){
     var browser = new Browser();
-    var email = 'foobar@YAle.edu';
+    var email = RandExp(/[a-z]/)+'@YAle.edu';
 
     browser.visit(SITE + '/events/0', function(){
       assert.ok(browser.html().indexOf(email) === -1, 'Email ' + email + ' found before filling form at /events/0.');
@@ -253,6 +254,7 @@ describe('The event detail pages',function(){
         });
     });
   });
+
 
   it('should reject RSVPs from non-Yale addresses', function(done){
     var browser = new Browser();
