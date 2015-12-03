@@ -7,3 +7,38 @@
     </li>
   {% endfor %}
 </ul>
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=b9w5kSinTuaPI87IIeVATw"></script>
+
+<!-- Load the JQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+// Define JavaScript for each page variation of this experiment.
+var pageVariations = [
+  function() {},  // Original: Do nothing. This will render the default HTML.
+  function() {    // Variation 1: add RSVP text
+    $( 'li.event-title' ).prepend( 'RSVP ' );
+  }
+];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function(){
+  // Ask Google Analytics which variation to show the user.
+  var chosenVariation = cxApi.chooseVariation(b9w5kSinTuaPI87IIeVATw);
+
+  // Execute the chosen view
+  pageVariations[chosenVariation]();
+}
+);
+</script>
+ @Krodizzle
+ Styling with Markdown is supported
+Write Preview
+
+Leave a comment
+Attach files by dragging & dropping,  Choose Files selecting them, or pasting from the clipboard.
+Comment
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
