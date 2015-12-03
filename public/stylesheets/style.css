@@ -13,18 +13,8 @@
     background:transparent;
 }
 
-.form-errors {
-	color: red;
-}
-
-.name {
-  color: red;
-}
-
 .btn { /* Makes ghost buttons */
 
-	background: transparent;
-	color: #FFFFFF;
 	border-width: 2px;
 	font-family: "Oswald", sans-serif;
 
@@ -38,6 +28,13 @@
 	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
 	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
 	transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.jumbotron .btn {
+  
+	background: transparent;
+	color: #FFFFFF;
+  
 }
 
 /* TODO: The nav link = white should only load on homepage */
@@ -67,4 +64,33 @@ nav a {
 .jumbo-text {
   color: white !important;
   border-color: white !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.top-offset {
+  margin-top: 50px;
+}
+
+#create-event input {
+  margin-bottom: 1em;
+}
+
+#create-event label {
+  display:none;
+}
+
+#create-event input[name="items"] {
+  min-height: 150px;
+}
+
+#create-event input[name="submit"] {
+  margin-top: 20px;
+}
+
+.giant {
+  font-size: 250%;
+  text-align: center;
 }
