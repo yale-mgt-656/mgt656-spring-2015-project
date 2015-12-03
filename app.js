@@ -27,7 +27,7 @@ app.get('/sprint-report6', sprintControllers.sprintreport6);
 app.get('/final-report', sprintControllers.finalreport);
 app.get('/events', eventControllers.listEvents);
 app.get('/events', eventControllers.listEvents);
-app.post('/events/new', eventControllers.newEvent);
+app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
 app.get('/api/events', eventControllers.api);
