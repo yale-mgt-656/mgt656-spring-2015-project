@@ -35,7 +35,7 @@
 {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -44,11 +44,13 @@
 {% endif %}
   
 <p>
-  	<form id="email" method="POST">
+  	<form method="POST"> 
           <label for="email">Email:</label>
-          <input type="email" name="email">
+          <input type="email" name="email" id="email">
           <input type="submit" name="Submit">
     </form>
+    
+    
 </p>
 
 {% endblock %}
