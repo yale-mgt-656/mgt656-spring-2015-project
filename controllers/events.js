@@ -43,11 +43,7 @@ var allowedDateInfo = {
 
 
 function listEvents(request, response) {
-  // Set our internal DB variable
-  var db = req.db;
 
-  // Set our collection
-  var collection = db.get('eventlist');
   var contextData = {
     'events': events.all.sort(function(a, b) {
       return b.date - a.date;
@@ -61,11 +57,7 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  // Set our internal DB variable
-  var db = request.db;
 
-  // Set our collection
-  var collection = db.get('eventlist');
   var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event', contextData);
 
@@ -85,13 +77,6 @@ function isRangedInt(number, name, min, max, errors){
 
 
 function saveEvent(req, res){
-
-    // Set our internal DB variable
-    var db = req.db;
-
-    // Set our collection
-    var collection = db.get('eventlist');
-
 
     var thingsToBring = [];
     thingsToBring.push(req.body.items);
@@ -156,12 +141,6 @@ function saveEvent(req, res){
 
 function eventDetail (req, res) {
 
-  // Set our internal DB variable
-  var db = req.db;
-
-  // Set our collection
-  var collection = db.get('eventlist');
-
   events.getById(parseInt(req.params.id)).success(function(ev) {
       if (ev === null) {
         res.status(404).send('404 Error: No such event');
@@ -179,8 +158,6 @@ function eventDetail (req, res) {
 
 // what is called when someone rsvps to an event
 function rsvp (request, response){
-  var db = request.db;
-  var collection = db.get('eventlist');
 
   // takes the incoming params id and identifies the event user wants to RSVP to and then stores in variable "ev"
   events.getById(parseInt(request.params.id)).success(function(ev){

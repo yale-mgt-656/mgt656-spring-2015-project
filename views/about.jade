@@ -4,8 +4,18 @@ head
    link(rel='stylesheet', href='/stylesheets/about.css')
    
 block mainContent
-  p About Us
-  span#famous-bison-name  April
+  h1 About Us 
+  .dropdown
+    Dropdown
+    ul.dropdown-menu
+      li 
+  .row
+    .col-md-6
+      .person
+        .name#famous-bison-name April
+        img#famous-bison-headshot(img='', src='https://imgur.com/aiBN0Id.jpg', alt='picture_of_zebra')
+
+  #famous-bison-name  April
   img#famous-bison-headshot(img='', src='https://imgur.com/aiBN0Id.jpg', alt='picture_of_zebra')
   span#doubtful-stork-name.name.header  Jeremy
   img#doubtful-headshot(img='', src='https://imgur.com/gIiU5mv.jpg', alt='picture_of_lion')
