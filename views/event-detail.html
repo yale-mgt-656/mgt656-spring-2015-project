@@ -3,11 +3,11 @@
 {% block mainContent %}
 <h1 id= "title" >{{event.title}} </h1>
 <br>
-<img src=  {{event.image}} />
+<img src= {{event.image}} id="image" />
 <br>
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "location"> Where: {{event.location}}  </span>
-<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "date"> When: {{event.date}} </span>
-<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;"id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
+<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "date"> When: {{event.date}} </span>
+<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
 
 <form method="POST">
     <input type="text" name="email" id="email" placeholder="Your Email" />
