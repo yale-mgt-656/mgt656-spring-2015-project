@@ -114,7 +114,7 @@ function saveEvent(req, res){
       }
 
     if (contextData.errors.length === 0) {
-      collection.insert( newEvent , function (err, doc) {
+      events.collection.insert( newEvent , function (err, doc) {
           if (err) {
               // If it failed, return error
               res.status(404).send("There was a problem adding the information to the database.");
@@ -167,7 +167,7 @@ function rsvp (request, response){
     if (validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
       ev.attending.push(request.body.email);
       // JW: Is this anyway you can modify an object instead of querying for it again?
-      collection.findAndModify(
+      events.collection.findAndModify(
         {"_id": ev._id}, // query
         {$set: {attending: ev.attending}},
         function(err, object) {

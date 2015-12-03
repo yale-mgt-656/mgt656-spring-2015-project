@@ -54,4 +54,5 @@ module.exports = exports = {
   all: allEvents,
   getById: getById,
   getMaxId: getMaxId,
+  collection: collection
 };
