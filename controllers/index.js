@@ -23,17 +23,9 @@ function var1 (request, response) {
   };
   response.render('index1.html', contextData);
 }
-function var2 (request, response) {
-  var contextData = {
-    title: 'SOM class of 2016 & 2017 Party Central',
-    tagline: 'Lets get ready to party.',
-    events: events.futures()
-  };
-  response.render('index2.html', contextData);
-}
+
 
 module.exports = {
   index: index,
-  var1: var1,
-  var2: var2
+  var1: var1
 };
