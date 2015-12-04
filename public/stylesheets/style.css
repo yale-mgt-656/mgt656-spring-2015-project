@@ -1,14 +1,18 @@
 header{
         background: url("http://www.northshorestriders.com/wp-content/uploads/2013/12/Holiday_BlogBanner_PNG_04.png");
-        background-size: 100% 100%;
+        
         color: white;
 }
 body {
-  padding: 50px;
+ 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: grey;
    }
+.container{
+    width: 100%!important;
+    padding: 10px!important;
 
+}
 a {
   color: #00B7FF;
 }
