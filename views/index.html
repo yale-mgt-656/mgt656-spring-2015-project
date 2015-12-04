@@ -5,7 +5,7 @@
 <style>
     body {
             text-align: center;
-            background-image: url("/images/home.jpg");
+            background-image: url("/images/home1.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -14,13 +14,13 @@
 </style>
 </head>
 <body>
-<div class="home">
-     <div class="homecontainer" style="background-color: rgba(0,0,0,0.6);">
-        <h1>Welcome to {{ title }}. {{tagline}}</h1>
-        <div>
+<div class="home" style="background: rgba(0,0,0,0.2)">
+     <div class="homecontainer">
+        <h1 class="sitetitle">{{ title }}. {{tagline}}</h1><br>
+        <div class="row mainpage">
             {% include "fragments/events-list.html" %}
         </div>
-          <div>
+          <div class="row">
           <a class="btn btn-primary btn-lg" href="/events" role="button">See all events</a></p><br>
     </div>
   </div>

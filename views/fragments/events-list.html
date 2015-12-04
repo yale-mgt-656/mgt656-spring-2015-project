@@ -1,20 +1,21 @@
 <ul>
   {% for event in events %}
-    <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
+  <div class ="col-md-4">
+    <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.8);">
       
       <img class="eventimage" src="{{event.image}}">
-      <br><h3 class="event-title"></h3>
-      <a href="/events/{{event.id}}">{{event.title}}</a>
+      
+      <time datetime="{{event.date}}" class="eventdate">{{event.date|prettyDate}}</time>
       <br>
-        <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      <br>
-         {{event.attending.length}} attending so far
+      <a href="/events/{{event.id}}" class="eventname">{{event.title}}</a><br>
+         {{event.attending.length}} attending so far<div class="event-title"></div>
       </br>
       <div>
           
     </div>
     
     </li>
+  </div>
   {% endfor %}
 </ul>
 
@@ -32,7 +33,7 @@
       $(".event-title").html('');
     },  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: add RSVP text
-      $(".event-title").html('RSVP');
+      $(".event-title").html('. RSVP now!');
     }
   ];
 

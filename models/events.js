@@ -42,7 +42,7 @@ var allEvents = [
     {
     id: 5,
     title: 'Beach party for hackers and nerds',
-    date:   new Date(2016, 8, 1, 19, 0, 0),
+    date:   new Date(2013, 8, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Shady\' house',
     attending: ['susana.arriage@yale.edu', 'karen@yale.edu', 'mezyad@yale.edu']
