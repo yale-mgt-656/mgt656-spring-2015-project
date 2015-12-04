@@ -21,12 +21,13 @@ configure(app);
 // Add routes mapping URLs to controllers
 app.get('/', indexControllers.index);
 app.get('/var1', indexControllers.var1);
-app.get('/var2', indexControllers.var2);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
+app.get('/events1/:id', eventControllers.eventDetail1);
+app.post('/events1/:id', eventControllers.rsvp);
 app.post('/events/:id', eventControllers.rsvp);
 app.get('/api/events', eventControllers.apiListEvents);
 app.get('/reports/:id', reportControllers.reportDetail);

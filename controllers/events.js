@@ -137,6 +137,13 @@ function eventDetail (request, response) {
   }
   response.render('event-detail.html', {event: ev});
 }
+function eventDetail1 (request, response) {
+  var ev = events.getById(parseInt(request.params.id));
+  if (ev === null) {
+    response.status(404).send('No such event');
+  }
+  response.render('event-detail1.html', {event: ev});
+}
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
@@ -163,6 +170,7 @@ module.exports = {
   'listEvents': listEvents,
   'apiListEvents': apiListEvents,
   'eventDetail': eventDetail,
+  'eventDetail1': eventDetail1,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp
