@@ -8,35 +8,40 @@
     <form id="create-event" method="POST">
     <!--<fieldset>--> 
     <!--  <legend>Create Event</legend>-->
-      <div>
+      <div class="form-group evform">
       <!--Event title-->
-      <label for="title">Event title:</label>
-      <input type="text" name="title">
+      <label for="title">Event title*:</label>
+      <input type="text" name="title" class="form-control" placeholder="eg: Awesome Party">
       </div>
       
-      <div>
+      <div class="form-group evform">
       <!--Event Location-->
-      <label for="location">Event location:</label>
-      <input type="text" name="location">
+      <label for="location">Event location*:</label>
+      <input type="text" name="location" class="form-control" placeholder="eg: Kyle's House">
       </div>
       
-      <div>
+      <div class="form-group evform">
       <!--Event Image-->
-      <label for="image">Event image URL:</label>
-      <input type="text" name="image">
+      <label for="image">Event image URL*:</label>
+      <input type="text" name="image" class="form-control" placeholder="eg: http://www.kizoa.com/img/e8nZC.gif">
       </div>
       
-      <div>
+      <div class="form-group evform">
       <!--Event Year-->
-        <label for="year">Event year:</label>
-        <select name="year" type="integer">
+       <div>
+       <label for="year">Event date*:</label>
+       </div>
+        <div class="col-md-4">
+        <select name="year" type="integer" class="form-control">
           <option value="2015">2015</option>
           <option value="2016">2016</option>
         </select>
+        </div>
 
       <!--Event Month-->
-        <label for="month">Event month:</label>
-        <select name="month" type="integer">
+        
+        <div class="col-md-4">
+        <select name="month" type="integer" class="form-control">
           <option value="0">January</option>
           <option value="1">February</option>
           <option value="2">March</option>
@@ -50,11 +55,13 @@
           <option value="10">November</option>
           <option value="11">December</option>
         </select>
-
+        <label for="month"></label>
+      </div>
       
       <!--Event Day-->
-      <label for="day">Event day:</label>
-        <select name="day" type="integer">
+    <label for="day"></label>
+      <div class="col-md-4">
+        <select name="day" type="integer" class="form-control">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -87,13 +94,17 @@
           <option value="30">30</option>
           <option value="31">31</option>
         </select>
-
+        </div>
       </div>
       
+        <!--Event Hour-->
+      <div class="form-group evform">
+      <br>
       <div>
-      <!--Event Hour-->
-      <label for="hour">Event hour:</label>
-        <select name="hour" type="integer">
+      <label for="hour">Event time*:</label>
+      </div>
+      <div class="col-md-4">
+        <select name="hour" type="integer" class="form-control">
           <option value="0">00</option>
           <option value="1">01</option>
           <option value="2">02</option>
@@ -119,27 +130,26 @@
           <option value="22">22</option>
           <option value="23">23</option>
         </select>
+        </div>
 
       <!--Event Minute-->
-      <label for="minute">Event minute:</label>
-        <select name="minute" type="integer">
-          <option value="0">0</option>
+      <label for="minute"></label>
+      <div class="col-md-4">
+        <select name="minute" type="integer" class="form-control" class="col-md-4">
+          <option value="0">00</option>
           <option value="30">30</option>
         </select>
-
+        </div>
       </div>
-      
       <!--Submit Button-->
+      <br>
+      <br>
       <div>
-      <input type="submit" id="submit" name="submit">
+      <button type="submit" id="submit" class="btn btn-success">Submit</button>
       </div>
-
-
-
     <!--</fieldset>-->
     </form>
-    
-    
+  
 </div>
 
 {% if errors %}

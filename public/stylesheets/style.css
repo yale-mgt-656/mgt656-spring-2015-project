@@ -97,6 +97,8 @@ position: absolute;
 
 
 /* Event detail page formatting */
+
+
 #attendees li {
     color:black;
 }
@@ -126,3 +128,13 @@ text-align:left;
 .event-title {
     display:inline;
 }
+
+/* Create Event page formatting */
+
+.evform{
+ max-width: 400px;
+ margin-right: auto;
+ margin-left: auto;
+}
+
+
