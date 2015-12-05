@@ -1,19 +1,19 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-<body style="background-color:lavender">
-<h1 id="title">{{event.title}}</h1> 
+<body style="background: url(http://www.wallpaperup.com/uploads/wallpapers/2014/04/10/328765/2e87043320c6b03efac1dcf36d315e68.jpg)">
+<h1 id="title" style="font-family:comic sans ms"><b>{{event.title}}</b></h1> 
 <p>
     <img id="image" src={{event.image}}>
     </p>
-<p style="color:red">Date and Time: <span id="date">{{event.date|prettyDate}}</span></p>
-<p>Location: <span id="location">{{event.location}}</span></p>
-<p>Attendees:</p>
+<p style="color:brown;font-family:comic sans ms;"><font size="6">Date and Time: <span id="date">{{event.date|prettyDate}}</span></font></p>
+<p style="color:darkblue;font-family:comic sans ms;"><font size="6">>Location: <span id="location">{{event.location}}</span></font></p>
+<p style="color:darkmagenta;font-family:lucida console;"><font size="6">-----------Attendees-----------</font></p>
 <ul id="attendees" style="list-style:none">
     {% for person in event.attending %}
-    <li>{{person}}</li>
+    <li style="color:darkmagenta;font-family:lucida console;"><font size="4">{{person}}</font></li>
     {% endfor %}
-<br><b>RSVP through your Yale e-mail:</b><br>
+<br><p style="color:darkred;font-family:comic sans ms;"><font size="6"><b>RSVP through your Yale e-mail and/ or Donate:</b></font></p>
 {% if errors %}
 <div>
     <ul class="form-errors">
@@ -25,11 +25,9 @@
 {% endif %}
 <form  method="POST">
    <input id="email" type="email" name="email" required class="textbox">
-  <br><br>
-  <input type="submit" value="Submit" class="btn btn-success">
+    <input type="submit" value="Submit" class="btn btn-success">
 </input>
-</form>
-<br>
+
 <form action="/donate" method=get>
     <input type="submit" value="Donate Here" class="btn btn-danger">
 </form>
