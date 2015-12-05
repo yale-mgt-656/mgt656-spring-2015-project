@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+<body style="background-color:lavender">
 <h1 id="title">{{event.title}}</h1> 
 <p>
     <img id="image" src={{event.image}}>
     </p>
-<p>Date and Time: <span id="date">{{event.date|prettyDate}}</span></p>
+<p style="color:red">Date and Time: <span id="date">{{event.date|prettyDate}}</span></p>
 <p>Location: <span id="location">{{event.location}}</span></p>
 <p>Attendees:</p>
 <ul id="attendees" style="list-style:none">
     {% for person in event.attending %}
     <li>{{person}}</li>
     {% endfor %}
-RSVP through your Yale e-mail:<br>
+<br><b>RSVP through your Yale e-mail:</b><br>
 {% if errors %}
 <div>
     <ul class="form-errors">
@@ -23,14 +24,15 @@ RSVP through your Yale e-mail:<br>
 </div>
 {% endif %}
 <form  method="POST">
-   <input id="email" type="email" name="email" required>
+   <input id="email" type="email" name="email" required class="textbox">
   <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" class="btn btn-success">
 </input>
 </form>
 <br>
 <form action="/donate" method=get>
-    <input type="submit" value="Donate Here">
+    <input type="submit" value="Donate Here" class="btn btn-danger">
 </form>
+</body>
 {% endblock %}
 

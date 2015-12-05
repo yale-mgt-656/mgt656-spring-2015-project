@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
+<body style="background-color:LemonChiffon ">
 
   {% if errors %}
     <div class="form-errors">
@@ -128,7 +129,7 @@
       
   <!-- title, location, image, year, month, day, hour, and minute -->
     <!--add submit button-->
-    <input type="submit" value=submit>
+    <input type="submit" value=Submit class="btn btn-warning">
     <br>
     <br>
 
@@ -140,7 +141,7 @@
       <br> 
       <input type="date" name="Day" min="2015-01-01" max="2016-12-31">
   -->
-  
+  </body>
   
 {% endblock %}
 
