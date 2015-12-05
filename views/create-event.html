@@ -15,23 +15,23 @@
 
 	<form id="create-event" method="POST">
     <label for="title">NAME YOUR EVENT:</label>
-    <input type="text" name="title" placeholder="Hackathon 2016">
+    <input type="text" class="textbox" name="title" placeholder="Hackathon 2016">
       <br>
       <br>
       
     <label for="location">LOCATION:</label>
-    <input type="text" name="location" placeholder="165 Whitney Avenue, New Haven, CT 06511">
+    <input type="text" class="textbox" name="location" placeholder="165 Whitney Avenue, New Haven, CT 06511">
       <br>
       <br>
       
     <label for="image">EVENT IMAGE URL (must be a link to a .gif or .png image):</label>
-    <input type="text" name="image" placeholder="http://buffalorising.com/wp-content/uploads/2015/01/03_04_13_LadyHacks1_INJ.jpg">
+    <input type="text" class="textbox" name="image" placeholder="http://buffalorising.com/wp-content/uploads/2015/01/03_04_13_LadyHacks1_INJ.jpg">
       <br>
       <br>
       
   DATE
     <label for="month">Month:</label>
-     <select name="month" form="create-event">
+     <select name="month" class="textbox" form="create-event">
         <option value="0">January</option>    
         <option value="1">February</option>    
         <option value="2">March</option>
@@ -47,7 +47,7 @@
       </select>
       
     <label for="day">Day:</label>
-      <select name="day" form="create-event">
+      <select name="day" class="textbox" form="create-event">
         <option value="1">1</option>       
         <option value="2">2</option>       
         <option>3</option>       
@@ -82,7 +82,7 @@
       </select>
       
     <label for="year">Year:</label>
-        <select name="year" form="create-event">
+        <select name="year" class="textbox" form="create-event">
          <option value="2015">2015</option> 
          <option value="2016">2016</option>
         </select>
@@ -91,7 +91,7 @@
       
     TIME
     <label for="hour">Hour:</label>
-      <select name="hour" form="create-event">
+      <select name="hour" class="textbox" form="create-event">
         <option value="0">0</option> 
         <option value="1">1</option>       
         <option value="2">2</option>       
@@ -119,7 +119,7 @@
       </select>
       
     <label for="minute">Minute:</label>
-    <select name="minute" form="create-event">
+    <select name="minute" class="textbox" form="create-event">
       <option value="0">0</option>
       <option value="30">30</option>
     </select>

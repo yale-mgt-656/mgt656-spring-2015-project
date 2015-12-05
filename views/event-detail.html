@@ -8,7 +8,7 @@
 <p>Date and Time: <span id="date">{{event.date|prettyDate}}</span></p>
 <p>Location: <span id="location">{{event.location}}</span></p>
 <p>Attendees:</p>
-<ul id="attendees">
+<ul id="attendees" style="list-style:none">
     {% for person in event.attending %}
     <li>{{person}}</li>
     {% endfor %}

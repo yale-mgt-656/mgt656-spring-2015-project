@@ -7,12 +7,9 @@ body {
  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: grey;
+  text-align:center;
    }
-.container{
-    width: 100%!important;
-    padding: 10px!important;
 
-}
 a {
   color: #00B7FF;
 }
@@ -24,10 +21,12 @@ a {
 ul#topofpage{
    padding: 10px;
    background: rgba(255,0,0,0.3);
+   text-align:center;
 }
 ul#topofpage li{
    display: inline;
    padding: 0px 10px 0px 10px;
+   
 }
 ul#bottomofpage{
    padding: 10px;
@@ -53,4 +52,11 @@ ul#bottomofpage li{
 
 .about_description {
     padding:20px 0 0 0;
+}
+.textbox {
+  padding: 5px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
 }
