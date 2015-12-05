@@ -183,8 +183,6 @@ function rsvp (request, response){
     response.render('event-detail.html', contextData);    
   }
 
-}
-
 function api(request, response){
   var output = {events: []};
   console.log('foo is equal to ', request.query.foo);
@@ -200,6 +198,28 @@ function api(request, response){
   }
   response.json(output);
 }
+
+/**
+ * Controller to which rsvp is submitted.
+ * Validates the rsvp email and adds the new attendee to
+ * our list of attendees.
+ */
+function rsvp(request, response){
+  var contextData = {errors: []};
+  var ev = events.getById(parseInt(request.params.id));
+
+    if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") != -1){
+    ev.attending.push(request.body.email);
+    response.redirect('/events/' + ev.id);
+  }else{
+    contextData.errors.push('Invalid email');
+    response.render('event-detail.html', contextData);    
+  }
+}
+ 
+
+
+
 
 /**
  * Export all our functions (controllers in this case, because they
