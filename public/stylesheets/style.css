@@ -1,17 +1,43 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-family: Lato;
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
 }
 
 .event-list {
   border: 1px solid black;
+  text-align: center;
+  font-family: Lato;
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
 }
 .event-list ul {
   list-style-type: none;
+  padding: 50px;
+  text-align: center;
+  font-family: Lato;
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
 }
 
-.front-title .front-p{
+.front-title{
   text-align: center;
+  font-family: Lato;
+	font-size: 40px;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
 }
 
 
