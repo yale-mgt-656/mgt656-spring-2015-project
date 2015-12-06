@@ -7,7 +7,13 @@
 <br>
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "location"> Where: {{event.location}}  </span>
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "date"> When: {{event.date}} </span>
-<p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
+{% if event.attending.length > 0 %}
+    <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;" id="attendees">
+    {% for atendee in event.attending%}
+        <li>{{atendee}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
 
 <form method="POST">
     <input type="text" name="email" id="email" placeholder="Your Email" />
