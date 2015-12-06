@@ -10,3 +10,32 @@ a {
 .form-errors {
 	color: red;
 }
+
+.smallp {
+  color:#610B21;
+  font-size:29px;
+  font-weight:normal;
+  text-align:center;  
+}
+
+.largep {
+  color: Maroon;
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.box {
+    background-color: #610B21;
+    width: 300px;
+    padding: 25px;
+    border: 25px solid navy;
+    margin: 25px;
+}
+footer{
+  background-color: #eee;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
+}
+
