@@ -25,6 +25,7 @@ function donatecontrol (request, response) {
   response.render('donation.html', contextData);
 }
 module.exports = {
-  index: index,donatecontrol:donatecontrol
+  index: index,
+  donatecontrol: donatecontrol
 };
 
