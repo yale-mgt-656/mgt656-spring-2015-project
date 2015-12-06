@@ -8,10 +8,17 @@
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "location"> Where: {{event.location}}  </span>
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "date"> When: {{event.date}} </span>
 <p><span style="color:#0B0B61;font-size:20px;font-weight:bold;text-align:center;" id= "attendees"> Attendees: <ul style= "color:#0B0B61;font-size:20px;font-weight:bold;text-align:left;">{{event.attending}} </ul> </span>
-
+{% if errors %}
+    <ul class="form-errors">
+      <p>Please correct the following errors!</p>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+  {% endif %}
 <form method="POST">
-    <input type="text" name="email" id="email" placeholder="Your Email" />
-    <input type="Submit" value="Submit" />
+<input type="text" name="email" id="email" placeholder="Your Email" />
+<input type="Submit" value="Submit" />
 </form>
 
 {% endblock %}
