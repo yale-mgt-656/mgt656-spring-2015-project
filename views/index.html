@@ -1,20 +1,31 @@
+
 {% extends "layout.html" %}
 
-{% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
-{% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
+
+  <header>
+    <h1>
+       <p style="color:#FF8000;font-size:45px;font-weight:bold;text-align:center;">Sababa FTW</p>
+     <div style="text-align: center"> <img id="logo" src="/img/sababa logo.png" height="150" width="150"  style="align:middle"/>
+       </h1>
+  </header>
+
+
+ <br>
+ <br>
+ <body bgcolor="white">
+  <p style="color:#FF8000;font-size:25px;font-weight:bold;text-align:left">Welcome to Sababa!</p>
+  <p style=”color:#000;font-size:18px;font-weight:normal;text-align:left;”>  Your one stop shop for the best events on the Yale Campus! </p>
+  <p style="color:#000;font-size:18px;font-weight:normal;text-align:left;"> Check out the <a href="/about">About us</a> page to learn more about our team!
+    You can also visit our <a href="/events">Events</a> page to learn about what's happening next!
+    Some of the things we are working on are: 
+   <br>
+{% include "fragments/events-list.html" %}
+  <br>
   </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+  <p style=”color:#000;font-size:18px;font-weight:normal;text-align:left;”>
+   Feeling inspired? You can also create a new event. Simply<a id="new" href="/events/new"> click here!</a>
   </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+</body>
 {% endblock %}
