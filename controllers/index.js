@@ -8,7 +8,7 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'Event Wire',
+    'title': 'Evently',
     'tagline': 'The newest way to create events!!',
     'events': []
   };
