@@ -56,7 +56,7 @@ function checkIntRange(request,fieldName, minVal, maxVal, contextData){
     var value = null;
     if (validator.isInt(request.body[fieldName]) === false) {
       contextData.errors.push('Your '+ fieldName +' should be an integer.');
-    } else{
+    }else{
       value = parseInt(request.body[fieldName], 10);
     if (value > maxVal || value < minVal) {
       contextData.errors.push('Your '+ fieldName +  'should be in the range '+ minVal + '-'+ maxVal + '.');
@@ -133,15 +133,18 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1){
     ev.attendees.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
+    if(request.body.email.toLowerCase().indexOf('harvard') !== -1){
+      contextData.errors.push('Invalid email, harvard punk');
+    }else{
+      contextData.errors.push('Invalid email');
+    }
     response.render('event-detail.html', contextData);    
   }
-
 }
 
 function api(request, response){
