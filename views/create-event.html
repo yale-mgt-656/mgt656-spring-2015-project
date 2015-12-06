@@ -16,6 +16,61 @@
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
+    <br>
+    
+    <label for="location">Event location:</label>
+    <input type="text" name="location">
+    <br>
+    
+    <label for="image">Event image:</label>
+    <input type="text" name="image">
+    <br>
+    
+    <label for="year">Event year:</label>
+    <select type="text" name="year">
+      {% for year in allowedDateInfo.years %}
+      <option value='{{year}}'>{{year}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    
+    <label for="month">Event month:</label>
+    <select type="text" name="month">
+      {% for mNum, mName in allowedDateInfo.months %}
+      <option value='{{mNum}}'>{{mName}}</option>
+      {% endfor %}
+    </select>
+    
+    
+    <br>
+    <label for="day">Event day:</label>
+    <select type="text" name="day">
+      {% for day in allowedDateInfo.days %}
+      <option value='{{day}}'>{{day}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="hour">Event hour:</label>
+    <select type="text" name="hour">
+      {% for hour in allowedDateInfo.hours %}
+      <option value='{{hour}}'>{{hour}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="minute">Event minute:</label>
+    <select type="text" name="minute">
+      <option value="0">:00</option>
+      <option value="30">:30</option>
+    </select>
+    
+    <br>
+    <input type ="submit" id="submit">
+    
+    
+    
+   <!-- title, location, image, year, month, day, hour, and minute-->
+    
+    
   </form>
 {% endblock %}
 

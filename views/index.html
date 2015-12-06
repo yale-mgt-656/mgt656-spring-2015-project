@@ -2,19 +2,33 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+      <h1>
+    <img id="logo" src="http://i.imgur.com/E59EGpr.png>" float="left"> <div align="center">Welcome to EventLite</div>
+    </h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
+  
+
+  
+  
+  <p align="center">
+     {{tagline}}
   </p>
+  
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    We can put some lorem ipsum here
   </p>
+  
   <p>
-    <a id="new" href="/events/new">Create a new event</a>
+    Want to do something fun with your friends? It's easy, just <a id="new" href="/events/new">create a new event</a>
   </p>
+  
+  <p>Here is our list of events</p>
+  <div style="border: 1px solid black">
+    {% include "fragments/events-list.html" %}
+  </div>
+
+
 {% endblock %}
