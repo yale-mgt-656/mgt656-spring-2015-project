@@ -1,23 +1,38 @@
 {% extends "layout.html" %}
 <div style="width:120px; height 120px;">;
 </div>
+
 {% block mainContent %}
 <p class="text-center" class="ImageBorder">
 <img style="border: 10px groove gold" src="{{event.image}}" id="image" height=150px>
 </p>
-<h1 id="title"><strong>{{event.title}}</strong></h1>
-<p><strong>When:</strong> <span id="date">{{event.date}}</span></p>
-<p><strong>Where: </strong> <span id="location">{{event.location}}</span></p>
-<p><strong>Who:</strong></p>
+    
+    <h1 id="title"><strong>{{event.title}}</strong></h1>
+    <p><strong>When:</strong> <span id="date">{{event.date}}</span></p>
+    <p><strong>Where: </strong> <span id="location">{{event.location}}</span></p>
+    <p><strong>Who:</strong></p>
+    
     <ul id="attendees">
-        {% for person in event.attendees %}
-            <li>{{person}}</li>
-        {% endfor %}
-    </ul>
-<p>Please come!</p>
-<form method="POST">
-    <input type="text" name="email" id="email" placeholder="Enter your email here"/>
-    <input type="submit" value="Submit"/>
-</form>
+    {% for person in event.attendees %}
+    
+    <li>{{person}}</li>
+            {% endfor %}
+        </ul>
+    
+    <p>Please come!</p>
+    
+    {% if errors %}
+    <div>
+        <ul class="form-errors">
+            {% for error in errors %}
+                <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <form method="POST">
+        <input type="text" name="email" id="email" placeholder="Enter your email here"/>
+        <input type="submit" value="Submit"/>
+    </form>
 
 {% endblock %}
