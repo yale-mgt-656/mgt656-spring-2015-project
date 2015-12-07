@@ -49,6 +49,23 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null;
+  if(validator.isInt(request.body[fieldName]) === false){
+    contextData.errors.push('Your ' + fieldName + ' shoud be an integrer.');
+    } else {
+      value = parseInt(request.body[fieldName], 10);
+      if (value > maxVal || value < minVal) {
+      contextData.errors.push('Your ' + fieldName + ' shoud be in a range between ' + minVal + ' and ' + maxVal);  
+      }
+    } return value;
+}
+
+validator.extend('isGifOrPng', function (imagepath){
+  var find = imagepath.match(/\.(png|gif)$/);
+  return find == null;
+});
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -60,10 +77,25 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+  if (validator.isURL(request.body.image) === false) { 
+    contextData.errors.push('Your image should be an URL');
+  }
+  if (validator.isGifOrPng(request.body.image) === true) {
+    contextData.errors.push('Your image should be a GIF or PNG URL');
+  }
+  
+  var year = checkIntRange(request, 'year', 2015, 2016, contextData);
+  var month = checkIntRange(request, 'month', 0, 11, contextData);
+  var day = checkIntRange(request, 'day', 1, 31, contextData);
+  var hour = checkIntRange(request, 'hour', 0, 23, contextData);
 
-
+  
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: findMaxId(events.all) + 1,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -71,11 +103,21 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
 }
+
+function findMaxId (xxx){
+    var maxId = 0;
+    for (var i = 0; i < xxx.length; i++){
+      if (maxId < xxx[i].id ) {
+        maxId = xxx[i].id;
+      }
+    } 
+    return maxId;
+  }
 
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
@@ -102,6 +144,25 @@ function rsvp (request, response){
 
 }
 
+/** API Documentation**/
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search) {
+    for(var i=0; i < events.all.length; i++){
+      if (events.all[i].title.indexOf(search) !== -1) {
+        output.events.push(events.all[i]);
+      }
+    }
+  } else {
+    output.events = events.all;
+  }
+  response.json(output);
+}
+
+
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +172,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api':api
 };
