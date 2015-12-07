@@ -139,18 +139,19 @@ text-align:left;
 
 .eventbox{
  color: white;
- background-color: #9900ff;
+ background-color: #0099ff;
  padding: 15px;
  margin-bottom:5px;
- margin-left:5px;
+ margin-left:20px;
  height: auto;
  overflow:hidden;
  border-radius: 25px;
 }
 
 .imagenes{
-    border: padding-box;
+    margin-top:20px;
     border-radius: 35px;
+    margin-left:10px;
     
 }
 
