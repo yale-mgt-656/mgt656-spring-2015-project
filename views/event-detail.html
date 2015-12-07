@@ -18,9 +18,12 @@
 <span class="event" id="date">{{event.date}}</span>
 <span class="event" id="location">{{event.location}}</span>
 <img class="event" id="image" src={{event.image}}>
-<span class="event" id="attendees"> Attending: 
-    <ul>{{event.attending}}</ul>
-</span>
+<label for "attendees">Attendees:</label>
+  <ul id="attendees">
+    {% for attendee in event.attending %}
+      <li>{{attendee}}</li>
+    {% endfor %}
+  </ul>
 
 <form id="event-detail" method="POST">
     <div>
