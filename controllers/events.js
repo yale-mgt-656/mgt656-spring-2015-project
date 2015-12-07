@@ -8,6 +8,7 @@ var validator = require('validator');
 // used a first.
 //
 var allowedDateInfo = {
+  years: [2015, 2016],
   months: {
     0: 'January',
     1: 'February',
@@ -22,6 +23,10 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+    14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+    25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
@@ -42,11 +47,36 @@ function listEvents(request, response) {
 }
 
 /**
+ * Controller that renders a list of events in JSON.
+ */
+function apiListEvents(request, response) {
+  if (request.query.search)
+    response.json({events: events.getByTitle(request.query.search)});
+  else
+    response.json({events: events.all});
+}
+
+/**
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {
+    'allowedDateInfo': allowedDateInfo
+  };
   response.render('create-event.html', contextData);
+}
+
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null;
+  if (validator.isInt(request.body[fieldName]) === false) {
+    contextData.errors.push('Your ' + fieldName + ' should be an integer.');
+  }else{
+    value = parseInt(request.body[fieldName], 10);
+    if (value > maxVal || value < minVal) {
+    contextData.errors.push('Your ' + fieldName + ' should be in the range ' + minVal + '-' + maxVal);
+    }
+  }
+  return value;
 }
 
 /**
@@ -58,20 +88,43 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your location should be between 5 and 50 letters.');
+  }
+  
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 50 letters.');
+  }
+  
+  var year = checkIntRange(request, 'year', 2015, 2016, contextData);
+  var month = checkIntRange(request, 'month', 0, 11, contextData);
+  var day = checkIntRange(request, 'day', 1, 31, contextData);
+  var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var minute = parseInt(request.body.minute);
+  if (isNaN(minute) || (minute !== 0 && minute !== 30)) {
+    contextData.errors.push('Your event\'s minute is not acceptable.');
+  }
+  
+  if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be a URL.');
+  }
+  if (validator.matches(request.body.image, /http(s?):\/\/([a-z,0-9,.,\/,\?,=]+)(.gif|.png)/i) === false) {
+    contextData.errors.push('Your image url is not valid. '+request.body.image);
   }
 
-
   if (contextData.errors.length === 0) {
+    var newid = parseInt(events.nextId());
+    var date = new Date(year, month, day, hour, minute, 0,0);
+    var datestr = date.toDateString();
     var newEvent = {
+      id: newid,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date:datestr,
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/'+newid);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -84,6 +137,13 @@ function eventDetail (request, response) {
   }
   response.render('event-detail.html', {event: ev});
 }
+function eventDetail1 (request, response) {
+  var ev = events.getById(parseInt(request.params.id));
+  if (ev === null) {
+    response.status(404).send('No such event');
+  }
+  response.render('event-detail1.html', {event: ev});
+}
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
@@ -91,12 +151,12 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.match(/([a-z0-9\.-_])+@yale.edu/i)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  } else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
+    contextData.errors.push('Invalid email or non-yale email address');
     response.render('event-detail.html', contextData);    
   }
 
@@ -108,8 +168,11 @@ function rsvp (request, response){
  */
 module.exports = {
   'listEvents': listEvents,
+  'apiListEvents': apiListEvents,
   'eventDetail': eventDetail,
+  'eventDetail1': eventDetail1,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp
+  
 };

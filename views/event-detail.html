@@ -4,7 +4,7 @@
   <head>
 <!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
-k='111866905-1',d=document,l=d.location,c=d.cookie;
+k='111866905-2',d=document,l=d.location,c=d.cookie;
 if(l.search.indexOf('utm_expid='+k)>0)return;
 function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
 indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
@@ -16,7 +16,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+
+
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -52,32 +53,40 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     </script>
  </head>
 {% endblock %}
-
 {% block mainContent %}
-  <h1 class="front-title">{{ title }} FTW</h1>
-  <p class="front-p">
-    Welcome to {{ title }}. {{tagline}} {{events.nextId}}
-  </p>
-  <p>Here is our list of events</p>
-    <div class="event-list">
-      {% include "fragments/events-list.html" %}
+
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
     </div>
-  </p>
+  {% endif %}
 
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
-<style> body { 
-  background: url(http://kenmclane.org/images/party_bg.jpg);
-  text-align: center;
+<h1 id="title"> {{event.title}} </h1>
+<a class="donation" href="/donate/{{event.id}}">Donate</a>
+<img id="image" src="{{event.image}}" >
 
+<dl class="dl-horizontal">
+  <dt>Location: </dt>
+  <dd><span id="location">{{ event.location }}</span></dd>
+  <dt>Date: </dt>
+  <dd><span id="date"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span></dd>
+   <dt>Attending: </dt>
+  <dd>
+    <div>
+      {% include "fragments/attendees-list.html" %}
+    </div>
+    {{event.attending.length}} attending so far.
+  </dd>
+</dl>
 
-color: black;
-font-family: helvetica;
-}
-</style>
+<form id="RSVP" method="POST">
+    <label for="email">Input your Yale email to RSVP:</label>
+    <input type="text" name="email" id="email">
+  
+  <button type=submit>Submit</button>
 {% endblock %}
