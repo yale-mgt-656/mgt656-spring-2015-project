@@ -17,7 +17,7 @@
 
 <body>
 
-<div id="wrap">
+<div class="container">
   {% block header %}
   <div>
   <header>
@@ -57,19 +57,18 @@
   <section>Welcome to {{ title }}. {{tagline}}</section>
   {% endblock %} 
  </div>
-  <div id="push"></div>
   {% block footer %}
   
-    <div id="footer">
-      <footer>
+    </div> 
+    <footer class="footer">
     <a href="/"> Home</a>
     <a href="/about"> About </a>
     <a href="/api/events" target="_blank">API</a>
     </footer>
-    </div>
+    
   
   {% endblock %}
-</div> 
+
   <!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -37,27 +37,21 @@ footer a {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-
-      html,
-      body {
-        height: 100%;
-        /* The html and body elements cannot have any padding or margin. */
-      }
-
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -60px;
-      }
-
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 60px;
-      }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
 
 
       /* Lastly, apply responsive CSS fixes as necessary */
@@ -78,7 +72,7 @@ footer a {
 
 
 /* Set the fixed height of the footer here */
-#footer {
+.footer {
   padding:20px;
   text-align: center;
   background-color: rgba(0,0,0,0.6);
@@ -87,7 +81,7 @@ footer a {
 
 .home {
 
-    padding-top: 100px;
+    padding: 100px 0;
     color: white;
     
 
@@ -163,7 +157,7 @@ text-align:left;
 
 .eventbox{
  color: white;
- background-color: #0099ff;
+ background-color: #EB7B1B;
  padding: 15px;
  margin-bottom:5px;
  height: auto;
