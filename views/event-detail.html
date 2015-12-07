@@ -6,11 +6,10 @@
 <p class="text-center" class="ImageBorder">
 <img style="border: 10px groove gold" src="{{event.image}}" id="image" height=150px>
 </p>
-    
-    <h1 id="title"><strong>{{event.title}}</strong></h1>
-    <p><strong>When:</strong> <span id="date">{{event.date}}</span></p>
-    <p><strong>Where: </strong> <span id="location">{{event.location}}</span></p>
-    <p><strong>Who:</strong></p>
+    <h1 id="title" style="color: fuchsia" class="text-center"><strong>{{event.title}}</strong></h1>
+    <p style="font-size:15px;"><strong>When:</strong> <span id="date">{{event.date}}</span></p>
+    <p style="font-size:15px;"><strong>Where: </strong> <span id="location">{{event.location}}</span></p>
+    <p style="font-size:15px;"><strong>Who:</strong></p>
     
     <ul id="attendees">
     {% for person in event.attendees %}
