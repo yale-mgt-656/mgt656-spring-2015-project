@@ -137,4 +137,20 @@ text-align:left;
  margin-left: auto;
 }
 
+.eventbox{
+ color: white;
+ background-color: #9900ff;
+ padding: 15px;
+ margin-bottom:5px;
+ margin-left:5px;
+ height: auto;
+ overflow:hidden;
+ border-radius: 25px;
+}
+
+.imagenes{
+    border: padding-box;
+    border-radius: 35px;
+    
+}
 

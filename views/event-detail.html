@@ -3,7 +3,7 @@
 <div class="container home">
     <div class="eventlist">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 eventbox">
                 <h1 id="title">{{event.title}}</h1>
                 <span id="date"><h3>When: {{event.date}}</h3></span>
                 <span id="location"><h3>Where: {{event.location}}</h3></span>
@@ -15,6 +15,7 @@
                 </ul>
                 <form method="post">
                     <input type="email" name="email" id="email" required placeholder="Your Yale email ID" class="form-control" />
+                    <br>
                     <input type="submit" value="Submit" class="btn btn-default" />
                 </form>
             </div>
@@ -32,7 +33,7 @@
             {% endif %}
         
 
-        <img src="{{event.image}}" style="width:550px" id="image" class="col-md-6"></img>
+        <img src="{{event.image}}" style"width=450px" id="image" class="col-md-6 imagenes"></img>
 
         <div class="col-md-6">
             <br><div class="donate">
