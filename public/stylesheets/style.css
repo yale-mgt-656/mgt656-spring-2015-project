@@ -85,6 +85,7 @@ position: absolute;
  margin-left:5px;
  height: 280px;
  overflow:hidden;
+ border-radius: 25px;
 }
 .newevent{
     color: white;
