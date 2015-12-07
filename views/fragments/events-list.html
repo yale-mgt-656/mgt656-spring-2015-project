@@ -3,7 +3,7 @@
     <li class="event" id="event-{{event.id}}" style="list-style:none">
       <a href="/events/{{event.id}}">
         <div class="event_image"><img src="{{event.image}}"></div>
-        <h4>{{event.title}}</h4></a>
+        <h4 class="event_title">{{event.title}}</h4></a>
      <p><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></p>
      <p>{{event.attending.length}} attending so far</p>
     </li>
@@ -22,7 +22,7 @@
 var pageVariations = [
   function() {},  // Original: Do nothing. This will render the default HTML.
   function() {    // Variation 1: add RSVP text
-    $( 'li.event-title' ).prepend( 'RSVP ' );
+    $( 'h4.event_title' ).prepend( 'RSVP ' );
   }
 ];
 
