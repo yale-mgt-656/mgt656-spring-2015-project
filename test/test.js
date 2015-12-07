@@ -254,7 +254,7 @@ describe('The event detail pages',function(){
     });
   });
 
-  it('should reject RSVPs from Yale addresses', function(done){
+  it('should reject RSVPs from non-Yale addresses', function(done){
     var browser = new Browser();
     var email = 'foobar@harvard.edu';
 
@@ -262,7 +262,7 @@ describe('The event detail pages',function(){
       browser
         .fill('email', email)
         .pressButton('Submit', function(){
-          assert.ok(browser.query('ul.form-errors'), 'RSVP from joker at Harvard should have been rejected.');
+          assert.ok(browser.query('ul.form-errors'), 'Invalid email!');
           done();
         });
     });
