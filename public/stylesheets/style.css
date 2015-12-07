@@ -1,5 +1,4 @@
 html {
-    position: relative;
     min-height: 100%;
 }
 
@@ -7,7 +6,6 @@ body {
   text-align: center;
   font-size: 14px;
   font-family:"Work Sans", Helvetica, Arial, sans-serif!important;
-
 }
 
 a {
@@ -40,26 +38,51 @@ footer a {
 /* Sticky footer styles
 -------------------------------------------------- */
 
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-}
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
 
 .row {
     margin-right:0px!important;
 }
+
 
 /* Set the fixed height of the footer here */
 #footer {
   padding:20px;
   text-align: center;
   background-color: rgba(0,0,0,0.6);
-position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow:hidden;
+
 }
 
 .home {
@@ -101,7 +124,7 @@ position: absolute;
 
 
 #attendees li {
-    color:black;
+    color: white;
 }
 
 .eventlist {
@@ -143,16 +166,13 @@ text-align:left;
  background-color: #0099ff;
  padding: 15px;
  margin-bottom:5px;
- margin-left:20px;
  height: auto;
  overflow:hidden;
  border-radius: 25px;
 }
 
 .imagenes{
-    margin-top:20px;
     border-radius: 35px;
-    margin-left:10px;
     
 }
 
