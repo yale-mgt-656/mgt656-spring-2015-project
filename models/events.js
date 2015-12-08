@@ -54,6 +54,12 @@ function getById (id) {
   return null;
 }
 
+allEvents.sort(function(a, b) {
+    a = new Date(a.date);
+    b = new Date(b.date);
+    return a>b ? -1 : a<b ? 1 : 0;
+});
+
 module.exports = exports = {
   all: allEvents,
   getById: getById
