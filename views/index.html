@@ -3,15 +3,18 @@
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
-     <img src="/images/evently_logo.png">
+     <img src="http://zenmarketinginc.com/wp-content/uploads/2015/06/Live-Concert-Event.jpg">
   </header>
 {% endblock %}
 #}
 
 {% block mainContent %}
   <p>
+    <a href="/events/new"><center><img id="logo" src="/images/Create_Event_Button.png" style="width: 200px"></center></a>
+    </p>
+    <p>                                  
     Welcome to {{ title }}. {{tagline}}
-  </p>
+    </p>
   <p>
     Here are the upcoming events:
   </p>
@@ -26,3 +29,4 @@
     <a id="new" href="/events/new">Create a new event</a>
   </p>
  {% endblock %}
+
