@@ -25,5 +25,9 @@ app.get('/api/events', eventControllers.api);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
 app.post('/events/:id([0-9]+)', eventControllers.rsvp);
+app.get('/donate', indexControllers.donate);
+
+
+// Alex created a get route to the donate link: indexControllers.donate. SET THIS UP IN MY INDEX.JS
 
 module.exports = app;

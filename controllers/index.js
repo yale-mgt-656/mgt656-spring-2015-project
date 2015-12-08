@@ -21,6 +21,15 @@ function index (request, response) {
   response.render('index.html', contextData);
 }
 
+function donate (request, response) {
+  var contextData = {
+    'title': 'Donate',
+    'tagline': 'Please give us your MON$Y'
+  };
+  response.render('donate.html', contextData);
+}
+
 module.exports = {
-  index: index
+  index: index,
+  donate: donate,
 };
