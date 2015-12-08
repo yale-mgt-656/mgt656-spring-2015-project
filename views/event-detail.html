@@ -34,7 +34,32 @@
 {# <form action="/donate" method=get>
     <input type="submit" value="Donate Here" class="btn btn-danger donation">
 </form> #}
-<a href="/donate" class="donation"><p style="color:blue;font-family:comic sans ms;"><font size="6"><b>"Donate Here..."</b></font></p></a>
+<a href="/donate" class="donation"><p class="donate_test" style="color:blue;font-family:comic sans ms;"><font size="6"><b>Donate Here</b></font></p></a>
 </body>
 {% endblock %}
 
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=2WUubbB3S5iaUjMsTDnAjQ"></script>
+
+<!-- Load the JQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+// Define JavaScript for each page variation of this experiment.
+var pageVariations = [
+  function() {},  // Original: Do nothing. This will render the default HTML.
+  function() {    // Variation 1: Replace Donate text with Support text
+    $( 'p.donate_test' ).replaceWith( 'Support Here' );
+  }
+];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function(){
+  // Ask Google Analytics which variation to show the user.
+  var chosenVariation = cxApi.chooseVariation();
+
+  // Execute the chosen view
+  pageVariations[chosenVariation]();
+}
+);
+</script>
