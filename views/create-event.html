@@ -4,9 +4,9 @@
 
 
   {% if errors %}
-    <div class="form-errors">
+    <div>
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -14,10 +14,10 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST">
+	<form method="POST">
 	  <div class="form-group">
       <label for="title">Event title:</label>
-      <input type="text" name="title">
+      <input type="text" name="title" id="title">
     </div>
     
     <div class="form-group">
