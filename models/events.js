@@ -17,7 +17,7 @@ var allEvents = [
   },
   {
     id: 1,
-    title: 'BBQ party for hackers and nerds',
+    title: 'BBQ Party For Hackers and Nerds',
     date:   new Date(2015, 8, 1, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Miles\' house',
@@ -25,7 +25,7 @@ var allEvents = [
   },
   {
     id: 2,
-    title: 'BBQ for managers',
+    title: 'BBQ For Managers',
     date:   new Date(2015, 9, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
@@ -33,7 +33,7 @@ var allEvents = [
   },
   {
     id: 3,
-    title: 'Cooking lessons for the busy business student',
+    title: 'Cooking Lessons For The Busy Business Student',
     date:   new Date(2014, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
