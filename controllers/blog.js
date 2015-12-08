@@ -3,11 +3,11 @@
 /**
  * Controller that renders our about page.
  */
-function about (request, response) {
+function blog (request, response) {
   var contextData = {};
-  response.render('about.html', contextData);
+  response.render('blog.html', contextData);
 }
 
 module.exports = {
-  about: about
+  blog: blog
 };
