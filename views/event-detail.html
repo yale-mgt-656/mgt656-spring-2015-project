@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+<h1 id="title">{{event.title}}</h1>
+
+<img id="image" src={{event.image}} />
+
+  <div>
+    <h3>When</h3>
+<span id="date">{{event.date}}</span>
+</div>
+<div>
+  <h3>Where</h3>
+<span id="location">{{event.location}}</span>
+</div>
+
+<div>
+<h3>Who's attending</h3>
+<ul id="attendees">
+  <li>{{event.attending}}</li>
+</ul>
+  </div>
+
+
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  	<form id="rsvp" method="POST">
+  <label for="email">Email for RSVP:</label>
+    <input type="text" name="email" id="email">
+        <input type="submit" value="Submit">
+  </form>
+
+  <div>
+    <a href="/events/new">Create a new Donut Club Event</a>
+    <a href="#" class="donation" onclick=”_gaq.push([‘_trackPageview’,’/vpv/donate’]);>Donate</a>
+  </div>
+
+
+{% endblock %}
+
