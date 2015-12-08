@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+  <style>
+  body
+     {
+      text-align: left;
+      background: url("http://jenruhman.com/freshjen/ninjas.jpg");
+      background-size: cover;
+      color: #fff;
+      font-family: arial;
+      font-size: 18;
+     }
+     
+    ul
+     {
+      display: inline;
+     }
+  </style>
+
+<body>
+{% block header %}  
+  <header>
+    <h1>About Us</h1>
+    <ul>
+      <li><a href="/events/new">New Event</a></li>
+      <li><a href="/events">Browse Events</a></li>
+    </ul>
+  </header>
+{% endblock %}
+{% block mainContent %}
+  <h2>Story</h2>
+  <p>Hi! We are Fragrant Sierra - code ninjas [hence - 'fragrant-ninja'!] who offer you the world's best event organizing app!</p>
+  <h2>People</h2>
+  <p>
+  <ul>
+     <div>
+     <h3><span id="shaun-name">Shaun </span></h3>
+     <span id="shaun-headshot"> <img id="shaun-headshot" src="http://i.imgur.com/17FTdVn.gif" width="150" height="120" class="img-rounded">
+     </span>
+     </div>
+     <div> 
+     <h3><span id="matt-name">Matthew </span></h3>
+     <span id="matt-headshot"> <img id="matt-headshot" src="https://media.giphy.com/media/13x0OguvAGp2k8/giphy.gif" width="150" height="120" class="img-rounded">
+     </span>
+     </div>
+     <div> 
+     <h3><span id="lily-name">Lily </span></h3>
+     <span id="lily-headshot"> <img id="lily-headshot" src="http://3.bp.blogspot.com/-nG-MGrnh8eM/UnkMhQEY_9I/AAAAAAAABEc/hHuKzLC_7MY/s1600/tumblr_inline_mo8al0OwwR1qimd9m.gif" width="150" height="120" class="img-rounded"> </span>
+     </div>
+     <div> 
+     <h3><span id="arjit-name">Arjit </span></h3>
+     <span id="arjit-headshot"> <img id="arjit-headshot" src="http://blog.photobucket.com/wp-content/uploads/2014/05/tumblr_m6wte5C16T1rvonpwo1_400.gif" width="150" height="120" class="img-rounded">
+    </span>
+    </div>
+  </ul>
+  </p>
+
+</body>
+{% endblock %}
