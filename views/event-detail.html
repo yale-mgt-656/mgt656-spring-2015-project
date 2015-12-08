@@ -1,15 +1,28 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <div>
+
 <h1 id="title">{{event.title}}</h1>
-<span id="date">{{event.date}}</span>
-<span id="location">{{event.location}}</span>
+
 <img id="image" src={{event.image}} />
+
+  <div>
+    <h3>When</h3>
+<span id="date">{{event.date}}</span>
+</div>
+<div>
+  <h3>Where</h3>
+<span id="location">{{event.location}}</span>
+</div>
+
+<div>
+<h3>Who's attending</h3>
 <ul id="attendees">
   <li>{{event.attending}}</li>
 </ul>
   </div>
+
+
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -20,16 +33,15 @@
       </ul>
     </div>
   {% endif %}
-  <div> 
   	<form id="rsvp" method="POST">
   <label for="email">Email for RSVP:</label>
-    <input type="text" name="email">
+    <input type="text" name="email" id="email">
         <input type="submit" value="Submit">
   </form>
-    </div>
+
   <div>
-    <a href="/events/new">Create a new event</a>
+    <a href="/events/new">Create your own event</a>
   </div>
-  
+
 
 {% endblock %}
