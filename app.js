@@ -28,6 +28,7 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/api/events', eventControllers.api);
 app.get('/sprint-report-4', sprintreportControllers.sprintreport);
 app.get('/sprint-report-5', sprintreportControllers.sprintreport5);
+app.get('/sprint-report-6', sprintreportControllers.sprintreport6);
 app.get('/donate', donateControllers.donate);
 app.get('/donate/thankyou', donateControllers.thankyou);
 
