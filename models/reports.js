@@ -17,7 +17,6 @@ var allReports = [
       {
         title: "Application Description and Purpose",
         paragraphs: ["The Wandering Wood Code team is creating an event management platform that will allow users to create and RSVP for upcoming events. Our goal is to create a more intuitive and user friendly version of of event management platforms than those currently on the market."],
-        //image: "http://i.imgur.com/pXjrQ.gif"
       },
       {
         title: "Coding Team Composition and Approach",
@@ -179,6 +178,109 @@ var allReports = [
           "Set up AB testing for event detail page",
           "Analyze traffic breakdown across segments and flow from landing to donation",
           "Optimize app based on GA results"]
+      }
+    ]
+  },
+  {
+    id: 6,
+    teammembers: [
+      {name: "Cheng Zhao", email: "cheng.zhao@yale.edu"},
+      {name: "David Mowat", email: "david.mowat@yale.edu"},
+      {name: "Nilofer Ahmed", email: "nilofer.ahmed@yale.edu"},
+      {name: "Stefan Bauer", email: "stefan.bauer@yale.edu"}
+      ],
+    date:   new Date(2015, 11, 7, 23,59, 59),
+    sections:[
+      {
+        title: "Application Description and Purpose",
+        paragraphs: ["The Wandering Wood Code team is creating an event management platform that will allow users to create and RSVP for upcoming events. Our goal is to create a more intuitive and user friendly version of of event management platforms than those currently on the market."],
+      },
+      {
+        title: "Coding Team Composition and Approach",
+        paragraphs: [
+          "The code .team is comprised of four second year MBA students at Yale SOM who have been immersed in coding for the semester. Cheng Zhao has extensive coding expertise and is leading our technical efforts with Nilofer Ahmed, Stefan Bauer and David Mowat contributing to the project. The Team is utilizing scrum methodology to ensure we deploy changes quickly and collaborate effectively.",
+          "The team is using waffle.io as our kanban board to track progress and manage our backlog. Current backlog with completed stories listed:"
+        ],
+        link: "https://waffle.io/wandering-wood/mgt656-spring-2015-project/join"
+      },
+      {
+        paragraphs: ["The platform will be deployed on Heroku - a current work-in-progress version of the website can be viewed at:"],
+        link: "https://mgt-656-wandering-wood.herokuapp.com/"
+      },
+      {
+        title: "Meetings Held and Outcomes",
+        paragraphs: 
+        [
+          "At the onset of the Sprint, we met to discuss the upcoming Sprint which would be the last major sprint of this project. Given that the project will be wrapping up, we all decided that clearing our backlog of stories was critically important for this sprint. The major story categories that remain are: finalizing formatting elements, migrating to a database, and further analysis of our Google Analytics data. We have learned that our team is most effective during collective working sessions so decided to continue that approach. We planned to meet on Friday afternoon to work jointly and then to finalize our respective tasks over the weekend.",
+          "In our Friday meeting, Nilofer took ownership of CSS formatting elements, Cheng and Stefan worked together on database migration and David worked on assessing the Google Analytics data. This meeting was very productive. Our team has established good working norms and continues to be able to complete tasks effectively together."
+        ]
+      },
+      {
+        title: "Method of Point Estimation",
+        paragraphs: 
+        [
+          "We played a quick game of planning poker to estimate the points for each task this week. The results of our planning poker were that database migration would be 60 points, outstanding formatting stories would be 45 points and that the Google Analytics would be 25 points."
+        ]
+      },
+      {
+        title: "What is Currently Functioning",
+        paragraphs: 
+        [
+          "Our site is currently functioning from a technical standpoint where it meets all critical functionality tests. We have also added some formatting elements to the homepage and created a logo to make the page more customized, but we have continued work to do on the look and feel of the site. We also have Google Analytics now functioning on the site. This enables us to analyze traffic coming to the site and will also enable us to see where the donations to events come from. This information will be valuable as as better understanding of what schools the majority of our target customers are affiliated with will enable more effective and targeted marketing.",
+          "From an aesthetics perspective, we have begun making use of Bootstrap more actively as a front end framework. While our site meets functional requirements and passes all the tests listed, its layout and design are sub-optimal at this time. To improve the website layout, we have begun using Bootstrap’s advanced grid system on all pages, with pre-sized rows and columns to house our content. This has greatly improved the viewability of the site on all devices, particularly mobile, as content is now better organized with consistent alignment. We are currently experiencing some challenges with consistent typography and style across the website - this will be added to the backlog for the next sprint and completed using a selection of related fonts and colour palettes."
+        ]
+      },
+      {
+        title: "Business Analytics",
+        paragraphs: 
+        [
+          "We have been using Google Analytics to track traffic and to assess effectiveness of generating donations. Thus far our traffic breaks down as follows: "
+        ],
+        image: "/images/pie6.png"
+      },
+      {
+        paragraphs: 
+        [
+          "We have not been able to analyze donation generation as the site is not yet registering any donor traffic. We have spoken with Kyle Jensen and his team as they were making changes to the testing code. We plan to attend office hours this week to determine why the test traffic is not registering any donations on our site. Addressing this issue will enable us to perform the remaining business analytics tasks.",
+          "Screenshot of Google Analytics Customer Acquisition Overview:"
+        ],
+        image: "/images/ga6.png"
+      },
+      {
+        title: "Work Load",
+        paragraphs: 
+        [
+          "WOur workload on this sprint was ambitious as the project deadline is fast approaching. The database migration exercise used up a lot of our team’s bandwidth. In spite of strained resources, we were able to make progress towards finalizing formatting. With the traffic code not registering any donations on our site yet, we were not able to do all business analytics as we had previously hoped to complete this sprint. This will leave more workload than hoped for the final days of the project, but our team will be able to share the tasks and get the job done."
+        ]
+      },
+      {
+        title: "Completed Stories During Sprint",
+        list: 
+        [
+          "Database migration",
+          "Utilize Bootstrap’s grid system on About page", 
+          "Gain further understanding of Google analytics to analyze traffic to site", 
+          "Set up donate button on Events Detail page"
+        ]
+      },
+      {
+        title: "Burndown Chart",
+        paragraphs: 
+        ["The Burndown chart below reflects the fact that all originally planned stories (i.e. completion of business  analytics) were not completed during this sprint."
+        ],
+        image: "/images/bd6.png"
+      },
+      {
+        title: "Backlog for Next Sprint",
+        list: 
+        [
+          "Update for Bootstrap grid system on all pages",
+          "Clean up headers and footers on all pages",
+          "Update stylesheet.css for consistent formatting across site",
+          "Analyze traffic breakdown across segments and flow from landing to donation",
+          "AB Test Homepage",
+          "AB Test Event Detail page"
+        ]
       }
     ]
   }
