@@ -13,10 +13,9 @@
     
     <ul id="attendees">
     {% for person in event.attendees %}
-    
-    <li>{{person}}</li>
-            {% endfor %}
-        </ul>
+        <li>{{person}}</li>
+    {% endfor %}
+    </ul>
     
     <p>Please come!</p>
     
@@ -29,14 +28,48 @@
         </ul>
     </div>
     {% endif %}
+    
     <form method="POST">
         <input type="text" name="email" id="email" placeholder="Enter your email here"/>
         <input type="submit" value="Submit"/>
     </form>
     
-    <p> Please donate to our event!</p>
+    <p>Please donate to our event!</p>
     <a href="/donate" class="donation"><h1>Donate</h1></a>
-        <!--<input type="amount" class="donation" name="donation-amount" id="donation-amount" placeholder="Donation Amt $$$$."/>-->
-        <!--<input type="submit" value="Donate"/>-->
+
+    <ul>
+      {% for event in events %}
+        <li class="event-title">
+          {{event.title}}.
+          <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+          {{event.attending.length}} attending so far.
+        </li>
+      {% endfor %}
+    </ul>
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+    <script src="//www.google-analytics.com/cx/api.js?experiment=LxUqKqW1QtucwC8dpue4Qw"></script>
+
+<!-- Load the JQuery library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script>
+// Define JavaScript for each page variation of this experiment.
+    var pageVariations = [
+        function() {},  // Original: Do nothing. This will render the default HTML.
+        function() {    // Variation 1: add RSVP text
+            $( 'li.event-title' ).prepend( 'RSVP ' );
+        }
+    ];
+
+    // Wait for the DOM to load, then execute the view for the chosen variation.
+    $(document).ready(function(){
+    // Ask Google Analytics which variation to show the user.
+        var chosenVariation = cxApi.chooseVariation( 'LxUqKqW1QtucwC8dpue4Qw' );
+        // Execute the chosen view
+        pageVariations[chosenVariation]();
+    
+    });
+    </script>
 
 {% endblock %}
