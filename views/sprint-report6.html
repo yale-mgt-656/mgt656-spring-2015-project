@@ -38,43 +38,51 @@
             <h1 style="text-align: center">Spring-Giant Team | Project Status Report: Sprint #6 | December 7, 2015</h1>
             <h2 style="text-align: center; font-size: 20px">Jeff McHugh (jeff.mchugh@yale.edu) | Megha Ghildyal (megha.ghildyal@yale.edu) | Lea Lupkin (lea.lupkin@yale.edu) | Jared MacLane (jared.maclane@yale.edu)</h2>
             <h4>Quick Snapshot: Where the Project Stands at the End of Sprint #6</h4>
-            <p><b>What we’re doing: </b> Our team is creating a website that is essentially a clone of Eventbrite. The site allows users to create new events and post them to the site. It also allows users to view upcoming events and RSVP to those that interest them, provided they have a Yale e-mail address. We have launched our website on Yale’s campus and different Yale schools are using it. We have been able to analyze the traffic through google analytics and plan to further do A/B testing using certain controls. <br><br>
-              Our team walked in with confidence into this sprint due to the their enhanced coding capabilities and experience with using analytics before. Of the 43 tests we run for the site, only 1 is not yet passing (should redirect the user to the event detail page if the form is valid).  <br><br>Here is a  <a href="https://mgt656-spring-giant.herokuapp.com/">link</a> to the home page. You’ll notice that:<Br>
-                  - We have a new logo and name, created by our brand specialist <Br>
-                  - This logo, clicked on any page, leads the user back to the homepage <Br>
-                  - We have developed a search function that enables us to <a href="https://mgt656-spring-giant.herokuapp.com/api/events?search=BBQ"> search by keyword (API) </a>that includes pertinent information about the event. <Br>
-                  - When a user clicks on <a href="https://mgt656-spring-giant.herokuapp.com/events/new">'Create New Events'</a>, the form now provides selectable options for date and time (see figure 1). It also allows the user to submit the form. <Br>
-                  - Each existing event that is being viewed now has a <a href="https://mgt656-spring-giant.herokuapp.com/events/1">donation button</a> on its page (see figure 2)<Br>
-                  - We have done quite a lot on the background analytics. Through our newly created <a href="https://analytics.google.com/analytics/web/?authuser=0#report/visitors-overview/a70405968w107634085p112131998/">google analytics page</a>, we are now able to monitor:<br>
-                  - How our <a href="https://analytics.google.com/analytics/web/#report/visitors-flow/a70405968w107634085p112131998/">traffic</a> breaks down across different segments and how they flow through our "funnel" from landing to donation (figure 3)<br>
-                  - From which of the various schools are people visiting our page through <a href ="https://analytics.google.com/analytics/web/#report/acquisition-channels/a70405968w107634085p112131998/%3F_r.drilldown%3Danalytics.trafficChannel%3AReferral/">referrals</a> and how many visitors we are getting from each school (figure 4)<br>
+            <p><b>What we’re doing: </b> Our team is creating a website that is an affordable alternative to Eventbrite. The site allows users to create new events and post them to the site. It also allows users to view upcoming events and RSVP to those that interest them, provided they have a Yale e-mail address. We launched our website on Yale’s campus and different Yale schools are using it. We analyzed the traffic through google analytics and are now conducting A/B test to improve certain features.<br><br>
+              Our team completed the final functionality of the site and spent time improving the visual appeal of the site this sprint. With the analytics setup, we began implementing a/b testing of two site features. New/updated tests were added, and changes were made to ensure that all tests are now passing.  <br><br>Here is a  <a href="https://mgt656-spring-giant.herokuapp.com/">link</a> to the home page. We are progressing nicely toward wrap-up this week. You’ll notice that:<Br>
+                  - All the pages are now in a ‘widescreen’ format instead of just a box in the middle of the page. We masked some of bootstrap’s formatting for this. <Br>
+                  - The homepage and browse events page now lists events in a grid format. <Br>
+                  - Almost all pages on the website have new background, font and button style. We used custom bootstrap button styles. <Br>
+                  - Users apparently really like Breaking Bad. <Br>
+                  - The donation button on <a href="https://mgt656-spring-giant.herokuapp.com/events/1">event details pages</a> is now successfully redirecting user to the basic donation page.<Br>
+                  - <a href="https://analytics.google.com/analytics/web/?authuser=0#report/visitors-overview/a70405968w107634085p112131998/">Google Analytics</a> is still monitoring website traffic, with a specific eye towards:
+                  <ul>
+                    <ul>
+                    <li>How our <a href="https://analytics.google.com/analytics/web/#report/visitors-flow/a70405968w107634085p112131998/">traffic</a> breaks down across different segments and how they flow through our "funnel" from landing to donation (figure 3)</li>
+                    <li>Who are the different schools visiting our page through <a href ="https://analytics.google.com/analytics/web/#report/acquisition-channels/a70405968w107634085p112131998/%3F_r.drilldown%3Danalytics.trafficChannel%3AReferral/">referrals</a> and how many visitors we are getting from each school (figure 4)</li>
+                    </ul>
+                  </ul>
+                  - The team worked on setting up two A/B tests:<br>
+                  <ul>
+                    <ul>
+                      <li>The influence that including the text “RSVP” on the homepage has on event click-through rates. This test is running and we will have results by the end of the week included in the final report. (Initial results are captured in figure 7)</li>
+                      <li>The second A/B test requested by the customer is close to being ready to launch.</li>
+                    </ul>
+                  </ul>
 <br>
-                  <b>Figure 1: Create events dropdown option</b><br><img src="/images/s5i1.PNG"></img><br><br>
-                  <b>Figure 2: Donation button associated with each event</b><br><img src="/images/s5i2.PNG"></img><br><br>
-                  <b>Figure 3: Traffic Funnel (google analytics)</b><br><img src="/images/s5i3.PNG"></img><br>
-                  <i>Note: We see from this page that out of the 1.7K users from the U.S. that have visited us, 1.6K have dropped off after the first page. 43 have viewed event #0, 41 event #3 and 3 have viewed the ‘create events’ page. The traffic further flows back into either the landing page (2nd interaction) or event #0 again (3rd interaction). Somehow, till now, no one has clicked on the ‘donate’ button that exists on every event’s page. We need to investigate why this is happening.</i><br><br>
-                  <b>Figure 4: Traffic referral-wise (google analytics)</b><br><img src="images/s5i4.PNG"></img><br>
-                  <i>Note: From this we realize that in the past one month, total number of visitors has been 1.66K out of which 54% are from Yale SOM, 9% from the school of medicine and 5% from the law school. 30% traffic has come from the search.yale.edu page and we need to look into this further for better understanding. Also, this page gives a detailed analysis of new users, bounce rate etc. for each of these customer segments.</i><br>
-                  <br>You’ll also notice some things that aren’t quite up to snuff yet:<br>
-                  - With the exception of the “About” page, the format of the site is still pretty basic. This was a strategic decision on the part of the team, as we wanted to get the functionality of the site down before we expand on its visual appeal. We had a training session on CSS in this sprint and plan to use what we’ve learned in the final sprint this week to make our pages look beautiful.<br>
-                  - The team is still working to setup A/B tests for a) understanding if making the events links on the home page include the word “RSVP” would increase click-through rate and b) if asking people to “donate” or “support” an event in the donation link increases conversion. We have set up an Optimizely account to perform this step.<br><br>
-                  <b>Burn Down Chart:</b><br><img src="/images/s5i5.PNG"></img><br>
+                  <b>Figure 1: New Homepage Design</b><br><img src="/images/s6i1.jpg" width="800" height="1000"></img><br><br>
+                  <b>Figure 2: New Browse Events Design</b><br><img src="/images/s6i2.jpg" width="800" height="1000"></img><br><br>
+                  <b>Figure 3: Re-Designed Create Events Form</b><br><img src="/images/s6i3.jpg" width="800" height="1000"></img><br><br>
+                  <b>Figure 4: New Event Detail Page Design, including Donation link</b><br><img src="images/s6i4.jpg" width="800" height="1000"></img><br><br>
+                  <b>Figure 5: Traffic Funnel for week Nov 30-Dec 6, via Google Analytics</b><br><img src="/images/s6i5.jpg" width="700" height="480"></img><br>
+                  <i>We’re seeing much more activity on our website this week, however still no traffic to the donation page. It is possible that the donation button was not functioning properly (not redirecting users). We will work on figuring out this issue again this week.</i><br><br>
+                  <b>Figure 6: Traffic Referrals for week Nov 30-Dec 6, via Google Analytics</b><br><img src="images/s6i6.jpg" width="700" height="480"></img><br><br>
+                  <b>Figure 7: A/B Test for whether including the text “RSVP” on homepage increases click-through rates to Event Detail pages</b><br><img src="images/s6i7.PNG" width="700" height="480"></img><br><br>
+                  <b>Burn Down Chart:</b><br><img src="/images/s6i8.jpg"></img><br>
                   <b>**Legend: Each red diamond marks the end of a sprint</b><br>
-                  <i>Note: The burndown chart has a relatively small number of stories because we kept our stories general enough to encapsulate several smaller “tasks” or “user points”. The number of stories increased again this time due to new requirements coming in from management. At the end of this sprint, we completed 2 out of 6 user stories left. In the 4 remaining stories, we have completed several sub tasks or user story points which make some of those stories  90% complete (not included in the burndown chart)! For the next sprint, we plan to depict the burndown chart more accurately by showing user points (and not stories) against days.</i><br>
-                  <h4>Sprint #5 Completed Stories</h4><img src="/images/s5i6.PNG"  width="600" height="600"></img>
-                  <h4>Project Backlog</h4><img src="/images/s5i7.PNG"  width="600" height="600"></img><br><br>
+                  <i>Reminder: The burndown chart shows user stories, instead of user points.</i><br><br>
+                  <h4>Sprint #6 Completed Stories</h4><img src="/images/s6i9.PNG"  width="500" height="500"></img>
+                  <h4>Project Backlog</h4><img src="/images/s6i10.PNG"  width="500" height="300"></img><br><br>
                  <h4>Recap of the week’s sprint</h4>
                   Scrum meetings: <br>
-                  - Tuesday, November 17<br>
-                  - Thursday, November 19<br>
-                  - Monday, November 30<br><br>
-                  The team met several times the week before thanksgiving to list down the user stories remaining (plus new ones added by Kyle), divide each one of them into user points and assign reasonable weights to all the user points. In our Tuesday meeting we spent 25% of the time reviewing the previous week’s sprint. We decided to continue to write our report in google doc format so everyone can review and comment before the product owner puts it in the HTML format we have created on cloud 9. We also decided to mention actual hours each task took (vs. planned hours) on <a href="https://waffle.io/spring-giant/mgt656-spring-2015-project">Waffle.io</a>. We devoted 75% of the time to go over our plans for the upcoming sprint but could not dole out individual assignments.Majority of our time was spent in understanding the new Google Analytics/ Optimizely functionalities we have to connect to our website to understand user behavior.  Our communication was much better, and every member of the team contributed to the brainstorming session during the sprint. For the past week, Lea was the scrum master and Megha was the product owner.  <br><br>
-                  We treated the next meeting as further planning for sprint-5. The user stories were heavy and we broke them down into further sub-tasks or user points after much deliberation. We also laid down our vision for the site’s visual style and user experience. At the end of the meeting, we reaffirmed our commitment to follow deadlines religiously for this sprint, as one can easily lose focus during a long break. We also decided to check our waffle.io page actively for helping each other on troubleshooting. As a result, we were able to complete 80% of the sub-tasks planned.<br><br>
-                  In our last meeting before this sprint, we discovered that we had not been doing our burn down chart exactly the way we should be because we had been including in it User Stories vs. Number of Days when in fact, it should be User Points (i.e. subtasks) vs. Number of Days. Since it will take us some time to go back to all our completed user stories to find out how what user points and days they refer to, we have decided to include this in our next report. Our sprint-6 report will therefore be a graph of ideal vs actual time taken for our User Points.<br><br>
+                  - Tuesday, December 1<br>
+                  - Wednesday, December 2<br><br>
+                  The team met during class at our usual Tuesday time. In our Tuesday meeting we spent 25% of the time reviewing the previous week’s sprint. We devoted 65% of the time to flesh out and clarify our user stories for the week, reassess estimate time, and make assignments for the sprint. We spent the last 10% discussing the final report and wrap up of the project. For the past week, Megha was the scrum master and Lea was the product owner. <br><br>
+                  The major tasks this week were 1) improving the style & formatting of the website for users and 2) implement the customer requested a/b tests. We intended to use Optimizely for the a/b tests, however discovered after setting up the experiments that Optimizely requires an account holder to enter credit card information, which the team was not comfortable with doing given the customer budget of $0. We switched focus to using Google Analytics instead. Using the suggested directions, we set up the first experiment to test the inclusion of RSVP on the homepage and its effect on increasing event detail click-through rate. We were not 100% sure that the a/b test was working properly. We also faced issues with setting up the a/b test for using the word donation vs. support on event detail pages. so we are checking with our technical experts (i.e. TAs) to ensure effective testing. We will include final a/b testing results in our final project report.<br><br>
                   <br>
                   
-                  <h4>Focus for Sprint #6</h4>These are the User Stories and Points we will aim to complete for the upcoming week. We should not need to add any more stories to the backlog as we made sure we covered all remaining tasks in the planning for this sprint:<br>
-                  <img src="/images/s5i8.PNG"  width="600" height="600"></img><br><br>
+                  <h4>Focus for Wrap-up this week:</h4><br>
+                  <img src="/images/s6i11.PNG"  width="500" height="300"></img><br><br>
                   </p>
       </div>
     </div>
