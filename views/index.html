@@ -5,6 +5,7 @@
   <header class="text-center">
    <h1 style="font-size:50px;"> <strong>{{ title }} FTW</strong> </h1>
   </header>
+
 {% endblock %}
 
 {% block mainContent %}
@@ -17,7 +18,9 @@
   <img style="border: 10px groove gold" id="logo" src="http://i.imgur.com/3BX6Zh2.png">
   </p>
   <p style="font-size:25px;"><strong>Come to one of the phenomenal PARTIES below:</strong></p>
+    
     {% include "fragments/events-list.html" %}
+  
   <p style="font-size:25px;">
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
@@ -26,4 +29,5 @@
     <span style="font-size:30px; border: 7px solid red; padding: 5px;">
     <a id="new" href="/events/new">Create a new event</a></span>
   </p>
+
 {% endblock %}
