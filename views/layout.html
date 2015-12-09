@@ -8,7 +8,7 @@
   </head>
 
 	<body 
-  	class="container" style="background-color:lightblue;">
+  	class="container" style="background:lightblue">
 	     {% block header %}
       <header>
         <img style="padding: 20px" id="header_img" src="http://i.imgur.com/Ljvhjnl.png"
@@ -17,15 +17,15 @@
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <section font face=verdana >Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
 
     {% block footer %}
   <footer>
     
-   My footer ROCKS. The time is now {{time}}.
+   <p style="font-size: 15px"> My footer ROCKS. The time is now {{time}}.
     <a href="/about">About us</a>.
-    <a href="/">Home</a>.
+    <a href="/">Home</a> </p>
        <img style="padding: 20px" id="footer_img" src="http://i.imgur.com/ecaMUfL.png"
        width=100% height=auto>
   </footer>
