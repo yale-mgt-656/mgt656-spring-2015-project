@@ -26,15 +26,17 @@
     },
     "run": {
         "@path": "/.c9/runners",
-        "@runner": "node-gulp",
+        "@runner": "Node.js (default)",
         "configs": {
             "@inited": "true",
             "json()": {
                 "Gulp": {
                     "command": "gulp",
+                    "cwd": "/",
                     "debug": true,
+                    "env": {},
                     "name": "Gulp",
-                    "runner": "Shell command"
+                    "runner": "Node.js (default)"
                 }
             }
         }

@@ -1,7 +1,14 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+header{
+        background: url("http://www.signartstudios.co.uk/blog/wp-content/uploads/2014/08/Red_Christmas_decorations_christmas_22228015_1920_12000b5419.jpg");
+    
+        color: white;
 }
+body {
+ 
+  font: 14px"Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: grey;
+  text-align:center;
+   }
 
 a {
   color: #00B7FF;
@@ -9,4 +16,64 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+ul#topofpage{
+   padding: 10px;
+   background: rgba(255,0,0,0.3);
+   text-align:center;
+}
+ul#topofpage li{
+   display: inline;
+   padding: 0px 10px 0px 10px;
+   
+}
+ul#bottomofpage{
+   padding: 10px;
+   background: rgba(0,0,250,0.3);
+}
+ul#bottomofpage li{
+   display: inline;
+   padding: 0px 10px 0px 10px;
+}
+
+.events li {
+    width: 300px;
+    height: 340px;
+    display: inline-block;
+    vertical-align: top;
+    border: 4px solid grey;
+    margin: 5px 5px 15px 5px;
+}
+
+.event_image img{
+    float: left;
+    height: 200px;
+    width: 292px;
+    margin: 0px 0px 6px 0px;
+}
+
+/*styling using about_image class */
+.about_image img{
+    float:left;
+    height:200px;
+    margin: 10px 0px 0px 0px;
+    border: 7px solid grey;
+    border-radius: 20px;
+}
+
+.about_image {
+    display:block;
+    margin:0 0 100px 0;
+}
+
+.about_description {
+    padding:20px 0 0 0;
+}
+.textbox {
+  padding: 5px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
 }

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+<body style="background: url(http://www.themesrefinery.net/wp-content/uploads/2014/06/light-background-design-website-9.jpg)">
+<h1 id="title" style="font-family:comic sans ms"><b>{{event.title}}</b></h1> 
+<p>
+    <img id="image" src={{event.image}}>
+    </p>
+<p style="color:brown;font-family:comic sans ms;"><font size="6">Date and Time: <span id="date">{{event.date|prettyDate}}</span></font></p>
+<p style="color:darkblue;font-family:comic sans ms;"><font size="6">Location: <span id="location">{{event.location}}</span></font></p>
+<p style="color:darkmagenta;font-family:lucida console;"><font size="6">-----------Attendees-----------</font></p>
+<ul id="attendees" style="list-style:none">
+    {% for person in event.attending %}
+    <li style="color:darkmagenta;font-family:lucida console;"><font size="4">{{person}}</font></li>
+    {% endfor %}
+<br><p style="color:darkred;font-family:comic sans ms;"><font size="6"><b>RSVP through your Yale e-mail:</b></font></p>
+{% if errors %}
+<div>
+    <ul class="form-errors">
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+<form  method="POST">
+   <input id="email" type="email" name="email" required class="textbox">
+    <input type="submit" value="Submit" class="btn btn-success">
+</input>
+</form>
+<br>
+<p style="color:darkred;font-family:comic sans ms;"><font size="6"><b>Help us out:</b></font></p>
+
+{# <form action="/donate" method=get>
+    <input type="submit" value="Donate Here" class="btn btn-danger donation">
+</form> #}
+<a href="/donate" class="donation"><p class="donate_test" style="color:blue;font-family:comic sans ms;"><font size="6"><b>Donate Here</b></font></p></a>
+</body>
+{% endblock %}
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=4QRPu5E5QSSnEHOP8NdOXQ"></script>
+
+<!-- Load the JQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+// Define JavaScript for each page variation of this experiment.
+var pageVariations = [
+  function() {},  // Original: Do nothing. This will render the default HTML.
+  function() {    // Variation 1: Replace Donate text with Support text
+    $( 'p.donate_test' ).replaceWith( 'Support Here' );
+  }
+];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function(){
+  // Ask Google Analytics which variation to show the user.
+  var chosenVariation = cxApi.chooseVariation();
+
+  // Execute the chosen view
+  pageVariations[chosenVariation]();
+}
+);
+</script>
