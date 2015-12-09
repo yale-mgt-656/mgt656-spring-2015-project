@@ -35,7 +35,7 @@
     </form>
     
     <p>Please donate to our event!</p>
-    <a href="/donate" class="donation"><h1>Donate</h1></a>
+    <a href="/donate" class="donation">Donate</a>
 
     <ul>
       {% for event in events %}
@@ -53,7 +53,7 @@
     var pageVariations = [
         function() {},
         function() {
-            $( 'li.event-title' ).prepend( 'RSVP ' );
+            $( 'a.donation' ).text( 'support' );
         }
     ];
 
