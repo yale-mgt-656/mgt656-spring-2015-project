@@ -25,31 +25,39 @@
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
 <script src="//www.google-analytics.com/cx/api.js?experiment=PuUpGuikTx6fajNeNDhBcA"></script>
 
-<script>
-  // Ask Google Analytics which variation to show the user.
-  var chosenVariation = cxApi.chooseVariation();
-</script>
-
 <!-- Load the JQuery library -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 <script>
 // Define JavaScript for each page variation of this experiment.
     var pageVariations = [
-        function() {},  // Original: Do nothing. This will render the default HTML.
+        function() {
+            document.getElementById('support').innerHTML = '';
+        },  // Original: Do nothing. This will render the default HTML.
         function() {    // Variation 1: Button Text
-            document.getElementById('button').innerHTML = 'Support';
+            document.getElementById('donate').innerHTML = '';
         },
-        function() {    // Variation 2: Button Text
-            document.getElementById('button').innerHTML = 'Donate';
-        }
     ];
+    
+    var chosenVariation = cxApi.chooseVariation();
 
 // Wait for the DOM to load, then execute the view for the chosen variation.
     $(document).ready(
-// Execute the chosen view
-    pageVariations[chosenVariation]
+        pageVariations[chosenVariation]
     );
+</script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
 
 <p>
@@ -94,7 +102,7 @@
 </p>
 
 <p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation" id="donate">
         <input type="hidden" name="cmd" value="_donations">
         <input type="hidden" name="business" value="ujjval.patel@yale.edu">
         <input type="hidden" name="lc" value="US">
@@ -108,15 +116,15 @@
 </p>
 
 
-<!--<p>-->
-<!--    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation">-->
-<!--        <input type="hidden" name="cmd" value="_s-xclick">-->
-<!--        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHLwYJKoZIhvcNAQcEoIIHIDCCBxwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCELyD/IkF6ESHsbu+mFS6hkvPlhb7gNHFTWSQUP+WQMMXfirUe8YZN8ABLHUky4QBRv4XXAY6Ca/Bn+C001F+ecU4uOPajPOsHA/Mn0rTMOneyokyb6qaUlK98E0Ji4B4rhPnRIkpweF1+82btXI70yyohV5T1LlZXLzZJaYMINDELMAkGBSsOAwIaBQAwgawGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIZh+rRLZyrw6AgYjJCE5P/DK9zDAanmIglK16ZBydzsJABwCBTD+HTtOhH42YHuuaEWTXHyksSGfeFRIJgZkrFORga/ZLQwjgAQftEnZd8TL+Dqd+i8no+iY0eUziHHboxKIx7aPX2oWqF30ZTsleUmmfSxiZJAS/TiLiMSSLJgQP0xh90ubwt1mZjKHsMTUjA8bKoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTUxMjA4MDA1MzMxWjAjBgkqhkiG9w0BCQQxFgQU0u7WW0M6tszo/1HU6QRsi5Xl2v0wDQYJKoZIhvcNAQEBBQAEgYB3Q2ZOU5/MORfMbaMdPLFkboZBqLjN7dBa2pWmu7N7BVxc7cEQrkd0Wtl8DGRZ9P//6dIDm3VKnkZeTbpg4oXwgHhmkytRKCSygmsjriiUpgD2rmddxjMTDtO8ZVHiWhzWY/8y6yIix9PeTdYfYK20iPgk9XziQj+1xvu6rFFjgg==-----END PKCS7------->
-<!--        ">-->
-<!--        <input type="image" src="http://i.imgur.com/t6zEkgw.png?1" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
-<!--        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">-->
-<!--    </form>-->
-<!--</p>-->
+<p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation" id="support">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+        ">
+        <input type="image" src="http://i.imgur.com/t6zEkgw.png?1" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+</p>
 
 
 {% endblock %}
