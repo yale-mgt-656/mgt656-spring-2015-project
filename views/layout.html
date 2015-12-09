@@ -3,9 +3,11 @@
   <head>
   
     <title>SPRING-GIANT</title>
-   
-     <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+    
+  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   </head>
 	<body>
 	  <script>
@@ -16,30 +18,30 @@
 
   ga('create', 'UA-70405968-1', 'auto');
   ga('send', 'pageview');
-
-</script>
+  </script>
+  
     {% block header %}
       <header>
       <a href="/"><center><img id="logo" src="/images/evently_logo.png" style="width: 200px"></center></a>
       <ul id="topofpage">        
-      <li><a href="/events"><b>Browse Events</b></a></li>
-      <li><a href="/events/new"><b>Create Events</b></a></li>
-      <li><a href="/Contact"><b>Talk to us!</b> </a></li>
+      <li><a href="/events"><b>FIND EVENTS</b></a></li>
+      <li><a href="/events/new"><b>CREATE EVENTS</b></a></li>
+      <li><a href="/Contact"><b>TALK TO US!</b> </a></li>
       </ul>
       </header>
     {% endblock %}
 <div  class="container">
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <section>{{ title }}. {{tagline}}</section>
     {% endblock %}</div>
     {% block footer %}
       <footer>
       <ul id="bottomofpage"> 
-      <li><a href="/"><b>Home</b></a></li>
-      <li><a href="/about"><b>About</b></a></li>
-      <li><a href= "/events"><b>Events</b></a></li>
-      <li><a href= "/careers"><b>Work for us</b></a></li>
-      <li><a href= "/help"><b>Help</b></a></li>
+      <li><a href="/"><b>HOME</b></a></li>
+      <li><a href="/about"><b>ABOUT US</b></a></li>
+      <li><a href= "/events"><b>FIND EVENTS</b></a></li>
+      <li><a href= "/careers"><b>SEARCH CAREERS</b></a></li>
+      <li><a href= "/help"><b>NEED HELP?</b></a></li>
       </footer>
     {% endblock %}
 
