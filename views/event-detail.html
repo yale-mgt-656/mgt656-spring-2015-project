@@ -13,10 +13,9 @@
     
     <ul id="attendees">
     {% for person in event.attendees %}
-    
-    <li>{{person}}</li>
-            {% endfor %}
-        </ul>
+        <li>{{person}}</li>
+    {% endfor %}
+    </ul>
     
     <p>Please come!</p>
     
@@ -29,9 +28,39 @@
         </ul>
     </div>
     {% endif %}
+    
     <form method="POST">
         <input type="text" name="email" id="email" placeholder="Enter your email here"/>
         <input type="submit" value="Submit"/>
     </form>
+    
+    <p>Please donate to our event!</p>
+    <a href="/donate" class="donation"><h1>Donate</h1></a>
+
+    <ul>
+      {% for event in events %}
+        <li class="event-title">
+          {{event.title}}.
+          <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+          {{event.attending.length}} attending so far.
+        </li>
+      {% endfor %}
+    </ul>
+
+    <script src="//www.google-analytics.com/cx/api.js?experiment=LxUqKqW1QtucwC8dpue4Qw"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+    var pageVariations = [
+        function() {},
+        function() {
+            $( 'li.event-title' ).prepend( 'RSVP ' );
+        }
+    ];
+
+    $(document).ready(function(){
+        var chosenVariation = cxApi.chooseVariation( 'LxUqKqW1QtucwC8dpue4Qw' );
+        pageVariations[chosenVariation]();
+    });
+    </script>
 
 {% endblock %}
