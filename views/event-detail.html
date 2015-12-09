@@ -36,7 +36,7 @@
 </form> #}
 <a href="/donate" class="donation"><p class="donate_test" style="color:blue;font-family:comic sans ms;"><font size="6"><b>Donate Here</b></font></p></a>
 </body>
-{% endblock %}
+
 
 <!-- Load the Content Experiment JavaScript API client for the experiment -->
 <script src="//www.google-analytics.com/cx/api.js?experiment=4QRPu5E5QSSnEHOP8NdOXQ"></script>
@@ -49,7 +49,7 @@
 var pageVariations = [
   function() {},  // Original: Do nothing. This will render the default HTML.
   function() {    // Variation 1: Replace Donate text with Support text
-    $( 'p.donate_test' ).replaceWith( 'Support Here' );
+    $( 'p.donate_test' ).html('Support Here');
   }
 ];
 
@@ -63,3 +63,4 @@ $(document).ready(function(){
 }
 );
 </script>
+{% endblock %}
