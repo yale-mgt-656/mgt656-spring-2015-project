@@ -20,7 +20,7 @@
                     <input type="submit" value="Submit" class="btn btn-default" />
                 </form></div>
                 <div class="donate">
-                <!--<input type="submit" value="Donate" id="donate" name="donate" href="/donate" class="btn">-->
+                <a href="/donate" class="btn btn-default btn-lg btn-block donation">Support this event</a>
             </div>
             </div>
 
@@ -58,10 +58,10 @@
     // Define JavaScript for each page variation of this experiment.
     var pageVariations = [
         function() {
-            $(".donate").html('<a href="/donate" class="btn btn-default btn-lg btn-block donation">Support this event</a>');
+            $("a.donation").html('Support this event');
         }, // Original: Use the word support
         function() { // Variation 1: Use the word donate
-            $(".donate").html('<a href="/donate" class="btn btn-default btn-lg btn-block donation">Donate to this event</a>');
+            $("a.donation").html('Donate to this event');
         }
     ];
 
