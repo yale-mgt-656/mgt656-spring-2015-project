@@ -3,9 +3,9 @@
 {% block mainContent %}
 
   {% if errors %}
-    <div class="form-errors">
+    <div>
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -25,16 +25,13 @@
     {% endfor %}
   </ul>
 
-<form id="event-detail" method="POST">
-    <div>
-    <label for="email">RSVP: Please enter your Yale email address</label>
-    <input type="text" name="email" id="email">
-    </div>
+<form id="rsvp" method="POST">
 
-    <div>
-      <input type="submit" id="email" name="email">
-    </div>
-</form>
+    <label for="email">Please RSVP with your Yale email address</label>
+    <input type="id" name="email">
+    
+    
+    <input type="Submit" name="Submit" id="Submit">
 
 {% endblock %}
 
