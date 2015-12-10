@@ -29,10 +29,12 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/api/events/', eventControllers.api);
-app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
+app.get('/events/:id([0-9]+)', eventControllers.eventDetail); 
+app.get('/api/events/:id([0-9]+)', eventControllers.apidetail);
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/faq', renderView('faq.html'));
 app.get('/terms', renderView('terms.html'));
 app.get('/contact', renderView('contact.html'))
 
 module.exports = app;
+

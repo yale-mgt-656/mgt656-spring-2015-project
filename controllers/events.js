@@ -188,16 +188,32 @@ function api(request, response){
   var output = {events: []};
   var search = request.query.search;
   if(search){
-     for(var i=0; i < events.all.length; i++){
+    for(var i=0; i < events.all.length; i++){
       if(events.all[i].title.indexOf(search) !== -1){
-      output.events.push(events.all[i]);
-      } else if(events.all[i].attending.indexOf(search) !== -1){
-      output.events.push(events.all[i]);
+        output.events.push(events.all[i]);
+      }
+      for(var j=0; j < events.all[i].attending.length; j++){
+        if(events.all[i].attending[j].indexOf(search) !== -1){
+          output.events.push(events.all[i]);
+        }
       }
     } 
-  }else{
+  } else{
     output.events = events.all;
   }
+  response.json(output);
+}
+
+
+function apidetail(request, response){
+  var output = {events: []};
+  // Check to see that request has a parameter called id
+  var id = parseInt(request.params.id);
+  for(var i=0; i < events.all.length; i++){
+    if(events.all[i].id === id) {
+      output.events.push(events.all[i]);
+    }
+  } 
   response.json(output);
 }
 
@@ -212,5 +228,6 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'api': api
+  'api': api,
+  'apidetail': apidetail
 };
