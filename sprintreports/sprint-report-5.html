@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Sprint Report - Dry Blessing</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="stylesheets/normalize.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+    <div class="row" style="margin-top: 10px; text-align: right;">
+      <ul>
+        <li style="margin-bottom:0"><a href="mailto:Karen.RamirezEstrada@yale.edu">Karen Ramirez-Estrada</a></li>
+        <li style="margin-bottom:0"><a href="mailto:Mezyad.AlMasoud@yale.edu">Mezyad AlMasoud</a></li>
+        <li style="margin-bottom:0"><a href="mailto:shadin.cornelioa@yale.edu">Shadin Cornelio</a></li>
+        <li style="margin-bottom:0"><a href="mailto:susana.arriaga@yale.edu">Susana Arriaga</a></li>
+      </ul>
+
+    </div>
+    <div class="row" style="text-align: center">
+      <h1>MGT 656 Dry Blessing Coding Team</h1>
+      <h2>Project Status Report</h2>
+      <h3>November 30, 2015</h3>
+
+    </div>
+    <div class="row">
+      <p>Link to live working project on Heroku: <a href="http://mgt-656-dry-blessing.herokuapp.com" target="_blank">RSVPd</a>
+        <br>Link to Waffle IO: <a href="https://waffle.io/dry-blessing/mgt656-spring-2015-project" target="_blank">Dry Blessing issues</a></p>
+    </div>
+     <div class="row">
+       <b style="text-decoration:underline">Executive summary</b>
+    <p>RSVPd is an event platform where users can create their own events, RSVP using their Yale email addresses and browse through events which will be happening in the future. </p>
+
+    <p>In sprint 5, we finished all the required user stories for our project and ensured the following - i) all mocha tests are passing, ii) we have implemented the extra user stories on A/B testing, and iii) we added extra user stories to make our project and web page better (in terms of aesthetics and database connectivity) in the final sprint.</p>
+    </div>
+    <div class="row">
+      <b style="text-decoration:underline">Product backlog</b>
+      <br>
+      <p>In Sprint 5, we completed the following activities:</p>
+      <ol>
+        <li>Created a donation button on the event detail page which links to a donation page</li>
+        <li>Created a thank you page after a person enters an amount in the donation page</li>
+        <li>The new event form is validated</li>
+        <li>If the form is validated it is redirected with a 302 response</li>
+        <li>Added RSVP text in the event box</li>
+        <li>Made A/B testing code using Google Analytics</li>
+        <li>Tested and analyzed the RSVP text</li>
+        <li>Tested the donation button v/s support button</li>
+        
+      </ol>
+    </div>
+    
+    <div class="row">
+      <b style="text-decoration:underline">Sprint Retrospective</b>
+      <br>
+      <p>What went well during the sprint cycle?:</p>
+      <ol>
+        <li>We finished implementing all the user stories for the project!</li>
+        <li>We ensured all the mocha tests pass.</li>
+        <li>We worked on our own branches for each story and created pull requests which made it much easier to manage the project without merge conflicts</li>
+        <li>We were able to implement Google Analytics A/B tests using documentation on its website, though it took up a lot of time and was not very straightforward to implement and test</li>
+        <li>We discovered a bug in the donation class name (in Professor Kyle's code) due to which we weren't seeing conversions on our donate/support buttons.</li>
+        
+      </ol>
+    </div>
+    
+    
+
+    <div class="row">
+      <b><i>What went wrong during the sprint cycle?</i></b>
+      <ol>
+        <li>The Google analytics were a challenge because we didn’t know how to use them and the documentation was not very straightforward</li>
+        <li>The RSVP button added in each event box in the homepage could not be a button with a link. Whenever we added a link, it would fail the mocha tests. So we had to change the RSVP to plain text (refer to Experiment 1 images below)</li>
+        <li>The Thanksgiving holiday prevented us from meeting as usual during the week, but we managed to work virtually from different locations</li>
+        <li>We were very close to finishing all the tasks down to 6 story points, but we decided to add more tasks (as seen in the spike on the burndown chart) such as the style for the donation and the event detail pages etc.</li>
+      </ol>
+    </div>
+
+
+    <div class="row">
+      <b><i>What could we do differently to improve?</i></b>
+      <ol>
+        <li>We had created a user story for the RSVP button and implemented it without checking if all the tests run. We should have been more careful in understanding test case requirements by going through the test.js code.</li>
+      </ol>
+    </div>
+
+
+    <div cla  ss="row">
+      <b style="text-decoration:underline">Stories to be completed in Sprint 6</b>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>#No</th>
+            <th>Story</th>
+            <th>Estimate</th>
+            <th>Responsible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Analyze traffic </td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Analyze the RSVP test</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Analyze the Donate vs Support button</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Style the donation page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Style the event detail page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Style the thankyou page</td>
+            <td>2</td>
+            <td>Susana</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Footer sticks to the bottom of screen</td>
+            <td>2</td>
+            <td>Mezyad & Karen</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Validate the donation</td>
+            <td>2</td>
+            <td>Karen</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Add Database</td>
+            <td>6</td>
+            <td>Shadin</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row">
+      <b style="text-decoration:underline">Burndown chart</b>
+
+      <p>We completed all planned story points this sprint and managed to finish the project. Therefore, in this sprint we will keep working to improve our work.</p>
+      <img src="/images/burndown5.png" style="width:500px">
+    </div>
+
+<div class="row">
+      <b style="text-decoration:underline">Experiment 1: RSVP Text on Homepage</b>
+<br>
+      <p>Original: Show nothing</p>
+      <img src="/images/HomePage.png" style="width:800px">
+      <p>Variation 1: Show RSVP text</p>
+      <img src="/images/HomePage2.png" style="width:800px">
+    </div>
+<br><br>
+<div class="row">
+      <b style="text-decoration:underline">Experiment 2: Donate/Support text on event pages</b>
+<br>
+      <p>Original: Support this event</p>
+      <img src="/images/support-experiment1-original.png" style="width:800px">
+      <p>Variation 1: Donate to this event</p>
+      <img src="/images/donate-experiment1-variation1.png" style="width:800px">
+    </div>
+  
+<div class="row">
+      <b style="text-decoration:underline">Experiments on Google Analytics for Data Analysis</b>
+<br>
+      <p>Experiment 1: RSVP test on the homepage:</p>
+      <img src="/images/experiment1-googleanalytics.png" style="width:800px">
+      <p>Experiment 2: Donate/support link on event detail pages:</p>
+      <img src="/images/experiment2-googleanalytics.png" style="width:800px">
+      <p>User Flow through the RSVPd website:</p>
+      <img src="/images/userflow.png" style="width:800px">
+      <p>Referral sources leading to the RSVPd website:</p>
+      <img src="/images/referrals.png" style="width:800px">
+    </div>
+  
+<div class="row">
+      <b style="text-decoration:underline">Mocha Tests - All pass!</b>
+<br>
+      <img src="/images/MochaTests.png" style="width:800px">
+      </div>
+
+    <div class="row">
+      <!--<b style="text-decoration:underline">Next steps</b>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+      <!--<li></li>-->
+
+      <p>We will be running team meetings on Wednesday and Friday to discuss our final progress on the sprint and prepare for our final demo.</p>
+
+    </div>
+
+
+  </div>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
