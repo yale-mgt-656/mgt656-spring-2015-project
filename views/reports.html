@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <div>
+    <ul>
+      {% for report in reports %}
+        <li class="report" id="report-{{report.id}}">
+          <a href ="/reports/{{report.id}}">Sprint {{report.id}} Report</a> .
+          <time datetime="{{report.date}}">{{report.date|prettyDate}}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+{% endblock %}
+
+
