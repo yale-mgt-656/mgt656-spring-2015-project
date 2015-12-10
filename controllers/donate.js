@@ -1,16 +1,14 @@
 'use strict';
 
-var events = require('../models/events');
-
 /**
  * Controller that renders a list of events in HTML.
  */
 function donate (request, response) {
-  var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
-    response.status(404).send('No such event');
-  }
-  response.render('donate.html', {event: ev});
+  var contextData = {
+    title: 'SOM class of 2016 & 2017 Party Central',
+    tagline: 'Lets get ready to party.'
+  };
+  response.render('donate.html', contextData);
 }
 
 

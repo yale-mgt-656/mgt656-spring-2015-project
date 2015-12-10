@@ -32,6 +32,6 @@ app.post('/events/:id', eventControllers.rsvp);
 app.get('/api/events', eventControllers.apiListEvents);
 app.get('/reports/:id', reportControllers.reportDetail);
 app.get('/reports', reportControllers.listReports);
-app.get('/donate/:id', donateControllers.donate);
+app.get('/donate', donateControllers.donate);
 
 module.exports = app;
