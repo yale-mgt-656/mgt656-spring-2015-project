@@ -3,73 +3,50 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1><strong>{{ title }} FTW</strong></h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
 
-<!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=YyrVKMmpSuCyM6QvZa-OIQ"></script>
-
-<!-- Load the JQuery library -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-<script>
-// Define JavaScript for each page variation of this experiment.
-    var pageVariations = [
-        function() {
-            document.getElementById('support').innerHTML = '';
-        },  // Original: Do nothing. This will render the default HTML.
-        function() {    // Variation 1: Button Text
-            document.getElementById('donate').innerHTML = '';
-        },
-    ];
-    
-    var chosenVariation = cxApi.chooseVariation();
-// Wait for the DOM to load, then execute the view for the chosen variation.
-    $(document).ready(
-        pageVariations[chosenVariation]
-    );
-</script>
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-71141414-1']);
-  _gaq.push(['_trackPageview']);
-  _gaq.push(['_trackEvent', 'button', 'clicked'])
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 <p>
-  Welcome to {{ title }}. {{tagline}}
+  <h3>Welcome to {{ title }} - <em>{{tagline}}</em></h3>
 </p>
 
-<img id="logo" src="http://i.imgur.com/tiidbFM.png">
-  
-<p>This is the list of our events</p>
-  <div>
-    {% include "fragments/events-list.html" %}
-  </div>
+<img id="logo" src="http://i.imgur.com/2MssBsC.png" class="img-rounded" width="250" height="175">
 
-<p>
-  Check out the <a href="/about">About us</a> page
-  as well as the <a href="/events">Events</a> page.
-</p>
+<strong>
+  <p>This is the list of our events</p>
+    <div>
+      {% include "fragments/events-list.html" %}
+    </div>
 
-<p>
-  <a id="new" href="/events/new">Create a new event</a>
-</p>
+  <p>
+    Check out the <a href="/about" class="text-success">About us</a> page
+    as well as the <a href="/events" class="text-success">Events</a> page.
+  </p>
 
+  <p>
+    <a id="new" href="/events/new"><button type="button" class="btn btn-primary">Create a new event</button></a>
+  </p>
+</strong>
 {% endblock %}
 
 {% block footer %}
   <footer>
-    <a href="/">Homepage</a>.
-    <a href="/about">About us</a>.
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
   </footer>
 {% endblock %}

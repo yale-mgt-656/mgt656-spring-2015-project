@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <header>Create a new event</header>
+  <header><h3><strong>Create a new event</strong></h3></header>
 {% endblock %}
 
 {% block mainContent %}
@@ -136,14 +136,25 @@
         </select>
       </p>
     
-      <input type="submit" id="submit">
+      <input type="submit" id="submit" class="btn btn-primary">
     </form>
   </p>  
 {% endblock %}
 
 {% block footer %}
   <footer>
-    <a href="/">Homepage</a>.
-    <a href="/about">About us</a>.
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
   </footer>
 {% endblock %}

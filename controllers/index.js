@@ -8,7 +8,7 @@ function index (request, response) {
   var now = new Date();
   var contextData = {
     'title': 'Powerful Meadow',
-    'tagline': 'A blue hippo company.',
+    'tagline': 'A Blue Hippo Company.',
     'events': []
   };
   for(var i=0; i < events.all.length; i++){

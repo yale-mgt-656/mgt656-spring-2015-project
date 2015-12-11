@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('http://i.imgur.com/FYNzEKY.jpg'); 
+  background-size: cover;
 }
 
 a {
@@ -10,3 +12,6 @@ a {
 .form-errors {
 	color: red;
 }
+
+
+
