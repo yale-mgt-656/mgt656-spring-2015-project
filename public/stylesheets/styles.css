@@ -1,0 +1,42 @@
+	html { 
+	  background-color:rgba(132,196,217,1); 
+	  background:#daede2; padding:5%; 
+	}
+
+	body header {
+		background-color:rgba(132,196,217,1); 
+	  color:#fff; 
+	  display:inline-block; 
+	  margin-bottom:1em; 
+	  padding:1em 5%; width:50%; 
+		}
+
+  footer { 
+    background:rgba(246,247,146,1); 
+    clear:both; 
+    color:#fff; 
+    padding:1em 5%; width:50%; 
+  }
+	
+	footer a { 
+	  margin-right:0.5em; 
+	}
+	
+	body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-errors {
+	color: red;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
