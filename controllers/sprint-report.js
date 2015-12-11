@@ -16,8 +16,15 @@ function sprintreport6 (request, response) {
   response.render('sprint-report-6.html', contextData);
 }
 
+function finalreport (request, response) {
+  var contextData = {};
+  response.render('final-report.html', contextData);
+}
+
+
 module.exports = {
   sprintreport: sprintreport,
   sprintreport5:sprintreport5,
-  sprintreport6:sprintreport6
+  sprintreport6:sprintreport6,
+  finalreport:finalreport,
 };
