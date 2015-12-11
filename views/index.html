@@ -8,22 +8,63 @@
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <img id="logo" src="http://i.imgur.com/tiidbFM.png">
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=YyrVKMmpSuCyM6QvZa-OIQ"></script>
+
+<!-- Load the JQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+// Define JavaScript for each page variation of this experiment.
+    var pageVariations = [
+        function() {
+            document.getElementById('support').innerHTML = '';
+        },  // Original: Do nothing. This will render the default HTML.
+        function() {    // Variation 1: Button Text
+            document.getElementById('donate').innerHTML = '';
+        },
+    ];
+    
+    var chosenVariation = cxApi.chooseVariation();
+// Wait for the DOM to load, then execute the view for the chosen variation.
+    $(document).ready(
+        pageVariations[chosenVariation]
+    );
+</script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-71141414-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackEvent', 'button', 'clicked'])
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<p>
+  Welcome to {{ title }}. {{tagline}}
+</p>
+
+<img id="logo" src="http://i.imgur.com/tiidbFM.png">
   
-  <p>This is the list of our events</p>
+<p>This is the list of our events</p>
   <div>
     {% include "fragments/events-list.html" %}
   </div>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+
+<p>
+  Check out the <a href="/about">About us</a> page
+  as well as the <a href="/events">Events</a> page.
+</p>
+
+<p>
+  <a id="new" href="/events/new">Create a new event</a>
+</p>
+
 {% endblock %}
 
 {% block footer %}

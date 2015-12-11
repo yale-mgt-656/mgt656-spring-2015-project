@@ -154,6 +154,11 @@ function api (request, response) {
   response.json(output);
 }
 
+function newDonation(request, response){
+  var contextData = {};
+  response.render('donation.html', contextData);
+}
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -165,4 +170,5 @@ module.exports = {
   'saveEvent': saveEvent,
   'rsvp': rsvp,
   'api': api,
+  'newDonation': newDonation,
 };
