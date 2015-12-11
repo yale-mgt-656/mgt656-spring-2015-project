@@ -21,3 +21,22 @@
 	footer a { 
 	  margin-right:0.5em; 
 	}
+	
+	body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-errors {
+	color: red;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
