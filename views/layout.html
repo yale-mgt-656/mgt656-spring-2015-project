@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+    <title>SPRING-GIANT</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   </head>
+	<body style="background: url(http://www.themesrefinery.net/wp-content/uploads/2014/06/light-background-design-website-9.jpg)">
+	  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	<body class="container">
-
+  ga('create', 'UA-70405968-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+      <a href="/"><center><img id="logo" src="/images/evently_logo.png" style="width: 200px"></center></a>
+      <ul id="topofpage">        
+      <li><a href="/events"><b>FIND EVENTS</b></a></li>
+      <li><a href="/events/new"><b>CREATE EVENTS</b></a></li>
+     
+      </ul>
+      </header>
     {% endblock %}
-
+<div  class="container">
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
-    {% endblock %}
-
+      <section>{{ title }}. {{tagline}}</section>
+    {% endblock %}</div>
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+      <ul id="bottomofpage"> 
+      <li><a href="/"><b>HOME</b></a></li>
+      <li><a href="/about"><b>ABOUT US</b></a></li>
+      <li><a href= "/events"><b>FIND EVENTS</b></a></li>
+      
+      </footer>
     {% endblock %}
 
   </body>
