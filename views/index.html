@@ -1,20 +1,52 @@
 {% extends "layout.html" %}
 
+
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1 class="text-warning"><strong>{{ title }} FTW</strong></h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
+
+
+<p>
+  <h3>Welcome to {{ title }} - <em>{{tagline}}</em></h3>
+</p>
+
+<img id="logo" src="http://i.imgur.com/2MssBsC.png" class="img-rounded" width="250" height="175">
+
+<strong>
+  <p>This is the list of our events</p>
+    <div>
+      {% include "fragments/events-list.html" %}
+    </div>
+
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Check out the <a href="/about" class="text-success">About us</a> page
+    as well as the <a href="/events" class="text-success">Events</a> page.
   </p>
+
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    <a id="new" href="/events/new"><button type="button" class="btn btn-primary">Create a new event</button></a>
   </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+</strong>
+{% endblock %}
+
+{% block footer %}
+  <footer>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </footer>
 {% endblock %}

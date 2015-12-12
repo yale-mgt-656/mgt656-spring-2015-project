@@ -1,9 +1,14 @@
 <ul>
   {% for event in events %}
-    <li>
-      {{event.title}}.
+
+<p>
+  <strong>
+    <li class="event" id="event-{{event.id}}">
+      <a href="/events/{{event.id}}" id="NoRSVP" class="text-success">{{event.title}}</a>
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
+      <strong>{{event.attending.length}} attending so far.</strong>
     </li>
+  </strong>
+</p>
   {% endfor %}
 </ul>
