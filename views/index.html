@@ -1,20 +1,33 @@
 {% extends "layout.html" %}
-
+{#
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
+     <img src="http://zenmarketinginc.com/wp-content/uploads/2015/06/Live-Concert-Event.jpg">
   </header>
 {% endblock %}
+#}
 
 {% block mainContent %}
+     
+      <p><p><a href="/events/new"><center><img id="logo" src="/images/Create_Event_Button.png" style="width: 200px"></center></a></p></p>
+    <p>                                  
+   <center>{{ title }} {{tagline}}</center> 
+    </p>
+    
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    SEE WHAT'S HAPPENING <br>
+    <b>NEED HELP? Call 1800-xxx-xxx or e-mail evently@som.edu</b>
+  </p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
+  <p>
+    Meet the <a href="/about">Founders</a> | Search for 
+     <a href="/events">Events</a>
   </p>
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    <a id="new" href="/events/new">CREATE YOUR EVENT NOW!</a>
   </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
-{% endblock %}
+ {% endblock %}
+
