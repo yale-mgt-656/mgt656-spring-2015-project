@@ -5,7 +5,7 @@
 {% block header %}
   
   <header>
-      <h1 id="title"><strong>{{event.title}}</strong></h1>
+      <h1 class="text-warning" id="title"><strong>{{event.title}}</strong></h1>
   </header>
   
 {% endblock %}
@@ -85,19 +85,16 @@
 {% endif %}
   
 <p>
-  	<form method="POST"> 
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email">
-          <input type="submit" name="Submit">
+  	<form method="POST" class="form-inline" role="form">
+  	  <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" class="form-control">
+        <input type="submit" name="Submit" class="btn btn-primary">
+        <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'donate']) class="donation" id="donate"><button type="button" class="btn btn-primary">Donate</button></a>
+        <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'support']) class="donation" id="support"><buttontype="button" class="btn btn-primary">Support</button></a>
+     </div>
     </form>
-</p>
 
-<p>
-    <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'donate']) class="donation" id="donate"><button type="button" class="btn btn-primary">Donate</button></a>
-</p>
-
-<p>
-    <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'support']) class="donation" id="support"><buttontype="button" class="btn btn-primary">Support</button></a>
 </p>
 
 
@@ -110,7 +107,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Powerful Meadow</a>
+          <a class="navbar-brand">Powerful Meadow</a>
         </div>
         <div>
           <ul class="nav navbar-nav">
