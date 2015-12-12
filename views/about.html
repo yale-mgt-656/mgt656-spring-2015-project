@@ -2,29 +2,64 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <header>About Us</header>
+  <header><h1 class="text-warning"><strong>About Us</strong></h1></header>
 {% endblock %}
     
 {% block mainContent %}
-  <p>Powerful Meadow is a Blue Hippo Company. We seek to change the world for the better. We are:</p>
-      
+
+<strong>
+  
+  <p>Powerful Meadow is a Blue Hippo Company. We seek to change the world for the better.</p>
+  
+  <div class="row">
+  
+  <div class="col-sm-3">
+  <p>    
     <p><span id="excited-zebra-name">Jon Firestone</span></p>
-      <a href="http://imgur.com/yzDy8tj"> <img id="excited-zebra-headshot" src="http://i.imgur.com/yzDy8tj.jpg" title="source: imgur.com"/></a>
-     
+      <a href="http://imgur.com/yzDy8tj"> <img id="excited-zebra-headshot" src="http://i.imgur.com/yzDy8tj.jpg" title="source: imgur.com" class="img-rounded" width="200" height="175"/></a>
+  </p>
+  </div>
+  
+  <div class="col-sm-3">
+  <p>  
     <p><span id="lovely-anteater-name">Sabrina Ling</span></p>
-      <a href="http://imgur.com/JXdx8eB"> <img id="lovely-anteater-headshot" src="http://i.imgur.com/JXdx8eB.jpg" title="source: imgur.com"/></a>
-      
+      <a href="http://imgur.com/JXdx8eB"> <img id="lovely-anteater-headshot" src="http://i.imgur.com/JXdx8eB.jpg" title="source: imgur.com" class="img-rounded" width="200" height="175"/></a>
+  </p>
+  </div>
+  
+  <div class="col-sm-3">
+  <p>
     <p><span id="helpful-salmon-name">Ujjval Patel</span></p>
-      <a href="http://imgur.com/AYUPeHv"> <img id="helpful-salmon-headshot" src="http://i.imgur.com/AYUPeHv.png" title="source: imgur.com"/></a>
-      
+      <a href="http://imgur.com/AYUPeHv"> <img id="helpful-salmon-headshot" src="http://i.imgur.com/AYUPeHv.png" title="source: imgur.com" class="img-rounded" width="200" height="175"/></a>
+  </p>
+  </div>
+  
+  <div class="col-sm-3">
+  <p>
     <p><span id="friendly-dove-name">Corinne Wyeth</span></p>
-      <a href="http://imgur.com/QQ7jxiE"> <img id="friendly-dove-headshot" src="http://i.imgur.com/QQ7jxiE.jpg" title="source: imgur.com"/></a>
-      
+      <a href="http://imgur.com/QQ7jxiE"> <img id="friendly-dove-headshot" src="http://i.imgur.com/QQ7jxiE.jpg" title="source: imgur.com" class="img-rounded" width="200" height="175"/></a>
+  </p>
+  </div>
+  
+  </div>
+</strong>
+
 {% endblock %}
 
 {% block footer %}
   <footer>
-    <a href="/">Homepage</a>.
-    <a href="/about">About us</a>.
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
   </footer>
 {% endblock %}

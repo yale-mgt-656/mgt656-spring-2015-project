@@ -5,7 +5,7 @@
 {% block header %}
   
   <header>
-      <h1 id="title">{{event.title}}</h1>
+      <h1 class="text-warning" id="title"><strong>{{event.title}}</strong></h1>
   </header>
   
 {% endblock %}
@@ -50,9 +50,10 @@
 </script>
 
 <p>
-    <img id="image" src="{{event.image}}" title="source: imgur.com">
+    <img id="image" src="{{event.image}}" title="source: imgur.com" class="img-rounded">
 </p>
 
+<strong>
 <p>
    Hope you have a good time at {{event.title}}! 
 </p>
@@ -70,6 +71,7 @@
         <li><span>{{event.attending}}</span></li>
     </ul>
 </p>
+</strong>
 
 {% if errors %}
     <div class="form-errors">
@@ -83,37 +85,16 @@
 {% endif %}
   
 <p>
-  	<form method="POST"> 
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email">
-          <input type="submit" name="Submit">
+  	<form method="POST" class="form-inline" role="form">
+  	  <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" class="form-control">
+        <input type="submit" name="Submit" class="btn btn-primary">
+        <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'donate']) class="donation" id="donate"><button type="button" class="btn btn-primary">Donate</button></a>
+        <a href='/events/donation' onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'support']) class="donation" id="support"><buttontype="button" class="btn btn-primary">Support</button></a>
+     </div>
     </form>
-</p>
 
-<p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation" id="donate">
-        <a href="https://www.paypal.com/cgi-bin/webscr" onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'donate', 1])></a>
-        <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="business" value="ujjval.patel@yale.edu">
-        <input type="hidden" name="lc" value="US">
-        <input type="hidden" name="item_name" value="Powerful Meadow">
-        <input type="hidden" name="no_note" value="0">
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-</p>
-
-<p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donation" id="support">
-        <a href="https://www.paypal.com/cgi-bin/webscr" onclick=_gaq.push(['_trackEvent', 'button', 'clicked', 'support', 1])></a>
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-        ">
-        <input type="image" src="http://i.imgur.com/t6zEkgw.png?1" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
 </p>
 
 
@@ -123,7 +104,18 @@
   
 {% block footer %}
   <footer>
-    <a href="/">Homepage</a>.
-    <a href="/about">About us</a>.
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
   </footer>
 {% endblock %}

@@ -2,11 +2,12 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <header>Create a new event</header>
+  <header><h1 class="text-warning"><strong>Create A New Event</strong></h1></header>
 {% endblock %}
 
 {% block mainContent %}
 
+<p>
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -17,35 +18,54 @@
       </ul>
     </div>
   {% endif %}
+</p>
 
   <p>
-  	<form id="create-event" method="POST">
-      <p>
-        <label for="title">Event title:</label>
-        <input type="text" name="title">
-      </p>
+  	<form id="create-event" method="POST" class="form-horizontal" role="form">
+  	 
+      <div class="form-group">
+        <label for="title" class="control-label col-sm-2">Event title:</label>
+        <div class="col-xs-2">
+          <input type="text" name="title" class="form-control">
+        </div>
+      </div>
       
-      <p>
-        <label for="location">Event Location:</label>
-        <input type="text" name="location">
-      </p>
       
-      <p>
-        <label for="image">Event Image:</label>
-        <input type="text" name="image">
-      </p>
       
-      <p>
-        <label for="year">Event Year:</label>
-        <select name="year">
+      <div class="form-group">
+        <label for="location" class="control-label col-sm-2">Event Location:</label>
+        <div class="col-xs-2">
+          <input type="text" name="location" class="form-control">
+        </div>
+      </div>
+      
+      
+      
+      <div class="form-group">
+        <label for="image" class="control-label col-sm-2">Event Image:</label>
+        <div class="col-xs-2">
+          <input type="text" name="image" class="form-control">
+        </div>
+      </div>
+      
+      
+      
+      <div class="form-group">
+        <label for="year" class="control-label col-sm-2">Event Year:</label>
+        <div class="col-xs-2">
+        <select name="year" class="form-control">
           <option value="2015">2015</option>
           <option value="2016">2016</option>
         </select>
-      </p>
+        </div>
+      </div>
       
-      <p>
-        <label for="month">Event Month:</label>
-        <select name="month">
+      
+      
+      <div class="form-group">
+        <label for="month" class="control-label col-sm-2">Event Month:</label>
+        <div class="col-xs-2">
+        <select name="month" class="form-control">
           <option value="0">January</option>
           <option value="1">February</option>
           <option value="2">March</option>
@@ -59,11 +79,15 @@
           <option value="10">November</option>
           <option value="11">December</option>
         </select>
-      </p>
+        </div>
+      </div>
       
-      <p>
-        <label for="day">Event Day:</label>
-        <select name="day">
+      
+      
+      <div class="form-group">
+        <label for="day" class="control-label col-sm-2">Event Day:</label>
+        <div class="col-xs-2">
+        <select name="day" class="form-control">
           <option value="0">1</option>
           <option value="1">2</option>
           <option value="2">3</option>
@@ -96,11 +120,15 @@
           <option value="29">30</option>
           <option value="30">31</option>
         </select>
-      </p>
+        </div>
+      </div>
       
-      <p>
-        <label for="hour">Event Hour:</label>
-        <select name="hour">
+      
+      
+      <div class="form-group">
+        <label for="hour" class="control-label col-sm-2">Event Hour:</label>
+        <div class="col-xs-2">
+        <select name="hour" class="form-control">
           <option value="0">12a</option>
           <option value="1">1a</option>
           <option value="2">2a</option>
@@ -126,24 +154,45 @@
           <option value="22">10p</option>
           <option value="23">11p</option>
         </select>
-      </p>
+        </div>
+      </div>
       
-      <p>
-        <label for="minute">Event Minute:</label>
-        <select name="minute">
+      
+      
+      <div class="form-group">
+        <label for="minute" class="control-label col-sm-2">Event Minute:</label>
+        <div class='col-xs-2'>
+        <select name="minute" class="form-control">
           <option value="0">:00</option>
           <option value="30">:30</option>
         </select>
-      </p>
-    
-      <input type="submit" id="submit">
+        </div>
+      </div>
+      
+      
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" id="submit" class="btn btn-primary">
+        </div>
+      </div>
     </form>
   </p>  
 {% endblock %}
 
 {% block footer %}
   <footer>
-    <a href="/">Homepage</a>.
-    <a href="/about">About us</a>.
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Powerful Meadow</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/about">About us</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
   </footer>
 {% endblock %}
