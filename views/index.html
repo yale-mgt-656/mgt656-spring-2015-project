@@ -12,8 +12,18 @@
             background-position: center;
         }
 </style>
+<script type="text/javascript">
+    if (document.getElementById) { window.onload = swap };
+function swap() {
+var numimages=2;
+rndimg = new Array("images/home.jpg", "images/home1.jpg");
+x=(Math.floor(Math.random()*numimages));
+randomimage=(rndimg[x]);
+document.getElementById("randimage").style.backgroundImage = "url("+ randomimage +")";
+}
+</script>
 </head>
-<body>
+<body id="randimage">
 <div class="home">
      <div class="homecontainer">
         <h1 class="sitetitle">{{ title }}. {{tagline}}</h1><br>
