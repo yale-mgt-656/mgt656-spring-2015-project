@@ -16,12 +16,14 @@
 
   <div class="home">
   <div class="homecontainer">
+    <div class="row">
     {% include "fragments/events-list.html" %}
   </div>
-  <div>
+  <div class="row">
      <a href="/events/new" id="new">
               <button type="button" class="btn btn-lg btn-warning">+ Create a new event</button>
             </a>
+  </div>
   </div>
   </div>
 {% endblock %}

@@ -104,6 +104,9 @@ body {
  overflow:hidden;
  border-radius: 25px;
 }
+
+.mainpage .try .pages:nth-child(n+4){display:none;}
+
 .newevent{
     color: white;
 }
