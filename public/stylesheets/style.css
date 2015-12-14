@@ -1,12 +1,175 @@
+html {
+    min-height: 100%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 14px;
+  font-family:"Work Sans", Helvetica, Arial, sans-serif!important;
 }
 
 a {
   color: #00B7FF;
 }
-
 .form-errors {
 	color: red;
 }
+
+footer a {
+  
+  padding: 10px;
+  color: white;
+  box-sizing: border-box;
+  float: inherit;
+  
+}
+
+.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+}
+
+.caption {
+    display: block;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+.row {
+    margin-right:0px!important;
+}
+
+
+/* Set the fixed height of the footer here */
+.footer {
+  padding:20px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+
+}
+
+.home {
+
+    padding: 100px 0;
+    color: white;
+    
+
+}
+
+.homecontainer
+{
+    text-align: center; 
+    color: inherit;
+    width: auto;
+}
+.eventstyle{
+ display: inline-block;
+ font: 20px;
+ color: white;
+ background-color: #C0C0C0;
+ margin-bottom:5px;
+ margin-left:5px;
+ height: 280px;
+ overflow:hidden;
+ border-radius: 25px;
+}
+
+.mainpage .try .pages:nth-child(n+4){display:none;}
+
+.newevent{
+    color: white;
+}
+
+.eventimage{
+    width: 100%;
+    height:200px;
+}
+
+
+/* Event detail page formatting */
+
+
+#attendees li {
+    color: white;
+}
+
+.eventlist {
+color:black;
+text-align:left;
+}
+
+#title {
+    font-size:30px;
+}
+
+.eventdate {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.eventname {
+       
+    max-height: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.event-title {
+    display:inline;
+}
+
+/* Create Event page formatting */
+
+.evform{
+ max-width: 400px;
+ margin-right: auto;
+ margin-left: auto;
+}
+
+.eventbox{
+ color: white;
+ background-color: #EB7B1B;
+ padding: 15px;
+ margin-bottom:5px;
+ height: auto;
+ overflow:hidden;
+ border-radius: 25px;
+}
+
+.imagenes{
+    border-radius: 35px;
+    
+}
+

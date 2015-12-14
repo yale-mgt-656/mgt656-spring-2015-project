@@ -1,0 +1,164 @@
+<head>
+
+
+  {% extends "layout.html" %}
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+{% block mainContent %}
+
+<body style="text-align:justify; line-height:2">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container" style="margin: 70px 0">
+
+    <div class="row" style="margin-top: 10px; ">
+      <ul>
+        <li style="margin-bottom:0"><a href="mailto:Karen.RamirezEstrada@yale.edu">Karen Ramirez-Estrada</a></li>
+        <li style="margin-bottom:0"><a href="mailto:Mezyad.AlMasoud@yale.edu">Mezyad AlMasoud</a></li>
+        <li style="margin-bottom:0"><a href="mailto:shadin.cornelio@yale.edu">Shadin Cornelio</a></li>
+        <li style="margin-bottom:0"><a href="mailto:susana.arriaga@yale.edu">Susana Arriaga</a></li>
+      </ul>
+
+    </div>
+    <div class="row" style="text-align: center">
+      <h1>MGT 656 Dry Blessing Coding Team</h1>
+      <h2>Final Report</h2>
+      <h3>December 11, 2015</h3>
+
+    </div>
+    <div class="row">
+      <p>Link to live working project on Heroku: <a href="http://mgt-656-dry-blessing.herokuapp.com" target="_blank">RSVPd</a>
+        <br>Link to Waffle IO: <a href="https://waffle.io/dry-blessing/mgt656-spring-2015-project" target="_blank">Dry Blessing issues</a></p>
+    </div>
+    <div class="row">
+      <h3 style="text-decoration:underline">Executive Summary</h3>
+
+      <p>RSVPd is an event platform that allows users to post events of different kinds - be it to relax, socialize, visit or party! Users can create their own events, RSVP using their Yale email addresses and browse through other events that have been
+        posted. We built the site <mark>"standing on the shoulders of giants"</mark> and it uses Nunjucks, a Javascript templating system, and Node.js, a server side Javascript environment. We implemented Google Analytics code using which we conducted several
+        experiments to determine which variation of our website was more appealing to users. We also had a testing framework using mocha to ensure the completion of user stories as per project requirements. The following points are some of the key characteristics that we
+        believe make Eventbrite a [horrible] platform compared to us:</p>
+      <ol>
+        <li>An integrated and highly motivated team is behind the RSVPd website. Women comprised of 75% of the team, thus proving that women can code pretty darn well! <mark>Cheers to diversity.</mark></li>
+        <li>We created mockups using <strong>Balsamiq</strong> using Z patterns to make the user interface intuitive.</li>
+        <li>We tested our website often and made sure all our tests pass!</li>
+        <li>We have been able to view traffic patterns on Google Analytics and have received more than 8k sessions from Yale Law, Yale School of Management, and Yale Search!</li>
+        <li>We implemented a RSVP/no-RSVP option and Donate/Support button and tested out what users find more compelling in order to deliver the best user experience.</li>
+        <li>The website is simple and easy to use with all the required functionality. Enough said.</li>
+
+      </ol>
+    </div>
+    <div class="row">
+      <h3 style="text-decoration:underline">Google Analytics Summary</h3>
+
+      <p>The traffic to our website is 98% referral and the three major sources of traffic are Yale Law School, Yale School of Management and Yale Search. The share of the sources can be seen in the following table and chart;</p>
+      <img src="/images/sources-traffic.png" style="width:500px">
+      <p>From the 8700 people that came into our webpage, only 6.35% stayed and continued on to one of our other pages. The pages where the traffic continues are:
+      </p>
+      <ol>
+        <li>Event 1</li>
+        <li>Event 2</li>
+        <li>Event 0</li>
+        <li>Event 5</li>
+        <li>Others</li>
+      </ol>
+      <p>Out of this 6.35%, only 12% continue and only the following two event pages lead to the Donation page: Event 1 and Event 0. The page that keeps and converts more traffic is the Events page because 90% of the traffic continues to another of the following;
+      </p>
+      <ol>
+        <li>New Event</li>
+        <li>About</li>
+        <li>Index</li>
+        <li>Others</li>
+      </ol>
+      <p>Out of the traffic that stays in transit, 79% continues and the principal pages where it goes are Events and Index. All of this can be seen in the next image.
+      </p>
+      <img src="/images/flow.png" style="width:500px">
+      <br>
+      <h3>A/B Testing</h3>
+      <b>Variation 1</b>
+      <p>The first variation that we tested was if the word “RSVP” placed on the event box would increase the click-through rate in comparison with not having this word. Our original version is without the “RSVP” word and our Variation 1 is with the “RSVP”
+        word as shown in the following pictures
+      </p>
+      <br>
+      <p><b>Original: Without RSVP</b></p>
+      <img src="/images/withoutrsvp.png" style="width:500px">
+      <p><b>Version 1: With RSVP</b></p>
+      <img src="/images/RSVP.png" style="width:500px">
+      <p>For this test we can say that our having the “RSVP” word increases the click-through rate by 1.94% and has a 50% probability of outperforming the original.</p>
+      <img src="/images/RSVP-test.png" style="width:500px"><br><br>
+      <b>Variation 2</b>
+      <p>The second variation that we tested was the preference of our traffic for donating vs supporting an event. On the event detail page, our Original version had a button that said “Support this event” and “Donate to this event” for our variation which can be seen in the following images:
+      </p>
+      <p><b>Original: Support this event</b></p>
+      <img src="/images/support.png" style="width:500px">
+      <p><b>Version 1: Donate to this event</b></p>
+      <img src="/images/donate.png" style="width:500px">
+      <p>For this test, we see that the 'Support' option outperforms the 'Donate' option as can be seen from the click-through rate (3.77% vs 0.36%).:</p>
+      <img src="/images/donate-vs-support.png" style="width:500px">
+    </div>
+
+
+    <div class="row">
+      <h3 style="text-decoration:underline">The Agile way</h3>
+<p>We structured our sprints so as to follow the practices discussed in class and ensured that we did things the Agile way.</p>
+      <table class="table">
+        <tr>
+          <td width="25%">Agile components</td>
+          <td width="75%">What we did</td>
+        </tr>
+        <tr>
+          <td width="25%">Sprint planning</td>
+          <td width="75%">At the beginning of each sprint, we scheduled time on our calendars for an in-person meeting. Here we looked at our product backlog on Waffle IO and each of us picked up the tasks we wanted to do keeping in mind the number of hours estimated for the task. We also discussed dependencies between tasks and collaborative efforts to complete them.</td>
+        </tr>
+         <tr>
+          <td width="25%">Scrum meeting</td>
+          <td width="75%">We had 10 minute stand-up meetings during class time to discuss what we had finished, what we planned to do and if we were facing obstacles. If the obstacles were complicated, we used class time to go and talk to Kyle or the TAs.</td>
+        </tr>
+         <tr>
+          <td width="25%">Sprint demo</td>
+          <td width="75%">We had a sprint demo on the Monday before every sprint report submission. This would ensure that we have working and usable code that pass the mocha tests corresponding to the user stories that we had completed.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="row" style="margin-top: 25px">
+      <h3 style="text-decoration:underline">Overall Retrospective </h3>
+
+      <p>During the overall project, the team grew together by overcoming different challenges at various stages of the project. Besides, we were able to understand and respect everyone’s role into the project and create a webpage which we are very proud
+        of. The thing that worked the best was planning and estimating the tasks, dividing the labor and then putting it together using the version control tools we learned during the course. Our top learnings from this course were:
+        <ul>
+
+          <li>We learned how to <b>estimate tasks</b> so that we can comfortably finish a project in 6 sprints rather than do a whole lot of work at the last minute (which some people - not us - would do in a typical b-school project).</li>
+
+          <li>We were able to pick up tasks that we liked to do most of the time. We also picked up routine tasks (such as creating HTML sprint reports) on a rotational basis which was a fair division of work.</li>
+
+          <li>Due to the visual and challenging nature of the project, we kept ourselves <b>self-motivated</b>.</li>
+
+          <li>The Waffle IO interface helped us to keep track of tasks very easily and was a very handy tool during sprint planning sessions.</li>
+
+          <li>We constantly helped each other during the entire projects - be it in person, over the phone or through screen-sharing sessions.</li>
+
+          <li>All of us developed our skills over the course of 6 weeks - through self-learning and through our team members!</li>
+
+          <li>The Google Analytics bit threw us off balance but we responded to change in a very positive way through planning and taking on extra work when needed.</li>
+
+        </ul>
+
+        <p>During the process of learning we dealt with some difficulties such as spending too much time looking for a coding solution on our own, which eventually led to tasks slipping into the next sprint. However, every time we faced difficulties we discussed
+          it as a team and if we weren’t able to find a solution, we took help from the TAs through the super helpful review sessions. </p>
+
+        <p>In general, we believe that this project helped us not only to develop team skills but to learn methodologies to develop efficient projects. To sum up, it taught us Agile values - interacting with the team, dealing with change, collaboration and
+          making sure our code works! </p>
+
+    </div>
+
+
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+{% endblock %}

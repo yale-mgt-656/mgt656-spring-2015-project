@@ -1,18 +1,29 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <div>
+<head>
+<style>
+    body {
+            text-align: center;
+            background-image: url("/images/events.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+</style>
+</head>
+
+  <div class="home">
+  <div class="homecontainer">
+    <div class="row">
     {% include "fragments/events-list.html" %}
   </div>
-  <div>
-    <a href="/events/new">Create a new event</a>
+  <div class="row">
+     <a href="/events/new" id="new">
+              <button type="button" class="btn btn-lg btn-warning">+ Create a new event</button>
+            </a>
   </div>
-
-{% endblock %}
-
-{% block footer %}
-  <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
-  </footer>
+  </div>
+  </div>
 {% endblock %}

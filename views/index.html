@@ -1,20 +1,39 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
-{% endblock %}
-
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+<head>
+<style>
+    body {
+            text-align: center;
+            background-image: url("/images/home.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+</style>
+<script type="text/javascript">
+    if (document.getElementById) { window.onload = swap };
+function swap() {
+var numimages=2;
+rndimg = new Array("images/home.jpg", "images/home1.jpg");
+x=(Math.floor(Math.random()*numimages));
+randomimage=(rndimg[x]);
+document.getElementById("randimage").style.backgroundImage = "url("+ randomimage +")";
+}
+</script>
+</head>
+<body id="randimage">
+<div class="home">
+     <div class="homecontainer">
+        <h1 class="sitetitle">{{ title }}. {{tagline}}</h1><br>
+        <div class="row mainpage">
+            {% include "fragments/events-list.html" %}
+        </div>
+          <div class="row">
+          <a class="btn btn-primary btn-lg" href="/events" role="button">See all events</a></p><br>
+    </div>
+  </div>
+</body>
+  
 {% endblock %}
