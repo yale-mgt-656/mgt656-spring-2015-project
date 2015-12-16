@@ -1,0 +1,123 @@
+<html>
+<h2>Judy Chang (judy.chang@yale.edu)
+David Kates (david.kates@yale.edu)
+Nicholas Lovejoy (nicholas.lovejoy@yale.edu)
+Jen Gaze (jen.gaze@yale.edu)
+
+
+Cosmic-Brook Coding Team: Sprint Six Report
+December 7, 2015
+</h2>
+<b>Overview of Project</b>
+Building an EventBrite-like site that allows people to post events and let others RSVP to them.
+<br>
+
+<h3>User Background & Notes on Metrics Platforms</h3>
+The site launched in early November, but analytics are only available starting November 29th, once the analytic framework was set up and it first started seeing substantial visitors. From that date to December 11th, the site has seen about 8,700 visitors, with nearly all the traffic coming from users in different schools at Yale University. The breakdown of users by school is as follows: medicine (29%), divinity (5%), SOM (39%), and law (26%). Almost all of them (99.5%) were new and not returning visitors.
+
+It should be noted that analytics were collected through two different services, Google Analytics and Optimizely. The former was used to generate aggregate data on user background and behavior, while the latter was used to run the A/B tests discussed below.
+
+<br>
+Overall User Flow
+The diagram below shows the overall movement of users through the site since November 29th. 
+As it shows, over 90% of the 8,700 visitors did not advance past the landing page, which was the most popular page visited. If someone did advance past this page, he or she was most likely to visit the “SOM House Party” event detail page. For a more detailed analysis of how visitors from different schools engaged with the site, see the section below called “Detailed Findings From A/B Tests.” 
+
+<img src="/sprint_images/Snip20151211_1.png"></img>
+
+
+<h3>Overview of A/B Tests</h3>
+We wanted to test whether adding “RSVP” to the SOM House Party link on the homepage would increase click thrus, so we created an A/B test in Optimizely that randomly displayed “RSVP.” To understand how this change would affect the behavior of different users (e.g. law, SOM, medicine, and divinity), we created separate experiments for each of these. Also, we set up a similar experiment to test whether “Submit” or “Donate” was more likely to encourage visitors to contribute to events.  
+
+The results of these tests are summarized below, and subsequent sections provide more analysis. It should be noted that these tests were only created on December 9th, which means many of them did not see enough visitors to generate statistically significant results.
+<br>
+<img src="/sprint_images/Snip20151211_2.png"></img>
+<br>
+<b>Recommendations</b>
+<br>
+RSVP v. No RSVP
+If given more time, we would like to run the tests a bit longer to collect conclusive evidence about click thru rates using different language in the event link. Based on the initial data collected, it appears that there are differences in click thru rates for different audiences. Therefore we would consider creating a new landing page where the audience member is directed to a unique event site based on their email address/school. For instance, SOM and medical school students should be directed to a homepage with “RSVP”, while divinity and law students should not.
+
+Donate v. Support
+If given more time, we would like to run the tests a bit longer to collect conclusive evidence about conversion rates for donate v. support.  If conversion rates for donations remained low overall, we would think about different ways to increase donations (e.g. Adding more info about where the money would go) as opposed to just changing language on the button.  
+
+User Flow
+Given the large drop off after the homepage, it’s clear that we should do more to entice people to use this site. While the A/B tests provide some instruction on what to change, it’s likely that other features of the site could be altered to improve user flow through it. For example, perhaps visitors: do not understand what the site is for, cannot find events that interest them, do not like the logo, etc. We recommend conducting small focus groups with potential users at different schools to understand what they do and do not like about the homepage, then make design and functionality adjustments accordingly. Related, we could add more features, like integration with Facebook to show profiles of attendees or integration with Google Maps to show exactly where the event is taking place. All these proposed design changes could also be vetted using A/B tests.
+
+<br>
+<h3>DETAILED FINDINGS FROM A/B TESTS</h3>
+
+
+<b>RSVP/No Rsvp Test - All Audiences</b>
+Original: “SOM House Party”
+<br>
+<br>
+Variation 1: “RSVP to SOM House Party”
+<br>
+<img src="/sprint_images/Snip20151211_3.png"></img>
+<img src="/sprint_images/Snip20151211_4.png"></img>
+<br>
+<b>Conclusion:</b>
+Out of the 2,618 visitors to our site, 4.45% of visitors clicked on the “SOM House Party” Link, while 6.36% of visitors clicked on the second version of the website which had a different link “RSVP to SOM house party.” 
+Based on these data, with 93% confidence we can state that adding RSVP increases click thru by +42.9%.
+<br>
+<br>
+<b>RSVP/No Rsvp Test - SOM</b>
+Original: “SOM House Party”
+<br>
+Variation 1: “RSVP to SOM House Party”
+<br>
+<img src="/sprint_images/Snip20151211_5.png"></img>
+<br>
+<b>Conclusion:</b><br>
+Out of the 767 visitors from SOM, 4.58% of visitors clicked on the “SOM House Party” Link, while 5.35% of visitors clicked on the second version of the website which had a different link “RSVP to SOM house party.” 
+Based on these data, with 90% confidence we can state that adding RSVP increases click thru by +16.8%.
+<br>
+<br>
+<b>RSVP/No Rsvp Test - Divinity School</b>
+Original: “SOM House Party”
+<br>
+Variation 1: “RSVP to SOM House Party”
+<br>
+<img src="/sprint_images/Snip20151211_7.png"></img>
+<br>
+<b>Conclusion:</b><br>
+Out of the 82 visitors from the Divinity School, 2.13% of visitors clicked on the “SOM House Party” Link, while 0% of visitors clicked on the second version of the website which had a different link “RSVP to SOM house party.” 
+Based on these data, with 90% confidence we can state that adding RSVP decreases click thru rate. However, these results are not conclusive as they are not statistically significant and only represent data from one visitor.
+<br>
+<br>
+<b>RSVP/No Rsvp Test - Law School</b>
+Original: “SOM House Party”
+<br>
+Variation 1: “RSVP to SOM House Party”
+<br>
+<img src="/sprint_images/Snip20151211_8.png"></img>
+<br>
+<b>Conclusion:</b><br>
+Out of the 444 visitors from the Law School, 7.48% of visitors clicked on the “SOM House Party” Link, while 4.35% of visitors clicked on the second version of the website which had a different link “RSVP to SOM house party.” 
+Based on these data, with 90% confidence we can state that adding RSVP decreases click thru rates by 41.8% with this audience. However, these results are not conclusive as they are not statistically significant.  
+<br>
+<br>
+<b>RSVP/No Rsvp Test - Med School</b>
+Original: “SOM House Party”
+<br>
+Variation 1: “RSVP to SOM House Party”
+<br>
+<img src="/sprint_images/Snip20151211_9.png"></img>
+<br>
+<b>Conclusion:</b><br>
+Out of the 539 visitors from the Law School, 9.34% of visitors clicked on the “SOM House Party” Link, while 12.8% of visitors clicked on the second version of the website which had a different link “RSVP to SOM house party.” 
+Based on these data, with 90% confidence we can state that adding RSVP increases click thru rates by 37.0% with this audience. However, these results are not conclusive as they are not statistically significant.  
+<br><br>
+<b>Donate/Support Button Test - All Audiences</b>
+Original: “Donate” button
+<br>
+Variation 1: “Support” button
+
+<br>
+<img src="/sprint_images/Snip20151211_10.png"></img>
+<br>
+<b>Conclusion:</b><br> 
+Out of the 287 visitors, 0.74% of visitors clicked on the “Donate” Button, while 0% of visitors clicked on the second version of the website which had a different “Support” button 
+Based on these data, with 90% confidence we can state that adding “Support” decreases click thru rates by 100%. However, these results are not conclusive as they are not statistically significant and only represent data from one visitor.  
+
+</html>

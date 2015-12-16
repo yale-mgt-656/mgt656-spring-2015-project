@@ -1,0 +1,42 @@
+ {% extends "layout.html" %}
+
+ 
+ {% block mainContent %}
+      <h1 id="title"> {{event.title}}
+      <script src="//cdn.optimizely.com/js/4063554479.js"></script>
+      </h1>
+      <p>When: <span id="date">{{event.date}}</span></p>
+
+      <p>Where: <span id="location">{{ event.location }}</span></p>
+      
+      <p3> Who:</p3>
+      <ul id="attendees">
+         {% for person in event.attending %}
+          <li>{{person}}</li>
+         {% endfor %}
+      </ul>
+      <p> Please come! </p>
+      
+      {% if errors %}
+      <div>
+        <ul class="form-errors">
+           {% for error in errors %}
+              <li>{{error}}</li>
+           {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      
+      <form method="POST">
+        <input type="text" name="email" id="email" placeholder="Your email"/>
+        <input type="Submit" value="Submit"/>
+        <br>
+        <br>
+        <input type="text" class = "donation" name="donate" id="donate" placeholder="Your donation amount"/>
+        <input type="Submit" value="Donate"/>
+      </form>
+      <br></br>
+      <img src='{{event.image}}' id="image"> </event><align="middle">
+ <br>
+ {% endblock %}
+ <br></br>
