@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+
+{% block mainContent %}
+
+<h1 id="title">{{event.title}}</h1>
+<span id="date"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
+<span id="location">{{event.location}}</span><br>
+<img id="image" src="{{event.image}}"><br>
+{{event.attending.length}} attending so far:<br>
+
+{% for person in event.attending %}
+<ul id="attendees">
+  <li>{{person}}</li>
+</ul>
+{% endfor %}
+
+{% if errors %}
+      <p>Please apply yourself and correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+{% endif %}
+
+<h2>RSVP Here:</h2>
+
+<form id="rsvp" method="POST">
+    Please enter your Yale email address:
+    <input type="email" name="email">
+    <input type="submit" value="Submit">
+</form>
+
+
+    <a id='donate' class='donate' href="https://mgt656-scrum-noobs.herokuapp.com/about">Donate</a>
+
+<!-- Load the JQuery library -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+  <script src="//www.google-analytics.com/cx/api.js?experiment=rmIGqDG4T4G0pGdurkIO7Q"></script>   
+<script>
+   // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {
+      $( 'a#donate' ).text( 'donate' );
+    },  // Donate 
+    function() {    // Variation 1: replace Donate with SUPPORT 
+   $( 'a#donate' ).text( 'support' );
+    }
+  ];
+   
+  // Wait for the DOM to load, then execute the view for the chosen variation.
+  $(document).ready(function(){
+    // Ask Google Analytics which variation to show the user.
+    var chosenVariation = cxApi.chooseVariation('rmIGqDG4T4G0pGdurkIO7Q');
+    
+    console.log('chosenVariation =', chosenVariation);
+   
+    // Execute the chosen view
+    pageVariations[chosenVariation]();
+    
+  });
+  </script>
+
+{% endblock %}

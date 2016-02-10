@@ -10,3 +10,17 @@ a {
 .form-errors {
 	color: red;
 }
+
+footer{
+  background-color:#eee;
+  padding:1em;
+  border:1px solid #ddd;
+  margin:2em 0;
+}
+html { 
+  background: url(http://kenmclane.org/images/party_bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

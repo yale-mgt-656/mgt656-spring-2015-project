@@ -3,7 +3,7 @@ var events = require('../models/events');
 /**
  * Controller that renders our index (home) page.
  */
-function index (request, response) {
+function indexAb (request, response) {
   var now = new Date();
   var contextData = {
     'title': 'MGT 656',
@@ -17,9 +17,9 @@ function index (request, response) {
     }
   }
   
-  response.render('index.html', contextData);
+  response.render('index_AB.html', contextData);
 }
 
 module.exports = {
-  index: index
+  index: indexAb
 };
