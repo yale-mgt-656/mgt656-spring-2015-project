@@ -1,0 +1,44 @@
+.introsprintreports {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
+    background: url(http://www.discount-supplements.co.uk/blog/wp-content/uploads/sprinter.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.introsprintreports .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.introsprintreports .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.introsprintreports .intro-body .intro-text {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .introsprintreports {
+        height: 100%;
+        padding: 20px;
+    }
+
+    .introsprintreports .intro-body .brand-heading {
+        font-size: 90px;
+    }
+
+    .introsprintreports .intro-body .intro-text {
+        font-size: 26px;
+    }
+}
