@@ -3,10 +3,16 @@
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
+     <img src="Logo2.png" id="logo">
+     
   </header>
+
 {% endblock %}
 
 {% block mainContent %}
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>

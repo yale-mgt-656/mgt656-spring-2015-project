@@ -29,14 +29,7 @@
         "@runner": "node-gulp",
         "configs": {
             "@inited": "true",
-            "json()": {
-                "Gulp": {
-                    "command": "gulp",
-                    "debug": true,
-                    "name": "Gulp",
-                    "runner": "Shell command"
-                }
-            }
+            "json()": {}
         }
     },
     "share": {

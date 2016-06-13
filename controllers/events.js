@@ -48,6 +48,18 @@ function newEvent(request, response){
   var contextData = {};
   response.render('create-event.html', contextData);
 }
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null; 
+  if (validator.isInt(request.body[fieldName])===false) {
+    contextData.errors.push('Your '+ fieldName +' should be an integer.');
+  }else{
+    value = parseInt(request.body[fieldName],10);
+    if (value > maxVal || value < minVal) {
+      contextData.errors.push('Your ' + fieldName + ' should be in the range ' + minVal + '-' + maxVal);
+    }
+  }
+    return value;
+  }
 
 /**
  * Controller to which new events are submitted.
@@ -60,6 +72,25 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
+    
+  if (validator.isLength(request.body.location, 5, 50) ==false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+  
+var year = checkIntRange(request, 'year',2015,2016,contextData);
+var month = checkIntRange(request, 'month',0,11,contextData);
+var day = checkIntRange(request, 'day',1,31,contextData);
+var hour = checkIntRange(request, 'hour',0,23,contextData);
+var minute = checkIntRange(request, 'minute',0,30,contextData);
+
+if(validator.isURL(request.body.image) === false) {
+  contextData.errors. push('Your image should be a URL');
+}
+
+if(request.body.image.match(/\.(png|gif)$/) === null) {
+  contextData.errors. push('Your image should be a .png or .gif');
+
+}
 
 
   if (contextData.errors.length === 0) {
@@ -67,14 +98,32 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
-      attending: []
+      date: new Date(year, month, day, hour, minute, 0),
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
     response.redirect('/events');
   }else{
     response.render('create-event.html', contextData);
   }
+}
+
+//sends all events JSON data to page
+function api(request, response){
+ var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i = 0; i< events.all.length; i++) {
+      if(events.all[i].title.indexOf(search) !== -1){
+        output.events.push(events.all[i]);
+      } 
+    }
+  } else{
+      output.events = events.all;
+  }
+  response.json(output);
 }
 
 function eventDetail (request, response) {
@@ -102,6 +151,7 @@ function rsvp (request, response){
 
 }
 
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +161,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
