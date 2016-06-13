@@ -6,7 +6,7 @@
 var allEvents = [
   {
     id: 0,
-    title: 'SOM House Party',
+    title: 'SOM House Party for all the cool peeps',
     // Note that JavaScript months are zero-indexed,
     // so, month zero is January. This is Jan 17th
     // 2013 at 4:30pm local time.
@@ -38,7 +38,15 @@ var allEvents = [
     image: 'http://i.imgur.com/02KT9.gif',
     location: 'Yale Farm',
     attending: ['homer.simpson@yale.edu'],
-  }
+  },
+    {
+    id: 5,
+    title: 'Beach party for hackers and nerds',
+    date:   new Date(2015, 8, 1, 19, 0, 0),
+    image: 'http://i.imgur.com/7pe2k.gif',
+    location: 'Shady\' house',
+    attending: ['susana.arriage@yale.edu', 'karen@yale.edu', 'mezyad@yale.edu']
+  },
 ];
 
 

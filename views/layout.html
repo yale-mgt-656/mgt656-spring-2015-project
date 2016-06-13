@@ -1,23 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
 
-	<body class="container">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 
-    {% block header %}
-      <header>Hey, I'm in the header</header>
-    {% endblock %}
+</head>
 
-    {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
-    {% endblock %}
+<body>
+<div id="wrap">
+  {% block header %}
+  <div>
+  <header>
+  <div id="top-menu" class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #f8f8f8;">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img src="/images/RSVPd-logo-v.png" id="logo" style="height:50px;margin: -15px;padding-right: 30px;"></a>
 
-    {% block footer %}
-      <footer>This be the footer.</footer>
-    {% endblock %}
-
-  </body>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/">Home</a>
+          </li>
+          <li><a href="/about">About</a>
+          </li>
+          <li><a href="/events">Events</a>
+          </li>
+          <li><a href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/events/new" id="new">
+              <button type="button" class="btn btn-sm btn-warning">+ Create a new event</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </header>
+  </div>
+  {% endblock %} 
+  
+  
+  {% block mainContent %}
+  <section>Welcome to {{ title }}. {{tagline}}</section>
+  {% endblock %} 
+ 
+  {% block footer %}
+  <footer>
+    <div id="footer">
+    <a href="/"> Home</a>
+    <a href="/about"> About </a>
+    <a href="/api/events" target="_blank">API</a>
+    </div>
+  </footer>
+  {% endblock %}
+</div> 
+</body>
 </html>
