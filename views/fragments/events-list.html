@@ -1,9 +1,44 @@
 <ul>
   {% for event in events %}
-    <li>
-      {{event.title}}.
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
+    <li id="event-{{event.id}}" class="event eventstyle" style="background-color: rgba(0,0,0,0.6);">
+      
+      <img class="eventimage" src="{{event.image}}">
+      <br>
+      <a href="/events/{{event.id}}">{{event.title}}</a>
+      <br>
+        <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+      <br>
+         {{event.attending.length}} attending so far
+      </br>
+      <div>
+          <a class="btn btn-primary btn-lg" href="/events/{{event.id}}" role="button">RSVP</a></p><br>
+    </div>
+      <a href="/events/{{event.id}}"><h3 class="event-title"></h3></a>
     </li>
   {% endfor %}
 </ul>
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="http://www.google-analytics.com/cx/api.js?experiment=8TjaBDUETBi_7DZx27qJeA"></script>
+
+<!-- Load the JQuery library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+  var chosenVariation = cxApi.chooseVariation();
+  // Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {
+      $(".event-title").html('');
+    },  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: add RSVP text
+      $(".event-title").html('RSVP');
+    }
+  ];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function() {
+  var chosenfxn = pageVariations[chosenVariation];
+  chosenfxn();
+});
+</script>

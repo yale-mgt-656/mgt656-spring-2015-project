@@ -1,12 +1,117 @@
+
 body {
-  padding: 50px;
+  text-align: center;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
   color: #00B7FF;
 }
-
 .form-errors {
 	color: red;
 }
+
+footer a {
+  
+  padding: 10px;
+  color: white;
+  box-sizing: border-box;
+  float: inherit;
+  
+}
+
+.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+}
+
+.caption {
+    display: block;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  position: relative;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  bottom: 0;
+  width: 100%;
+  padding:20px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  position:fixed;
+}
+
+.home {
+
+    padding-top: 100px;
+    color: white;
+    
+
+}
+
+.homecontainer
+{
+    text-align: center; 
+    color: inherit;
+    width: auto;
+    padding-top: 50px;
+}
+.eventstyle{
+ display: inline-block;
+ font: 20px;
+ color: white;
+ background-color: #C0C0C0;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ margin-bottom:5px;
+ margin-left:5px;
+ width:200px;
+}
+.newevent{
+    color: white;
+}
+
+.eventimage{
+    width:170px;
+}
+    
+}
+=======
+
+/* Event detail page formatting */
+#attendees li {
+    color:black;
+}
+
+.eventlist {
+color:black;
+text-align:left;
+}
+
+#title {
+    font-size:30px;
+}
+
+

@@ -8,6 +8,7 @@ var configure = require('./config.js');
 var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
+var sprintreportControllers = require('./controllers/sprint-report.js');
 
 
 // Create our express app
@@ -21,6 +22,10 @@ app.get('/', indexControllers.index);
 app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
+app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
+app.post('/events/:id([0-9]+)', eventControllers.rsvp);
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/api/events', eventControllers.api);
+app.get('/sprint-report-4', sprintreportControllers.sprintreport);
 
 module.exports = app;
