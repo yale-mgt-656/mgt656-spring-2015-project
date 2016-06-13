@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/daunting-wood/mgt656-spring-2015-project.png?label=ready&title=Ready)](https://waffle.io/daunting-wood/mgt656-spring-2015-project)
+[![Stories in Ready](https://badge.waffle.io/daunting-wood/mgt656-spring-2015-project.png?label=ready&title=Ready)](https://waffle.io/daunting-wood/mgt656-spring-2015-project)
 # MGT 645 Project
 
 This is the starter project for MGT 645. You'll fork this
