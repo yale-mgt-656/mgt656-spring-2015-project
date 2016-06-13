@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <header>
+    <h1>Events</h1>
+    <h2>Look at all these options!!! Decisions, Decisions...</h2>
+  </header>
+{% endblock %}
+
 {% block mainContent %}
   <div>
     {% include "fragments/events-list.html" %}
@@ -10,9 +17,10 @@
 
 {% endblock %}
 
-{% block footer %}
+  {% block footer %}
   <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
+   The time is now {{time}}... when will you be at your next event?!
+    <a href="/about">About Team Young Frost</a>.
+    <a href="/">Take me home!</a>
   </footer>
 {% endblock %}

@@ -5,7 +5,7 @@
  */
 function index (request, response) {
   var contextData = {
-    'title': 'MGT 656',
+    'title': 'Team Young Frost',
     'tagline': 'You are doomed (just kidding).'
   };
   response.render('index.html', contextData);

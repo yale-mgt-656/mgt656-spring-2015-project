@@ -26,7 +26,12 @@ var allowedDateInfo = {
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016],
+  days: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+  ],
 };
 
 /**
@@ -45,7 +50,7 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event.html', contextData);
 }
 
@@ -57,13 +62,61 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 50) === false) {
+    contextData.errors.push('Your title should be between 1 and 50 letters.');
   }
 
+ if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be between 1 and 50 letters.');
+  }
+
+if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer.');
+  }
+
+if (validator.isInt(request.body.month) === false) {
+    contextData.errors.push('Your month should be an integer.');
+  }
+  
+  if (validator.isInt(request.body.day) === false) {
+    contextData.errors.push('Your day should be an integer.');
+  }
+
+if (validator.isInt(request.body.hour) === false) {
+    contextData.errors.push('Your hour should be an integer.');
+  }
+
+if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be a URL.');
+  }
+
+if (!request.body.image.match(/\.(png|gif)$/)) {
+    contextData.errors.push('Your image should be a png or gif file.');
+}
+
+var year = parseInt(request.body.year, 10);
+if (year > 2016 || year < 2015) {
+    contextData.errors.push('Your year should be 2015 or 2016.');
+  }
+
+var month = parseInt(request.body.month, 10);
+if (month > 11 || month < 0) {
+    contextData.errors.push('Your month should be between 0 and 11, inclusive.');
+  }
+
+var day = parseInt(request.body.day, 10);
+if (day > 31 || day < 1) {
+    contextData.errors.push('Your day should be between 1 and 31, inclusive.');
+  }
+
+var hour = parseInt(request.body.hour, 10);
+if (hour > 23 || hour < 0) {
+    contextData.errors.push('Your hour should be between 0 and 23, inclusive.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.getMaxId() + 1,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -71,7 +124,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect(302,'/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
