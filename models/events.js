@@ -32,6 +32,15 @@ var allEvents = [
     attending: ['kim.kardashian@yale.edu'],
   },
   {
+    id: 3,
+    title: 'Watching Paint Dry!',
+    date:   new Date(2015, 11, 2, 13, 0, 0),
+    image: 'http://i.imgur.com/CJLrRqh.gif',
+    location: 'Jeff\'s House',
+    attending: ['kim.kardashian@yale.edu'],
+  },
+  
+  {
     id: 4,
     title: 'Cooking lessons for the busy business student',
     date:   new Date(2014, 8, 2, 19, 0, 0),
