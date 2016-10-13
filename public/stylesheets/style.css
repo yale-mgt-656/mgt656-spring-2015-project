@@ -10,3 +10,9 @@ a {
 .form-errors {
 	color: red;
 }
+footer {
+  background-color: #fbe2b4 ;
+  padding: 1em;
+  margin: 2em 0;
+  
+}
