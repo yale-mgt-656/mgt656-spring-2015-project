@@ -38,7 +38,7 @@ function listEvents(request, response) {
     'events': events.all,
     'time': currentTime
   };
-  response.render('event.html', contextData);
+  response.render('events.html', contextData);
 }
 
 /**
