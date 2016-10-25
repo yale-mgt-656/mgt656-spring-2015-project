@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>{{title}}</title>
+   {% block stylesheet%}
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    {% endblock %}
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
@@ -12,7 +15,7 @@
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <section>Welcome to {{title}}! {{tagline}}</section>
     {% endblock %}
 
     {% block footer %}
