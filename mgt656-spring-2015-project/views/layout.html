@@ -3,15 +3,12 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
 
     {% block header %}
-      <header>
-        <h1> "Welcome to EventTite! (Default header)" </h1>
-      </header>
+      <header>Hey, I'm in the header</header>
     {% endblock %}
 
     {% block mainContent %}
@@ -19,10 +16,7 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>
-          <a href="/about">About Us</a> | 
-          <a href="/"Home">Home</a>
-      </footer>
+      <footer>This be the footer.</footer>
     {% endblock %}
 
   </body>
