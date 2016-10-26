@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 50px Helvetica, Arial, sans-serif;
 }
 h1 {
@@ -23,7 +23,7 @@ img {
 #banner {
     background:url('http://www.citi.io/wp-content/uploads/2015/08/1168-00-06.jpg');
     width:100%;
-    min-height:50px;
+    min-height:150px;
 }
 }
 a {
