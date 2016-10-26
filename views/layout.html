@@ -10,7 +10,7 @@
 
     {% block header %}
       <header>
-        <h1> "Welcome to EventTite! (This is this header for every page)" </h1>
+        <h1> "Welcome to EventTite! (Default header)" </h1>
       </header>
     {% endblock %}
 
@@ -20,9 +20,11 @@
 
     {% block footer %}
       <footer>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/">Return to Home</a></li>
-        </footer>
+        <nav>
+          <link> href="/about">About Us</a>
+          <link> href="/">Return to Home</a> 
+        </nav>
+      </footer>
     {% endblock %}
 
   </body>
