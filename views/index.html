@@ -2,18 +2,28 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>Powerful bang event app</h1>
   </header>
+  <img id="logo" src="pblogo.png" >
+  <br>
 {% endblock %}
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Welcome to the Powerful Bang Events app. Where dreams come true.
   </p>
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    Check out the <a href="/about">About us</a> page.<br>
+    Check out the <a href="/events">Events</a> page.
   </p>
+<strong>Events:</strong>
+  <ul>
+		<li class="event" id="event-1">Event 1</li>
+		<li class="event" id="event-2">Event 2</li>
+		<li class="event" id="event-3">Event 3</li>
+		<li class="event" id="event-4">Event 4</li>
+	</ul>
+  
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
