@@ -9,7 +9,9 @@
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+        <h1> "Welcome to EventTite! (This is this header for every page)" </h1>
+      </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -17,7 +19,10 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/">Return to Home</a></li>
+        </footer>
     {% endblock %}
 
   </body>
