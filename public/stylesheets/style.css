@@ -18,6 +18,11 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+#Wrapper {
+  background: #ADD8E6;
+}
 a {
   color: #00B7FF;
 }
