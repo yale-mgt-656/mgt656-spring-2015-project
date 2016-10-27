@@ -38,7 +38,7 @@ tests.
 
 	./node_modules/.bin/mocha
 
-That will run all the tests in `test/tests.js`.
+That will run all the tests in `test/tests.js`. 
 
 
 ## What we're using
