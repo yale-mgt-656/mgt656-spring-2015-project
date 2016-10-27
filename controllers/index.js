@@ -6,7 +6,7 @@
 function index (request, response) {
   var contextData = {
     'title': 'XCG Events',
-    'tagline': 'Not campus group'
+    'tagline': 'Not campus groups'
   };
   response.render('index.html', contextData);
 }
