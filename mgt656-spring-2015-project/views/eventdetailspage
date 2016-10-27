@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Event Details </title>
+    </head>
+    <body>
+    <h1> Event Title </h1>
+    <h2> <span> Event Date </span> 
+    Event Location </span> </h2>
+    </body>
+</html>
