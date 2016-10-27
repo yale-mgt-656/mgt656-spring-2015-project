@@ -26,6 +26,11 @@ img {
     min-height:150px;
 }
 
+.floatdown {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
 
 a {
   color: #00B7FF;
