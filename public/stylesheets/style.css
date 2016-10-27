@@ -20,3 +20,11 @@ footer {
   margin: 2em 0;
   
 }
+header { background-color:  #ff4c65;
+color: #eee;
+font-weight: bold;
+padding: 1em;
+margin: 2em 0;
+font-size: medium;
+text-align: center;
+}
