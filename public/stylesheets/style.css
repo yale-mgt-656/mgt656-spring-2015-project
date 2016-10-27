@@ -24,13 +24,13 @@ img {
     background:url('https://thumb9.shutterstock.com/display_pic_with_logo/2033162/348860096/stock-photo-festival-event-party-with-people-blurred-background-348860096.jpg');
     position: relative;
     width:100%;
-    min-height:150px;
+    min-height:200px;
 }
 
 .floatdown {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 40px;
 }
 
 a {
