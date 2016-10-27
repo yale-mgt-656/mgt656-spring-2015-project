@@ -22,6 +22,7 @@ img {
 
 #banner {
     background:url('https://thumb9.shutterstock.com/display_pic_with_logo/2033162/348860096/stock-photo-festival-event-party-with-people-blurred-background-348860096.jpg');
+    position: relative;
     width:100%;
     min-height:150px;
 }
