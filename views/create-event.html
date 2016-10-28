@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
-{% block mainContent %}
+<header>
+    <h1>{{ title }} FTW</h1>
+  </header>
+  
+
 
   {% if errors %}
     <div class="form-errors">
@@ -11,12 +15,15 @@
         {% endfor %}
       </ul>
     </div>
-  {% endif %}
+
 
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
   </form>
-{% endblock %}
 
 
+  <footer>
+    Look at me customize the footer. The time is now {{time}}.
+    <a href="/about">About us</a>.
+  </footer>
