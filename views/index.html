@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
-{% block header %}
+
   <header>
     <h1>{{ title }} FTW</h1>
   </header>
-{% endblock %}
+
 
 {% block mainContent %}
   <p>
@@ -19,3 +19,8 @@
     <a id="new" href="/events/new">Create a new event</a>
   </p>
 {% endblock %}
+
+  <footer>
+    Look at me customize the footer. The time is now {{time}}.
+    <a href="/about">About us</a>.
+  </footer>
