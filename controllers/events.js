@@ -51,14 +51,14 @@ function newEvent(request, response){
 }
 /**
  * Controller that renders a page for scrum reports.
- */
+ 
  
 function scrumReport(request, response){
   var contextData = {};
   response.render('scrumreport.html', contextData);
   
 }
-
+*/
 
 function checkIntRange(request, fieldname, minVal, maxVal, contextData){
   var value = null;
@@ -145,6 +145,5 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp
-  'scrumReport': scrumReport
   
 };
