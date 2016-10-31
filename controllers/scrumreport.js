@@ -3,11 +3,11 @@
 /**
  * Controller that renders our scrum report page.
  */
-function scrumReport (request, response) {
+function scrumReport1 (request, response) {
   var contextData = {};
-  response.render('scrumreport.html', contextData);
+  response.render('scrumreport1.html', contextData);
 }
 
 module.exports = {
-  scrumReport: scrumReport
+  scrumReport1: scrumReport1
 };
