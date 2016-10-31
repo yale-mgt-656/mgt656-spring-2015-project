@@ -2,14 +2,14 @@
 
  {% block header %}
       <header>
-        <h1> Welcome to EventTite! </h1>
+        <h1> Welcome to <span style="color:#FF3339";>EventTite!</span></h1>
       </header>
     {% endblock %}
 
 {% block mainContent %}
   <img id="logo" src="http://funkyimg.com/i/2iYs3.png"
-  <p></p><p> Check out our sweet list of events! </p>
-  <div style="border: 1px solid black">
+  <p></p><p><span style="font-size:16px";>Check out our sweet list of events!</span> </p>
+  <div>
     {% include "fragments/events-list.html" %}
   </div>
   <p></p>

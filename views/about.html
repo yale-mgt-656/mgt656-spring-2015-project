@@ -1,22 +1,23 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-    <div style="font-size:16px"><br>
-    
     <span style="font-size:20px">Meet our team!</span><br><br>
-    <p>
-        <span id="a-b-name">Victoria Chen</span><br>
-        <img id="a-b-headshot" src="IMAGESOURCEURLHERE"
-    </p><p>
-        <span id="a-b-name">Ramya Gopal</span><br>
-        <img id="a-b-headshot" src="IMAGESOURCEURLHERE"
-    </p><p>
-         <span id="encouraging-porcupine-name">Leah Karlins</span><br>
-         <img id="encouraging-porcupine-headshot" src="http://funkyimg.com/i/2iYCb.jpg"
-    </p><p>
-         <span id="a-b-name">Gita Ramamurti</span><br>
-        <img id="a-b-headshot" src="IMAGESOURCEURLHERE"
-    </div>
+
+    <table style="width:100%">
+        <tr></tr>
+            <td align="center"><span id="a-b-name">Victoria Chen</span></td>
+            <td align="center"><span id="a-b-name">Ramya Gopal</span></td>
+            <td align="center"><span id="encouraging-porcupine-name">Leah Karlins</span></td>
+            <td align="center"><span id="a-b-name">Gita Ramamurti</span><br></td>
+        </tr>
+        <tr>
+            <td align="center"><img id="a-b-headshot" src="http://funkyimg.com/i/2iYDF.png"</td>
+            <td align="center"><img id="a-b-headshot" src="http://funkyimg.com/i/2iYDa.jpg"</td>
+            <td align="center"><img id="encouraging-porcupine-headshot" src="http://funkyimg.com/i/2iYCb.jpg"</td>
+            <td align="center"><img id="a-b-headshot" src="http://funkyimg.com/i/2iYDc.png"</td>
+        </tr>
+    </table>
+ 
 {% endblock %}
 
 your names, each in a span tag with id attribute set to your class nickname with a -name suffix, e.g. "fast-lion-name".
