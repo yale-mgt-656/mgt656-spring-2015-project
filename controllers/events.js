@@ -49,16 +49,7 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
   
 }
-/**
- * Controller that renders a page for scrum reports.
- 
- 
-function scrumReport(request, response){
-  var contextData = {};
-  response.render('scrumreport.html', contextData);
-  
-}
-*/
+
 
 function checkIntRange(request, fieldname, minVal, maxVal, contextData){
   var value = null;
@@ -79,6 +70,7 @@ if (value > maxVal || value < minVal) {
  * Validates the form and adds the new event to
  * our global list of events.
  */
+ 
 function saveEvent(request, response){
   var contextData = {errors: []};
 
