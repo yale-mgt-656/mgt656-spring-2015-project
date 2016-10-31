@@ -1,6 +1,6 @@
 body {
   padding: 0px;
-  font: 50px Helvetica, Arial, sans-serif;
+  font: 50px Gotham, sans-serif;
 }
 h1 {
   text-indent: 20px;
@@ -24,7 +24,7 @@ img {
     background:url('https://image.freepik.com/free-vector/silhouettes-of-people-dancing_1048-620.jpg');
     position: relative;
     width:100%;
-    min-height:200px;
+    min-height:250px;
 }
 
 .floatdown {
