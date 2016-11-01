@@ -54,7 +54,7 @@ function newEvent(request, response){
 function checkIntRange(request, fieldname, minVal, maxVal, contextData){
   var value = null;
   if (validator.isInt(request.body[fieldname]) === false) {
-    contextData.errors.push('Your'+ fieldname + ' year should be an integer.');
+    contextData.errors.push('Your '+ fieldname + ' should be an integer.');
   }else{
 
 value = parseInt(request.body[fieldname], 10);
