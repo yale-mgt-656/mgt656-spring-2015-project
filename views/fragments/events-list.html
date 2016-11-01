@@ -4,12 +4,15 @@
       <a href = “/events/{{event.id}}”>{{event.title}}.</a>
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
-<!--Email RSVP form - to be copied into events detail page-->
+<!--Email RSVP form to be moved to event details page-->
     <form method=post>
       Email:<br>
-      <input type="email" name="email" pattern="+yale.edu"><br>
+      <input type="email" name="email"><br>
     <input type="submit" value="Submit">
     </form>
+
+  {% endif %}
+  
 <!--End Email RSVP form-->
     </li>
   {% endfor %}
