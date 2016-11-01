@@ -91,7 +91,7 @@ function eventDetail (request, response) {
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    response.status(404).send('Please add valid email address');
   }
 
   if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") !== -1) {
@@ -116,3 +116,4 @@ module.exports = {
   'saveEvent': saveEvent,
   'rsvp': rsvp
 };
+
