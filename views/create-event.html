@@ -3,8 +3,9 @@
 {% block mainContent %}
 
   {% if errors %}
+  <h1>Create an Event!</h1>
     <div class="form-errors">
-      <p>Please correct the following errors!</p>
+      <p>Please correct the following errors!</
       <ul>
         {% for error in errors %}
           <li>{{error}}</li>
@@ -17,6 +18,8 @@
     <label for="title">Event title:</label>
     <input type="text" name="title">
   </form>
+  <footer> <a href="https://mgt-656-shy-haze.herokuapp.com/about" id="logo">About Us</a>
+  <a href="https://mgt-656-shy-haze.herokuapp.com/" id="logo">Home</a></footer>
 {% endblock %}
 
 
