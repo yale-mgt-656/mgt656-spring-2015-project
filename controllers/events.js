@@ -71,7 +71,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events'+events.all.length);
   }else{
     response.render('create-event.html', contextData);
   }
