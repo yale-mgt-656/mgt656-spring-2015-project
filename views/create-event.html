@@ -34,16 +34,25 @@
     <input type="Int" name="Day">
     
      <label for="Hour">Event Hour:</label>
-    <input type="Int" name="Hour">
+    <!--<input type="Int" name="Hour"> -->
+    
+    <select name="Hour">
+  <option value="hours">{{allowedDateInfo[hours]}}</option>
+  
+</select>
     
      <label for="minute">Event minute:</label>
-    <input type="Int" name="minute">
+    <!--<input type="Int" name="minute"> 
     
-    <select name="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
+    How to check the input types?
+    How to add drop down menus to select from
+    How to create new event page and see it with the new /id
+    
+    -->
+    
+    <select name="minute">
+  <option value="0">0</option>
+  <option value="30">30</option>
 </select>
     
     <input type="submit" id="submit">

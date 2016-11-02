@@ -10,7 +10,7 @@ var allEvents = [
     // Note that JavaScript months are zero-indexed,
     // so, month zero is January. This is Jan 17th
     // 2013 at 4:30pm local time.
-    date:   new Date(2016, 0, 17, 16, 30, 0),
+    date:   new Date(2016, 11, 17, 16, 30, 0),
     image: 'http://i.imgur.com/pXjrQ.gif',
     location: 'Kyle \'s house',
     attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
@@ -18,7 +18,7 @@ var allEvents = [
   {
     id: 1,
     title: 'BBQ party for hackers and nerds',
-    date:   new Date(2015, 8, 1, 19, 0, 0),
+    date:   new Date(2016, 11, 10, 19, 0, 0),
     image: 'http://i.imgur.com/7pe2k.gif',
     location: 'Miles\' house',
     attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
