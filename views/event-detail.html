@@ -1,7 +1,30 @@
  {% extends "layout.html" %}
  
+ {% block header %}
+      <header>
+        <h1> <span style="color:#119999";>Event Details! </span></h1>
+      </header>
+    {% endblock %}
+    
+    getById (1)
+    
+ {% block mainContent %}
+  <h2> <span style="font-size:14px";> Event Title: </span></h2>
+   <p></p>
+   When: <span style="color:#018899";> <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </span>
+   <p></p>
+   Where: <span style="color:#018899";> <location location="{{event.location}}"></location> </span>
+  <p></p>
+  Attendees: 
+  <p></p>
+    
  <form method=post>
-      Email:<br>
+      Interested in attending? RSVP by entering your email address below! <br>
+      <p></p>
       <input type="email" name="email"><br>
+      <p></p>
     <input type="submit" value="Submit">
     </form>
+
+{% endblock %}
+    
