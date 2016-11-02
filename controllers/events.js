@@ -66,7 +66,12 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.year, 2015, 2016) === false) {
     contextData.errors.push('year must be 2015 or 2016');
   }
-  
+  if (request.body.image.endsWith(".gif") or request.body.image.endsWith(".png")  ) {
+    contextData.errors.push('image format MUST be .gif or .png');
+  }  
+  if (request.body.image.startsWith("http://") or request.body.image.startsWith("https://")  ) {
+    contextData.errors.push('image url must begin with http:// or https://');
+  }  
 
 
   if (contextData.errors.length === 0) {
