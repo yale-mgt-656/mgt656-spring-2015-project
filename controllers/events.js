@@ -60,7 +60,10 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
+  
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -91,7 +94,7 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") !== -1) {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
