@@ -58,8 +58,15 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
+  if (validator.isLength(request.body.location, 0, 50) === false) {
+    contextData.errors.push('Your location should be shorter than 50 letters.');
+  }
+  if (validator.isLength(request.body.year, 2015, 2016) === false) {
+    contextData.errors.push('year must be 2015 or 2016');
+  }
+  
 
 
   if (contextData.errors.length === 0) {
