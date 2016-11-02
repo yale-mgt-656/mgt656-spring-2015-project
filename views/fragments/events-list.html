@@ -1,9 +1,15 @@
+<div style="font-size:20 px"> 
 <ul>
   {% for event in events %}
     <li class = "event" id="event-{{event.id}}">
       <a href = “/events/{{event.id}}”>{{event.title}}.</a>
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
+    </li>
+  {% endfor %}
+</ul>
+</div>
+
 <!--Email RSVP form to be moved to event details page-->
     <form method=post>
       Email:<br>
@@ -12,6 +18,3 @@
     </form>
   
 <!--End Email RSVP form-->
-    </li>
-  {% endfor %}
-</ul>
