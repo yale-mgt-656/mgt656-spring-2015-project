@@ -82,10 +82,11 @@ function saveEvent(request, response){
 
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {event: ev}
   if (ev === null) {
     response.status(404).send('No such event');
   }
-  response.render('event-detail.html', {event: ev});
+  response.render('event-detail.html', contextData);
 }
 
 function rsvp (request, response){
@@ -94,16 +95,19 @@ function rsvp (request, response){
     response.status(404).send('Please add valid email address');
   }
 
-  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") !== -1) {
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('@yale.edu') !== -1) {
+     ev.attending.push(request.body.email);
+     response.redirect('/events/' + ev.id);
   }else{
+    console.log("inside false");
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
+    console.log("before rendering");
     response.render('event-detail.html', contextData);    
   }
 
 }
+
 
 /**
  * Export all our functions (controllers in this case, because they
