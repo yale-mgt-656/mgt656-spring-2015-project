@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
+  <body style="background-color:#EBDEF0;">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+       <h1>About Us</h1> 
+      </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -16,7 +21,10 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+          <a href="/about">About Us</a> | 
+          <a href="/"Home">Home</a>
+      </footer>
     {% endblock %}
 
   </body>
