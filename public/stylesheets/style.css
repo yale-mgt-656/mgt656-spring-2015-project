@@ -1,12 +1,30 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 75px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fbe2b4;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+.header {
+  font: 40px; 
 }
+  
+
 
 .form-errors {
 	color: red;
+}
+footer {
+  background-color: #fbe2b4 ;
+  padding: 1em;
+  margin: 2em 0;
+  
+}
+header { background-color:  #ff4c65;
+color: #eee;
+font-weight: bold;
+padding: 1em;
+margin: 2em 0;
+font-size: medium;
+text-align: center;
 }
