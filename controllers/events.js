@@ -70,8 +70,17 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
+  if (validator.isLength(request.body.title, 0, 0) === true) {
+    contextData.errors.push('Your title should not be empty');
+  }
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 characters');
+  }
+  if (validator.isLength(request.body.location, 0, 0) === true) {
+    contextData.errors.push('Your location should not be empty');
+  }
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be less than 50 characters');
   }
   
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
@@ -80,7 +89,7 @@ function saveEvent(request, response){
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
   
   if (request.body.image.endsWith(".gif")== false && request.body.image.endsWith(".png")==false) {
-    contextData.errors.push('image format MUST be .gif or .png');
+    contextData.errors.push('image format must be .gif or .png');
   }  
   if (request.body.image.startsWith("http://")== false && request.body.image.startsWith("https://")==false  ) {
     contextData.errors.push('image url must begin with http:// or https://');
