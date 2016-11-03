@@ -76,25 +76,9 @@ function saveEvent(request, response){
   
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
   var month = checkIntRange(request, 'month', 0, 11, contextData);
-  var day = checkIntRange(request, 'day', 0, 31, contextData);
+  var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
   
-  
-  if (validator.isInt(request.body.year) === false) {
-    contextData.errors.push('Your year should be an integer.');
-  }
-  var year = parseInt(request.body.year, 10);
-  if (year > 2016 || year <2015) {
-    contextData.errors.push('Your year should be 2015 or 2016.');
-  }  
-  
-  
-  if (validator.isInt(request.body.year, {min: 2015, max: 2016}) == false) {
-    contextData.errors.push('Your year should be an integer.');
-  } 
-  if (request.body.year!=2015 && request.body.year!=2016) {
-    contextData.errors.push('year must be 2015 or 2016');
-  }
   if (request.body.image.endsWith(".gif")== false && request.body.image.endsWith(".png")==false) {
     contextData.errors.push('image format MUST be .gif or .png');
   }  
