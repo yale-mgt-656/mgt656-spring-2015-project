@@ -2,18 +2,25 @@
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>{{ title }}</h1>
   </header>
+  <img id="logo" src="images/pblogo.png" height=250px >
+  <br>
 {% endblock %}
+
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Welcome to {{ title }}. {{ tagline }}
   </p>
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    Check out the <a href="/about">About us</a> page.<br>
+    Check out the <a href="/events">Events</a> page.
   </p>
+  <p>List of events:</p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
