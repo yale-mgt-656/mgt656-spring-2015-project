@@ -49,6 +49,19 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null;
+  if (validator.isInt(request.body[fieldName]) === false) {
+    contextData.errors.push('Your ' + fieldName + 'year should be an integer.');
+  }else{
+    value = parseInt(request.body[fieldName], 10);
+    if (value > maxVal || value <minVal) {
+      contextData.errors.push('Your ' + fieldName + 'should be in the range ' + minVal + '-' + maxVal + '.');
+    }
+  }
+  return value;
+}
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -58,7 +71,7 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 50 letters.');
+    contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
   if (validator.isInt(request.body.year) === false) {
     contextData.errors.push('Your year should be an integer.');

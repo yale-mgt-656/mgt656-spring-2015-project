@@ -15,18 +15,16 @@
 
 	<form id="create-event" method="POST">
     <label for="title">Event Title:</label>
-    <input type="text" name="title">
+    <input type="text" name="title" id="title">
     <br>
     <label for="location"> Event Location: </label>
-    <input type="text" name="location">
-    <br>
-    <label for="title"> Event Title: </label>
-    <input type="text" name="title">
+    <input type="text" name="location" id="location">
     <br>
     <label for="image"> Event Image: </label>
-    <input type="text" name="image">
+    <input type="text" name="image" id="image">
     <br>
-  <label for="year"> Year </label> <select name="year">
+  <label for="year"> Year </label> 
+  <select name="year">
     <option value="2015">2015</option>
     <option value="2016">2016</option>
 <!-- we will rule out the following options, both here and in the validation js. -Leo --> 
@@ -35,8 +33,9 @@
     <option value="2020">2020</option>
     <option value="2021">2021</option> -->
   </select> <br>
-  <label for="month"> Month </label> <select name="month">
-    <option value="0">January</option>
+  <label for="month"> Month </label> 
+  <select name="month">
+    <option value=0>January</option>
     <option value="1">February</option>
     <option value="2">March</option>
     <option value="3">April</option>
