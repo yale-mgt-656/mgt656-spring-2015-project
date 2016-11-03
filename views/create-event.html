@@ -2,6 +2,8 @@
 
 {% block mainContent %}
 
+
+
   {% if errors %}
   <!DOCTYPE html>
     <div class="form-errors">
@@ -30,15 +32,15 @@
      <label for="month">Event month:</label>
     <input type="Int" name="month">
     
-     <label for="Day">Event Day:</label>
+     <label for="Day">Event day:</label>
     <input type="Int" name="Day">
     
-     <label for="Hour">Event Hour:</label>
+     <label for="Hour">Event hour:</label>
     <!--<input type="Int" name="Hour"> -->
     
     <select name="Hour">
-  <option value="hours">{{allowedDateInfo[hours]}}</option>
-  
+  <option value="1">1</option>
+  <option value="2">2</option>
 </select>
     
      <label for="minute">Event minute:</label>
