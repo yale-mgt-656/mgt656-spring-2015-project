@@ -63,10 +63,10 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.location, 0, 50) === false) {
     contextData.errors.push('Your location should be shorter than 50 letters.');
   }
-  if (request.body.year!=2015 && request.body.year!=2016) === false) {
+  if (request.body.year!=2015 && request.body.year!=2016) {
     contextData.errors.push('year must be 2015 or 2016');
   }
-  if (request.body.image.endsWith(".gif")== false && request.body.image.endsWith(".png")==false ) {
+  if (request.body.image.endsWith(".gif")== false && request.body.image.endsWith(".png")==false) {
     contextData.errors.push('image format MUST be .gif or .png');
   }  
   if (request.body.image.startsWith("http://")== false && request.body.image.startsWith("https://")==false  ) {
