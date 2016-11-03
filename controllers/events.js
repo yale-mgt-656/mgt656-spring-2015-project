@@ -80,7 +80,11 @@ function saveEvent(request, response){
 if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 50 letters.');
   }  
+  if ((request.body.minute) != 0 || (request.body.minute)!=30){
+    contextData.errors.push('Your events should start at the beggining of the hour/ half hour mark');
+  }
   
+  var minute = request.body.minute
   var year = checkIntRange(request, year, 2015, 2016, contextData);
   var month = checkIntRange(request, month, 0, 11, contextData);
 var hour = checkIntRange(request, hour, 0, 23, contextData);
