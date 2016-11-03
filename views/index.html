@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
-{% endblock %}
+ {% block header %}
+      <header>
+        <h1> Welcome to <span style="color:#FF3339";>EventTite!</span></h1>
+      </header>
+    {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
+  <img id="logo" src="http://funkyimg.com/i/2iYs3.png"
+  <p></p><p><span style="font-size:16px";>Check out our sweet list of events!</span> </p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
+  <p></p>
+   <p style="font-size:16px">
+    Planning an event? <a id="new" href="/events/new">Create a new event</a> today!
   </p>
 {% endblock %}

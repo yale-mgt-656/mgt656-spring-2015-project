@@ -49,6 +49,20 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function checkIntrange(request, fieldname, minval, maxval, contextData){
+  var value = null;
+  if (validator.isInt(request.body[fieldname]) == false){
+    contextData.errors.push('Your ' + fieldname + ' should be an integer.');
+  }else{
+    value = parseInt(request.body[fieldname], 10);
+    if (value > maxval || value < minval) {
+      contextData.errors.push('Your ' + fieldname + ' should be in the range ' + minval + '-' + maxval);
+    }
+      
+    }
+    return value;
+  }
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -60,7 +74,8 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
+  
+ var year = checkIntrange(request, 'year', 2015, 2016, contextData);
 
   if (contextData.errors.length === 0) {
     var newEvent = {
@@ -91,7 +106,7 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("@yale.edu") !== -1) {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
