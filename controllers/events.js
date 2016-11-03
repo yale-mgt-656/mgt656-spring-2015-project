@@ -73,7 +73,6 @@ function saveEvent(request, response){
     contextData.errors.push('image url must begin with http:// or https://');
   }  
 
-
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
