@@ -3,12 +3,14 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>XCG: Simple event management to get things done.</header>
+
     {% endblock %}
 
     {% block mainContent %}
@@ -16,7 +18,10 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+        <a href="/">Home</a> &gt; <a href="/about">About our company</a>
+        
+      </footer>
     {% endblock %}
 
   </body>
