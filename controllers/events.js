@@ -60,9 +60,18 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
-  if (validator.isLength(request.body.location, 0, 50) === false) {
-    contextData.errors.push('Your location should be shorter than 50 letters.');
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer.');
   }
+  var year = parseInt(request.body.year, 10);
+  if (year > 2016 || year <2015) {
+    contextData.errors.push('Your year should be 2015 or 2016.');
+  }  
+  
+  
+  if (validator.isInt(request.body.year, {min: 2015, max: 2016}) == false) {
+    contextData.errors.push('Your year should be an integer.');
+  } 
   if (request.body.year!=2015 && request.body.year!=2016) {
     contextData.errors.push('year must be 2015 or 2016');
   }
