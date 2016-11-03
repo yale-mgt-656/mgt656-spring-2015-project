@@ -1,12 +1,10 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
-{% endblock %}
-
 {% block mainContent %}
+   <p>
+    <img id="logo" src="wildflower.png" alt="Wildflower" style="width:400px;height:90px;">
+  </p>
+  
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
@@ -17,4 +15,5 @@
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+  
 {% endblock %}
