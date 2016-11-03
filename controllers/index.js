@@ -8,7 +8,8 @@ var events  = require('../models/events');
 function index (request, response) {
   var contextData = {
     'title': 'XCG Events',
-    'tagline': 'Not campus groups'
+    'tagline': 'Not campus groups',
+    'events': events.all
   };
   response.render('index.html', contextData);
 }
