@@ -6,9 +6,9 @@
 
   {% if errors %}
   <!DOCTYPE html>
-    <div class="form-errors">
+    <div class="form-errors-wrapper">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
