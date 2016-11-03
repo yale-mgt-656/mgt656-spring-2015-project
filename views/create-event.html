@@ -13,10 +13,129 @@
     </div>
   {% endif %}
 
+<div class="container">
+  
+	
 	<form id="create-event" method="POST">
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
+	
+	<fieldset>
+	  <legend>Create Your Event</legend>
+  
+    <div class="form-group">
+    
+	  <label for="title">Event title:</label>
+    <input type="text" class="form-control" placeholder="1-50 characters" name="title"><br>
+    <label for="location">Event location:</label>
+    <input type="text" class="form-control" placeholder="1-50 characters" name="location"><br>
+    <label for="image">Event image:</label>
+    <input type="url" class="form-control" placeholder="URL" name="image"><br>
+    
+    <label for="Year">Event Year:</label>
+    <select name="Year" class="form-control">
+    <option value=''>--Select Year--</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    </select><br>
+    
+    <label for="Month">Event Month:</label>
+    <select name="Month" class="form-control">
+    <option value=''>--Select Month--</option>
+    <option value='1'>January</option>
+    <option value='2'>February</option>
+    <option value='3'>March</option>
+    <option value='4'>April</option>
+    <option value='5'>May</option>
+    <option value='6'>June</option>
+    <option value='7'>July</option>
+    <option value='8'>August</option>
+    <option value='9'>September</option>
+    <option value='10'>October</option>
+    <option value='11'>November</option>
+    <option value='12'>December</option>
+    </select><br>
+    
+    <label for="Day">Event Day:</label>
+    <select name="Day" class="form-control">
+    <option value=''>--Select Day--</option>
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    </select><br>
+    
+    <label for="Hour">Event Hour:</label>
+    <select name="Hour" class="form-control">
+    <option value=''>--Select Hour--</option>
+    <option value='00'>00</option>
+    <option value='01'>01</option>
+    <option value='02'>02</option>
+    <option value='03'>03</option>
+    <option value='04'>04</option>
+    <option value='05'>05</option>
+    <option value='06'>06</option>
+    <option value='07'>07</option>
+    <option value='08'>08</option>
+    <option value='09'>09</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    </select><br>
+    
+    <label for="Minute">Event Minute:</label>
+    <select name="Minute" class="form-control">
+    <option value=''>--Select Minute--</option>
+    <option value='00'>00</option>
+    <option value='30'>30</option>
+    </select><br><br>
+    
+    <label for="Submit"></label>
+    <input type="submit" value="Submit" class="btn btn-default">
+    
+    </div>
+    
+  </fieldset>    
+    
   </form>
+  
+</div>
 {% endblock %}
 
 
