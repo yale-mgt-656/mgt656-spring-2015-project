@@ -1,14 +1,16 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
 }
 
 .form-errors {
 	color: red;
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
 }
 
 footer {
@@ -16,4 +18,12 @@ footer {
   padding: 1em;
   border: 1px solid #ddd;
   margin: 2em 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.image-caption {
+  text-align: center;
 }
