@@ -17,21 +17,15 @@
     <!-- NOT YET IMPLEMENTED <span id="location">{{event.location}}</span> -->
 	<!-- IMAGE HERE -->
 	<ul>
-	    {% for event in events %}
+	    {% for people in event.attending %}
         <li>
-          {{event.attending}}
+          {{people}}
         </li>
-<<<<<<< HEAD
         {% endfor %}
     </ul>
-    
   <form id="email" method="POST">
     E-mail:
     <input type="email" name="email">
-    <input type="submit">
+    <input type="submit" value="RSVP">
   </form>
-=======
-      {% endfor %}
-  </ul>
->>>>>>> 2bc0a476f48be501579a0c8f4273de1cce791906
 {% endblock %}

@@ -125,22 +125,21 @@ function rsvp (request, response){
   }
 var flag=0;
   if(validator.isEmail(request.body.email)){
-    /*var flag=0;
-    for(var i=request.body.email.length-1;i>=0;i--){
-          if(request.body.email[i]=='@'){
-            flag=1;
-          }*/
+          flag=1;
           var temp=request.body.email.toLowerCase();
           var check=temp.includes("yale.edu");
-          if(check==true)flag=1;
+          if(check==true)flag=2;
   }
-  if(flag==1){
+  if(flag==2){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  }
+  else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(flag==1)contextData.errors.push('Not a Yale student!');
+    else contextData.errors.push('Invalid email');
+    
+    response.render('event-detail.html', contextData); 
   }
 
 }
