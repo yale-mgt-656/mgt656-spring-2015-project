@@ -127,8 +127,10 @@ var flag=0;
   if(validator.isEmail(request.body.email)){
           flag=1;
           var temp=request.body.email.toLowerCase();
-          var check=temp.includes("yale.edu");
-          if(check==true)flag=2;
+          if(temp.includes("yale.edu")){
+              temp=temp.slice(0,temp.length-8);
+              if(temp[temp.length-1]=='@')flag=2;
+          }
   }
   if(flag==2){
     ev.attending.push(request.body.email);
@@ -136,9 +138,8 @@ var flag=0;
   }
   else{
     var contextData = {errors: [], event: ev};
-    if(flag==1)contextData.errors.push('Not a Yale student!');
+    if(flag==1)contextData.errors.push('RSVP from joker at Harvard should have been rejected.');
     else contextData.errors.push('Invalid email');
-    
     response.render('event-detail.html', contextData); 
   }
 
