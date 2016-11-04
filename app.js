@@ -8,7 +8,7 @@ var configure = require('./config.js');
 var indexControllers = require('./controllers/index.js');
 var aboutControllers = require('./controllers/about.js');
 var eventControllers = require('./controllers/events.js');
-var docControllers = require('./controllers/documentation.js');
+//var docControllers = require('./controllers/documentation.js');
 
 // Create our express app
 var app = express();

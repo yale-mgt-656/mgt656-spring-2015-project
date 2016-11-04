@@ -22,17 +22,20 @@
 </ul>
 <script>
     $(document).ready(function(){
-      //  alert("I worked!");
         $('#link3').click(function(){
-      //if($("#sprint3").css('display')=="none") {
-            if($("#sprint3").is(":hidden")){
+      if($("#sprint3").css('display')=="none") {
+        //    if($("#sprint3").is(":hidden")){
                $('#sprint3').show();
+                       //alert("I worked!");
+                    
+                  // $("#sprint3").style.display="block";
                 }
+                else  $('#sprint3').hide();
             });
     });
 </script>
 <a href="" id="link3">sprint3</a>
-<span id="sprint3" style="display:none">
+<div id="sprint3" style="display:none">
     <h1>Sprint 3 Documentation</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
@@ -84,7 +87,7 @@
         </ul>
         
     <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
-</span>
+</div>
 <!--//////////////////////////sprint 2/////////////////////-->
 <span id="sprint2">
     <h1>Sprint2 Documentation</h1>
