@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+  {% if errors %}
+    <div>
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+    <h1 id="title">{{event.title}}</h1>
+    <span id="date">{{event.date}}</span>
+    <!-- NOT YET IMPLEMENTED <span id="location">{{event.location}}</span> -->
+    <span id="location">{{event.location}}</span>
+    <img src="{{event.image}}" id="image">
+	<!-- IMAGE HERE -->
+	<ul id="attendees">
+	    {% for people in event.attending %}
+        <li>
+          {{people}}
+        </li>
+        {% endfor %}
+    </ul>
+  <form id="email" method="POST">
+    E-mail:
+    <input type="email" name="email">
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}

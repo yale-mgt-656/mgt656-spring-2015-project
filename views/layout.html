@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>{{title}}</title>
+   {% block stylesheet%}
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    {% endblock %}
   </head>
-
+<script src="jquery/dist/jquery.min.js"></script>
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>C U THERE, I'm in!</header>
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <section>Welcome to {{title}}! {{tagline}}</section>
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>Learn more <a href="/about">about us!</a> We'll <a href="/">C U There!</a> outer nova inc.</footer>
     {% endblock %}
 
   </body>
