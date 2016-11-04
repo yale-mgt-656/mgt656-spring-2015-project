@@ -26,7 +26,17 @@
         Stephanie Hickman: stephanie.hickman@yale.edu
     </li>
 </ul>
-<a href="" id="link3" onclick="sprint('sprint3')">sprint3</a>
+<script>
+var $ = require('jquery');
+function sprint(){
+    $('link3').click({function(){
+        $('sprint3').toggle();
+    }
+    });
+    
+}
+</script>
+<a href="" id="link3" onclick="sprint()">sprint3</a>
 <span id="sprint3" style="display:none">
     <h1>Sprint 3 Documentation</h1>
     <h3> Burn Down Chart </h3>
