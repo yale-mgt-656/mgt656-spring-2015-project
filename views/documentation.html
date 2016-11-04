@@ -27,16 +27,21 @@
     </li>
 </ul>
 <script>
-var $ = require('jquery');
-function sprint(){
-    $('link3').click({function(){
-        $('sprint3').toggle();
-    }
-    });
-    
-}
+
+    $(document).ready(function(){
+      //  alert("I worked!");
+        $('#link3').click(function(){
+      //     if($("#sprint3").css('display')=="none") {
+        if($("#sprint3").is(":hidden")){
+
+               $('#sprint3').show();
+           }
+        }
+        );
+});
+
 </script>
-<a href="" id="link3" onclick="sprint()">sprint3</a>
+<a href="" id="link3">sprint3</a>
 <span id="sprint3" style="display:none">
     <h1>Sprint 3 Documentation</h1>
     <h3> Burn Down Chart </h3>
