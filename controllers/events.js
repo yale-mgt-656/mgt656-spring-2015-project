@@ -88,6 +88,10 @@ function saveEvent(request, response){
   if (validator.isURL(request.body.image) === false) {
     contextData.errors.push('Your image should be a url.');
   }
+  
+   if (validator.contains(request.body.image, '.gif' || '.png') === false) {
+    contextData.errors.push('Your image should be a url.');
+  }
 
 var year = checkIntRange(request, 'year', 2015, 2016, contextData);
 
