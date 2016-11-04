@@ -7,7 +7,7 @@
 {% block header %}
   <header>
     <h1> MGT 656 Management of Software Development </h1>
-    <h2> Project Status Report // Thursday, October 27, 2016 </h2>
+    <h2> Project Status Report 
     <h3> Outer Nova </h3>
   </header>
 {% endblock %}
@@ -21,26 +21,29 @@
     <li>Stephanie Hickman: stephanie.hickman@yale.edu</li>
 </ul>
 <script>
+var check=0;
     $(document).ready(function(){
         $('#link3').click(function(){
-      if($("#sprint3").css('display')=="none") {
-        //    if($("#sprint3").is(":hidden")){
-               $('#sprint3').show();
-                       //alert("I worked!");
-                    
-                  // $("#sprint3").style.display="block";
-                }
-                else  $('#sprint3').hide();
-            });
+            $('#sprint2').hide();
+            if($("#sprint3").css('display')=="none")$('#sprint3').show();
+            else  $('#sprint3').hide();
+        });
+        $('#link2').click(function(){
+            $('#sprint3').hide();
+            if($("#sprint2").css('display')=="none")$('#sprint2').show();
+            else  $('#sprint2').hide();
+        });
+        
     });
 </script>
-<!--
-<a href="" id="link3">sprint3</a>
-<div id="sprint3" style="display:none">
--->
-<span id="sprint3">
+<h2>Sprint Reports</h2>
+<ul>
+    <li><a href="#" id="link3">Sprint3 Report</a></li>
+    <li><a href="#" id="link2">Sprint2 Report</a></li>
+</ul>
+<span id="sprint3" style="display:none">
 
-    <h1>Sprint 3 Documentation</h1>
+    <h1>Sprint 3 Documentation (Nov.1, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
             <li>Make the current events appear on the home page</li>
@@ -93,8 +96,8 @@
     <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
 </span>
 <!--//////////////////////////sprint 2/////////////////////-->
-<span id="sprint2">
-    <h1>Sprint2 Documentation</h1>
+<span id="sprint2" style="display:none">
+    <h1>Sprint2 Documentation(Oct.27, 2016)</h1>
     <h3> Burn Down Chart </h3>
     <img src='/pictures/BurnDownChartSprint2.png' height="400px" width="600px">
     <h3> Completed Stories in this Sprint(in priority order)</h3>
