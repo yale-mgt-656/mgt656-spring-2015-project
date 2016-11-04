@@ -89,7 +89,7 @@ function saveEvent(request, response){
     contextData.errors.push('Your image should be a url.');
   }
   
-   if (validator.contains(request.body.image, '.gif || .png') === false) {
+   if (validator.contains(request.body.image, '.gif' || '.png') === false) {
     contextData.errors.push('Your image should be a gif or png file.');
   }
 
