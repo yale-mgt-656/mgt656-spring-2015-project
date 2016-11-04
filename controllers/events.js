@@ -90,7 +90,7 @@ function saveEvent(request, response){
   }
   
    if (validator.contains(request.body.image, '.gif' || '.png') === false) {
-    contextData.errors.push('Your image should be a url.');
+    contextData.errors.push('Your image should be a gif or png file.');
   }
 
 var year = checkIntRange(request, 'year', 2015, 2016, contextData);
