@@ -3,24 +3,31 @@
 {% block mainContent %}
 <!DOCTYPE html>
  
+ <style>
+div { width: 100%; 
+ background-color: #e0bbba; }
+</style>
  
- <header>
-    <h1>
+    
 
-    trying out the event detail page
+  
+  <div>
+  <ul>
+  
+    <li class="event" id="event-{{event.id}}">
+      <p>Event: {{event.title}}</p> <br/>
+      <p> <img src="{{event.image}}"> </p> <br/>
+      <p >Event Location: {{event.location}}</p> <br/>
+      <p >Who is attending? {{event.attending}}</p> <br/>
+      <p> When: <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </p> <br/>
+      
+      
+    </li>
+  
+</ul>
+</div>
  
  
- 
-    </h1>
-  </header>
-  
-  
-  <p>I hope it works!</p>
-  
-  <script>
-  function getById() {}
-  </script>
-  <script src="models/events.js"></script>
   
   
   
