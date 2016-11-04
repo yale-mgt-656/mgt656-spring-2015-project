@@ -86,9 +86,9 @@ var year = checkIntRange(request, 'year', 2015, 2016, contextData);
 
 var month = checkIntRange(request, 'month', 0, 11, contextData);
 
-var day = checkIntRange(request, 'Day', 1, 31, contextData);
+var day = checkIntRange(request, 'day', 1, 31, contextData);
 
-var hour = checkIntRange(request, 'Hour', 0, 23, contextData);
+var hour = checkIntRange(request, 'hour', 0, 23, contextData);
 
   
   if (contextData.errors.length === 0) {
