@@ -26,5 +26,6 @@ app.get('/api/events', eventControllers.api);
 //app.post('/docreport1', docControllers.sprint);
 
 app.post('/events/new', eventControllers.saveEvent);
+app.get('/events/event.id', eventControllers.eventDetail);
 
 module.exports = app;
