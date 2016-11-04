@@ -111,7 +111,7 @@ var hour = checkIntRange(request, 'hour', 0, 23, contextData);
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events/:id([0-9]+)');
+    response.redirect('/events');
     
   }else{
     response.render('create-event.html', contextData);
@@ -143,10 +143,22 @@ function rsvp (request, response){
 
 }
 
-//function api(request, response){
-  //var output = {events: events.all};
-  //response.json(output);
-//}
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i=0; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+        output.events.push(events.all[i]);
+      }
+    }
+    
+  }else{
+    output.events = events.all;
+  }
+  response.json(output);
+}
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -157,6 +169,7 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
   
 };
