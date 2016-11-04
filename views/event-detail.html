@@ -21,4 +21,10 @@
         </li>
         {% endfor %}
     </ul>
+    
+  <form id="email" onsubmit="validateForm()" method="post">
+    E-mail:
+    <input type="email" name="email">
+    <input type="submit">
+  </form>
 {% endblock %}
