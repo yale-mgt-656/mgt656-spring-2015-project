@@ -123,14 +123,23 @@ function rsvp (request, response){
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
+var flag=0;
   if(validator.isEmail(request.body.email)){
+          flag=1;
+          var temp=request.body.email.toLowerCase();
+          var check=temp.includes("yale.edu");
+          if(check==true)flag=2;
+  }
+  if(flag==2){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  }
+  else{
     var contextData = {errors: [], event: ev};
-    contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    if(flag==1)contextData.errors.push('Not a Yale student!');
+    else contextData.errors.push('Invalid email');
+    
+    response.render('event-detail.html', contextData); 
   }
 
 }

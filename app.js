@@ -22,6 +22,8 @@ app.get('/docreport1', aboutControllers.documentation1);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/api/events', eventControllers.api);
+app.post('/events/:id([0-9]+)', eventControllers.rsvp);
+
 app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
 
