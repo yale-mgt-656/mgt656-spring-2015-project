@@ -111,7 +111,8 @@ var hour = checkIntRange(request, 'hour', 0, 23, contextData);
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/:id([0-9]+)');
+    
   }else{
     response.render('create-event.html', contextData);
   }
@@ -140,6 +141,11 @@ function rsvp (request, response){
     response.render('event-detail.html', contextData);    
   }
 
+}
+
+function api(request, response){
+  var output = {events: events.all};
+  response.json(output);
 }
 
 /**

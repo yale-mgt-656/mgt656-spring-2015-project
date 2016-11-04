@@ -23,10 +23,10 @@ app.get('/about', aboutControllers.about);
 app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.post('/events/new', eventControllers.saveEvent);
-
+app.get('api/events', eventControllers.api);
 app.get('/events/:id([0-9]+)', eventControllers.eventDetail);
 app.post('/events/:id([0-9]+)', eventControllers.rsvp);
-//app.post('/events/.id', eventControllers.saveEvent.id);
+
 
 
 
