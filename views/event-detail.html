@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+
 {% block mainContent %}
 
   {% if errors %}
@@ -19,6 +21,6 @@
         <li>
           {{event.attending}}
         </li>
-        {% endfor %}
-    </ul>
+      {% endfor %}
+  </ul>
 {% endblock %}
