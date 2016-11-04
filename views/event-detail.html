@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+
 {% block mainContent %}
 
   {% if errors %}
@@ -19,6 +21,7 @@
         <li>
           {{event.attending}}
         </li>
+<<<<<<< HEAD
         {% endfor %}
     </ul>
     
@@ -27,4 +30,8 @@
     <input type="email" name="email">
     <input type="submit">
   </form>
+=======
+      {% endfor %}
+  </ul>
+>>>>>>> 2bc0a476f48be501579a0c8f4273de1cce791906
 {% endblock %}

@@ -15,75 +15,78 @@
 {% block mainContent %}
 
 <ul>
-    <li>
-        David T Sanchez: david.topiltzin@yale.edu
-    </li>
-    <li>
-        Ruan Hsuan Wei : hsuanwei.ruan@yale.edu
-    </li>
-      <li> Lixing Liang: lixing.liang@yale.edu</li>
-    <li>
-        Stephanie Hickman: stephanie.hickman@yale.edu
-    </li>
+    <li>David T Sanchez: david.topiltzin@yale.edu</li>
+    <li>Ruan Hsuan Wei : hsuanwei.ruan@yale.edu</li>
+    <li> Lixing Liang: lixing.liang@yale.edu</li>
+    <li>Stephanie Hickman: stephanie.hickman@yale.edu</li>
 </ul>
 <script>
-
     $(document).ready(function(){
       //  alert("I worked!");
         $('#link3').click(function(){
-      //     if($("#sprint3").css('display')=="none") {
-        if($("#sprint3").is(":hidden")){
-
+      //if($("#sprint3").css('display')=="none") {
+            if($("#sprint3").is(":hidden")){
                $('#sprint3').show();
-           }
-        }
-        );
-});
-
+                }
+            });
+    });
 </script>
 <a href="" id="link3">sprint3</a>
 <span id="sprint3" style="display:none">
     <h1>Sprint 3 Documentation</h1>
-    <h3> Burn Down Chart </h3>
-    <!-- INSERT IMAGE HERE -->
-    <img src='/pictures/BurnDownChartSprint3.png' height="400px" width="600px">
     <h3>New stories in this Sprint(in priority order)</h3>
-        We broke our stories into smaller pieces.
+        <ul>
+            <li>Make the current events appear on the home page</li>
+            <li>Event/new submission validator</li>
+            <li>Link to an events detail page</li>
+            <li>/Events/new make changes to the redirection function</li>
+        </ul>
+    <p>We broke our stories into smaller pieces.</p>
+    <h3> Burn Down Chart </h3>
+    <img src='/pictures/BurnDownChartSprint3.png' height="400px" width="600px">
     <h3>Completed Stories in this Sprint(in priority order)</h3>
         <ul>
-            <li> /Events/new make changes to the redirection function</li>
-            <li> about button</li>
-            <li> home button</li>
-            <li> /Events/new new events button</li>
-            <li> /Events/new event name</li>
-            <li> /Events/new location</li>
-            <li> /Events/new image</li>
-            <li> /Events/new year</li>
-            <li> /Events/new date</li>
-            <li> /Events/new submission button</li>
-            <li> /Events/new submission validator</li>       
+            <li>/Events/new make changes to the redirection function</li>
+            <li>about button</li>
+            <li>home button</li>
+            <li>/Events/new new events button</li>
+            <li>/Events/new event name</li>
+            <li>/Events/new location</li>
+            <li>/Events/new image</li>
+            <li>/Events/new year</li>
+            <li>/Events/new date</li>
+            <li>/Events/new submission button</li>
+            <li>/Events/new submission validator</li>      
+            <li>Link to an events detail page</li>
+            <li>Make the current events appear on the home page</li>
         </ul>
-        <p>including new stories added today</p>
-        <!-- some description here about adding stories <p></p> -->
+        <p>We broke our stories into smaller pieces.</p>
     <h3> Current Backlog in Order as of Nov2, 2016</h3>
         <ul>
-            <li> /Events/new JS function that add the newly created event to event database</li>
-            <li> /Events/new JS </li>
-            <li> /Events/event# display detailed info, including images</li>
-            <li> /Events/event# RSVP with your email and email validation</li>
-            <li> General web design: deciding on the layout format</li>
-            <li> Update the documentation format of the documentation page</li>
+            <li>/Events/new JS function that add the newly created event to event database</li>
+            <li>/Events/new JS </li>
+            <li>/Events/event# display detailed info, including images</li>
+            <li>/Events/event# RSVP with your email and email validation</li>
+            <li>General web design: deciding on the layout format</li>
+            <li>Update the documentation format of the documentation page</li>
+            <li>Saving Events</li>
+            <li>Passing Tests</li>
         </ul>
         
     <h3> What to Expect in the Next Delivery </h3>
         <ul>
             <li>Passing Tests (Makes up several stories)</li>
             <li>Formatting (make it look pretty)</li>
+            <li>Saving Events</li>
+            <li>/Events/event# display detailed info, including images</li>
+            <li>/Events/new JS function that add the newly created event to event database</li>
+            <li>/Events/new JS </li>
         </ul>
         
     <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
 </span>
-<span id="sprint2" >
+<!--//////////////////////////sprint 2/////////////////////-->
+<span id="sprint2">
     <h1>Sprint2 Documentation</h1>
     <h3> Burn Down Chart </h3>
     <img src='/pictures/BurnDownChartSprint2.png' height="400px" width="600px">
