@@ -97,6 +97,7 @@ function saveEvent(request, response){
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.all.length,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -104,7 +105,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events'+events.all.length);
+    response.redirect('/events/'+(events.all.length-1));
   }else{
     response.render('create-event.html', contextData);
   }
@@ -138,7 +139,7 @@ var flag=0;
   }
   else{
     var contextData = {errors: [], event: ev};
-   if(flag==1)contextData.errors.push('RSVP from joker at Harvard rejected.');
+   if(flag==1)contextData.errors.push('non Yale student rejected.');
     else contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData); 
   }
