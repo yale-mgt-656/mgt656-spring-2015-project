@@ -1,3 +1,12 @@
+header h1, h2 {
+   margin-top: 0;
+   text-align: center;
+}
+
+footer {
+  font-size: large;
+}
+
 body {
   padding: 50px;
 }
@@ -7,10 +16,13 @@ body {
 }
 
 img {
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     margin: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -27,3 +39,16 @@ span {
 .image-caption {
   text-align: center;
 }
+
+a {
+  color: red;
+}
+
+.navbar-default .navbar-brand {
+    color: red;
+}
+
+.nav.navbar-nav li a {
+    color: red;
+}
+ 
