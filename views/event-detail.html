@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <h1>{{event.title}}, {{event.date}}</h1>
+  <h1>{{event.title}}</h1>
   <img src={{event.image}}</>
-  <p>Are you going?</p>
-  <p>It is at {{event.location}}.</p>
+  <h4>Where: {{event.location}}, {{event.address}}</h4>
+  <h4>When: {{event.date}}</h4>
+  <h4>Details: {{event.details}}</h4>
 {% endblock %}
