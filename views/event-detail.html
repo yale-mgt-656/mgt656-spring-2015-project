@@ -27,11 +27,11 @@ div { width: 100%;
       <h1 id="title">Event: {{event.title}}</h1> <br/>
       <p> <img id="image" src="{{event.image}}"> </p> <br/>
       <span id="location">Event Location: {{event.location}}</span> <br/>
-     
+     <p>Who is attending? </p>
      <ul id="attendees">
       {% for person in event.attending %}
       
-       <li>Who is attending? {{person}}</li> <br/> 
+       <li>{{person}}</li> <br/> 
        
        {% endfor %}
        </ul>
