@@ -24,11 +24,19 @@ div { width: 100%;
   <ul>
   
     <li class="event" id="event-{{event.id}}">
-      <p>Event: {{event.title}}</p> <br/>
-      <p> <img src="{{event.image}}"> </p> <br/>
-      <p >Event Location: {{event.location}}</p> <br/>
-      <p >Who is attending? {{event.attending}}</p> <br/>
-      <p> When: <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </p> <br/>
+      <h1 id="title">Event: {{event.title}}</h1> <br/>
+      <p> <img id="image" src="{{event.image}}"> </p> <br/>
+      <span id="location">Event Location: {{event.location}}</span> <br/>
+     
+     <ul id="attendees">
+      {% for person in event.attending %}
+      
+       <li>Who is attending? {{person}}</li> <br/> 
+       
+       {% endfor %}
+       </ul>
+       
+      <span id="date"> When: <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </span> <br/>
       
       
     </li>
@@ -40,7 +48,7 @@ div { width: 100%;
   <label for="rsvp">Let us know if you are coming:</label>
     <input type="email" id="email" name="email" placeholder="Your Yale email">
   
-   <input type="submit" id="submit">
+   <input type="submit" value="submit">
  
   
   </form>
