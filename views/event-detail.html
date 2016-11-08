@@ -3,7 +3,14 @@
 {% block mainContent %}
 <!DOCTYPE html>
 
-<div class="form-errors-wrapper">
+
+ 
+ <style>
+div { width: 100%; 
+ background-color: #e0bbba; }
+</style>
+ 
+    <div class="form-errors-wrapper">
       
       <ul class="form-errors">
         {% for error in errors %}
@@ -11,13 +18,6 @@
         {% endfor %}
       </ul>
     </div>
- 
- <style>
-div { width: 100%; 
- background-color: #e0bbba; }
-</style>
- 
-    
 
   
   <div>
