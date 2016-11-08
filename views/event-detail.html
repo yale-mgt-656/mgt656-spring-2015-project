@@ -2,6 +2,15 @@
 
 {% block mainContent %}
 <!DOCTYPE html>
+
+<div class="form-errors-wrapper">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
  
  <style>
 div { width: 100%; 
@@ -27,9 +36,12 @@ div { width: 100%;
 </ul>
 </div>
  
+ <form id="create-rsvp" method="POST">
+  <label for="rsvp">Let us know if you are coming:</label>
+    <input type="email" id="email" name="email" placeholder="Your Yale email">
+  
+   <input type="submit" id="submit">
  
   
-  
-  
-  
+  </form>
 {% endblock %}

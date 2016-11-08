@@ -32,7 +32,7 @@ var allEvents = [
     attending: ['kim.kardashian@yale.edu'],
   },
   {
-    id: 4,
+    id: 3,
     title: 'Cooking lessons for the busy business student',
     date:   new Date(2014, 8, 2, 19, 0, 0),
     image: 'http://i.imgur.com/02KT9.gif',
