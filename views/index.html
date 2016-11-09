@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 
+
+
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <h1>{{ title }}</h1>
   </header>
 {% endblock %}
 
@@ -10,6 +12,10 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+   <p>Upcoming Events</p>
+   <div style="border: 1px solid orange">
+     {% include "fragments/events-list.html" %}
+   </div>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
@@ -17,4 +23,7 @@
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+  <footer>
+    <p>Created by Shy Haze Corporation</p>
+  </footer>
 {% endblock %}
