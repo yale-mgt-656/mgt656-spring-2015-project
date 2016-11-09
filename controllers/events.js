@@ -83,11 +83,16 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be less than 50 characters');
   }
   
-  var year = checkIntRange(request, 'year', 2015, 2016, contextData);
-  var month = checkIntRange(request, 'month', 0, 11, contextData);
-  var day = checkIntRange(request, 'day', 1, 31, contextData);
-  var hour = checkIntRange(request, 'hour', 0, 23, contextData);
-  
+ // var year = checkIntRange(request, 'year', 2015, 2016, contextData);
+// var month = checkIntRange(request, 'month', 0, 11, contextData);
+//  var day = checkIntRange(request, 'day', 1, 31, contextData);
+ // var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var year=request.body.year;
+  var month=request.body.month;
+  var day=request.body.day;
+  var hour=request.body.hour;
+  var minute=request.body.minute;
+
   if (request.body.image.endsWith(".gif")== false && request.body.image.endsWith(".png")==false) {
     contextData.errors.push('image format must be .gif or .png');
   }  
@@ -101,7 +106,7 @@ function saveEvent(request, response){
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(year, month, day, hour, minute, 0),
       attending: []
     };
     events.all.push(newEvent);
