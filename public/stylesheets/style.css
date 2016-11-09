@@ -1,7 +1,7 @@
-body {
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+}*/
 
 a {
   color: #00B7FF;
@@ -9,4 +9,42 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+
+body {
+  
+   padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 1)
+    ),
+    
+}
+.outer{
+  position:relative;
+
+}
+.mission {
+  position: absolute;
+  top: 75%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+h1 {  
+
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+p {
+  margin: 0;
+  font-size: 1.5rem;
 }
