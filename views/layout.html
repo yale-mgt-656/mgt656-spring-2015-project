@@ -12,7 +12,13 @@
 	<body class="container">
 	  
     {% block header %}
-  <header></header>
+  <header>
+    <span class="header">
+      <div class="header-logo">
+      <a href="/"><img class="logo" src = "../images/pblogo.png" height="100px"></a>
+      </div>
+    </span>
+  </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -21,7 +27,7 @@
 
     {% block footer %}
       <footer>
-        <a href="/">Home</a> | <a href="/about">About Us</a>
+        <a href="/">Home</a> | <a href="/about">About Us</a> | <a href="/events">Events</a>
       </footer>
     {% endblock %}
 
