@@ -3,12 +3,27 @@
   <head>
     <title>{{title}}</title>
    {% block stylesheet%}
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    
     {% endblock %}
   </head>
 <script src="jquery/dist/jquery.min.js"></script>
-	<body class="container">
+	
+<body class="container">
+  <div class="menu">
+      <div class="menu-left">
+        <a href="/"><img src="/pictures/CUthere.PNG" width="80px" height="70px"></a>
+      </div>
+      <ul class="menu-right">
+        <li><a href="/docreport1">SPRINT REPORTS</a></li>
+        <li><a href="/events/new">CREATE EVENTS</a></li>
+        <li><a href="/events">EVENTS</a></li>
+        <li><a href="/about">ABOUT</a></li>
+      </ul>
+  </div>
 
     {% block header %}
       <header>C U THERE, I'm in!</header>
