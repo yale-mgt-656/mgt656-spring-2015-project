@@ -20,21 +20,29 @@ a {
 
 
 .menu{
+  position:relative;
   margin-top:0px;
   display:inline-block;  
-  color:blue;
-  
+  background-color: #f0ffff;
+  width:100%;
+  height: 70px;
+
 }
 .menu-left{
 float:left;
 
 }
 .menu-right li{
- float:right;
+  float:right;
+    padding-right:1px;
+ height: 70px;
 padding: 15px;
-  
+background-color:#f0ffff;
+list-style-type :none;
 }
-  
+.menu-right li:hover{
+  background-color:#e6e6fa;
+}  
 #about-us-list {
   padding: 10px;
   height :500px;

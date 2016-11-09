@@ -11,51 +11,20 @@
     {% endblock %}
   </head>
 <script src="jquery/dist/jquery.min.js"></script>
-	<body class="container">
-
-<!--
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">EVENTS</a></li>
-      <li><a href="#">CREATE EVENTS</a></li>
-      <li><a href="#">SPRINT REPORTS</a></li>
-
-    </ul>
+	
+<body class="container">
+  <div class="menu">
+      <div class="menu-left">
+        <a href="/"><img src="/pictures/CUthere.PNG" width="80px" height="70px"></a>
+      </div>
+      <ul class="menu-right">
+        <li><a href="/docreport1">SPRINT REPORTS</a></li>
+        <li><a href="/events/new">CREATE EVENTS</a></li>
+        <li><a href="/events">EVENTS</a></li>
+        <li><a href="/about">ABOUT</a></li>
+      </ul>
   </div>
-</nav>
--->
 
-
-<div class="menu">
-  <div class="container-fluid">
-    <div class="menu-left">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="menu-right">
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">EVENTS</a></li>
-      <li><a href="#">CREATE EVENTS</a></li>
-      <li><a href="#">SPRINT REPORTS</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-
-<!--
-<div>
-  <a href="about.html" class="menu_bar">ABOUT</a>
-  <a href="about.html" class="menu_bar">EVENTS</a>
-  <a href="about.html" class="menu_bar">CREATE EVENTS</a>
-  <a href="about.html" class="menu_bar">SPRINT REPORTS</a>
-</div>
-
--->
     {% block header %}
       <header>C U THERE, I'm in!</header>
     {% endblock %}
