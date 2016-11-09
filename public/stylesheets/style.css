@@ -1,11 +1,7 @@
-header h1, h2 {
-   margin-top: 0;
-   text-align: center;
-}
-
-footer {
-  font-size: large;
-}
+/*header h1, h2 {*/
+/*   margin-top: 0;*/
+/*   text-align: center;*/
+/*}*/
 
 body {
   padding: 50px;
@@ -25,6 +21,10 @@ img {
     margin-right: auto;
 }
 
+img.logo {
+  border: none;
+}
+
 footer {
   background-color: #eee;
   padding: 1em;
@@ -40,15 +40,24 @@ span {
   text-align: center;
 }
 
-a {
-  color: red;
-}
-
 .navbar-default .navbar-brand {
-    color: red;
+    color: #337ab7;
 }
 
 .nav.navbar-nav li a {
-    color: red;
+    color: #337ab7;
+}
+
+.header {
+  text-align: left;
+  width: 100%;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
 }
  
+.header-logo {
+  float: left;
+  margin-left: 8px;
+  padding: 5px;
+}
