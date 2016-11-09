@@ -57,9 +57,46 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 50) === false) {
+    contextData.errors.push('Your title should be between 1 and 100 letters.');
   }
+  
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be between 1 and 100 letters.');
+  }
+  
+  if (validator.isURL(request.body.image) === false,['http','https']) {
+    contextData.errors.push('Must be URL starting with http:// or https://');
+  }
+  
+  if (request.body.image.match(/\.(png|gif)$/) == null) {
+    contextData.errors.push('Must be URL ending in .gif or .png.');
+  }
+  
+/* Since year,month,day,hour,and minute are dropdown menu options, 
+   validation is coded as checking for the case where user did not make
+   a selection.  */
+  
+  if (request.body.year == null) {
+    contextData.errors.push('Please select a year.');
+  }
+  
+  if (request.body.month == null) {
+    contextData.errors.push('Please select a month.');
+  }
+  
+  if (request.body.day == null) {
+    contextData.errors.push('Please select a day.');
+  }
+  
+  if (request.body.hour == null) {
+    contextData.errors.push('Please select an hour.');
+  }
+  
+  if (request.body.minute == null) {
+    contextData.errors.push('Please select minute.');
+  }
+  
 
 
   if (contextData.errors.length === 0) {
@@ -100,6 +137,24 @@ function rsvp (request, response){
     response.render('event-detail.html', contextData);    
   }
 
+}
+
+function api(request, response) {
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i = 0; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+      output.events.push(events.all[i]);
+      }
+    }
+  }
+  else{
+     output.events = events.all;
+  }
+  
+  response.json(output);
 }
 
 /**

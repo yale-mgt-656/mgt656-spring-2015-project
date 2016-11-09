@@ -1,20 +1,45 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <header>
-    <h1>{{ title }} FTW</h1>
-  </header>
+<img class="logo" src="../images/pblogo.png" height="130px">
+  <!--<header>-->
+  <!--  <div class="navbar navbar-default">-->
+  <!--    <div class="container">-->
+  <!--    <div class="navbar-header">-->
+  <!--      <a href="" class="navbar-brand"></a>-->
+         
+  <!--    </div>-->
+      
+  <!--    <div class="collapse navbar-collapse">-->
+  <!--      <ul class="nav navbar-nav">-->
+  <!--        <li><a href="/about">About Us</a></li>-->
+  <!--        <li><a href="/events">Events</a></li>        -->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+    
+  <!--</div> -->
+    
+  <!--</header>-->
+  
 {% endblock %}
 
+
 {% block mainContent %}
+    
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    <h3>Welcome to {{ title }}. {{ tagline }}</h3>
   </p>
   <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
+    Check out the <a href="/about">About us</a> page.<br>
+    Check out the <a href="/events">Events</a> page.
   </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+  <p>List of events:</p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
+ 
+ <a class="btn btn-primary" href="/events/new" role="button">Create New Event</a>  
+ 
+
 {% endblock %}

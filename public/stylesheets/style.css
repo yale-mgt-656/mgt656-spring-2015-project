@@ -1,12 +1,63 @@
+/*header h1, h2 {*/
+/*   margin-top: 0;*/
+/*   text-align: center;*/
+/*}*/
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
 }
 
 .form-errors {
 	color: red;
+}
+
+img {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+  border: none;
+}
+
+footer {
+  background-color: #eee;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.image-caption {
+  text-align: center;
+}
+
+.navbar-default .navbar-brand {
+    color: #337ab7;
+}
+
+.nav.navbar-nav li a {
+    color: #337ab7;
+}
+
+.header {
+  text-align: left;
+  width: 100%;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+ 
+.header-logo {
+  float: left;
+  margin-left: 8px;
+  padding: 5px;
 }
