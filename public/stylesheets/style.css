@@ -14,9 +14,15 @@ a {
 
 #about-us-list {
   padding: 10px;
+  height :500px;
+  display: block;
+    margin: auto;
+
 }
 
 #about-us-list li {
+    padding: 10px;
+
   float: left;
   width: 250px;
   display:block;
@@ -26,10 +32,14 @@ a {
 #about-us-list img {
   width: 250px;
   height: 250px;
+  padding: 5px;   
+  border-radius: 50%;
 }
 
 #footer {
   display: block;
+  
+}
 
 
 body {
