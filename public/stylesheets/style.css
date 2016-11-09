@@ -1,6 +1,8 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  margin-left: 0px;
 }
 
 a {
@@ -9,4 +11,21 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+
+.menu{
+  margin-top:0px;
+  display:inline-block;  
+  color:blue;
+  
+}
+.menu-left{
+float:left;
+
+}
+.menu-right li{
+ float:right;
+padding: 15px;
+  
 }
