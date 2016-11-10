@@ -2,7 +2,7 @@
  
  {% block header %}
       <header>
-        <h1> <span style="color:#119999";>Event Details! </span></h1>
+        <h1 id="title"> <span style="color:#119999";>Event Details! </span></h1>
       </header>
     {% endblock %}
     
@@ -12,7 +12,7 @@
  {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="for-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -20,7 +20,7 @@
     </div>
   {% endif %}
   
- 
+
  <h2> <title title="{{event.title}}">{{event.title}}</title> </h2>
   <img src="{{event.image}}" />
    <p></p> 
@@ -31,13 +31,14 @@
   Attendees:<span style="color:#018899";> <attendees attending ="{{event.attending}}"></attendees>{{event.attending}}</attendees> </span>
   <p></p>
 
- <form method=post>
+    
+ <form method="POST">
       Interested in attending? RSVP by entering your email address below! <br>
       <p></p>
-      <input type="email" name="email"><br>
+      <input type="email" name="email" id="email"><br>
       <p></p>
     <input type="submit" value="Submit">
     </form>
-
+    
 {% endblock %}
   
