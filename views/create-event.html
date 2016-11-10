@@ -15,31 +15,58 @@
 
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
-    <input type="text" name="title">
+    <input type="text" name="title" placeholder="dope title">
     <p>
-    <label for="date">Event Date:</label>
-    <input type="text" name="title">
+    <label for="date">Event Day:</label>
+    <input type="text" name="day" placeholder="day">
     </p>
     
     <p>
+    <label for="date">Event Month:</label>
+    <input type="text" name="month" placeholder="month">
+    </p>
+    
+    <p>
+    <label for="date">Event Year:</label>
+    <input type="text" name="year" placeholder="month/day">
+    </p>
+    
+    <p>
+    <label for="date">Event Hour:</label>
+    <input type="text" name="hour" placeholder="military time e.g. 13">
+    </p>
+    
+    <p>
+    <label for="date">Event Minute:</label>
+    <input type="text" name="minute" placeholder="minute e.g. 33">
+    </p>
+    
+    
+    <p>
     <label for="location">Event Location:</label>
-    <input type="text" name="title">
+    <input type="text" name="title" placeholder="pls not GPSCY">
     </p>
     
     <p>
     <label for="image">Event Image:</label>
-    <input type="text" name="title">
+    <input type="text" name="title" placeholder="dope meme">
     </p>
     
     <p>
-    <label for="attendees">Event Attendees:</label>
-    <input type="text" name="title">
+    <label for="attendees">List of Event Attendees:</label>
+    <input type="text" name="title" placeholder="all your peeps">
     </p>
     
     <p>
-    <input type="radio" name="RSVP" value="yes" checked> Yes<br>
-    <input type="radio" name="gender" value="no"> No<br>
-    <input type="radio" name="gender" value="maybe"> Maybe
+    <label for="RSVP">Will you attend?:</label> <br>
+    <input type="radio" name="RSVP" value="yes"> Yes<br>
+    <input type="radio" name="RSVP" value="no"> No<br>
+    <input type="radio" name="RSVP" value="maybe"> Maybe
+    </p>
+    
+     <p>
+    <label for="RSVP Email">RSVP Email:</label>
+    <input type="text" name="email" placeholder="Must be @yale.edu but idk how">
     </p>
     
     <p>
