@@ -6,7 +6,7 @@
       </header>
     {% endblock %}
     
-    getById (1)
+    getById (i)
     
  {% block mainContent %}
  {% if errors %}
@@ -19,15 +19,18 @@
       </ul>
     </div>
   {% endif %}
-  <h2> <span style="font-size:14px";> Event Title: </span></h2>
-   <p></p>
+  
+ 
+  <title title="{{event.title}}">{{event.title}}</title> 
+  <img src="{{event.image}}" />
+   <p></p> 
    When: <span style="color:#018899";> <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </span>
    <p></p>
-   Where: <span style="color:#018899";> <location location="{{event.location}}"></location> </span>
+   Where: <span style="color:#018899";> <location location="{{event.location}}">{{event.location}}</location> </span>
   <p></p>
-  Attendees: 
+  Attendees:<span style="color:#018899";> <attendees attending ="{{event.attending}}"></attendees>{{event.attending}}</attendees> </span>
   <p></p>
-    
+
  <form method=post>
       Interested in attending? RSVP by entering your email address below! <br>
       <p></p>
@@ -37,4 +40,4 @@
     </form>
 
 {% endblock %}
-    
+  
