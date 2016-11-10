@@ -19,29 +19,25 @@
 <script>
 var check=0;
     $(document).ready(function(){
-        /*
-        $('#link3').click(function(){
-            $('#sprint2').hide();
-            if($("#sprint3").css('display')=="none")$('#sprint3').show();
-            else  $('#sprint3').hide();
+
+        $('.link').click(function(){
+           $('.sprint').each(function(){
+                $(this).hide();
+           });
+        var id=$(this).attr('id').replace('link', 'sprint');
+           $('#'+id).show();
         });
-        $('#link2').click(function(){
-            $('#sprint3').hide();
-            if($("#sprint2").css('display')=="none")$('#sprint2').show();
-            else  $('#sprint2').hide();
-        });
-        */
     });
 </script>
 <h2>Sprint Reports</h2>
 <ul>
-    <li><a href="#" id="link4">Sprint4 Report</a></li>
-    <li><a href="#" id="link3">Sprint3 Report</a></li>
-    <li><a href="#" id="link2">Sprint2 Report</a></li>
+    <li><a href="#" class="link" id="link4">Sprint4 Report</a></li>
+    <li><a href="#" class="link" id="link3">Sprint3 Report</a></li>
+    <li><a href="#" class="link" id="link2">Sprint2 Report</a></li>
 </ul>
 <!--//////////////////////////sprint 4/////////////////////-->
-<span id="sprint4" style="display:none">
-<h1>Sprint 3 Documentation (Nov.1, 2016)</h1>
+<span class="sprint" id="sprint4" style="display:none">
+<h1>Sprint 4 Documentation (Nov.8, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
         </ul>
@@ -66,7 +62,7 @@ var check=0;
 </span>
 
 <!--//////////////////////////sprint 3/////////////////////-->
-<span id="sprint3" style="display:none">
+<span class="sprint" id="sprint3" style="display:none">
 
     <h1>Sprint 3 Documentation (Nov.1, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
@@ -121,7 +117,7 @@ var check=0;
     <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
 </span>
 <!--//////////////////////////sprint 2/////////////////////-->
-<span id="sprint2" style="display:none">
+<span class="sprint" id="sprint2" style="display:none">
     <h1>Sprint2 Documentation(Oct.27, 2016)</h1>
     <h3> Burn Down Chart </h3>
     <img src='/pictures/BurnDownChartSprint2.png' height="400px" width="600px">
