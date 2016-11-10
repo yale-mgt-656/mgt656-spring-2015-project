@@ -19,7 +19,6 @@ function index (request, response) {
       contextData.events.push(event);
     }
   }
-  // contextData.events = events.all;
   response.render('index.html', contextData);
 }
 
