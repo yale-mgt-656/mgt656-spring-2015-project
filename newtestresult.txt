@@ -1,0 +1,569 @@
+   
+   The site, on all pages
+     ✓ should be using Bootstrap CSS
+     ✓ should have a header element
+     ✓ should have a footer element
+     ✓ should have a link to /about in the footer
+     ✓ should have a link to / in the footer
+   
+   The home page
+     ✓ should be up and running
+     ✓ should have your team logo
+     ✓ should have a list of events
+     ✓ should have a time tag for each event
+     ✓ should have a link for each event
+     ✓ should not show events that are over
+     ✓ should have a link to create a new event
+   
+   The API
+     1) should return an array of upcoming events in JSON format
+     2) should allow for searching events by title
+   
+   The about page
+     3) should have people on it
+     4) should have a picture of each person
+   
+   The event detail pages
+     5) should exist for each event and should have title, image, etc
+     6) should allow Yale users to RSVP
+     7) should reject RSVPs from non-Yale addresses
+   
+   The new event creation page
+     ✓ should exist
+     ✓ should have a form that can be posted back
+     ✓ should have appropriate form fields and labels
+     8) should use select inputs for year, month, day, hour and minute form elements.
+     9) should have the appropriate options for select elements
+   
+   The form for creating new events
+     ✓ should display errors to the user when the year is not an integer
+     ✓ should display errors to the user when the year is more than 2016
+     ✓ should display errors to the user when the year is less than 2015
+     ✓ should display errors to the user when the month is not an integer
+     ✓ should display errors to the user when the month is more than 11
+     ✓ should display errors to the user when the month is less than 0
+     ✓ should display errors to the user when the day is not an integer
+     ✓ should display errors to the user when the day is more than 31
+     ✓ should display errors to the user when the day is less than 1
+     ✓ should display errors to the user when the hour is not an integer
+     ✓ should display errors to the user when the hour is more than 23
+     ✓ should display errors to the user when the hour is less than 0
+     10) should display errors to the user when the image is not a gif or png
+     11) should display errors to the user when the image is not a URL
+     12) should display errors to the user when the location is too long
+     13) should display errors to the user when the location is empty
+     ✓ should display errors to the user when the title is too long
+     ✓ should display errors to the user when the title is empty
+     14) should redirect the user to the event detail page if the form is valid
+
+   Executed 43 tests in 7 suites in 1s 208ms
+       29 passes
+       14 failed
+   
+   14) The form for creating new events should redirect the user to the event detail page if the form is valid
+   
+       Bad redirect location, it should look like events/4, events/5, etc: expected '/events' to match /events\/\d+\/?$/
+       
+       at Request._callback (test/test.js:503:48)
+       
+       502 |       assert.ok(httpResponse.headers.hasOwnProperty('location'), 'http response header should include location.');
+       503 |       expect(httpResponse.headers.location).to.match(/events\/\d+\/?$/, 'Bad redirect location, it should look like events/4, events/5, etc');
+       504 |       done();
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   13) The form for creating new events should display errors to the user when the location is empty
+   
+       Expected status code 200, but got302
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:478:16)
+       
+       477 |         assert.ok(err === null, 'Error: ' + err);
+       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
+       479 |         var window = jsdom.jsdom(body).defaultView;
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   12) The form for creating new events should display errors to the user when the location is too long
+   
+       Expected status code 200, but got302
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:478:16)
+       
+       477 |         assert.ok(err === null, 'Error: ' + err);
+       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
+       479 |         var window = jsdom.jsdom(body).defaultView;
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   11) The form for creating new events should display errors to the user when the image is not a URL
+   
+       Expected status code 200, but got302
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:478:16)
+       
+       477 |         assert.ok(err === null, 'Error: ' + err);
+       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
+       479 |         var window = jsdom.jsdom(body).defaultView;
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   10) The form for creating new events should display errors to the user when the image is not a gif or png
+   
+       Expected status code 200, but got302
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:478:16)
+       
+       477 |         assert.ok(err === null, 'Error: ' + err);
+       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
+       479 |         var window = jsdom.jsdom(body).defaultView;
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   9) The new event creation page should have the appropriate options for select elements
+   
+       Should have select input for hour
+       
+       at Context.<anonymous> (test/test.js:323:18)
+       
+       322 |           var select = this.browser.query('select[name="' + fieldName + '"]');
+       323 |           assert.ok(select, 'Should have select input for ' + fieldName);
+       324 |           assert.deepEqual(
+       
+       at node_modules/lodash/index.js:2874:23
+       
+       2873 |         case 3: return function(value, index, collection) {
+       2874 |           return func.call(thisArg, value, index, collection);
+       2875 |         };
+       
+       at node_modules/lodash/index.js:3073:15
+       
+       3072 |           var key = props[index];
+       3073 |           if (iteratee(iterable[key], key, iterable) === false) {
+       3074 |             break;
+       
+       at baseForOwn (node_modules/lodash/index.js:2046:14)
+       
+       2045 |     function baseForOwn(object, iteratee) {
+       2046 |       return baseFor(object, iteratee, keys);
+       2047 |     }
+       
+       at Function.forOwn (node_modules/lodash/index.js:3378:16)
+       
+       3377 |         }
+       3378 |         return objectFunc(object, iteratee);
+       3379 |       };
+       
+       at Context.<anonymous> (test/test.js:321:9)
+       
+       321 |       _.forOwn(requiredFieldValues, function (expectedOptionValues, fieldName) {
+       322 |           var select = this.browser.query('select[name="' + fieldName + '"]');
+       
+   
+   8) The new event creation page should use select inputs for year, month, day, hour and minute form elements.
+   
+       Should have select input for day at /events/new
+       
+       at Context.<anonymous> (test/test.js:309:14)
+       
+       308 |     for (var i = 0; i < requiredFields.length; i++) {
+       309 |       assert.ok(this.browser.query('select[name="' + requiredFields[i] + '"]'), 'Should have select input for ' + requiredFields[i] + ' at ' + this.browser.location.pathname);
+       310 |     }
+       
+   
+   7) The event detail pages should reject RSVPs from non-Yale addresses
+   
+       No INPUT matching 'email'
+       
+       at Browser.fill (node_modules/zombie/lib/index.js:838:7)
+           at /source/index.js:722:4
+           
+           721 |     const field = this.field(selector);
+           722 |     assert(field && (field.tagName === 'TEXTAREA' || (field.tagName === 'INPUT')), `No INPUT matching '${selector}'`);
+           723 |     assert(!field.disabled, 'This INPUT field is disabled');
+           
+       at test/test.js:263:10
+       
+       262 |       browser
+       263 |         .fill('email', email)
+       264 |         .pressButton('Submit', function(){
+       
+       at Browser.done (node_modules/zombie/lib/eventloop.js:589:11)
+           at /source/eventloop.js:445:8
+           
+           444 |       try {
+           445 |         callback(error);
+           446 |       } catch (error) {
+           
+       at node_modules/zombie/lib/document.js:741:13
+           at /source/document.js:611:14
+           
+           610 |     .catch(function(error) {
+           611 |       browser.emit('error', error);
+           612 |     })
+           
+       at run (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:108:47)
+       
+       107 |           if(!ok)record.h = true;
+       108 |           result = handler === true ? value : handler(value);
+       109 |           if(result === reaction.promise){
+       
+       at node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:119:28
+       
+       118 |     };
+       119 |     while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+       120 |     chain.length = 0;
+       
+       at flush (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/$.microtask.js:19:5)
+       
+       18 |     if(domain)domain.enter();
+       19 |     fn(); // <- currently we use it only for Promise - try / catch not required
+       20 |     if(domain)domain.exit();
+       
+   
+   6) The event detail pages should allow Yale users to RSVP
+   
+       No INPUT matching 'email'
+       
+       at Browser.fill (node_modules/zombie/lib/index.js:838:7)
+           at /source/index.js:722:4
+           
+           721 |     const field = this.field(selector);
+           722 |     assert(field && (field.tagName === 'TEXTAREA' || (field.tagName === 'INPUT')), `No INPUT matching '${selector}'`);
+           723 |     assert(!field.disabled, 'This INPUT field is disabled');
+           
+       at test/test.js:249:10
+       
+       248 |       browser
+       249 |         .fill('email', email)
+       250 |         .pressButton('Submit', function(){
+       
+       at Browser.done (node_modules/zombie/lib/eventloop.js:589:11)
+           at /source/eventloop.js:445:8
+           
+           444 |       try {
+           445 |         callback(error);
+           446 |       } catch (error) {
+           
+       at node_modules/zombie/lib/document.js:741:13
+           at /source/document.js:611:14
+           
+           610 |     .catch(function(error) {
+           611 |       browser.emit('error', error);
+           612 |     })
+           
+       at run (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:108:47)
+       
+       107 |           if(!ok)record.h = true;
+       108 |           result = handler === true ? value : handler(value);
+       109 |           if(result === reaction.promise){
+       
+       at node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:119:28
+       
+       118 |     };
+       119 |     while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+       120 |     chain.length = 0;
+       
+       at flush (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/$.microtask.js:19:5)
+       
+       18 |     if(domain)domain.enter();
+       19 |     fn(); // <- currently we use it only for Promise - try / catch not required
+       20 |     if(domain)domain.exit();
+       
+   
+   5) The event detail pages should exist for each event and should have title, image, etc
+   
+       Couldn't retreive all events at /events/:id.
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at test/test.js:229:14
+       
+       228 |     async.map(testedEventUrls, fetchEventDetail, function(err, results){
+       229 |       assert.ok(_.every(results, 'success'), 'Couldn\'t retreive all events at /events/:id.');
+       230 |       for (var i = results.length - 1; i >= 0; i--) {
+       
+       at node_modules/async/lib/async.js:52:16
+       
+       51 |             if (fn === null) return;
+       52 |             fn.apply(this, arguments);
+       53 |             fn = null;
+       
+       at node_modules/async/lib/async.js:361:13
+       
+       360 |         }, function (err) {
+       361 |             callback(err, results);
+       362 |         });
+       
+       at node_modules/async/lib/async.js:52:16
+       
+       51 |             if (fn === null) return;
+       52 |             fn.apply(this, arguments);
+       53 |             fn = null;
+       
+       at done (node_modules/async/lib/async.js:246:17)
+       
+       245 |             else if (key === null && completed <= 0) {
+       246 |                 callback(null);
+       247 |             }
+       
+       at node_modules/async/lib/async.js:44:16
+       
+       43 |             if (fn === null) throw new Error("Callback was already called.");
+       44 |             fn.apply(this, arguments);
+       45 |             fn = null;
+       
+       at node_modules/async/lib/async.js:358:17
+       
+       357 |                 results[index] = v;
+       358 |                 callback(err);
+       359 |             });
+       
+       at test/test.js:225:9
+       
+       224 |       browser.visit(url, function(){
+       225 |         cb(null, browser);
+       226 |       });
+       
+       at Browser.done (node_modules/zombie/lib/eventloop.js:589:11)
+           at /source/eventloop.js:445:8
+           
+           444 |       try {
+           445 |         callback(error);
+           446 |       } catch (error) {
+           
+       at node_modules/zombie/lib/document.js:741:13
+           at /source/document.js:611:14
+           
+           610 |     .catch(function(error) {
+           611 |       browser.emit('error', error);
+           612 |     })
+           
+       at run (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:108:47)
+       
+       107 |           if(!ok)record.h = true;
+       108 |           result = handler === true ? value : handler(value);
+       109 |           if(result === reaction.promise){
+       
+       at node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/es6.promise.js:119:28
+       
+       118 |     };
+       119 |     while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+       120 |     chain.length = 0;
+       
+       at flush (node_modules/zombie/node_modules/babel-runtime/node_modules/core-js/library/modules/$.microtask.js:19:5)
+       
+       18 |     if(domain)domain.enter();
+       19 |     fn(); // <- currently we use it only for Promise - try / catch not required
+       20 |     if(domain)domain.exit();
+       
+   
+   4) The about page should have a picture of each person
+   
+       Found 0 people and 0 images.
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Context.<anonymous> (test/test.js:207:12)
+       
+       206 |     var numImages = this.browser.queryAll('img[id$="-headshot"]').length;
+       207 |     assert.ok(numPeople === numImages && numPeople > 0, 'Found ' + numPeople + ' people and ' + numImages + ' images.');
+       208 |   });
+       
+   
+   3) The about page should have people on it
+   
+       Expected spans with name-based ids on page at /about
+       
+       at Context.<anonymous> (test/test.js:201:12)
+       
+       200 |   it('should have people on it', function(){
+       201 |     assert.ok(this.browser.query('span[id$="-name"]'), 'Expected spans with name-based ids on page at ' + this.browser.location.pathname);
+       202 |   });
+       
+   
+   2) The API should allow for searching events by title
+   
+       API not found at /api/events
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:173:14)
+       
+       172 |     request(url, function (error, response, body) {
+       173 |       assert.ok(response.statusCode !== 404, 'API not found at /api/events');
+       174 |       var data = JSON.parse(body);
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)
+   
+   1) The API should return an array of upcoming events in JSON format
+   
+       API not found at /api/events
+       
+       + expected - actual
+       
+       -false
+       +true
+       
+       at Request._callback (test/test.js:161:14)
+       
+       160 |       assert.ok(body !== 'null', 'JSON data has no contents.');
+       161 |       assert.ok(response.statusCode !== 404, 'API not found at /api/events');
+       162 |       var data = JSON.parse(body);
+       
+       at Request.self.callback (node_modules/request/request.js:187:22)
+       
+       186 |       self._callbackCalled = true
+       187 |       self._callback.apply(self, arguments)
+       188 |     }
+       
+       at Request.<anonymous> (node_modules/request/request.js:1048:10)
+       
+       1047 |     }
+       1048 |     self.emit('complete', response, response.body)
+       1049 |   })
+       
+       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
+       
+       968 |     responseContent.on('end', function (chunk) {
+       969 |       self.emit('end', chunk)
+       970 |     })
+       
+       at endReadableNT (_stream_readable.js:921:12)

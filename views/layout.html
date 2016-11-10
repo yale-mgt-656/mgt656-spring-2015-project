@@ -2,22 +2,21 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <link rel= 'stylesheet' href='/stylesheets/style.css '/>
+    <link rel= 'stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
 
-	<body class="container">
+      <header>Eventbite Clone</header>
 
-    {% block header %}
-      <header>Hey, I'm in the header</header>
-    {% endblock %}
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
 
-    {% block footer %}
-      <footer>This be the footer.</footer>
-    {% endblock %}
+   
+      <footer>
+        <a href="/">Home</a> &gt <a href="/about">About us</a>
+      </footer>
+<!-- robin's test comment -->
 
   </body>
 </html>
