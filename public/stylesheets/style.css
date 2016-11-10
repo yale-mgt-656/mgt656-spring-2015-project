@@ -25,7 +25,12 @@ a {
   display:inline-block;  
   background-color: #f0ffff;
   width:100%;
+<<<<<<< HEAD
   height: 70px;
+=======
+  height: 60px;
+
+>>>>>>> e55eb26a63150e94e00930f39c55a8f428f0cc6d
 }
 
 .menu-left{
@@ -35,7 +40,7 @@ float:left;
 .menu-right li{
   float:right;
     padding-right:1px;
- height: 70px;
+ height: 60px;
 padding: 15px;
 background-color:#f0ffff;
 list-style-type :none;

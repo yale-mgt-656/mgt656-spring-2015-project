@@ -1,10 +1,10 @@
 <ul>
   {% for event in events %}
-    <li class="index-event" id="event-{{event.id}}">
+    <li class="event" id="event-{{event.id}}">
       
       <div class="index-event-info">
          <span class="index-event-info-name"><a href="/events/{{event.id}}">{{event.title}}.</a></span>
-         <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> 
+         <span class="index-event-info-time"></span><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
       </div>
 
     <br>
