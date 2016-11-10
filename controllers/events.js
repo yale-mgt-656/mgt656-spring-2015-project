@@ -125,6 +125,22 @@ function rsvp (request, response){
 
 }
 
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i = 0; i < event.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+      output.events.push(events.all[i]);
+      }
+    }
+  }else{
+    output.events = events.all;
+  }
+  response.json(output);
+}
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -136,3 +152,4 @@ module.exports = {
   'saveEvent': saveEvent,
   'rsvp': rsvp
 };
+
