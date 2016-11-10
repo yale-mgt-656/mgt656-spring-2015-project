@@ -58,10 +58,33 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
 
+if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be less than 50 letters.');
+  }
 
+if (validator.contains(request.body.year,'2016') === false && validator.contains(request.body.year,'2016')=== false) {
+    contextData.errors.push('Year should be 2016 or 2017');
+  }
+
+if (request.body.month <= 0 && request.body.month >= 11) {
+    contextData.errors.push('Month must be between 0 and 11');
+  }
+
+if (request.body.hour <= 0 || request.body.hour >= 23) {
+    contextData.errors.push('Hour must be between 0 and 23');
+  }
+
+if (request.body.minute !== 0 || request.body.minute !== 30) {
+    contextData.errors.push('Minute must be either 0 or 30');
+  }
+   
+if (validator.contains(request.body.email, '@yale.edu')) {
+    contextData.errors.push('Your email must contain @yale.edu');
+  }
+    
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
