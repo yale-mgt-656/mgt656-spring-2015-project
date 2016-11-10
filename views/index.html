@@ -11,13 +11,11 @@
     Welcome to {{ title }}. {{tagline}}
   </p>
   <img id="logo" src="https://s15.postimg.org/7d9c0lmzv/Drinking_Buddies_LOGO.png" style="width: 40%; height: 40%">
-  
-  <ul>
-  <li>SOM House Party. Sunday, Jan. 17 at 4:30pm 2 attending so far.</li>
-  <li>BBQ party for hackers and nerds. Tuesday, Sep. 1 at 7:00pm 2 attending so far.</li>
-  <li>BBQ for managers. Tuesday, Oct. 20 at 6:00pm 1 attending so far.</li>
-  <li>Cooking lessons for the busy business student. Tuesday, Sep. 2 at 7:00pm 1 attending so far.</li>
-</ul>
+  <p>Here is our list of events</p>
+  <div style ="border: 1px style black">
+  <div>{% include "fragments/events-list.html" %}
+  </div>
+ 
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
