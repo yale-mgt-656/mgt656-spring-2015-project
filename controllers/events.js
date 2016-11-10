@@ -73,14 +73,18 @@ function saveEvent(request, response){
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
-    }
-}
-
-var year = checkIntrange(request, 'year', 2015, 2016, contextData);
+  }
+    
+    if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+  
+ var year = checkIntrange(request, 'year', 2015, 2016, contextData);
  var month = checkIntrange(request, 'month', 0, 11, contextData);
  var day = checkIntrange(request, 'day', 1, 31, contextData);
  var hour = checkIntrange(request, 'hour', 0, 23, contextData);
-if (contextData.errors.length === 0) {
+
+  if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
       location: request.body.location,
@@ -94,6 +98,7 @@ if (contextData.errors.length === 0) {
     response.render('create-event.html', contextData);
   }
 }
+
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   var contextData = {event: ev}
