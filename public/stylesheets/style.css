@@ -100,32 +100,42 @@ p {
 }
 
 
-.index-event {
+.index-event-id {
   position: relative;
-  max-width: 600px;
-  margin: auto;
-  
-}
-
-.index-event-info {
-  background-size: cover;
+  margin: 10px auto;
+  background-color: rgba(211,211,211, 0.4);
+  padding: 10px;
+  border-radius: 15px; 
+  max-width: 800px;
   font: bold;
-  font-size: 15px;
 }
 
 .index-event-info-name {
   font-size: 20px;
   float: left;
-  
 }
 
 .index-event-info-time {
-  float:right;
+  float: right;
 }
+
+/*
+.index-event-detail {
+  height: 0px ;
+  opacity: 0;
+}
+
+.index-event-image {
+  height: 0px;
+  opacity: 0;
+}
+*/
+
 
 li {
    list-style-type: none; 
 }
+
 
 
 

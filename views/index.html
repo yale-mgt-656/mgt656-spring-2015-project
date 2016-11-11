@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 
+<script>
+   $('index-event-info').click(function() {
+    $("index-event-detail").show();
+    alert("hello");
+    });
+</script>
+
 {% block header %}
   <header>
     <h1>{{ title }}</h1>
@@ -12,9 +19,8 @@
   </p>
 
   <div class="index-logo">
-      <img id="logo"src="/pictures/Capture.PNG" width = 1100px>
+      <img id="logo"src="/pictures/Capture.PNG" height=0>
   </div>
-
 
   <p>
     Check out the <a href="/about">About us</a> page
@@ -22,10 +28,13 @@
   </p>
   
    <div class="index-event">
-    {% include "fragments/events-list.html" %}
+    {% include "fragments/index-events-list.html" %}
    </div>
    
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+
+
 {% endblock %}
+

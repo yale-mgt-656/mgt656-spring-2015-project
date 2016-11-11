@@ -1,0 +1,31 @@
+<ul>
+    
+  {% for event in events %}
+
+  
+    <li class="event" id="event-{{event.id}}">
+    <div class="index-event-id">
+      <div class="index-event-info">
+         <span class="index-event-info-name"><a href="/events/{{event.id}}">{{event.title}}.</a></span>
+         <span class="index-event-info-time"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
+      </div>
+
+    <br>
+    
+    <div class="index-event-detail">
+         <br><span class="location">{{event.location}}</span>
+         <br><span class="attendance">{{event.attending.length}} attending so far.</span></br>
+    </div>
+
+    </br> 
+
+    <div class="index-event-image">
+         <img src="{{event.image}}" id="image">
+    </div>
+    
+    </div>
+    </li>
+    
+  {% endfor %}
+</ul>
+
