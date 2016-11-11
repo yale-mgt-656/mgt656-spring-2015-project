@@ -1,5 +1,6 @@
 'use strict';
 
+
 var events = require('../models/events');
 var validator = require('validator');
 
@@ -179,3 +180,4 @@ module.exports = {
   'rsvp': rsvp,
   'api': api
 };
+

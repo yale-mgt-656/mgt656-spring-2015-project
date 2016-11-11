@@ -25,9 +25,14 @@ a {
   display:inline-block;  
   background-color: #f0ffff;
   width:100%;
+<<<<<<< HEAD
+  height: 70px;
+=======
   height: 60px;
 
+>>>>>>> e55eb26a63150e94e00930f39c55a8f428f0cc6d
 }
+
 .menu-left{
 float:left;
 
@@ -48,16 +53,13 @@ list-style-type :none;
   height :500px;
   display: block;
     margin: auto;
-
 }
 
 #about-us-list li {
-    padding: 10px;
-
+  padding: 10px;
   float: left;
   width: 250px;
   display:block;
-  
 }
 
 #about-us-list img {
@@ -69,15 +71,13 @@ list-style-type :none;
 
 #footer {
   display: block;
-  
 }
-
 
 
 .outer{
   position:relative;
-
 }
+
 .mission {
   position: absolute;
   top: 75%;
@@ -89,7 +89,6 @@ list-style-type :none;
   height:100px;*/
 }
 h1 {  
-
   text-transform: uppercase;
   margin: 0;
   font-size: 3rem;
@@ -99,3 +98,45 @@ p {
   margin: 0;
   font-size: 1.5rem;
 }
+
+
+.index-event-id {
+  position: relative;
+  margin: 10px auto;
+  background-color: rgba(211,211,211, 0.4);
+  padding: 10px;
+  border-radius: 15px; 
+  max-width: 800px;
+  font: bold;
+}
+
+.index-event-info-name {
+  font-size: 20px;
+  float: left;
+}
+
+.index-event-info-time {
+  float: right;
+}
+
+/*
+.index-event-detail {
+  height: 0px ;
+  opacity: 0;
+}
+
+.index-event-image {
+  height: 0px;
+  opacity: 0;
+}
+*/
+
+
+li {
+   list-style-type: none; 
+}
+
+
+
+
+
