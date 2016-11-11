@@ -119,17 +119,9 @@ p {
   float: right;
 }
 
-/*
 .index-event-detail {
-  height: 0px ;
-  opacity: 0;
+ display: none;
 }
-
-.index-event-image {
-  height: 0px;
-  opacity: 0;
-}
-*/
 
 
 li {
