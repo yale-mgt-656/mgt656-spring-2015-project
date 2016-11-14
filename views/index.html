@@ -10,14 +10,24 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+
+  <div class="index-logo">
+      <img id="logo"src="/pictures/Capture.PNG" height=0>
+  </div>
+
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
-   <div>
-    {% include "fragments/events-list.html" %}
-  </div>
+  
+   <div class="index-event">
+    {% include "fragments/index-events-list.html" %}
+   </div>
+   
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
+
+
 {% endblock %}
+
