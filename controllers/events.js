@@ -157,4 +157,3 @@ module.exports = {
   'rsvp': rsvp,
   'api': api
 };
-
