@@ -3,12 +3,16 @@
 
 {% block mainContent %}
 
-Details for this event:
-<ul>
-    <li>Title: <a href="/events/{{event.id}}">{{event.title}}</a>.</li>
-    <li>Date & time: <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time></li>
-    <li>Attendees: {{event.attending.length}} people are going.</li>
-</ul>
+<h1 id="title">{{event.title}}</h1>
+
+    <span id="date"><strong>Date & time:</strong> <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time></span>
+    <span id="location"><strong>Location:</strong></span>
+    <span id="image"><strong>Image:</strong></span>
+    
+    <strong>Attendees: </strong>{{event.attending.length}} people are going. They are:
+    <ul id="attendees">
+        <li>{{event.attending}}</li>
+    </ul>
   
   <div>
     <a class="btn btn-primary" href="/events/new">Create a new event</a>
