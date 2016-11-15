@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+
+{% block mainContent %}
+
+Details for this event:
+<ul>
+    <li>Title: <a href="/events/{{event.id}}">{{event.title}}</a>.</li>
+    <li>Date & time: <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time></li>
+    <li>Attendees: {{event.attending.length}} people are going.</li>
+</ul>
+  
+  <div>
+    <a class="btn btn-primary" href="/events/new">Create a new event</a>
+  </div>
+
+
+
+{% endblock %}
