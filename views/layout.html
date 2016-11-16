@@ -28,8 +28,17 @@
     {% block footer %}
       <footer>
         <a href="/">Home</a> | <a href="/about">About Us</a> | <a href="/events">Events</a>
+        
+        <form class="navbar-form navbar-right" role="search" method="get">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" id="searchEvents">
+        </div>
+        <a class="btn btn-primary" role="button">Submit</a>
+        
+        </form>
       </footer>
     {% endblock %}
 
   </body>
 </html>
+ 

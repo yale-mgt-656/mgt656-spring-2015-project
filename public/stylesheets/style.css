@@ -30,7 +30,14 @@ footer {
   padding: 1em;
   border: 1px solid #ddd;
   margin: 2em 0;
+  height: 80px;
 }
+
+footer > a {
+    vertical-align:middle;
+     
+}
+
 
 span {
   display: inline-block;
