@@ -65,6 +65,7 @@ list-style-type :none;
 #about-us-list {
   padding: 10px;
   height :500px;
+  margin-left: 12%;
 
 }
 
@@ -95,7 +96,7 @@ padding:5%;
 }
 
 .outer {
-  margin-left: 8%;
+  margin-left: 5%;
 }
 
 .outer li {
@@ -341,7 +342,7 @@ p {
 }
 
 
-<<<<<<< HEAD
+
 .list-event-name a{
   text-decoration: underline;
   text-align:center; 
@@ -391,23 +392,14 @@ p {
   border-radius: 15px;
 }
 
-.event-detail-page h1 {
-  font-size: 30px;
-=======
+
 li {
    list-style-type: none; 
->>>>>>> bcc4990c0286b1dc880f6ece2e3115e00f84adc3
 }
 
-
-
-
-
-<<<<<<< HEAD
 .event-detail-page form {
   position: relative;
   padding: 25px 0px 5px 360px ;
   width: 100%;
 }
-=======
->>>>>>> bcc4990c0286b1dc880f6ece2e3115e00f84adc3
+
