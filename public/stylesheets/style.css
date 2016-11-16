@@ -25,12 +25,8 @@ a {
   display:inline-block;  
   background-color: #f0ffff;
   width:100%;
-<<<<<<< HEAD
-  height: 70px;
-=======
   height: 60px;
 
->>>>>>> e55eb26a63150e94e00930f39c55a8f428f0cc6d
 }
 
 .menu-left{
@@ -39,7 +35,7 @@ float:left;
 }
 .menu-right li{
   float:right;
-    padding-right:1px;
+  padding-right:1px;
  height: 60px;
 padding: 15px;
 background-color:#f0ffff;
@@ -88,6 +84,7 @@ list-style-type :none;
  /*width:200px;
   height:100px;*/
 }
+
 h1 {  
   text-transform: uppercase;
   margin: 0;
@@ -99,6 +96,10 @@ p {
   font-size: 1.5rem;
 }
 
+
+li {
+   list-style-type: none; 
+}
 
 .index-event-id {
   position: relative;
@@ -124,11 +125,26 @@ p {
 }
 
 
-li {
-   list-style-type: none; 
+.list-event {
+  padding: 10px 20px 0 20px;
+  max-width: 1000px;
+  margin: 5px auto;
+  background-color: rgba(211,211,211,0.3);
+  border-radius: 20px;
 }
 
+.list-event-info-name {
+  font-size: 20px;
+}
 
+.list-event-info-time {
+  float: right;
+}
 
+.list-event-detail {
+  padding-top: 5px;
+}
 
-
+.list-event-image {
+  padding-top: 5px;
+}
