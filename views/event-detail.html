@@ -5,14 +5,14 @@
 
 <h1 id="title">{{event.title}}</h1>
 
+<div class="event-detail" id="event-image">
+    <span id="image"><img src="{{event.image}}" height="200"></span>
+</div>
 <div class="event-detail">
     <span id="date"><strong>Date & time:</strong> <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time></span>
 </div>
 <div class="event-detail">
-    <span id="location"><strong>Location:</strong></span>
-</div>
-<div class="event-detail" id="event-image">
-    <span id="image"><strong>Image:</strong></span>
+    <span id="location"><strong>Location:</strong> {{event.location}}</span>
 </div>
 <div class="event-detail"> 
     <strong>Attendees: </strong>{{event.attending.length}} people are going. They are:
