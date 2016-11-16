@@ -1,15 +1,23 @@
+
+
 body {
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0px;
-  margin-left: 0px;
+  
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
   background: 
     linear-gradient(
       rgba(0, 0, 0, 1),
       rgba(0, 0, 0, 1)
     ),
 }
-
+.main{
+  padding:20px;
+  margin:10px;
+}
+.container-fluid{
+      padding: 0;
+      margin:0;
+  }
 a {
   color: #00B7FF;
 }
@@ -19,26 +27,25 @@ a {
 }
 
 
-.menu{
+#menu{
   position:relative;
-  margin-top:0px;
+  margin:0;
+  padding: 0;
   display:inline-block;  
   background-color: #f0ffff;
   width:100%;
-  height: 70px;
-
+  height: 60px;
 }
+
 .menu-left{
 float:left;
-
 }
 .menu-right li{
+  padding: 15px;
   float:right;
-    padding-right:1px;
- height: 70px;
-padding: 15px;
-background-color:#f0ffff;
-list-style-type :none;
+  height: 57px;
+  background-color:#f0ffff;
+  list-style-type :none;
 }
 .menu-right li:hover{
   background-color:#e6e6fa;
@@ -46,18 +53,15 @@ list-style-type :none;
 #about-us-list {
   padding: 10px;
   height :500px;
-  display: block;
   margin: auto;
 
 }
 
 #about-us-list li {
-    padding: 10px;
-
+  padding: 10px;
   float: left;
   width: 250px;
-  display:block;
-  
+  height:500px;
 }
 
 #about-us-list img {
@@ -68,20 +72,20 @@ list-style-type :none;
 }
 
 #footer {
-  display: block;
-  
+  position: fixed;
+margin-left: 20%;
+padding:5%;
 }
-
 
 
 .outer{
   position:relative;
-
 }
+
 .mission {
   position: absolute;
-  top: 75%;
-  left: 52%;
+  top:70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
@@ -89,13 +93,45 @@ list-style-type :none;
   height:100px;*/
 }
 h1 {  
-
   text-transform: uppercase;
-  margin: 0;
   font-size: 3rem;
   white-space: nowrap;
 }
 p {
-  margin: 0;
+  padding:10px;
   font-size: 1.5rem;
 }
+
+
+.index-event-id {
+  position: relative;
+  margin: 10px auto;
+  background-color: rgba(211,211,211, 0.4);
+  padding: 10px;
+  border-radius: 15px; 
+  max-width: 800px;
+  font: bold;
+}
+
+.index-event-info-name {
+  font-size: 20px;
+  float: left;
+}
+
+.index-event-info-time {
+  float: right;
+}
+
+.index-event-detail {
+ display: none;
+}
+
+
+li {
+   list-style-type: none; 
+}
+
+
+
+
+
