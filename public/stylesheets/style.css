@@ -53,7 +53,7 @@ float:left;
 #about-us-list {
   padding: 10px;
   height :500px;
-  margin: auto;
+  margin-left: 15%;
 
 }
 
@@ -62,6 +62,7 @@ float:left;
   float: left;
   width: 250px;
   height:500px;
+  list-style-type:none;
 }
 
 #about-us-list img {
@@ -72,26 +73,71 @@ float:left;
 }
 
 #footer {
-  position: fixed;
-margin-left: 20%;
+text-align: center;
 padding:5%;
 }
 
+.meet-team {
+  text-align: center;
+}
 
-.outer{
+.outer {
+  margin-left: 8%;
+}
+
+.outer li {
+  display:inline;
+}
+
+.vision {
   position:relative;
 }
 
-.mission {
+.vision-statement {
   position: absolute;
-  top:70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 400px;
+  top: -160px;
+  left: 18%;
+  transform: translate(0, -500);
   color: white;
   text-align: center;
+  font-size: 300%;
  /*width:200px;
   height:100px;*/
+/*}*/}
+
+.vision-statement h1 {
+  font-size: 200%;
 }
+
+.vision-statement p {
+  font-size: 75%;
+}
+
+.mission {
+  position:relative;
+}
+
+.mission-statement {
+  position: absolute;
+  width: 400px;
+  top: -160px;
+  right: 20%;
+  color: white;
+  text-align: center;
+  font-size: 300%;
+ /*width:200px;
+  height:100px;*/
+/*}*/}
+
+.mission-statement h1 {
+  font-size: 200%;
+}
+
+.mission-statement p {
+  font-size: 75%;
+}
+
 h1 {  
   text-transform: uppercase;
   font-size: 3rem;
