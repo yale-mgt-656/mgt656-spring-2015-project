@@ -28,21 +28,13 @@ footer {
   height: 80px;
 }
 
-<<<<<<< HEAD
-footer > a {
-    vertical-align:middle;
-     
-}
 
-
-span {
-=======
 span.header {
   display: inline-block;
 }
 
 .aboutphoto {
->>>>>>> aea76acac00c44f2eac29721686d9f92077c04d6
+ 
   display: inline-block;
 }
 
