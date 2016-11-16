@@ -1,19 +1,32 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <h1> Happiness is only truth when shared.</h1>
+<div id="about-page">
+  <h1 class="meet-team"> Happiness is only truth when shared.</h1>
   <div class="outer">
-      <img src="/pictures/road-sunset-wallpaper.jpg" width=1200px height=500px>
+      <!-- <img src="/pictures/road-sunset-wallpaper.jpg" width="1200px" height="500px"> -->
 
-      <div class="mission">
-        <h1>Mission</h1>
-        <p>CU There Events is committed to providing a state-of-the-art platform where people get to see, reserve, and create the events that matter the most to them.</p>
-        <h1>Vision</h1>
-        <p>By 2020 our growth strategy will place CU There Events as the lead webApp in event planning.</p>
+      <div>
+        <ul>        
+          <li class="mission">
+            <img id="mission-container" src="/pictures/Mission.PNG" height="550px">
+            <div class="mission-statement">
+              <h1>Mission</h1>
+              <p>CU There Events is committed to providing a state-of-the-art platform where people get to see, reserve, and create the events that matter the most to them.</p>
+            </div>
+          </li>
+          <li class="vision">
+            <img id="vision-container" src="/pictures/vision.PNG" height="550px">
+            <div class="vision-statement">
+              <h1>Vision</h1>
+              <p>By 2020 our growth strategy will place CU There Events as the lead webApp in event planning.</p>
+            </div>
+          </li>
+        </ul>
       </div>
 </div>
-  
-  <h2>Meet the Team</h2>
+<br> 
+  <h2 class="meet-team">Meet the Team</h2>
   <div id = "about-us-list">
     <ul>
       <li id="David">
@@ -37,6 +50,7 @@
         <p>Stephanie is a sophomore in Yale College double majoring in Computer Science and Spanish. She is passionate about using technology to bring new ideas to life that will change the world!</p>
       </li>
     </ul>
+  </div>
   </div>
   <br>
 {% endblock %}

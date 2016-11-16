@@ -1,15 +1,23 @@
+
+
 body {
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0px;
-  margin-left: 0px;
+  
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
   background: 
     linear-gradient(
       rgba(0, 0, 0, 1),
       rgba(0, 0, 0, 1)
     ),
 }
-
+.main{
+  padding:20px;
+  margin:10px;
+}
+.container-fluid{
+      padding: 0;
+      margin:0;
+  }
 a {
   color: #00B7FF;
 }
@@ -19,21 +27,23 @@ a {
 }
 
 
-.menu{
+#menu{
   position:relative;
-  margin-top:0px;
+  margin:0;
+  padding: 0;
   display:inline-block;  
   background-color: #f0ffff;
   width:100%;
   height: 60px;
 
+
 }
 
 .menu-left{
 float:left;
-
 }
 .menu-right li{
+  padding: 15px;
   float:right;
   padding-right:1px;
  height: 60px;
@@ -47,15 +57,16 @@ list-style-type :none;
 #about-us-list {
   padding: 10px;
   height :500px;
-  display: block;
-    margin: auto;
+  margin-left: 15%;
+
 }
 
 #about-us-list li {
   padding: 10px;
   float: left;
   width: 250px;
-  display:block;
+  height:500px;
+  list-style-type:none;
 }
 
 #about-us-list img {
@@ -66,18 +77,79 @@ list-style-type :none;
 }
 
 #footer {
-  display: block;
+text-align: center;
+padding:5%;
 }
 
+.meet-team {
+  text-align: center;
+}
 
-.outer{
+.outer {
+  margin-left: 8%;
+}
+
+.outer li {
+  display:inline;
+}
+
+.vision {
   position:relative;
 }
 
-.mission {
+.vision-statement {
   position: absolute;
-  top: 75%;
-  left: 52%;
+  width: 400px;
+  top: -160px;
+  left: 18%;
+  transform: translate(0, -500);
+  color: white;
+  text-align: center;
+  font-size: 300%;
+ /*width:200px;
+  height:100px;*/
+/*}*/}
+
+.vision-statement h1 {
+  font-size: 200%;
+}
+
+.vision-statement p {
+  font-size: 75%;
+}
+
+.mission {
+  position:relative;
+}
+
+.mission-statement {
+  position: absolute;
+  width: 400px;
+  top: -160px;
+  right: 20%;
+  color: white;
+  text-align: center;
+  font-size: 300%;
+ /*width:200px;
+  height:100px;*/
+/*}*/}
+
+.mission-statement h1 {
+  font-size: 200%;
+}
+
+.outer1{
+  position: relative;
+  /*left:10%;
+  top:10%;*/
+  float: left;
+}
+
+.Art {
+  position:absolute;
+  top:10px
+ /* top:70%;
+  left: 50%;*/
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
@@ -85,15 +157,154 @@ list-style-type :none;
   height:100px;*/
 }
 
+.outer2{
+  position: relative;
+ left:10%;
+  top:10%;
+}
+
+.Business {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer3{
+  position: relative;
+  left:10%;
+  top:10%;
+}
+
+.Concert {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer4{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Entrepreneur {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer5{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Food {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer6{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Gaming {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer7{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Party {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer8{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Running {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer9{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Wood {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+ /*width:200px;
+  height:100px;*/
+
+.mission-statement p {
+  font-size: 75%;
+}
+
 h1 {  
   text-transform: uppercase;
-  margin: 0;
   font-size: 3rem;
   white-space: nowrap;
   text-align: center;
 }
 p {
-  margin: 0;
+  padding:10px;
   font-size: 1.5rem;
 }
 
