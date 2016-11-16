@@ -32,6 +32,7 @@ a {
   background-color: #f0ffff;
   width:100%;
   height: 60px;
+
 }
 
 .menu-left{
@@ -40,9 +41,7 @@ float:left;
 .menu-right li{
   padding: 15px;
   float:right;
-  height: 57px;
-  background-color:#f0ffff;
-  list-style-type :none;
+
   padding-right:1px;
  height: 60px;
 padding: 15px;
@@ -55,7 +54,7 @@ list-style-type :none;
 #about-us-list {
   padding: 10px;
   height :500px;
-  margin: auto;
+  margin-left: 15%;
 
 }
 
@@ -64,6 +63,7 @@ list-style-type :none;
   float: left;
   width: 250px;
   height:500px;
+  list-style-type:none;
 }
 
 #about-us-list img {
@@ -75,15 +75,94 @@ list-style-type :none;
 
 #footer {
 margin-left: 20%;
+
+text-align: center;
 padding:5%;
 }
 
+.meet-team {
+  text-align: center;
+}
 
-.outer{
+.outer {
+  margin-left: 8%;
+}
+
+.outer li {
+  display:inline;
+}
+
+.vision {
   position:relative;
 }
 
+.vision-statement {
+  position: absolute;
+  width: 400px;
+  top: -160px;
+  left: 18%;
+  transform: translate(0, -500);
+  color: white;
+  text-align: center;
+  font-size: 300%;
+ /*width:200px;
+  height:100px;*/
+/*}*/}
+
+.vision-statement h1 {
+  font-size: 200%;
+}
+
+.vision-statement p {
+  font-size: 75%;
+}
+
 .mission {
+  position:relative;
+}
+
+.mission-statement {
+  position: absolute;
+  width: 400px;
+  top: -160px;
+  right: 20%;
+  color: white;
+  text-align: center;
+  font-size: 300%;
+ /*width:200px;
+  height:100px;*/
+/*}*/}
+
+.mission-statement h1 {
+  font-size: 200%;
+}
+
+.outer1{
+  position: relative;
+  /*left:10%;
+  top:10%;*/
+  float: left;
+}
+
+.Art {
+  position:absolute;
+  top:10px;
+ /* top:70%;
+  left: 50%;*/
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer2{
+  position: relative;
+ left:10%;
+  top:10%;
+}
+
+.Business {
   position: absolute;
   top:70%;
   left: 50%;
@@ -94,10 +173,134 @@ padding:5%;
   height:100px;*/
 }
 
+.outer3{
+  position: relative;
+  left:10%;
+  top:10%;
+}
+
+.Concert {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer4{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Entrepreneur {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer5{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Food {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer6{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Gaming {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer7{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Party {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer8{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Running {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer9{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Wood {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+ /*width:200px;
+  height:100px;*/
+
+.mission-statement p {
+  font-size: 75%;
+}
+
 h1 {  
   text-transform: uppercase;
   font-size: 3rem;
   white-space: nowrap;
+  text-align: center;
 }
 p {
   padding:10px;
@@ -162,4 +365,62 @@ li {
         padding:7px;
 
   
+}
+
+
+.list-event-image {
+  padding-top: 5px;
+}
+
+.event-detail-page {
+  font-size: 20px;
+  color: white;
+  margin: 10px auto;
+  max-width: 1000px;
+  position: relative;
+  background-color: rgba(130,130,130,1);
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(211, 211,211, 0.2);
+  border-radius: 15px;
+}
+
+.event-detail-page h1 {
+  font-size: 30px;
+}
+
+.event-detail-page-text  {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  padding-top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.event-detail-page ul  {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+.event-detail-page span {
+  position: relative;
+  font-size: 15px;
+}
+
+.event-detail-page img {
+  position: relative;
+  padding: 50px 0 0 0 ;
+  width: 100%;
+}
+
+.event-detail-page form {
+  position: relative;
+  padding: 25px 0px 5px 360px ;
+  width: 100%;
 }
