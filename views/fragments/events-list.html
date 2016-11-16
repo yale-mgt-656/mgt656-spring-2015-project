@@ -10,23 +10,21 @@
     <div class="list-event-image" style="position:relative">
         <img src="{{event.image}}" id="image" width="100%">
 
-<div class="container-fluid" style="position: absolute; top:20px;width:100%;padding:10px">
-      <div class="list-event-info">
-         <span class="list-event-info-name"><a href="/events/{{event.id}}">{{event.title}}.</a></span>
-         <span class="list-event-info-time"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
-      </div>
+    <div class="container-fluid" style="position: absolute; top:20px;width:100%;padding:10px">
+             
+        <span class="list-event-name"><a href="/events/{{event.id}}">{{event.title}}.</a></span>
+         <span class="list-event-time"><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></span>
       <div class="list-event-detail">
          <span class="location">{{event.location}}</span></br>
          <span class="attendance">{{event.attending.length}} attending so far.</span>
       </div>
-<div>
+    <div>
     </div>
 
 
 
  
-    <hr></hr>
-    
+
     </li>
 </div>
     
