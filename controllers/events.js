@@ -64,24 +64,49 @@ function saveEvent(request, response){
 if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be less than 50 letters.');
   }
+  
+  console.log(request.body.year);
 
-if (validator.contains(request.body.year,'2016') === false && validator.contains(request.body.year,'2016')=== false) {
+if (request.body.year > 2017 && request.body.year < 2015) {
     contextData.errors.push('Year should be 2016 or 2017');
   }
 
-if (request.body.month <= 0 && request.body.month >= 11) {
+if (validator.isInt(request.body.year) === false){
+    contextData.errors.push('Year should be an integer');
+  }
+
+if (request.body.month > 11 && request.body.month <0 ) {
     contextData.errors.push('Month must be between 0 and 11');
   }
 
-if (request.body.hour <= 0 || request.body.hour >= 23) {
+if (validator.isInt(request.body.month) === false){
+    contextData.errors.push('month should be an integer');
+  }
+
+if (request.body.date > 31 && request.body.date <1) {
+    contextData.errors.push('Date must be between 1 and 31');
+  }
+
+if (validator.isInt(request.body.date) === false){
+    contextData.errors.push('date should be an integer');
+  }
+
+if (request.body.hour > 23 && request.body.hour <0) {
     contextData.errors.push('Hour must be between 0 and 23');
   }
 
-if (request.body.minute !== 0 || request.body.minute !== 30) {
-    contextData.errors.push('Minute must be either 0 or 30');
+if (validator.isInt(request.body.hour) === false){
+    contextData.errors.push('hour should be an integer');
+  }
+  
+console.log(request.body.minute);
+console.log(validator.equals(request.body.minute, "00"));
+
+if (validator.equals(request.body.minute, "00") === false || validator.equals(request.body.minute, "30") === false) {
+    contextData.errors.push('Minute must be either 00 or 30');
   }
    
-if (validator.contains(request.body.email, '@yale.edu')) {
+if (validator.contains(request.body.email,'@yale.edu') === false) {
     contextData.errors.push('Your email must contain @yale.edu');
   }
     

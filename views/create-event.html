@@ -5,7 +5,7 @@
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -18,7 +18,7 @@
     <input type="text" name="title" placeholder="dope title">
     <p>
     <label for="date">Event Day:</label>
-    <input type="text" name="day" placeholder="day">
+    <input type="integer" name="day" placeholder="day">
     </p>
     
     <p>
@@ -38,7 +38,7 @@
     
     <p>
     <label for="minute">Event Minute:</label>
-    <input type="text" name="minute" placeholder="00 or 30">
+    <input type="integer" name="minute" placeholder="00 or 30">
     </p>
     
     
