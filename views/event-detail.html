@@ -3,31 +3,38 @@
 {% block mainContent %}
 
   {% if errors %}
-    <div>
+
+  <div>
       <p>Please correct the following errors!</p>
       <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
       </ul>
-    </div>
+  </div>
   {% endif %}
+  <div class="event-detail-page">
     <h1 id="title">{{event.title}}</h1>
-    <span id="date">{{event.date}}</span>
-    <!-- NOT YET IMPLEMENTED <span id="location">{{event.location}}</span> -->
-    <span id="location">{{event.location}}</span>
+    <div class="event-detail-page-text">
+    Time: <span id="date">{{event.date}}</span>
+    <br>
+    Location: <span id="location">{{event.location}}</span>
+    </br>
+    </div>
     <img src="{{event.image}}" id="image">
-	<!-- IMAGE HERE -->
-	<ul id="attendees">
+    <br>
+  	<ul id="attendees">
 	    {% for people in event.attending %}
         <li>
           {{people}}
         </li>
         {% endfor %}
     </ul>
+    </br>
   <form id="email" method="POST">
-    E-mail:
+    Sign up with your e-mail:
     <input type="email" name="email">
     <input type="submit" value="Submit">
   </form>
+  </div>
 {% endblock %}

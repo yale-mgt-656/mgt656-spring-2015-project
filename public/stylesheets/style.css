@@ -90,6 +90,7 @@ h1 {
   margin: 0;
   font-size: 3rem;
   white-space: nowrap;
+  text-align: center;
 }
 p {
   margin: 0;
@@ -147,4 +148,51 @@ li {
 
 .list-event-image {
   padding-top: 5px;
+}
+
+.event-detail-page {
+  font-size: 20px;
+  color: white;
+  margin: 10px auto;
+  max-width: 1000px;
+  position: relative;
+  background-color: rgba(130,130,130,1);
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(211, 211,211, 0.2);
+  border-radius: 15px;
+}
+
+.event-detail-page h1 {
+  font-size: 30px;
+}
+
+.event-detail-page-text  {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  padding-top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.event-detail-page ul  {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+.event-detail-page span {
+  position: relative;
+  font-size: 15px;
+}
+
+.event-detail-page img {
+  position: relative;
+  padding: 50px 0 0 0 ;
+  width: 100%;
 }
