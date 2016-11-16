@@ -10,10 +10,7 @@ body {
       rgba(0, 0, 0, 1)
     ),
 }
-.main{
-  padding:20px;
-  margin:10px;
-}
+
 .container-fluid{
       padding: 0;
       margin:0;
@@ -72,7 +69,6 @@ float:left;
 }
 
 #footer {
-  position: fixed;
 margin-left: 20%;
 padding:5%;
 }
