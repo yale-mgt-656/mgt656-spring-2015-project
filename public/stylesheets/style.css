@@ -32,11 +32,9 @@ a {
   margin:0;
   padding: 0;
   display:inline-block;  
-  background-color: #f0ffff;
+  background-color: #ff8A47;
   width:100%;
   height: 60px;
-
-
 }
 
 .menu-left{
@@ -45,11 +43,9 @@ float:left;
 .menu-right li{
   padding: 15px;
   float:right;
-  padding-right:1px;
- height: 60px;
-padding: 15px;
-background-color:#f0ffff;
-list-style-type :none;
+  height: 57px;
+  background-color:#ff8A47;
+  list-style-type :none;
 }
 .menu-right li:hover{
   background-color:#e6e6fa;
@@ -57,7 +53,6 @@ list-style-type :none;
 #about-us-list {
   padding: 10px;
   height :500px;
-  margin-left: 15%;
 
 }
 
@@ -301,17 +296,12 @@ h1 {
   text-transform: uppercase;
   font-size: 3rem;
   white-space: nowrap;
-  text-align: center;
 }
 p {
   padding:10px;
   font-size: 1.5rem;
 }
 
-
-li {
-   list-style-type: none; 
-}
 
 .index-event-id {
   position: relative;
@@ -337,79 +327,11 @@ li {
 }
 
 
-.list-event {
-  padding: 10px 20px 0 20px;
-  max-width: 1000px;
-  margin: 5px auto;
-  background-color: rgba(211,211,211,0.3);
-  border-radius: 20px;
+li {
+   list-style-type: none; 
 }
 
-.list-event-info-name {
-  font-size: 20px;
-}
 
-.list-event-info-time {
-  float: right;
-}
 
-.list-event-detail {
-  padding-top: 5px;
-}
 
-.list-event-image {
-  padding-top: 5px;
-}
 
-.event-detail-page {
-  font-size: 20px;
-  color: white;
-  margin: 10px auto;
-  max-width: 1000px;
-  position: relative;
-  background-color: rgba(130,130,130,1);
-  border-style: solid;
-  border-width: 3px;
-  border-color: rgba(211, 211,211, 0.2);
-  border-radius: 15px;
-}
-
-.event-detail-page h1 {
-  font-size: 30px;
-}
-
-.event-detail-page-text  {
-  position: absolute;
-  font-size: 18px;
-  color: white;
-  padding-top: 30px;
-  left: 50%;
-  transform: translate(-50%, -50%)
-}
-
-.event-detail-page ul  {
-  position: absolute;
-  font-size: 18px;
-  color: white;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding-top: 50px;
-  margin-bottom: 30px;
-}
-
-.event-detail-page span {
-  position: relative;
-  font-size: 15px;
-}
-
-.event-detail-page img {
-  position: relative;
-  padding: 50px 0 0 0 ;
-  width: 100%;
-}
-
-.event-detail-page form {
-  position: relative;
-  padding: 25px 0px 5px 360px ;
-  width: 100%;
-}
