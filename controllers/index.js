@@ -18,7 +18,7 @@ function index (request, response) {
     }
   }
   
- // contextData.events = events.all;
+ //contextData.events = events.all;
   response.render('index.html', contextData);
 }
 

@@ -83,13 +83,16 @@ function saveEvent(request, response){
  var month = checkIntrange(request, 'month', 0, 11, contextData);
  var day = checkIntrange(request, 'day', 1, 31, contextData);
  var hour = checkIntrange(request, 'hour', 0, 23, contextData);
+ var minute = checkIntrange(request, 'minute', 0, 30, contextData);
+
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.all.length, 
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(year, month, day, hour, minute),
       attending: []
     };
     events.all.push(newEvent);
