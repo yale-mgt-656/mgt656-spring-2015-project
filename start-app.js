@@ -3,7 +3,7 @@
 var app = require('./app.js');
 
 // Get config variables
-var port = process.env.PORT || 3500;
+var port = process.env.PORT || 8080;
 var host = process.env.C9_HOSTNAME || process.env.IP;
 
 // Start the server
