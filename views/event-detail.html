@@ -5,18 +5,25 @@
 
 <h1 id="title">{{event.title}}</h1>
 
+<div class="event-detail">
     <span id="date"><strong>Date & time:</strong> <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time></span>
+</div>
+<div class="event-detail">
     <span id="location"><strong>Location:</strong></span>
+</div>
+<div class="event-detail" id="event-image">
     <span id="image"><strong>Image:</strong></span>
-    
+</div>
+<div class="event-detail"> 
     <strong>Attendees: </strong>{{event.attending.length}} people are going. They are:
     <ul id="attendees">
         <li>{{event.attending}}</li>
     </ul>
-  
-  <div>
+</div>
+
+<div>
     <a class="btn btn-primary" href="/events/new">Create a new event</a>
-  </div>
+</div>
 
 
 
