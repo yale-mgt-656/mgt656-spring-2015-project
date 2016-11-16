@@ -196,3 +196,9 @@ li {
   padding: 50px 0 0 0 ;
   width: 100%;
 }
+
+.event-detail-page form {
+  position: relative;
+  padding: 25px 0px 5px 360px ;
+  width: 100%;
+}
