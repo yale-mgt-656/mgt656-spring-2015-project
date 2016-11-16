@@ -3,8 +3,10 @@
     
 
   {% for event in events %}
+  
+<div class="list-event">
     <li class="event" id="event-{{event.id}}">
-   
+
 
       <div class="list-event-info">
          <span class="list-event-info-name"><a href="/events/{{event.id}}">{{event.title}}.</a></span>
@@ -19,11 +21,12 @@
      <div class="list-event-image">
         <img src="{{event.image}}" id="image" width="100%">
       </div>
-    
-    
+
+ 
     <hr></hr>
     
     </li>
+</div>
     
   {% endfor %}
 </ul>
