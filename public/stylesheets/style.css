@@ -92,6 +92,162 @@ padding:5%;
  /*width:200px;
   height:100px;*/
 }
+
+.outer1{
+  position: relative;
+  /*left:10%;
+  top:10%;*/
+  float: left;
+}
+
+.Art {
+  position:absolute;
+  top:10px
+ /* top:70%;
+  left: 50%;*/
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer2{
+  position: relative;
+ left:10%;
+  top:10%;
+}
+
+.Business {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer3{
+  position: relative;
+  left:10%;
+  top:10%;
+}
+
+.Concert {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer4{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Entrepreneur {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer5{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Food {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer6{
+  position: relative;
+  left:20%;
+  top:20%;
+}
+
+.Gaming {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer7{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Party {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer8{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Running {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
+.outer9{
+  position: relative;
+  left:30%;
+  top:30%;
+}
+
+.Wood {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+ /*width:200px;
+  height:100px;*/
+}
+
 h1 {  
   text-transform: uppercase;
   font-size: 3rem;
