@@ -71,33 +71,33 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    return response.redirect('/events');
   }else{
-    response.render('create-event.html', contextData);
+    return response.render('create-event.html', contextData);
   }
 }
 
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    return response.status(404).send('No such event');
   }
-  response.render('event-detail.html', {event: ev});
+  return response.render('event-detail.html', {event: ev});
 }
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    return response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+    return response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    return response.render('event-detail.html', contextData);    
   }
 
 }
@@ -115,7 +115,7 @@ function api(request, response){
   }else{
     output.events = events.all;
   }
-  response.json(output);
+  return response.json(output);
 }
 
 /**
