@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <div class="row">
+                <div class="media">
+                    <div class="col-md-2 col-sm-6">
+                        <div class="media-left media-top">
+                            <img class="media-object img-responsive" src={{event.image}} alt="Event Image"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-10 col-sm-6">
+                        <div class="media-body">
+      
+                            <h2 class="media-heading">{{event.title}}</h2>
+                            <b>Location:</b> {{event.location}}
+                            <br/>
+                            <b>Date:</b> {{event.date|prettyDate}}    
+         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="panel-body">
+            <div class="col-sm-12 col-md-6">
+                <b>Attending:</b>
+                
+                <ul class="list-group">
+                    {% for attendee in event.attending %}
+                        <li class="list-group-item">{{attendee}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="panel-footer clearfix">
+            <button class="btn btn-primary pull-right">RSVP</button>
+        </div>
+        
+    </div>
+    
+{% endblock %}

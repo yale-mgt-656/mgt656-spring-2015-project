@@ -71,35 +71,51 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    return response.redirect('/events');
   }else{
-    response.render('create-event.html', contextData);
+    return response.render('create-event.html', contextData);
   }
 }
 
 function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    return response.status(404).send('No such event');
   }
-  response.render('event-detail.html', {event: ev});
+  return response.render('event-detail.html', {event: ev});
 }
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
-    response.status(404).send('No such event');
+    return response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+    return response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    return response.render('event-detail.html', contextData);    
   }
 
+}
+
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i =0; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+        output.events.push(events.all[i]);
+      }
+    }
+  }else{
+    output.events = events.all;
+  }
+  return response.json(output);
 }
 
 /**
@@ -111,5 +127,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api' : api
 };
