@@ -73,11 +73,14 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-  
+
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+      contextData.errors.push('Your location should be between 1 and 100 letters.');
+    }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
