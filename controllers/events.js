@@ -65,7 +65,7 @@ function saveEvent(request, response){
     contextData.errors.push('Your location should be between 1 and 100 letters.');
   }
   
-  if (validator.isURL(request.body.image) === false,['http','https']) {
+  if (validator.isURL(request.body.image) === false) {
     contextData.errors.push('Must be URL starting with http:// or https://');
   }
   
@@ -77,23 +77,23 @@ function saveEvent(request, response){
    validation is coded as checking for the case where user did not make
    a selection.  */
   
-  if (request.body.year == null) {
+  if (request.body.year == 0) {
     contextData.errors.push('Please select a year.');
   }
   
-  if (request.body.month == null) {
+  if (request.body.month == 0) {
     contextData.errors.push('Please select a month.');
   }
   
-  if (request.body.day == null) {
+  if (request.body.day == 0) {
     contextData.errors.push('Please select a day.');
   }
   
-  if (request.body.hour == null) {
+  if (request.body.hour == 0) {
     contextData.errors.push('Please select an hour.');
   }
   
-  if (request.body.minute == null) {
+  if (request.body.minute == 0) {
     contextData.errors.push('Please select minute.');
   }
   

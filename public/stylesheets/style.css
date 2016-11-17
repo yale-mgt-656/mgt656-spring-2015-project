@@ -16,7 +16,7 @@ img {
     margin-right: auto;
 }
 
-.logo {
+#logo {
   border: none;
 }
 
@@ -27,7 +27,6 @@ footer {
   margin: 2em 0;
   height: 80px;
 }
-
 
 span.header {
   display: inline-block;

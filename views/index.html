@@ -1,7 +1,14 @@
 {% extends "layout.html" %}
 
 {% block header %}
-<img class="logo" src="../images/pblogo.png" height="130px">
+ <header>
+    <span class="header">
+      <div class="header-logo">
+       <img id="logo" src = "../images/pblogo.png" height="100px"> 
+      </div>
+    </span>
+  </header>
+  
   <!--<header>-->
   <!--  <div class="navbar navbar-default">-->
   <!--    <div class="container">-->
@@ -39,7 +46,7 @@
     {% include "fragments/events-list.html" %}
   </div>
  
- <a class="btn btn-primary" href="/events/new" role="button">Create New Event</a>  
+ <a class="btn btn-primary" href="/events/new" role="button" id="new">Create New Event</a>  
  
 
 {% endblock %}
