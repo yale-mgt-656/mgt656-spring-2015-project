@@ -391,9 +391,12 @@ p {
 .event-detail-page h1 {
   font-size: 30px;
 }
-li {
+   li {
    list-style-type: none; 
+}
 
+.event-detail-page img {
+  width: 100%;
 }
 
 
@@ -401,10 +404,6 @@ li {
 
 
 .event-detail-page form {
-  position: relative;
-  padding: 25px 0px 5px 360px ;
-  width: 100%;
-}
   position: relative;
   padding: 25px 0px 5px 360px ;
   width: 100%;
