@@ -12,7 +12,7 @@
       </ul>
     </div>
   {% endif %}
-
+<body>
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title"> <br>
@@ -24,34 +24,36 @@
     <label for="image">Event image:</label>
     <input type="text" name="image"> <br>
     
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-   $ ( "#datepicker" ).datepicker();
-  } );
-  </script>
-</head>
-<body>
  
-<p>Date: <input type="text" id="datepicker"></p>
- 
-    
+<label for ="Month" >Month:</label>
+<select name="Month">
+  <option datalist= allowedDateInfo.months></option>
+  </select>
+<br> 
+    <label for ="day" >Day:</label>
+<input type="integer" name="day">
+<br> 
+ <label for ="year" >Year:</label>
+<input type="integer" name="year">
+<br> 
     <label for="hour">Event hour:</label>
-    <input type="text" name="hour"> <br>
-    
+       <select > 
+     <option allowedDateInfo.hours></option>
+  </select>
+  <br>
     <label for="minute">Event minute:</label>
-    <input type="text" name="minute"> <br>
+    
+  <select>
+  <option value="0">0</option>
+  <option value="30">30</option>
+
+</select>
+    <br>
     
     <!--title, location, image, year, month, day, hour, minute-->
     <input type="submit">
   </form>
+  </body>
 {% endblock %}
 
 <title>XCG: Create Events</title>
