@@ -56,7 +56,7 @@
      31) should display errors to the user when the title is empty
      32) should redirect the user to the event detail page if the form is valid
 
-   Executed 43 tests in 7 suites in 1s 2ms
+   Executed 43 tests in 7 suites in 810ms
        11 passes
        32 failed
    
@@ -152,18 +152,13 @@
    
    29) The form for creating new events should display errors to the user when the location is empty
    
-       Expected status code 200, but got302
+       Error page should contain form errors.
        
-       + expected - actual
+       at Request._callback (test/test.js:481:16)
        
-       -false
-       +true
-       
-       at Request._callback (test/test.js:478:16)
-       
-       477 |         assert.ok(err === null, 'Error: ' + err);
-       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
-       479 |         var window = jsdom.jsdom(body).defaultView;
+       480 |         var formErrors = window.document.querySelector('ul.form-errors');
+       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
+       482 |         var errorListItems = formErrors.getElementsByTagName('li');
        
        at Request.self.callback (node_modules/request/request.js:186:22)
        
@@ -187,18 +182,13 @@
    
    28) The form for creating new events should display errors to the user when the location is too long
    
-       Expected status code 200, but got302
+       Error page should contain form errors.
        
-       + expected - actual
+       at Request._callback (test/test.js:481:16)
        
-       -false
-       +true
-       
-       at Request._callback (test/test.js:478:16)
-       
-       477 |         assert.ok(err === null, 'Error: ' + err);
-       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
-       479 |         var window = jsdom.jsdom(body).defaultView;
+       480 |         var formErrors = window.document.querySelector('ul.form-errors');
+       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
+       482 |         var errorListItems = formErrors.getElementsByTagName('li');
        
        at Request.self.callback (node_modules/request/request.js:186:22)
        
