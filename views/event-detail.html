@@ -1,0 +1,45 @@
+ {% extends "layout.html" %}
+ 
+ {% block header %}
+      <header>
+        <h1 id="title"> <span style="color:#119999";>Event Details! </span></h1>
+      </header>
+    {% endblock %}
+    
+    getById (i)
+    
+ {% block mainContent %}
+ {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+>>>>>>> 33096135639ebccc0b6c741ccca6651960c1d129
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+
+ <h2> <title title="{{event.title}}">{{event.title}}</title> </h2>
+  <img src="{{event.image}}" />
+   <p></p> 
+   When: <span style="color:#018899";> <time datetime="{{event.date}}">{{event.date|prettyDate}}</time> </span>
+   <p></p>
+   Where: <span style="color:#018899";> <location location="{{event.location}}">{{event.location}}</location> </span>
+  <p></p>
+  Attendees:<span style="color:#018899";> <attendees attending ="{{event.attending}}"></attendees>{{event.attending}}</attendees> </span>
+  <p></p>
+
+    
+ <form method="POST">
+      Interested in attending? RSVP by entering your email address below! <br>
+      <p></p>
+      <input type="email" name="email" id="email"><br>
+      <p></p>
+    <input type="submit" value="Submit">
+    </form>
+    
+{% endblock %}
+  
