@@ -3,14 +3,14 @@
 {% block mainContent %}
 
   {% if errors %}
-    <div class="form-errors">
+    <ul class="form-errors">
       <p>Please correct the following errors!</p>
       <ul>
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
       </ul>
-    </div>
+    </ul>
   {% endif %}
 <body>
 	<form id="create-event" method="POST">
@@ -26,20 +26,91 @@
     
  
 <label for ="Month" >Month:</label>
-<select name="Month">
-  <option datalist= allowedDateInfo.months></option>
-  </select>
+<select>
+ <option value ="0">January</option> 
+   <option value = "1"> February</option>
+   <option value = "2">March </option>
+   <option value = "3"> April </option>
+  <option value="4">May</option>
+   <option value="5">June</option> 
+   <option value="6">July </option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value ="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+    </select>
 <br> 
     <label for ="day" >Day:</label>
-<input type="integer" name="day">
+<select name="day" id="day" onchange="" size="1">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+</select>
 <br> 
  <label for ="year" >Year:</label>
-<input type="integer" name="year">
+<select name = "year" id = "year">
+  <option value = "00">2015</option>
+  <option value = "01">2016</option>
+  <option value = "02">2017</option>
+</select>
 <br> 
     <label for="hour">Event hour:</label>
-       <select > 
-     <option allowedDateInfo.hours></option>
-  </select>
+    <select>
+      <option value = "00">00</option>
+     <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    
+</select>
   <br>
     <label for="minute">Event minute:</label>
     
@@ -51,7 +122,7 @@
     <br>
     
     <!--title, location, image, year, month, day, hour, minute-->
-    <input type="submit">
+    <input type="submit" id ="submit">
   </form>
   </body>
 {% endblock %}
