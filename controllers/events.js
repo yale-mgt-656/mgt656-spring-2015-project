@@ -71,29 +71,42 @@ function checkIntrange(request, fieldname, minval, maxval, contextData){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
+if(request.body.image.includes('.gif') == false) {
+	if(request.body.image.includes('.png') == false){
+	contextData.errors.push('Your image must be a .png or .gif');
+}  
+
+}
+
+  if (validator.isURL(request.body.image) == false) {
+   contextData.errors.push('Your image should contain a url.'); 
+  }
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
     
     if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 100 letters.');
+    
   }
   
  var year = checkIntrange(request, 'year', 2015, 2016, contextData);
  var month = checkIntrange(request, 'month', 0, 11, contextData);
  var day = checkIntrange(request, 'day', 1, 31, contextData);
  var hour = checkIntrange(request, 'hour', 0, 23, contextData);
-
+ 
+ 
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/'+newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
