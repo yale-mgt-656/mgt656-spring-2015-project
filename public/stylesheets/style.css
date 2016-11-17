@@ -38,18 +38,21 @@ a {
 float:left;
 }
 .menu-right li{
-  
-    color: white;
   padding: 15px;
   float:right;
+ 
+
+
+  padding-right:1px;
+
+padding: 15px;
+
+list-style-type :none;
+
   height: 57px;
   background-color:#ff8A47;
-  list-style-type :none;
-}
-.menu-right li a{
- 
-  color:white;
-  
+
+
 }
 .menu-right li:hover{
   background-color:#e6e6fa;
@@ -57,6 +60,7 @@ float:left;
 #about-us-list {
   padding: 10px;
   height :500px;
+  margin-left: 8%;
 
 }
 
@@ -87,7 +91,7 @@ padding:5%;
 }
 
 .outer {
-  margin-left: 8%;
+  margin-left: 5%;
 }
 
 .outer li {
@@ -397,6 +401,10 @@ li {
 
 
 .event-detail-page form {
+  position: relative;
+  padding: 25px 0px 5px 360px ;
+  width: 100%;
+}
   position: relative;
   padding: 25px 0px 5px 360px ;
   width: 100%;
