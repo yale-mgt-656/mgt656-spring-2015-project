@@ -60,7 +60,9 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
+if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
 
   if (contextData.errors.length === 0) {
     var newEvent = {
