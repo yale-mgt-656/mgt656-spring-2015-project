@@ -3,6 +3,7 @@
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
+    <img id="logo" src="http://www.lovablechihuahua.com/wp-content/uploads/2015/12/lovable-chihuahua-training.png">
   </header>
 {% endblock %}
 
@@ -10,10 +11,16 @@
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+  
+  
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
+  <p>Here is our list of events</p>
+  <div style="border: 1px solid black">
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
