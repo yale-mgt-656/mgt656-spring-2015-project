@@ -48,19 +48,19 @@
      23) should display errors to the user when the hour is not an integer
      24) should display errors to the user when the hour is more than 23
      25) should display errors to the user when the hour is less than 0
-     26) should display errors to the user when the image is not a gif or png
-     27) should display errors to the user when the image is not a URL
-     28) should display errors to the user when the location is too long
-     29) should display errors to the user when the location is empty
-     30) should display errors to the user when the title is too long
-     31) should display errors to the user when the title is empty
-     32) should redirect the user to the event detail page if the form is valid
+     ✓ should display errors to the user when the image is not a gif or png
+     ✓ should display errors to the user when the image is not a URL
+     ✓ should display errors to the user when the location is too long
+     ✓ should display errors to the user when the location is empty
+     ✓ should display errors to the user when the title is too long
+     ✓ should display errors to the user when the title is empty
+     26) should redirect the user to the event detail page if the form is valid
 
-   Executed 43 tests in 7 suites in 810ms
-       11 passes
-       32 failed
+   Executed 43 tests in 7 suites in 1s 259ms
+       17 passes
+       26 failed
    
-   32) The form for creating new events should redirect the user to the event detail page if the form is valid
+   26) The form for creating new events should redirect the user to the event detail page if the form is valid
    
        Bad redirect location, it should look like events/4, events/5, etc: expected '/events' to match /events\/\d+\/?$/
        
@@ -69,196 +69,6 @@
        502 |       assert.ok(httpResponse.headers.hasOwnProperty('location'), 'http response header should include location.');
        503 |       expect(httpResponse.headers.location).to.match(/events\/\d+\/?$/, 'Bad redirect location, it should look like events/4, events/5, etc');
        504 |       done();
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   31) The form for creating new events should display errors to the user when the title is empty
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   30) The form for creating new events should display errors to the user when the title is too long
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   29) The form for creating new events should display errors to the user when the location is empty
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   28) The form for creating new events should display errors to the user when the location is too long
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   27) The form for creating new events should display errors to the user when the image is not a URL
-   
-       Expected status code 200, but got302
-       
-       + expected - actual
-       
-       -false
-       +true
-       
-       at Request._callback (test/test.js:478:16)
-       
-       477 |         assert.ok(err === null, 'Error: ' + err);
-       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
-       479 |         var window = jsdom.jsdom(body).defaultView;
-       
-       at Request.self.callback (node_modules/request/request.js:186:22)
-       
-       185 |       self._callbackCalled = true
-       186 |       self._callback.apply(self, arguments)
-       187 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1060:10)
-       
-       1059 |     }
-       1060 |     self.emit('complete', response, response.body)
-       1061 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:980:12)
-       
-       979 |     responseContent.once('end', function (chunk) {
-       980 |       self.emit('end', chunk)
-       981 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   26) The form for creating new events should display errors to the user when the image is not a gif or png
-   
-       Expected status code 200, but got302
-       
-       + expected - actual
-       
-       -false
-       +true
-       
-       at Request._callback (test/test.js:478:16)
-       
-       477 |         assert.ok(err === null, 'Error: ' + err);
-       478 |         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
-       479 |         var window = jsdom.jsdom(body).defaultView;
        
        at Request.self.callback (node_modules/request/request.js:186:22)
        

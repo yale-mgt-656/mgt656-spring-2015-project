@@ -49,6 +49,18 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function isImageURL(x){
+  if(validator.isURL(x)){
+    var y = x.toLowerCase();
+    var isPng = y.endsWith(".png");
+    var isGif = y.endsWith(".gif");
+    if(isPng || isGif){
+      return true;
+    }
+  }
+  return false;
+}
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -63,8 +75,12 @@ function saveEvent(request, response){
 if (validator.isLength(request.body.location, 1, 50) === false) {
     contextData.errors.push('Your location should be between 1 and 100 letters.');
   }
+  if(isImageURL(request.body.image) === false){
+    contextData.errors.push('Your image should be a URL, png, gif.');
+  }
+  
 
-  if (contextData.errors.length === 0) {
+  if (contextData.errors.length === 0){
     var newEvent = {
       title: request.body.title,
       location: request.body.location,
@@ -79,7 +95,7 @@ if (validator.isLength(request.body.location, 1, 50) === false) {
   }
 }
 
-function eventDetail (request, response) {
+function eventDetail (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
