@@ -86,7 +86,7 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-  
+
 if (validator.isLength(request.body.location, 1, 50) === false) {
     contextData.errors.push('Your location should be between 1 and 100 letters.');
   }
@@ -108,10 +108,11 @@ if (validator.isLength(request.body.location, 1, 50) === false) {
       location: request.body.location,
       image: request.body.image,
       date: new Date(),
-      attending: []
+      attending: [],
+      id: events.all.length
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
