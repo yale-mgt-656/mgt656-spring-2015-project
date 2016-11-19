@@ -3,42 +3,89 @@
 {% block header %}
 <!DOCTYPE html>
   <header>
-    <div class="navigation">
     
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About Us</a></li>
-      <li><a href="/events">Events</a></li>
-      <li><a href="/events/new">Create Events</a></li>
-    </ul>
-  </div>
+    <div class="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/events/new">Create Events</a></li>
+      </ul>
+    </div>
     
       <img id="logo" src="https://s4.postimg.org/8nyv1t225/nerd.png"> 
     
+    <h1> {{ title }} Home Page  </h1>
     
+    <style>
     
+    h3 {
+      color: #FFF;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 40px 40px;
+      padding: 40px;
+      text-align: center;
+    }
     
-   <h1> {{ title }} Home Page  </h1>
-    
-    
-   
+    .main {
+      background: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-5/shards.png");
+      margin: 0;
+      padding: 40px 40px;
+      height: 700px;
+    }
+      p{
+        
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        
+          }
+    </style>
     
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }} home page. {{tagline}}
-  </p>
-<p> Here's our list of events </p>
+  
+<div class="main">
+   <h3> 
+       &nbsp
+       </br>
+       &nbsp
+       </br>
+       <img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-5/htmlcss1-img_diamond.png" width="60px">
+        </br>
+        &nbsp
+       </br>
+       You are Welcome to 
+       </br>
+       
+       {{ title }} home page
+   </h3>
+   
+   <p>
+     
+        {{tagline}}
+        
+        Check out the <a href="/about">About us</a> page
+        as well as the <a href="/events">Events</a> page.
+      
+        </br>
+      
+        <a id="new" href="/events/new">Create a new event</a>
+        
+        </br>
+      
+        Here's our list of events:
 
-  {% include "fragments/events-list.html" %}
+    </p>
+</div>
+ 
+    {% include "fragments/events-list.html" %}
 
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+
+
 {% endblock %}
