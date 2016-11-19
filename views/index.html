@@ -3,25 +3,37 @@
 {% block header %}
 <!DOCTYPE html>
   <header>
-    <h1>
-      <img id="logo" src="https://s22.postimg.org/i039mcgz5/NERD_FILE.png"> 
+    <div class="navigation">
     
-    </h1>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/events/new">Create Events</a></li>
+    </ul>
+  </div>
     
-    <h1>
-    {{ title }} Free The World  
-    </h1>
+      <img id="logo" src="https://s4.postimg.org/8nyv1t225/nerd.png"> 
+    
+    
+    
+    
+   <h1> {{ title }} Home Page  </h1>
+    
+    
+   
+    
   </header>
 {% endblock %}
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Welcome to {{ title }} home page. {{tagline}}
   </p>
 <p> Here's our list of events </p>
-<div style="border: 1px solid black">
+
   {% include "fragments/events-list.html" %}
-</div>
+
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.

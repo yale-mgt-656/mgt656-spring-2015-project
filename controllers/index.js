@@ -8,9 +8,11 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'MGT 656 Misty Meadow',
-    'tagline': 'You are doomed (just kidding).',
+    'title': 'Misty Meadow\'s',
+    'tagline': 'You can browse and register for upcoming events.',
     'events': []
+      
+      //'events': events.all
     
   };
   for(var i=0; i < events.all.length; i++){

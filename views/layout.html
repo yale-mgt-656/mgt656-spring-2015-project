@@ -8,33 +8,12 @@
     
     
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
-   
-<style>
-  #navigation {
-    position:relative;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:70%;
-    background-color:gray;
-    color:green;
-    height:35px;
-    text-align:center;
-    padding-top:15px;
-}
-#navigation a {
-    font-size:14px;
-    padding-left:15px;
-    padding-right:15px;
-    color:black;
-    text-decoration:none;
-}
-#navigation a:hover {
-    color:blue;
-}
-</style>
+    
+    
+    
+
   
   </head>
 
@@ -42,29 +21,17 @@
 
     {% block header %}
       <header>
+      
+       <div class="navigation">
+    
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/events/new">Create Events</a></li>
+    </ul>
+  </div>
         
-        <div id="page">
-    <div id="header">
-        <a href="">
-            <img src="" border=0 >
-        </a>
-
-         <h2><a href="" border=0>Misty Meadow</a></h2>
-
-        <div id="navigation"> 
-            <a href="#">About</a>
-            <a href="#">Events</a>
-            <a href="#">Pictures</a>
-            <a href="#">random</a>
-            <a href="#">random1</a>
-            <a href="#">random2</a>
-            <a href="#">random3</a>
-        </div>
-    </div>
-
-    <div id="main"></div>
-    <div id="footer"></div>
-</div>
         
         Hey, I'm in the header
       
@@ -77,12 +44,16 @@
     {% endblock %}
 
     {% block footer %}
-      <footer> 
+      <footer > 
       
-     
-        <a href="/"> Home </a> &gt
-     <a href="/about"> About Us </a>    
+     <div class="navnav">
+      <ul> 
+       <li> <a href="/"> Home </a> </li>
+      <li> <a href="/about"> About Us </a>   </li>
+      </ul>
+      </div>
     
+
       
       </footer>
     {% endblock %}
