@@ -1,20 +1,117 @@
 {% extends "layout.html" %}
 
 {% block header %}
+<!DOCTYPE html>
   <header>
-    <h1>{{ title }} FTW</h1>
+    
+    <div class="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/events/new">Create Events</a></li>
+      </ul>
+    </div>
+    
+      <img id="logo" src="https://s4.postimg.org/8nyv1t225/nerd.png"> 
+    
+    <h1> {{ title }} Home Page  </h1>
+    
+    <style>
+    
+    h3 {
+      color: #FFF;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 40px 40px;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .main {
+      background: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-5/shards.png");
+      margin: 0;
+      padding: 40px 40px;
+      height: 700px;
+    }
+      p{
+        
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        
+          }
+          
+          
+    #map {
+        height: 400px;
+        width: 100%;
+       }
+       
+    </style>
+    
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+  
+<div class="main">
+   <h3> 
+       &nbsp
+       </br>
+       &nbsp
+       </br>
+       <img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-5/htmlcss1-img_diamond.png" width="60px">
+        </br>
+        &nbsp
+       </br>
+       You are Welcome to 
+       </br>
+       
+       {{ title }} home page
+   </h3>
+   
+   <p>
+     
+        {{tagline}}
+        
+        Check out the <a href="/about">About us</a> page
+        as well as the <a href="/events">Events</a> page.
+      
+        </br>
+      
+        <a id="new" href="/events/new">Create a new event</a>
+        
+        </br>
+      
+        Here's our list of events:
+
+    </p>
+</div>
+ 
+    {% include "fragments/events-list.html" %}
+
+  <!--<h4>Find events on Google Maps</h4>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var newhaven = {lat: 41.608, lng: -72.927};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: newhaven
+        });
+        var marker = new google.maps.Marker({
+          position: newhaven,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxDzC5XHr48IITY1WC198f0er4dWDbpgg&callback=initMap">
+    </script> -->
+
+
+
 {% endblock %}

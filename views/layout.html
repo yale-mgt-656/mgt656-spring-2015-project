@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+
     <title>{{ title }}</title>
+    
+    
+    
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    
+    
+    
+
+  
   </head>
 
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>
+      
+       <div class="navigation">
+    
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/events/new">Create Events</a></li>
+    </ul>
+  </div>
+        
+        
+        Hey, I'm in the header
+      
+      
+      </header>
     {% endblock %}
 
     {% block mainContent %}
@@ -16,7 +44,18 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer > 
+      
+     <div class="navnav">
+      <ul> 
+       <li> <a href="/"> Home </a> </li>
+      <li> <a href="/about"> About Us </a>   </li>
+      </ul>
+      </div>
+    
+
+      
+      </footer>
     {% endblock %}
 
   </body>

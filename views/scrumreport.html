@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+<!DOCTYPE html>
+
+<style>
+    
+    h2{
+       
+  background-color: #eee;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  margin:0.5em 0;
+}
+  h3{
+  background-color: #edd;
+  padding: 1em;
+  
+  border: 1px solid #ddd;
+  margin:1em 0;
+}   
+</style>
+
+
+<h1> Scrum Report week 4 - Team Misty Meadow</h1>
+      
+
+<h2>Date : 10th November 2016?</h2>
+
+
+<h3>Team members -<br/>
+    Divesh Kumar: Divesh.Kumar@yale.edu	 <br/>
+    Ettie Nikolova: Ettie.Nikolova@yale.edu <br/>
+    Kevin Rouse: Kevin.Rouse@yale.edu  <br/>
+    Narmin Vakilova: Narmin.Vakilova@yale.edu <br/>
+
+</h3>
+
+<h4>
+
+<ol>
+  <li>Burndown Chart: <br/>
+      <img src="https://s16.postimg.org/bwqm173ad/Capture1.png">
+  </li>
+  
+  <li>
+    <p>
+      Completed stories in the sprint: Read on <a href="https://waffle.io/misty-meadow/mgt656-spring-2015-project">waffle</a> <br/>
+      Stories:
+
+      <ul> 
+        <li>10: New Event/Event Creation Page</li>
+        <li>18: Event Details Page - Page Creation</li>
+        <li>19: Event Details Page - Layout Design</li>
+        <li>20: Event Details Page - Show Event Details and Information Upon Request</li>
+        <li>27: Tests for validating the input types on create events page</li>
+        </br>
+        
+      </ul>
+     </li> 
+     
+     <li>
+        <p>
+      Narrative of what has been accomplished since last report including any notable challenges or roadblocks encountered:
+
+
+      <ul> 
+        <li>Since the last sprint, we have been able to finish all the user stories and have passed all 43 mocha tests. 
+        </li>
+        <li>The process involved, validation checks on event creation page, additions in the code to ensure that if entered details for a new event meet the required criteria, a new event-page is created with a new id for the event. This steps required significant effort from the team as we didn’t have the requisite knowledge on syntax - (id[0-9]+)
+</li>
+        <li>Once the event page was generated, we created the rsvp button with requisite attributes, id and type
+</li>
+        <li>The rsvp can be used by anyone with a @yale id and gives an error for any non @yale id. Again, this required change of entered id to lowercase and we went to office hours to be able to understand the right syntax.
+</li>
+        <li>A major roadblock occurred when despite having been able to meet the requirements our mocha tests weren’t passing for rsvp function and significant time was spent in debugging the issue. Ultimately we realized that the only reason why we were failing the tests was a lower-case ‘s’ in our submit button.
+</li>
+        
+      </ul>
+    </p>
+    
+  </li>
+  
+  
+  <li>
+    Current backlog in order: <br/>
+    <img src="https://s13.postimg.org/qjapr3g9z/Capture2.png">
+  </li>
+  
+  <li>
+    <p>
+       Narrative of what expected work before next report <br/>
+For the next sprint, we expect to have everything done. Already, we have completed all of the mocha requirements listed, and have full basal requirements functioning. All we have left to do is formatting and fixing small UX bugs like default years, default months, and data population. We estimated these to be 40 points worth of bugs, but as we get into them, we believe that may not be as accurate as we initially expected. For the formatting, worth 20 points, each of us developers this time are going to code formatting of a given page, so that we each practice the CSS. After we each have our own page, we will get together and discuss what formatting components we like best between our own pages. We will then decide upon the best formatting and align this set of structures amongst all our pages. Additionally, we will have open bandwidth relative to our recent velocity, so we may attempt to complete stories that come in mid-sprint, in case Kyle throws us a curveball.
+
+
+
+
+
+    </p>
+  </li>
+  
+</ol>
+
+
+</h4>
+
+
+{% endblock %}
