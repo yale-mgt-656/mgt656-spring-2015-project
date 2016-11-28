@@ -6,7 +6,7 @@
 function index (request, response) {
   var contextData = {
     'title': 'MGT 656',
-    'tagline': 'You are doomed (just kidding).'
+    'tagline': 'Where Your Wildest Dreams Come True.'
   };
   response.render('index.html', contextData);
 }
