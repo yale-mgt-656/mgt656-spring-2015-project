@@ -36,6 +36,7 @@
     "javascript": {
         "@formatOnSave": "false",
         "@formatter": "esformatter -i \"$file\"",
+        "@jsbeautify": "false",
         "@use_jsbeautify": "true"
     },
     "language": {
