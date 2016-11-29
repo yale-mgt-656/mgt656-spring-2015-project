@@ -15,25 +15,25 @@
 <body>
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
-    <input type="text" name="title"> <br>
+    <input type="text" name="title" id="title"> <br>
     
     
     <label for="location">Event location:</label>
-    <input type="text" name="location"> <br>
+    <input type="text" name="location" id="location"> <br>
     
     <label for="image">Event image:</label>
-    <input type="text" name="image"> <br>
+    <input type="text" name="image" id="image"> <br>
     
  
-<label for ="Month" >Month:</label>
-<select>
- <option value ="0">January</option> 
-   <option value = "1"> February</option>
-   <option value = "2">March </option>
-   <option value = "3"> April </option>
+<label for ="month" >Month:</label>
+<select type=select name="month" id="month">
+ <option value="0">January</option> 
+   <option value="1">February</option>
+   <option value="2">March</option>
+   <option value="3">April</option>
   <option value="4">May</option>
    <option value="5">June</option> 
-   <option value="6">July </option>
+   <option value="6">July</option>
     <option value="7">August</option>
     <option value="8">September</option>
     <option value ="9">October</option>
@@ -42,16 +42,16 @@
     </select>
 <br> 
     <label for ="day" >Day:</label>
-<select name="day" id="day" onchange="" size="1">
-    <option value="01">01</option>
-    <option value="02">02</option>
-    <option value="03">03</option>
-    <option value="04">04</option>
-    <option value="05">05</option>
-    <option value="06">06</option>
-    <option value="07">07</option>
-    <option value="08">08</option>
-    <option value="09">09</option>
+<select type=select name="day" id="day" onchange="" size="1">
+   <option value = "1">01</option>
+     <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    <option value="7">07</option>
+    <option value="8">08</option>
+    <option value="9">09</option>
     <option value="10">10</option>
     <option value="11">11</option>
     <option value="12">12</option>
@@ -74,27 +74,27 @@
     <option value="29">29</option>
     <option value="30">30</option>
     <option value="31">31</option>
+   
 </select>
 <br> 
  <label for ="year" >Year:</label>
-<select name = "year" id = "year">
-  <option value = "00">2015</option>
-  <option value = "01">2016</option>
-  <option value = "02">2017</option>
+<select type=select name = "year" id = "year">
+  <option value = "2015">2015</option>
+  <option value = "2016">2016</option>
 </select>
 <br> 
     <label for="hour">Event hour:</label>
-    <select>
-      <option value = "00">00</option>
-     <option value="01">01</option>
-    <option value="02">02</option>
-    <option value="03">03</option>
-    <option value="04">04</option>
-    <option value="05">05</option>
-    <option value="06">06</option>
-    <option value="07">07</option>
-    <option value="08">08</option>
-    <option value="09">09</option>
+    <select type=select name = "hour" id="hour">
+      <option value = "0">00</option>
+     <option value="1">01</option>
+    <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    <option value="7">07</option>
+    <option value="8">08</option>
+    <option value="9">09</option>
     <option value="10">10</option>
     <option value="11">11</option>
     <option value="12">12</option>
@@ -114,14 +114,13 @@
   <br>
     <label for="minute">Event minute:</label>
     
-  <select>
+  <select type=select name="minute" id="minute">
   <option value="0">0</option>
   <option value="30">30</option>
 
 </select>
     <br>
     
-    <!--title, location, image, year, month, day, hour, minute-->
     <input type="submit" id ="submit">
   </form>
   </body>
