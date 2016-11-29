@@ -1,18 +1,43 @@
+<!DOCTYPE html>
 {% extends "layout.html" %}
 
 {% block header %}
   <header>
-    <h1>{{ title }} FTW</h1>
+    <img id="logo" src="https://s11.postimg.org/nsj8dqor3/teamlogo.png">
+    <h1>Dawn Dream Events</h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
   <p>
-    Welcome to {{ title }}. {{tagline}}
+    Welcome to Dawn Dream Events. {{tagline}}
   </p>
+    <p> Here is our list of events</p>
+    <div style="border: 1px solid black">
+     {% include "fragments/events-list.html" %}
+  </div>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
+     {% include "fragments/events-list.html" %}
+     <ul>
+    <li class="event" id="event-0">
+      <a href="/events/0">SOM House Party</a>.
+      <time datetime="Tue Jan 17 2017 16:30:00 GMT+0000 (UTC)">Tuesday, Jan. 17, 2017 at  4:30pm.</time>
+      2 people are going.
+    </li>
+    <li class="event" id="event-1">
+      <a href="/events/1">BBQ party for hackers and nerds</a>.
+      <time datetime="Fri Sep 01 2017 19:00:00 GMT+0000 (UTC)">Friday, Sep.  1, 2017 at  7:00pm.</time>
+      2 people are going.
+    </li>
+    <li class="event" id="event-2">
+      <a href="/events/2">BBQ for managers</a>.
+      <time datetime="Fri Oct 20 2017 18:00:00 GMT+0000 (UTC)">Friday, Oct. 20, 2017 at  6:00pm.</time>
+      1 people are going.
+    </li>
+  </ul>
+
   </p>
   <p>
     <a id="new" href="/events/new">Create a new event</a>

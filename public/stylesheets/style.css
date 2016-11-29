@@ -10,3 +10,6 @@ a {
 .form-errors {
 	color: red;
 }
+.aboutphoto {
+    display: inline-block;
+}
