@@ -119,6 +119,13 @@ function rsvp (request, response){
 
 }
 
+function api(request.response){
+  var output={events:events.[];
+  for (var i=0; i<events.all.length; i++){
+    output.events.push(events.all[i]);
+  }
+  response.json(output);
+}
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
