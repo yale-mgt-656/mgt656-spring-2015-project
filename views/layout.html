@@ -5,17 +5,29 @@
    {% block stylesheet%}
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
         <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="jquery/dist/jquery.min.js"></script>
 
     {% endblock %}
   </head>
-<script src="jquery/dist/jquery.min.js"></script>
+
 	
 <body>
   <div class="container-fluid" id="menu">
       <div class="menu-left">
-        <a href="/"><img src="/pictures/Capture.PNG" width="180px" height="57px"></a>
+        <a href="/"><img src="/pictures/newbackround.PNG" width="180px" height="57px"></a>
       </div>
       <ul class="menu-right">
         <li><a href="/docreport1">SPRINT REPORTS</a></li>
@@ -24,7 +36,6 @@
         <li><a href="/about">ABOUT</a></li>
       </ul>
   </div>
-<div class="main">
     {% block header %}
       <header>C U THERE, I'm in!</header>
     {% endblock %}
@@ -38,6 +49,5 @@
       <footer>Learn more <a href="/about">about us!</a> We'll <a href="/">C U There!</a> outer nova inc.</footer>
     </div>
     {% endblock %}
-</div>
   </body>
 </html>
