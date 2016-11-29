@@ -8,12 +8,8 @@ var events = require('../models/events');
 function index (request, response) {
   var contextData = {
     'title': 'MGT 656',
-<<<<<<< HEAD
-    'tagline': 'Where Your Wildest Dreams Come True.'
-=======
-    'tagline': 'You are doomed (just kidding).',
+    'tagline': 'Where Your Wildest Dreams Come True.',
     'events':events.all
->>>>>>> Add list of events to homepage
   };
   response.render('index.html', contextData);
 }
