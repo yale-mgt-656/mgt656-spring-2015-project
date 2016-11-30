@@ -3,9 +3,9 @@
 {% block mainContent %}
 
   {% if errors %}
-    <div class="form-errors">
+    <div style="margin-left: 35%; font-size: 15px">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -13,10 +13,110 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST">
-    <label for="title">Event title:</label>
-    <input type="text" name="title">
+	<form method="POST" style="font-size: 20px; margin-left: 35%; padding:20px; width:35%; background-color:rgba(211,211,211, 0.9); color:black;border-radius:2em">
+    <label for="title">Event Title:</label>
+    <input type="text" name="title" id="title">
+    <br>
+    <label for="location"> Event Location: </label>
+    <input type="text" name="location" id="location">
+    <br>
+    <label for="image"> Event Image: </label>
+    <input type="text" name="image" id="image">
+    <br>
+  <label for="year"> Year </label> 
+  <select name="year">
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+<!-- we will rule out the following options, both here and in the validation js. -Leo --> 
+<!--    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option> -->
+  </select> <br>
+  <label for="month"> Month </label> 
+  <select name="month">
+    <option value=0>January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+  </select> <br>
+  <label for="day"> Day </label> <select name="day">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>    
+    <option value="17">17</option>    
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>   
+    <option value="22">22</option>   
+    <option value="23">23</option>  
+    <option value="24">24</option>  
+    <option value="25">25</option>  
+    <option value="26">26</option>
+    <option value="27">27</option>  
+    <option value="28">28</option>  
+    <option value="29">29</option>  
+    <option value="30">30</option> 
+    <option value="31">31</option>     
+  </select> <br>
+  <label for="hour"> Hour </label> <select name="hour">
+  <option value="0">00 hrs </option>
+   <option value="1">1 hrs </option>
+   <option value="2">2 hrs </option>
+   <option value="3">3 hrs</option>
+   <option value="4">4 hrs</option>
+   <option value="5">5 hrs</option>
+   <option value="6">6 hrs</option>
+   <option value="7">7 hrs</option>
+   <option value="8">8 hrs</option>
+   <option value="9">9 hrs</option>
+   <option value="10">10 hrs</option>
+   <option value="11">11 hrs</option>
+   <option value="12">12 hrs</option>
+   <option value="13">13 hrs</option>
+   <option value="14">14 hrs</option>
+   <option value="15">15 hrs</option>
+   <option value="16">16 hrs</option>
+   <option value="17">17 hrs</option>
+   <option value="18">18 hrs</option>
+   <option value="19">19 hrs</option>
+   <option value="20">20 hrs</option>
+   <option value="21">21 hrs</option>
+   <option value="22">22 hrs</option>
+   <option value="23">23 hrs</option>
+  </select> <br>
+   <label for="minute"> Minute </label> <select name="minute">
+    <option value="0">0</option>
+    <option value="30">30</option>
+  </select>
+    <br>
+  <label for="submit"> Event Sumbit: </label>
+    <input type="submit" name="submit">
+    <br>
   </form>
+  
+  
 {% endblock %}
-
 

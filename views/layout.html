@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>{{title}}</title>
+   {% block stylesheet%}
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="jquery/dist/jquery.min.js"></script>
+
+    {% endblock %}
   </head>
 
-	<body class="container">
-
+	
+<body>
+  <div class="container-fluid" id="menu">
+      <div class="menu-left">
+        <a href="/"><img src="/pictures/newbackround.PNG" width="180px" height="57px"></a>
+      </div>
+      <ul class="menu-right">
+        <li><a href="/docreport1">SPRINT REPORTS</a></li>
+        <li><a href="/events/new">CREATE EVENTS</a></li>
+        <li><a href="/events">EVENTS</a></li>
+        <li><a href="/about">ABOUT</a></li>
+      </ul>
+  </div>
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header class="head">C U there <span style="color: #aaaaaa">I'm in!</span></header>
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <!-- <section>Welcome to {{title}}! {{tagline}}</section> -->
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+    <div id="footer">
+      <footer>Learn more <a href="/about">about us!</a> We'll <a href="/">C U There!</a> outer nova inc.</footer>
+    </div>
     {% endblock %}
-
   </body>
 </html>
