@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -9,4 +9,9 @@ a {
 
 .form-errors {
 	color: red;
+}
+footer{
+  background-color: #eee;
+  border: 1px solid #ddd;
+  margin: 5em 0;
 }

@@ -3,20 +3,26 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css/'>
   </head>
+  
+   
 
-	<body class="container">
+	<body class="container">  
+	  
+  <header>
+    <h1> Drinking Buddies!</h1>
+  </header>
 
-    {% block header %}
-      <header>Hey, I'm in the header</header>
-    {% endblock %}
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+        <a href="/">Home</a> &gt; <a href="/about">About Us</ahref>
+      </footer>
     {% endblock %}
 
   </body>

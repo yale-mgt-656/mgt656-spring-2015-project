@@ -1,11 +1,17 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-
+<style>
+    body {
+      background: url("https://s11.postimg.org/6nry9tm0z/drinking_games_2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -13,10 +19,157 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST">
+	
+
+
+<form id="create-event" method="POST" >
     <label for="title">Event title:</label>
-    <input type="text" name="title">
-  </form>
+    <input type="text" name="title" placeholder="dope title">
+    
+    
+    <p>
+    <label for="day">Event Date:</label>
+     <select  name="day" id="day" onchange="allowedDateInfo"> 
+      <option value='0'>1</option>
+      <option value='1'>2</option>       
+      <option value='2'>3</option>       
+      <option value='3'>4</option>       
+      <option value='4'>5</option>       
+      <option value='5'>6</option>       
+      <option value='6'>7</option>       
+      <option value='7'>8</option>       
+      <option value='8'>9</option>       
+      <option value='9'>10</option>       
+      <option value='10'>11</option>       
+      <option value='11'>12</option>       
+      <option value='12'>13</option>
+      <option value='13'>14</option>       
+      <option value='14'>15</option>       
+      <option value='15'>16</option>       
+      <option value='16'>17</option>       
+      <option value='17'>18</option>       
+      <option value='18'>19</option>  
+      <option value='19'>20</option>       
+      <option value='20'>21</option>       
+      <option value='21'>22</option>       
+      <option value='22'>23</option>
+      <option value='23'>24</option>
+      <option value='24'>25</option>       
+      <option value='25'>26</option>  
+      <option value='26'>27</option>       
+      <option value='27'>28</option>       
+      <option value='28'>29</option>       
+      <option value='29'>30</option>
+      <option value='30'>31</option>
+      </select>
+    </p>
+    
+    
+    <p>
+    <label for="month">Event Month:</label>
+    <select name="month" id="month" onchange="allowedDateInfo">
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+  </select>
+    </p>
+    
+    
+    <p>
+    <label for="year">Event Year:</label>
+    <select name="year" id="year" onchange="allowedDateInfo">
+      <option value="2015">2016</option>
+      <option value="2016">2017</option>
+    </select>
+    </p>
+    
+
+    <p>
+    <label for="hour">Event Hour:</label>
+    <select  name="hour" id="hour" onchange="allowedDateInfo"> 
+      <option value='0'>0</option>
+      <option value='1'>1</option>       
+      <option value='2'>2</option>       
+      <option value='3'>3</option>       
+      <option value='4'>4</option>       
+      <option value='5'>5</option>       
+      <option value='6'>6</option>       
+      <option value='7'>7</option>       
+      <option value='8'>8</option>       
+      <option value='9'>9</option>       
+      <option value='10'>10</option>       
+      <option value='11'>11</option>       
+      <option value='12'>12</option>
+      <option value='13'>13</option>       
+      <option value='14'>14</option>       
+      <option value='15'>15</option>       
+      <option value='16'>16</option>       
+      <option value='17'>17</option>       
+      <option value='18'>18</option>  
+      <option value='19'>19</option>       
+      <option value='20'>20</option>       
+      <option value='21'>21</option>       
+      <option value='22'>22</option>
+      <option value='23'>23</option>
+      </select>
+    </p>
+    
+    
+    <p>
+    <label for="minute">Event Minute:</label>
+    <select  name="minute" id="minute" onchange="allowedDateInfo"> 
+      <option value='0'>0</option>
+      <option value='30'>30</option>       
+    </select>
+    </p>
+
+    
+    <p>
+    <label for="location">Event Location:</label>
+    <input type="text" name="location" placeholder="pls not GPSCY">
+    </p>
+    
+    
+    <p>
+    <label for="image">Event Image:</label>
+    <input type="text" name="image" placeholder="dope meme">
+    </p>
+    
+    
+    <p>
+    <label for="attendees">List of Event Attendees:</label>
+    <input type="text" name="attendees" placeholder="all your peeps">
+    </p>
+    
+    
+    <p>
+    <label for="RSVP">Will you attend?:</label> <br>
+    <input type="radio" name="RSVP" value="yes"> Yes<br>
+    <input type="radio" name="RSVP" value="no"> No<br>
+    <input type="radio" name="RSVP" value="maybe"> Maybe
+    </p>
+    
+    
+     <p>
+    <label for="email">RSVP Email:</label>
+    <input type="text" name="email" placeholder="Must be @yale.edu">
+    </p>
+    
+    
+    <p>
+    <input id="submit" type="submit" value="Submit">
+    </p>
+  
+</form>
 {% endblock %}
 
 

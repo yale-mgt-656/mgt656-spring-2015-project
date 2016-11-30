@@ -22,11 +22,14 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
-  minutes: [0, 30],
-  hours: [
+  minute: [0, 30],
+  hour: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  year: [2016, 2017],
+  day: [1,2,3,4,5,6,7,8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,24,25,26,27,28,29,30,31],
 };
 
 /**
@@ -58,10 +61,58 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
   }
 
+if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be less than 50 letters.');
+  }
+  
+  console.log(request.body.year);
 
+if (request.body.year > 2017 && request.body.year < 2015) {
+    contextData.errors.push('Year should be 2016 or 2017');
+  }
+
+if (validator.isInt(request.body.year) === false){
+    contextData.errors.push('Year should be an integer');
+  }
+
+if (request.body.month > 11 && request.body.month <0 ) {
+    contextData.errors.push('Month must be between 0 and 11');
+  }
+
+if (validator.isInt(request.body.month) === false){
+    contextData.errors.push('month should be an integer');
+  }
+
+if (validator.isInt(request.body.date) === false){
+    contextData.errors.push('date should be an integer');
+  }
+
+if (request.body.date > 31 && request.body.date <1) {
+    contextData.errors.push('Date must be between 1 and 31');
+  }
+
+if (request.body.hour > 23 && request.body.hour <0) {
+    contextData.errors.push('Hour must be between 0 and 23');
+  }
+
+if (validator.isInt(request.body.hour) === false){
+    contextData.errors.push('hour should be an integer');
+  }
+  
+console.log(request.body.minute);
+console.log(validator.equals(request.body.minute, "0"));
+
+if (validator.equals(request.body.minute, "0") === false && validator.equals(request.body.minute, "30") === false) {
+    contextData.errors.push('Minute must be either 0 or 30');
+  }
+   
+if (validator.contains(request.body.email,'@yale.edu') === false) {
+    contextData.errors.push('Your email must contain @yale.edu');
+  }
+    
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
@@ -102,6 +153,24 @@ function rsvp (request, response){
 
 }
 
+function api(request, response){
+ var output = {events: []};
+ var search = request.query.search;
+ 
+ if(search){
+   for(var i = 0; i < events.all.length; i++){
+     if(events.all[i].title.indexOf(search) !== -1){
+       output.events.push(events.all[i]);
+     }
+   }
+ }else{
+   output.events = events.all;
+ }
+ response.json(output);
+}
+
+
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +180,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
