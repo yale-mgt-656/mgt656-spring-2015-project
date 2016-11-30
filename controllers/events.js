@@ -83,12 +83,12 @@ if (validator.isInt(request.body.month) === false){
     contextData.errors.push('month should be an integer');
   }
 
-if (request.body.date > 31 && request.body.date <1) {
-    contextData.errors.push('Date must be between 1 and 31');
-  }
-
 if (validator.isInt(request.body.date) === false){
     contextData.errors.push('date should be an integer');
+  }
+
+if (request.body.date > 31 && request.body.date <1) {
+    contextData.errors.push('Date must be between 1 and 31');
   }
 
 if (request.body.hour > 23 && request.body.hour <0) {
@@ -102,7 +102,7 @@ if (validator.isInt(request.body.hour) === false){
 console.log(request.body.minute);
 console.log(validator.equals(request.body.minute, "00"));
 
-if (validator.equals(request.body.minute, "00") === false || validator.equals(request.body.minute, "30") === false) {
+if (validator.equals(request.body.minute, "00") === false && validator.equals(request.body.minute, "30") === false) {
     contextData.errors.push('Minute must be either 00 or 30');
   }
    
@@ -165,6 +165,7 @@ function api(request, response){
  }
  response.json(output);
 }
+
 
 
 /**
