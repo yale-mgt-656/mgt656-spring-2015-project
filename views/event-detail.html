@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block mainContent %}
+<h1> {{event.title}} </h1>
+<p1> 
+<img src= {{event.image}} height=200/> </p1>
+<br>
+<p2> {{event.date|prettyDate}} </p2>
+{% endblock %}
+

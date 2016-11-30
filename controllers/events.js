@@ -87,8 +87,8 @@ if (validator.isLength(request.body.location, 5, 50) === false) {
   var minute = request.body.minute
   var year = checkIntRange(request, year, 2015, 2016, contextData);
   var month = checkIntRange(request, month, 0, 11, contextData);
-var hour = checkIntRange(request, hour, 0, 23, contextData);
-var day = checkIntRange(request, day, 1, 31, contextData);
+  var hour = checkIntRange(request, hour, 0, 23, contextData);
+  var day = checkIntRange(request, day, 1, 31, contextData);
 
 
   if (contextData.errors.length === 0) {
@@ -147,6 +147,7 @@ function api(request, response){
   }
   response.json(output);
 }
+
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
