@@ -1,7 +1,13 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-
+<style>
+    body {
+      background: url("https://s11.postimg.org/6nry9tm0z/drinking_games_2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -13,7 +19,11 @@
     </div>
   {% endif %}
 
-	<form id="create-event" method="POST" >
+	
+
+<form id="create-event" method="POST">
+ 
+
     <label for="title">Event title:</label>
     <input type="text" name="title" placeholder="dope title">
     
@@ -47,15 +57,18 @@
     <input type="text" name="location" placeholder="pls not GPSCY">
     </p>
     
+    
     <p>
     <label for="image">Event Image:</label>
     <input type="text" name="image" placeholder="dope meme">
     </p>
     
+    
     <p>
     <label for="attendees">List of Event Attendees:</label>
     <input type="text" name="attendees" placeholder="all your peeps">
     </p>
+    
     
     <p>
     <label for="RSVP">Will you attend?:</label> <br>
@@ -64,17 +77,18 @@
     <input type="radio" name="RSVP" value="maybe"> Maybe
     </p>
     
+    
      <p>
     <label for="email">RSVP Email:</label>
     <input type="text" name="email" placeholder="Must be @yale.edu">
     </p>
     
+    
     <p>
-
     <input type="submit" value="Submit">
     </p>
   
-  </form>
+</form>
 {% endblock %}
 
 

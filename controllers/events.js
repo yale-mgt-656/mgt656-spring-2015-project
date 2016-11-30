@@ -22,11 +22,14 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
-  minutes: [0, 30],
-  hours: [
+  minute: [0, 30],
+  hour: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  year: [2016, 2017],
+  date: [1,2,3,4,5,6,7,8, 9, 10, 11,
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,24,25,26,27,28,29,30,31],
 };
 
 /**
@@ -100,10 +103,10 @@ if (validator.isInt(request.body.hour) === false){
   }
   
 console.log(request.body.minute);
-console.log(validator.equals(request.body.minute, "00"));
+console.log(validator.equals(request.body.minute, "0"));
 
-if (validator.equals(request.body.minute, "00") === false && validator.equals(request.body.minute, "30") === false) {
-    contextData.errors.push('Minute must be either 00 or 30');
+if (validator.equals(request.body.minute, "0") === false && validator.equals(request.body.minute, "30") === false) {
+    contextData.errors.push('Minute must be either 0 or 30');
   }
    
 if (validator.contains(request.body.email,'@yale.edu') === false) {

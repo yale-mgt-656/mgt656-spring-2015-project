@@ -1,10 +1,19 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-
+<style>
+    body {
+      background: url("https://s11.postimg.org/6nry9tm0z/drinking_games_2.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 <h1 id="title"> {{event.title}} </h1>
 <p1> <img id="image" src=http://www.ekaterinawalter.com/wp-content/uploads/2016/01/image-2.jpg> </p1>
-<div><p2> <span id="date">Time: {{event.date|prettyDate}}</span> </p2></div>
-<p3> <span id="location">Location: {{event.location}}</span></p3>
-<ul id="attendees"><p4>Attendees: {{event.attending}}</p4> </ul>
+<div></div>
+<br/>
+<div><p2> <span id="date"><strong>Time:</strong> {{event.date|prettyDate}}</span> </p2></div>
+<br/>
+<p3> <span id="location"><strong>Location: </strong>{{event.location}}</span></p3>
+<ul id="attendees"><p4><strong>Attendees:</strong> {{event.attending}}</p4></ul>
 {% endblock %}
