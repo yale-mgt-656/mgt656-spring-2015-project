@@ -2,9 +2,9 @@
 
 {% block mainContent %}
 
-<h1> {{event.title}} </h1>
-<p1> <img src=http://www.ekaterinawalter.com/wp-content/uploads/2016/01/image-2.jpg> </p1>
-<p2> {{event.date|prettyDate}} </p2>
-
-
+<h1 id="title"> {{event.title}} </h1>
+<p1> <img id="image" src=http://www.ekaterinawalter.com/wp-content/uploads/2016/01/image-2.jpg> </p1>
+<div><p2> <span id="date">Time: {{event.date|prettyDate}}</span> </p2></div>
+<p3> <span id="location">Location: {{event.location}}</span></p3>
+<ul id="attendees"><p4>{{event.attending}} attending so far.</p4> </ul>
 {% endblock %}
