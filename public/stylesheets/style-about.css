@@ -1,0 +1,51 @@
+footer {
+  background-color: #fbe2b4 ;
+  padding: 1em;
+  margin: 2em 0;
+  
+}
+header { background-color:  #ff4c65;
+color: #eee;
+font-weight: bold;
+padding: 1em;
+margin: 2em 0;
+font-size: medium;
+text-align: center;
+}
+
+body {
+  padding: 75px;
+  font: 20px "sans-serif", Helvetica, Arial, sans-serif;
+  background-color: #fbe2b4;
+  color: black;
+  text-align: center;
+}
+
+h1 {
+  font: 80px "Impact"; 
+  color: #ff4c65;
+  text-align: center;
+}
+
+p1 {
+  font: 20px "Impact";
+  color: black;
+  text-align: center;
+}
+
+p2 {
+  font: 65px "Impact";
+  color: #59c4c5;
+  text-align: center;
+}
+  
+  p3 {
+  font: 45px "Impact";
+  color: white;
+  text-align: center;
+}
+
+
+.form-errors {
+	color: red;
+}

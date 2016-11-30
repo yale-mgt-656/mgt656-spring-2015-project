@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+ {% if errors %}
+    <ul class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </ul>
+  {% endif %}
+
+
+<h1 id="title"> {{event.title}} </h1>
+<p1> 
+<img id="image" src= {{event.image}} height=200 /> </p1>
+<br>
+<p2>
+ <span id="date">{{event.date|prettyDate}}</span>
+ <span id="location">{{event.location}}</span>
+      {{event.attending.length}} attending so far. <br>
+  <ul id="attendees">
+  {% for attendee in event.attending %}
+    <li> 
+      {{attendee.email}}
+    </li>
+  {% endfor %}
+</ul>
+  </p2>   
+  <form id="email" method="POST">
+     Want to RSVP? Enter your email address here:<br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <button type="button">Submit</button>
+   </form>
+
+{% endblock %}
