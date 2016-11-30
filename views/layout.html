@@ -8,17 +8,23 @@
 
 	<body class="container">
 
+
     {% block header %}
-      <header>Hey, I'm in the header</header>
+      <header>Dream Dawn</header>
     {% endblock %}
+
 
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
 
+
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+      <a href="/">Home</a> &gt; <a href="/about">About Us</a>
+      </footer>
     {% endblock %}
+
 
   </body>
 </html>
