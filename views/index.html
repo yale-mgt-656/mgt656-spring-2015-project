@@ -2,17 +2,15 @@
 
 {% block header %}
   <header>
-    <h1><!-- {{ title }} --></h1>
+    <h1 style="display:none"><!-- {{ title }} --></h1>
   </header>
 {% endblock %}
 
 {% block mainContent %}
-  <p>
-    <p class="head">C U there <span style="color: #aaaaaa">I'm in!</span></p>
-  </p>
+    <p class="head" >C U there <span style="color: #aaaaaa">I'm in!</span></p>
 
   <div class="index-logo">
-      <img id="logo"src="/pictures/Capture.PNG" height=0>
+      <img id="logo" src="/pictures/Capture.PNG" style="display: none">
   </div>
   
 <!-- Carousel container -->
@@ -123,7 +121,9 @@
 <!-- Center the image -->
 <style scoped>
 .item img{
-    margin: 0 auto;
+    padding: 0 0 100px 0;
+    margin: auto;
+    width: 100%;
 }
 </style>
 
