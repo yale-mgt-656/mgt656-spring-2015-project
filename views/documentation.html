@@ -1,0 +1,240 @@
+{% extends "layout.html" %}
+{% block header %}
+  <header>
+    <h1> MGT 656 Management of Software Development </h1>
+    <h2> Project Status Report 
+    <h3> Outer Nova </h3>
+  </header>
+{% endblock %}
+    
+{% block mainContent %}
+
+<ul>
+    <li>David T Sanchez: david.topiltzin@yale.edu</li>
+    <li>Ruan Hsuan Wei : hsuanwei.ruan@yale.edu</li>
+    <li>Lixing Liang: lixing.liang@yale.edu</li>
+    <li>Stephanie Hickman: stephanie.hickman@yale.edu</li>
+</ul>
+<script>
+var check=0;
+    $(document).ready(function(){
+        $('.link').click(function(){
+           $('.sprint').each(function(){
+                $(this).hide();
+           });
+        var id=$(this).attr('id').replace('link', 'sprint');
+           $('#'+id).show();
+        });
+    });
+</script>
+<h2>Sprint Reports</h2>
+<ul>
+    <li><a href="#" class="link" id="link6">Final Report</a></li>
+    <li><a href="#" class="link" id="link5">Sprint5 Report</a></li>
+    <li><a href="#" class="link" id="link4">Sprint4 Report</a></li>
+    <li><a href="#" class="link" id="link3">Sprint3 Report</a></li>
+    <li><a href="#" class="link" id="link2">Sprint2 Report</a></li>
+
+</ul>
+<!--//////////////////////////final report/////////////////////-->
+
+<span class="sprint" id="sprint6" style="display:none">
+<h1>Sprint 6 Documentation (Nov.29, 2016)</h1>
+    <h3>New stories in this Sprint(in priority order)</h3>
+        <ul>
+            <li>add carousel</li>
+        </ul>
+    <h3> Burn Down Chart </h3>
+    <!--change the chart link!-->
+<img src='/pictures/BurnDownChartSprint4.png' height="400px" width="600px">
+    <h3>Completed Stories in this Sprint(in priority order)</h3>
+        <ul>
+           <li>add carousel</li>
+            
+        </ul>
+    <h3> Current Backlog in Order as of Nov 29, 2016</h3>
+       <p>Done!!</p>
+    <h3> Special Features of our project:</h3>
+       <p>We spent a lot of time in making it look nice, and we learned a lot from adding these additional features!</p>
+
+
+</span>
+<!--//////////////////////////sprint 5/////////////////////-->
+
+<span class="sprint" id="sprint5" style="display:none">
+<h1>Sprint 5 Documentation (Nov.15, 2016)</h1>
+    <h3>New stories in this Sprint(in priority order)</h3>
+        <ul>
+           <li>design homepage</li>
+            <li>design about page</li>
+           <li>design event page</li>
+            <li>design events detail page</li>
+            <!--how about create event page?-->
+        </ul>
+    <p>We added stories according to different pages to make the website prettier</p>
+    <h3> Burn Down Chart </h3>
+    <!--change the chart link!-->
+<img src='/pictures/BurnDownChartSprint4.png' height="400px" width="600px">
+    <h3>Completed Stories in this Sprint(in priority order)</h3>
+        <ul>
+           <li>design homepage</li>
+            <li>design about page</li>
+           <li>design event page</li>
+            <li>design events detail page</li>
+
+        </ul>
+    <h3> Current Backlog in Order as of Nov15, 2016</h3>
+       <p>Done!!(maybe)</p>
+        
+    <h3> What to Expect in the Next Delivery </h3>
+    <p>no sprints left!!!</p>
+</span>
+<!--////////////sprint 4/////////////////////-->
+<span class="sprint" id="sprint4" style="display:none">
+<h1>Sprint 4 Documentation (Nov.8, 2016)</h1>
+    <h3>New stories in this Sprint(in priority order)</h3>
+        <ul>
+            <li>new logo</li>
+            <li>add background image to mission and vision</li>
+            <li>align team member photo</li>
+            <li>add menubar</li>
+            <li>make team member photos round</li>
+            <li>add javascript display on homepage</li>
+            <li>decide color and background and other layout</li>
+        </ul>
+    <p>We broke our stories into smaller pieces.</p>
+    <h3> Burn Down Chart </h3>
+<img src='/pictures/BurnDownChartSprint4.png' height="400px" width="600px">
+    <h3>Completed Stories in this Sprint(in priority order)</h3>
+        <ul>
+           <li>new logo</li>
+            <li>add background image to mission and vision</li>
+            <li>make team member photos round</li>
+            <li>align team member photo</li>
+            <li>add menubar</li>
+            <li>add javascript display on homepage</li>
+        </ul>
+    <h3> Current Backlog in Order as of Nov8, 2016</h3>
+        <ul>
+           <li>add color and background and other layout</li>
+
+        </ul>
+        
+    <h3> What to Expect in the Next Delivery </h3>
+        <ul>
+            <li>add color and background and other layout</li>
+            <li>FINISH OUR FANCY WEBSITE!!</li>
+        </ul>
+    <p> We passed all the tests, and we are focusing on making the site look prettier!</p>
+</span>
+
+<!--//////////////////////////sprint 3/////////////////////-->
+<span class="sprint" id="sprint3" style="display:none">
+
+    <h1>Sprint 3 Documentation (Nov.1, 2016)</h1>
+    <h3>New stories in this Sprint(in priority order)</h3>
+        <ul>
+            <li>Make the current events appear on the home page</li>
+            <li>Event/new submission validator</li>
+            <li>Link to an events detail page</li>
+            <li>/Events/new make changes to the redirection function</li>
+        </ul>
+    <p>We broke our stories into smaller pieces.</p>
+    <h3> Burn Down Chart </h3>
+    <img src='/pictures/BurnDownChartSprint3.png' height="400px" width="600px">
+    <h3>Completed Stories in this Sprint(in priority order)</h3>
+        <ul>
+            <li>/Events/new make changes to the redirection function</li>
+            <li>about button</li>
+            <li>home button</li>
+            <li>/Events/new new events button</li>
+            <li>/Events/new event name</li>
+            <li>/Events/new location</li>
+            <li>/Events/new image</li>
+            <li>/Events/new year</li>
+            <li>/Events/new date</li>
+            <li>/Events/new submission button</li>
+            <li>/Events/new submission validator</li>      
+            <li>Link to an events detail page</li>
+            <li>Make the current events appear on the home page</li>
+        </ul>
+        <p>We broke our stories into smaller pieces.</p>
+    <h3> Current Backlog in Order as of Nov1, 2016</h3>
+        <ul>
+            <li>/Events/new JS function that add the newly created event to event database</li>
+            <li>/Events/new JS </li>
+            <li>/Events/event# display detailed info, including images</li>
+            <li>/Events/event# RSVP with your email and email validation</li>
+            <li>General web design: deciding on the layout format</li>
+            <li>Update the documentation format of the documentation page</li>
+            <li>Saving Events</li>
+            <li>Passing Tests</li>
+        </ul>
+        
+    <h3> What to Expect in the Next Delivery </h3>
+        <ul>
+            <li>Passing Tests (Makes up several stories)</li>
+            <li>Formatting (make it look pretty)</li>
+            <li>Saving Events</li>
+            <li>/Events/event# display detailed info, including images</li>
+            <li>/Events/new JS function that add the newly created event to event database</li>
+            <li>/Events/new JS </li>
+        </ul>
+        
+    <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
+</span>
+<!--//////////////////////////sprint 2/////////////////////-->
+<span class="sprint" id="sprint2" style="display:none">
+    <h1>Sprint2 Documentation(Oct.27, 2016)</h1>
+    <h3> Burn Down Chart </h3>
+    <img src='/pictures/BurnDownChartSprint2.png' height="400px" width="600px">
+    <h3> Completed Stories in this Sprint(in priority order)</h3>
+        <ul>
+            <li> Title </li>
+            <li> /About vision </li>
+            <li> /About mission </li>
+            <li> /About Meet the team</li>
+            <li> Add Bootstrap </li>
+            <li> /index teamLogo </li>
+            <li> /Homepage sample event </li>
+            <li> /About Team member David </li>
+            <li> /About Team member Shervyna </li>
+            <li> /About Team member Leo </li>
+            <li> /About Team member Stephanie </li>
+        </ul>
+        <p> After doing some sprint planning we finally were able to execute the first stories of our project. We decided to first get the whole structure of the project and after start adding style to it. We started by doing the most simple task and expect to start performing the more complex task in the following sprints.   </p>
+    <h3> Current Backlog in Order </h3>
+           <ul>
+            <li> search button</li>
+            <li> about button</li>
+            <li> home button</li>
+            <li> /Events/new new events</li>
+            <li> /Events/new event name</li>
+            <li> /Events/new location</li>
+            <li> /Events/new image</li>
+            <li> /Events/new year</li>
+            <li> /Events/new date</li>
+            <li> /Events/event# display info</li>
+            <li> /Events/event# RSVP with your email</li>
+            <li> /confirmation you have been confirmed</li>
+            <li> /confirmation the following people have been confirmed</li>
+            <li> /confirmation display names</li>
+            <li> /api/events for searching/grading</li>
+            <li> /api/events id,title,location</li>
+        </ul>
+    <h3> What to Expect in the Next Delivery </h3>
+    <ul>
+            <li> about button</li>
+            <li> home button</li>
+            <li> /Events/new new events</li>
+            <li> /Events/new event name</li>
+            <li> /Events/new location</li>
+            <li> /Events/new image</li>
+            <li> /Events/new year</li>
+            <li> /Events/new date</li>
+            <li> /Events/event# display info</li>
+            <li> /Events/event# RSVP with your email</li>
+        </ul>
+    <p> For the next delivery we plan to almost finish the project and start adding style to it. </p>
+</span>
+{% endblock  %}

@@ -1,5 +1,55 @@
 {% extends "layout.html" %}
 
 {% block mainContent %}
-  <p>This is the about us page</p>
+<div id="about-page">
+  <h1 class="meet-team"> Happiness is only truth when shared.</h1>
+  <div class="outer">
+
+      <div>
+        <ul>        
+          <li class="mission">
+            <img id="mission-container" src="/pictures/Mission.PNG" height="500px">
+            <div class="mission-statement">
+              <h1>Mission</h1>
+              <p>CU There Events is committed to providing a state-of-the-art platform where people get to see, reserve, and create the events that matter the most to them.</p>
+            </div>
+          </li>
+          <li class="vision">
+            <img id="vision-container" src="/pictures/vision.PNG" height="500px">
+            <div class="vision-statement">
+              <h1>Vision</h1>
+              <p>By 2020 our growth strategy will place CU There Events as the lead webApp in event planning.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+</div>
+<br> 
+  <h2 class="meet-team">Meet the Team</h2>
+  <div id = "about-us-list">
+    <ul>
+      <li id="David">
+        <span id="precious-porcupine-name">David</span>
+        <img id="precious-porcupine-headshot" src='/pictures/David.JPG' >
+        <p> He is in charge of the vision and growth strategy of CU There Events. David is a senior majoring in Economics & Finance at the Monterrey Institute of Technology and Higher Education. He is very passionate about using technology for uniting society and creating unique sharing and connecting experiences.</p>
+      </li>
+      <li id="Leo">
+        <span id="charming-squirrel-name">Leo</span>
+        <img id="charming-squirrel-headshot" src='/pictures/leo.JPG' >
+        <p>Leo is a Pokemon hunter from Davenport College '18. He travels around the world with his Pikachu.</p>
+      </li>  
+      <li id="Shervyna">
+        <span id="shiny-horse-name">Shervyna</span>
+        <img id="shiny-horse-headshot" src='/pictures/Shervyna.JPG' >
+        <p>Shervyna is a junior majoring in computer science and economics. She is seeking to integrate her multicultural background with her passion in technology to bring more happiness to the world!</p>
+      </li>
+      <li id="Stephanie">
+        <span id="fancy-meerkat-name">Stephanie</span>
+        <img id="fancy-meerkat-headshot" src='/pictures/Steph.JPG' >
+        <p>Stephanie is a sophomore in Yale College double majoring in Computer Science and Spanish. She is passionate about using technology to bring new ideas to life that will change the world!</p>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <br>
 {% endblock %}
