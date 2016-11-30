@@ -25,7 +25,7 @@ var allEvents = [
   },
   {
     id: 2,
-    title: 'BBQ for managers',
+    title: 'Party in the USA',
     date:   new Date(2015, 9, 20, 18, 0, 0),
     image: 'http://i.imgur.com/CJLrRqh.gif',
     location: 'Barry Nalebuff\'s house',
