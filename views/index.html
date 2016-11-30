@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-
 {% block header %}
   <header>
     <h1>{{ title }} FTW</h1>
@@ -7,10 +6,17 @@
 {% endblock %}
 
 {% block mainContent %}
+  <style>
+    body {
+      background: url("https://s16.postimg.org/ohan1w2r9/drinking_buddies.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
-  <img id="logo" src="https://s15.postimg.org/7d9c0lmzv/Drinking_Buddies_LOGO.png" style="width: 40%; height: 40%">
+  <img id="logo" src="https://s13.postimg.org/x1l4xlu6v/Drinking_Buddies_LOGO.png" style="width: 30%; height: 30%">
   <p>Here is our list of events</p>
   <div style ="border: 1px style black">
     {% include "fragments/events-list.html" %}
@@ -24,5 +30,4 @@
     <a id="new" href="/events/new">Create a new event</a>
   </p>
  
-  
 {% endblock %}
