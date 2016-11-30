@@ -1,6 +1,6 @@
 <script>
 $(document).ready(function() {
-   $(".index-event-id").click(function() {
+   $(".index-event-id").hover(function() {
     $(this).children(".index-event-detail").toggle();
     });
 });
@@ -23,7 +23,7 @@ $(document).ready(function() {
     <div class="index-event-detail" id="event-{{event.id}}">
          <br><span class="location">{{event.location}}</span>
          <br><span class="attendance">{{event.attending.length}} attending so far.</span></br>
-         <img src="{{event.image}}" id="image">
+         <img src="{{event.image}}" id="image"></br>
     </div>
 
     </br> 

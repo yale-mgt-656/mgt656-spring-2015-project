@@ -21,7 +21,8 @@
     Location: <span id="location">{{event.location}}</span>
     </br>
     </div>
-    <img src="{{event.image}}" id="image">
+    <div class="event-detail-page-img"></div>
+    <img src="{{event.image}}" id="image" >
     <br>
   	<ul id="attendees">
 	    {% for people in event.attending %}
@@ -32,7 +33,7 @@
     </ul>
     </br>
   <form id="email" method="POST">
-    <input type="email" name="email" placeholder="register with email">
+    <input type="email" name="email" placeholder="register with email" style="color:black">
     <input type="submit" value="Submit" style="color:black">
   </form>
   </div>
