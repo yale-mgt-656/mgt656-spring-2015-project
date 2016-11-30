@@ -21,7 +21,8 @@
     Location: <span id="location">{{event.location}}</span>
     </br>
     </div>
-    <img src="{{event.image}}" id="image">
+    <div class="event-detail-page-img"></div>
+    <img src="{{event.image}}" id="image" >
     <br>
   	<ul id="attendees">
 	    {% for people in event.attending %}
