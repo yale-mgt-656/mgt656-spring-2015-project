@@ -414,3 +414,19 @@ p {
   width: 100%;
 }
 
+
+.head {
+  text-align: center;
+  font-size: 250%;
+  color: #3aa1ff;
+}
+
+#new {
+  text-align: center;
+}
+
+#new-event {
+  margin-left: auto;
+  margin-right: auto;
+}
+
