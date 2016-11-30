@@ -1,5 +1,7 @@
 
-
+.carousel .item {
+  height: 600px;
+}
 body {
   
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -47,7 +49,7 @@ float:left;
   background-color:#e2e2e2;
 }
 .menu-right li a {
-  color:white;
+  color:#1285ff;
 }
 
 .menu-right li:hover{
