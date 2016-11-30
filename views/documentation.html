@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block header %}
-  <header>
+  <header style="text-align:center">
     <h1> MGT 656 Management of Software Development </h1>
     <h2> Project Status Report 
     <h3> Outer Nova </h3>
@@ -9,7 +9,7 @@
     
 {% block mainContent %}
 
-<ul>
+<ul style="text-align:center">
     <li>David T Sanchez: david.topiltzin@yale.edu</li>
     <li>Ruan Hsuan Wei : hsuanwei.ruan@yale.edu</li>
     <li>Lixing Liang: lixing.liang@yale.edu</li>
@@ -27,8 +27,8 @@ var check=0;
         });
     });
 </script>
-<h2>Sprint Reports</h2>
-<ul>
+<h2 style="text-align:center">Sprint Reports</h2>
+<ul style="text-align:center">
     <li><a href="#" class="link" id="link6">Final Report</a></li>
     <li><a href="#" class="link" id="link5">Sprint5 Report</a></li>
     <li><a href="#" class="link" id="link4">Sprint4 Report</a></li>
@@ -38,11 +38,13 @@ var check=0;
 </ul>
 <!--//////////////////////////final report/////////////////////-->
 
-<span class="sprint" id="sprint6" style="display:none">
+<div class="sprint" id="sprint6" style="display:none">
 <h1>Sprint 6 Documentation (Nov.29, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
             <li>add carousel</li>
+            <li>minor fixes(make it look prettier)</li>
+
         </ul>
     <h3> Burn Down Chart </h3>
     <!--change the chart link!-->
@@ -50,7 +52,7 @@ var check=0;
     <h3>Completed Stories in this Sprint(in priority order)</h3>
         <ul>
            <li>add carousel</li>
-            
+            <li>minor fixes(make it look prettier)</li>
         </ul>
     <h3> Current Backlog in Order as of Nov15, 2016</h3>
        <p>Done!!</p>
@@ -58,10 +60,10 @@ var check=0;
        <p>We spent a lot of time in making it look nice, and we learned a lot from adding these additional features!</p>
 
 
-</span>
+</div>
 <!--//////////////////////////sprint 5/////////////////////-->
 
-<span class="sprint" id="sprint5" style="display:none">
+<div class="sprint" id="sprint5" style="display:none">
 <h1>Sprint 5 Documentation (Nov.15, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
@@ -88,9 +90,9 @@ var check=0;
         
     <h3> What to Expect in the Next Delivery </h3>
     <p>no sprints left!!!</p>
-</span>
+</div>
 <!--////////////sprint 4/////////////////////-->
-<span class="sprint" id="sprint4" style="display:none">
+<div class="sprint" id="sprint4" style="display:none">
 <h1>Sprint 4 Documentation (Nov.8, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
         <ul>
@@ -126,10 +128,10 @@ var check=0;
             <li>FINISH OUR FANCY WEBSITE!!</li>
         </ul>
     <p> We passed all the tests, and we are focusing on making the site look prettier!</p>
-</span>
+</div>
 
 <!--//////////////////////////sprint 3/////////////////////-->
-<span class="sprint" id="sprint3" style="display:none">
+<div class="sprint" id="sprint3" style="display:none">
 
     <h1>Sprint 3 Documentation (Nov.1, 2016)</h1>
     <h3>New stories in this Sprint(in priority order)</h3>
@@ -182,9 +184,9 @@ var check=0;
         </ul>
         
     <p>We hope to focus on passing tests in our next sprint, and hopefully make the site look prettier</p>
-</span>
+</div>
 <!--//////////////////////////sprint 2/////////////////////-->
-<span class="sprint" id="sprint2" style="display:none">
+<div class="sprint" id="sprint2" style="display:none">
     <h1>Sprint2 Documentation(Oct.27, 2016)</h1>
     <h3> Burn Down Chart </h3>
     <img src='/pictures/BurnDownChartSprint2.png' height="400px" width="600px">
@@ -236,5 +238,5 @@ var check=0;
             <li> /Events/event# RSVP with your email</li>
         </ul>
     <p> For the next delivery we plan to almost finish the project and start adding style to it. </p>
-</span>
+</div>
 {% endblock  %}

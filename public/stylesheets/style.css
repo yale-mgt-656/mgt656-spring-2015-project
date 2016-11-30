@@ -51,6 +51,8 @@ float:left;
 }
 .menu-right li a {
   color:#1285ff;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .menu-right li:hover{
@@ -429,4 +431,11 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-
+label{
+  padding:5px;
+  
+}
+.sprint{
+margin-left:30%;
+  width:100%;
+}
