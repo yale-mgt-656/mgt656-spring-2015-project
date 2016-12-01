@@ -1,0 +1,20 @@
+body {
+  padding: 75px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fbe2b4;
+}
+
+h1 {
+  font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color:#ff4c65;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.form-errors {
+	color: red;
+}
