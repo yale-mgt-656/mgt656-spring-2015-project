@@ -4,9 +4,19 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #5271ff;
 }
 
 .form-errors {
 	color: red;
+}
+.aboutphoto {
+    display: inline-block;
+}
+footer{
+  background-color: #eee;
+  color: white;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
 }
