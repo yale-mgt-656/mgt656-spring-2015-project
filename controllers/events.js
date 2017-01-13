@@ -99,8 +99,34 @@ function rsvp (request, response){
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
 }
+function api(request,response){
+  var url = require("url");
+  var keyword = url.parse(request.url, true).query.search;
+  var output = null;
+  if (keyword != null) {
+    var keywords = keyword.toLowerCase().split(" ");
+    console.log(keywords);
+    output = {events:[]};
+    for (var i=0; i < events.all.length; i++) {
+      var keyword_is_not_matching = false;
+      var title = events.all[i].title.toLowerCase();
+      for (var j = 0; j < keywords.length; ++j) {
+        if (title.indexOf(keywords[j]) < 0) {
+          keyword_is_not_matching = true;
+          break;
+        }
+      }
+      if (!keyword_is_not_matching) {
+        output.events.push(events.all[i]);
+      }
+    }
+  } else {
+    output = {events:events.all};
+  }
+  response.json(output);
+}
+
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -111,5 +137,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
