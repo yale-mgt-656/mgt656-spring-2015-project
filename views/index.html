@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
+
 {% block header %}
   <header>
+    <a href="/">
+      <img id="logo" src="/stylesheets/Teamlogo2.PNG" alt="logo"/>
+      </a>
     <h1>{{ title }} FTW</h1>
   </header>
 {% endblock %}
@@ -9,6 +13,12 @@
 {% block mainContent %}
   <p>
     Welcome to {{ title }}. {{tagline}}
+  </p>
+  <p>
+    Here is our list of events:
+    <div style="boarder: 1px solid black">
+    {% include "fragments/events-list.html" %}
+    </div>
   </p>
   <p>
     Check out the <a href="/about">About us</a> page
