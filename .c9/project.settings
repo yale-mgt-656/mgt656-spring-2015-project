@@ -8,7 +8,7 @@
     "build": {
         "@builder": "auto",
         "@path": "/.c9/builders",
-        "@saveall": true
+        "@saveall": "true"
     },
     "find.nak": {
         "@searchLimit": 100
@@ -26,17 +26,9 @@
     },
     "run": {
         "@path": "/.c9/runners",
-        "@runner": "node-gulp",
         "configs": {
             "@inited": "true",
-            "json()": {
-                "Gulp": {
-                    "command": "gulp",
-                    "debug": true,
-                    "name": "Gulp",
-                    "runner": "Shell command"
-                }
-            }
+            "json()": {}
         }
     },
     "share": {
