@@ -7,14 +7,19 @@
 {% endblock %}
 
 {% block mainContent %}
+  <img src="/images/mangrove.png" id="logo">
   <p>
     Welcome to {{ title }}. {{tagline}}
   </p>
+  <p>List of events</p>
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
   <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
   <p>
-    <a id="new" href="/events/new">Create a new event</a>
+    <a class="btn btn-default" id="new" href="/events/new">Create a new event</a>
   </p>
 {% endblock %}

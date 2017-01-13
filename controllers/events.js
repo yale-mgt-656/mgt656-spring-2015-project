@@ -22,6 +22,10 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  monthvalue: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+    12, 13, 14, 15, 16, 17, 18, 19, 20, 21,  
+    22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
@@ -61,9 +65,57 @@ function saveEvent(request, response){
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
 
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+
+  if (validator.isInt(request.body.year) === false) {
+    contextData.errors.push('Your year should be an integer.');
+  }
+
+  if (!(validator.equals(request.body.year, 2015) || validator.equals(request.body.year, 2016))) {
+    contextData.errors.push('Your year can only be 2015 or 2016.');
+  }
+
+  if (validator.isInt(request.body.month) === false) {
+    contextData.errors.push('Your month should be an integer.');
+  }
+
+  if (validator.isIn(request.body.month, allowedDateInfo.monthvalue) === false) {
+    contextData.errors.push('Your month should be between 0 and 11.');
+  }
+
+  if (validator.isInt(request.body.day) === false) {
+    contextData.errors.push('Your day should be an integer.');
+  }
+
+  if (validator.isIn(request.body.day, allowedDateInfo.days) === false) {
+    contextData.errors.push('Your day should be between 1 and 31.');
+  }
+
+  if (validator.isInt(request.body.hour) === false) {
+    contextData.errors.push('Your hour should be an integer.');
+  }
+
+  if (validator.isIn(request.body.hour, allowedDateInfo.hours) === false) {
+    contextData.errors.push('Your hour should be between 0 and 23.');
+  }
+
+  if (!(validator.matches(request.body.image, "^http://") || validator.matches(request.body.image, "^https://"))) {
+    //if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be a URL starting with http:// or https://');
+    contextData.errors.push(request.body.image);
+  }
+
+  if (!(validator.matches(request.body.image, ".png$") || validator.matches(request.body.image, ".gif$"))) {
+    contextData.errors.push('Your image should be a URL ending with .png or .gif');
+  }
+
 
   if (contextData.errors.length === 0) {
+    var nextId = events.nextEventId();
     var newEvent = {
+      id: nextId,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -71,10 +123,12 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/'+nextId);
   }else{
     response.render('create-event.html', contextData);
   }
+
+
 }
 
 function eventDetail (request, response) {
@@ -102,6 +156,22 @@ function rsvp (request, response){
 
 }
 
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  if (search){
+    for(var i; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+        output.events.push(events.all[i]);
+     }
+    }
+  }
+  else{
+    output.events = events.all;
+  }
+  
+  response.json(output);
+}
 /**
  * Export all our functions (controllers in this case, because they
  * handles requests and render responses).
@@ -111,5 +181,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };

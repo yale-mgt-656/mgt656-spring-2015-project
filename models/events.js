@@ -54,7 +54,12 @@ function getById (id) {
   return null;
 }
 
+function nextEventId () {
+  return allEvents[allEvents.length - 1].id + 1;
+}
+
 module.exports = exports = {
   all: allEvents,
-  getById: getById
+  getById: getById,
+  nextEventId: nextEventId
 };
