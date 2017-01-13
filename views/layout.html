@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' />
   </head>
 
 	<body class="container">
@@ -16,7 +17,10 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>This be the footer.
+       <a href="/about">About us</a>
+        <a href="/">Home</a>
+      </footer>
     {% endblock %}
 
   </body>
