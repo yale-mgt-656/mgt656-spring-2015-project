@@ -10,3 +10,7 @@ a {
 .form-errors {
 	color: red;
 }
+
+.checkmark li:before {
+    content: "\2713\0020";
+}
