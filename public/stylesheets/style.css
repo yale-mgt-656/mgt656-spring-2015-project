@@ -1,12 +1,58 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body.container{
+  background-color: white;
+  font: 18px "Archer";
 }
-
 a {
-  color: #00B7FF;
+  color: black;
 }
 
 .form-errors {
 	color: red;
+}
+footer {
+  color: black;
+  font: 20px "Gotham Light";
+  margin-left: 950px;
+  padding: 1em;
+}
+.headerBar {
+  color: black;
+  font: 20px "Gotham Light";
+  margin-left: 850px;
+  padding: 1em;
+}
+.headerBar2 {
+  color: black;
+  font: 20px "Gotham Light";
+  margin-left: 970px;
+}
+.subtitle {
+  font: 40px "Gotham Light";
+}
+.events {
+  font: 20px "Gotham";
+  color: black;
+  margin-left: 200px;
+  margin-right: 400px;
+}
+.createevents {
+  font: 20px "Gotham";
+  color: black;
+}
+.title {
+  font:60px "Gotham";
+   margin-left: 350px;
+  padding: 1em;
+}
+.eventscontainer {
+   margin-right: 700px;
+   margin-left: 0px;
+  padding: 1em;
+}
+ul {
+ list-style: none;
+}
+.names {
+  margin-left: 50px
+  margin-right: 50px;
 }
