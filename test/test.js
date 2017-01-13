@@ -105,9 +105,7 @@ describe('The home page',function(){
     this.server = app.listen(this.port, done);
   });
 
-  before(function(done){
-    this.browser.visit(SITE, done);
-  });
+
 
   it('should be up and running', function(){
     assert.ok(this.browser.success, 'Home page not found at ' + this.browser.location.pathname);

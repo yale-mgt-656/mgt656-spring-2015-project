@@ -2,22 +2,137 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <link rel='stylesheet' href='/stylesheets/style.css' /> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <html lang="en">
 
-	<body class="container">
+<head>
 
-    {% block header %}
-      <header>Hey, I'm in the header</header>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MGT656</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://ironsummitmedia.github.io/startbootstrap-grayscale/css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+
+</head>
+{% block mainContent %}
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span><img id="logo" src="http://imgur.com/D3ZLmnG.png" style="opacity: 0.6"/></span> <!-- http://i.imgur.com/TEpG0ur.png
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#about">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about/#about">Status Report</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                      {% block header %}
+                        <h1 class="brand-heading">{{title}}</h1>
+                        <p class="intro-text">{{tagline}}</p>
+                        {% endblock %}
+                        {% block right%}
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                            {% endblock %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+      {% block left %}
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2></h2>
+                <p> </p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </section>
     {% endblock %}
 
-    {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
-    {% endblock %}
+    <!-- Footer -->
+    <footer>
+        <a href="/">Home</a> || <a href="/about">About</a>>
+    </footer>
+{% endblock %}
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-    {% block footer %}
-      <footer>This be the footer.</footer>
-    {% endblock %}
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-  </body>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>
+  
+    
+    
 </html>
