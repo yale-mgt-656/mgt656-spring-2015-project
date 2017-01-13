@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/junglees/mgt656-spring-2015-project.png?label=ready&title=Ready)](https://waffle.io/junglees/mgt656-spring-2015-project)
 # MGT 645 Project
 
 This is the starter project for MGT 645. You'll fork this

@@ -1,12 +1,63 @@
+header{
+  font-family:'times new roman';
+  color: red !important;
+  font-weight: bolder;
+}
+
+.donkey{
+  font-family:trebuchet;
+   font-size:20pt;
+}
+
+p{
+  font-family:garamond;
+  padding: 15px;
+  font-size:130%;
+  color: #FFFFF0 !important;
+}
+
+span{
+  padding:10px;
+}
+
+img{
+  padding-bottom:10px;
+  border-radius: 20px;;
+}
+
+
+li {
+    list-style-type: none;
+    display: inline;
+    padding:20px;
+}
+
+ul{
+  color: orange !important;
+  padding: 20px;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  text-align: center;
+  background: url("http://vmwebapp.com/vmworld/images/vmworld-gatherings.jpg");
+  background-size:cover;
 }
 
 a {
-  color: #00B7FF;
+ 
+  font-weight: bolder;
+  font-family: garamond;
+  color: orange !important;
 }
 
 .form-errors {
 	color: red;
 }
+
+footer{
+  background-color: #FFFFFF;
+  border: solid;
+}
+

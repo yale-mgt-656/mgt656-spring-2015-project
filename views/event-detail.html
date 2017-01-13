@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+  <p>Welcome to biggest event of the year --- Event {{event.id}}</p>
+  
+  <h1 id='title'>{{event.title}}</h1>
+  <br></br>
+  <span id='date'>{{event.date|prettyDate}}</span>
+  <br></br>
+  <span id='location'>{{event.location}}</span>
+  <br></br>
+  <img src='{{event.image}}' id='image'>
+  
+  <p>You know it's a party when these folks are coming:</p>
+  <ul id='attendees'>
+    <li>{{event.attending}}</li>
+  </ul>
+  
+  <p>To RSVP to the event, just submit your email address:</p>
+  <form id="rsvp" method="POST">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+    
+    <input type="submit" name="submit">
+    
+  </form>
+  
+  {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}<br></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+     
+{% endblock %}
+
+{% block footer %}
+  <footer>
+    The time is now {{time}}.
+    <a href="/about">About us</a>.
+  </footer>
+{% endblock %}
