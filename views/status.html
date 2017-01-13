@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+ <header>
+    
+</header>
+
+{% block mainContent %}
+  <p>MGT 656 - Software Development Project Status Report</p>
+
+ <p>Jonas Clark (jonas.clark@yale.edu)</p>
+ <p>Alex Henry (alex.henry@yale.edu)</p>
+ <p>Amanda Rinderle (amanda.rinderle@yale.edu)</p>
+
+<p>February 4, 2015</p>
+
+<p>Burn Down Chart
+<div id="logo">
+     <img src="http://i.imgur.com/QKmrOrA.png" alt="Burn Down Chart" </div></p>
+     
+
+<p>Sprint Completed Stories</p>
+<ul>1. Using Bootstrap CSS</ul>
+<ul>2. Link to /about in the footer</ul>
+<ul>3. Link to / in the footer</ul>
+<ul>4. Team logo on /</ul>
+<ul>5. Team members on /about</ul>
+<ul>6. Photos of team members on /about</ul>
+
+<p>We spent considerable time upfront setting up our collaborative workspaces and getting familiar with the basics of working together on the same application using Github, Cloud9, and Heroku. We decided to create new branches for each feature improvement for the application and work on these independently in Cloud9. This meant that we needed to understand the mechanics of how to push and pull code from Github, merge pieces of work, and deploy to Heroku. Something that sounds easy, but took a fair bit of time for us to all understand and be able to execute on (Kyle and Octocat both helped!). </p>
+
+<p>We then worked on several html/css features that we prioritized because we believed that we’d be able to make these changes relatively quickly given both our existing knowledge and the size of the tasks. After making these updates in different branches we merged them with the origin master and deployed our updated application to Heroku. </p>
+
+<p>Product Backlog</p>
+<ul>1. Create additional required pages</ul>
+<ul>2. Create unordered list of events on homepage</ul>
+<ul>3. Allow for creating a new event on the homepage</ul>
+<ul>4. Create form for creating new events on new events page</ul>
+<ul>5. Create RSVP function</ul>
+<ul>6. Make site compliant with API JSON format</ul>
+
+<p>After finishing the html/css elements of the site (such as creating the additional required pages with bootstrap css, header/footer, and links, creating an unordered list of events), we plan to tackle some of the java script requirements (allow for creating new events, create form for creating new events, create RSVP function). We will save making the site compliant with API JSON format for last as we anticipate this taking the most time. </p>
+
+{% endblock %}
