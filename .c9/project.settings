@@ -35,6 +35,12 @@
                     "debug": true,
                     "name": "Gulp",
                     "runner": "Shell command"
+                },
+                "Test configuration": {
+                    "command": "app.js",
+                    "debug": true,
+                    "name": "Test configuration",
+                    "runner": "Node.js (default)"
                 }
             }
         }
