@@ -1,12 +1,84 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+ font-family: 'AsapBold';
+ src: url("asap-bold-webfont.eot");
+ src: url("asap-bold-webfont.svg");
+ src: url("asap-bold-webfont.tt");
+ src: url("asap-bold-webfont.woff");
+ font-weight: normal;
+ font-style: normal;
 }
-
+@font-face {
+ font-family: 'Asap';
+ src: url("asap-regular-webfont.eot");
+ src: url("asap-regular-webfont.svg");
+ src: url("asap-regular-webfont.ttf");
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'BPscript';
+ src: url("bpscript-webfont.eot");
+ src: url("bpscript-webfont.svg");
+ src: url("bpscript-webfont.ttf");
+ src: url("bpscript-webfont.woff");
+ font-weight: normal;
+ font-style: normal;
+}
+body.container{
+  background-color: white;
+  font-size: 18px;
+  font-family: "Asap";
+}
 a {
-  color: #00B7FF;
+  color: black;
 }
 
 .form-errors {
 	color: red;
+}
+footer {
+  font-size:  20px;
+  font-family: "Asap";
+  margin-left: 950px;
+  padding: 1em;
+}
+.headerBar {
+  font-size:  20px;
+  font-family: "Asap";
+  margin-left: 850px;
+  padding: 1em;
+}
+.headerBar2 {
+  font-size:  20px;
+  font-family: "Asap";
+  margin-left: 950px;
+}
+.subtitle {
+  font-size: 40px;
+  font-family: "Asap";
+}
+.events {
+  font-size: 30px;
+  font-family: "BPscript";
+  margin-left: 200px;
+  margin-right: 400px;
+}
+.createevents {
+  font-size: 30px;
+  font-family: "BPscript";
+  color: black;
+}
+.title {
+  font-size: 60px;
+  font-family: 'BPscript';
+  margin-left: 350px;
+  padding: 1em;
+}
+.eventscontainer {
+   margin-right: 700px;
+   margin-left: 0px;
+  padding: 1em;
+}
+ul {
+ list-style: none;
 }
