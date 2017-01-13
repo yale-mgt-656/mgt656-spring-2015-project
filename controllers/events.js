@@ -22,11 +22,13 @@ var allowedDateInfo = {
     10: 'November',
     11: 'December'
   },
+  days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
   minutes: [0, 30],
   hours: [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
     12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-  ]
+  ],
+  years: [2015, 2016]
 };
 
 /**
@@ -45,7 +47,7 @@ function listEvents(request, response) {
  * Controller that renders a page for creating new events.
  */
 function newEvent(request, response){
-  var contextData = {};
+  var contextData = {allowedDateInfo: allowedDateInfo};
   response.render('create-event.html', contextData);
 }
 
@@ -57,21 +59,63 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 50) === false) {
+    contextData.errors.push('Your title should be between 1 and 50 letters.');
+  }
+  
+  if (validator.isLength(request.body.location, 1, 50) === false) {
+    contextData.errors.push('Your location should be between 1 and 50 letters.');
   }
 
+  if (validator.isURL(request.body.image) === false){
+    contextData.errors.push('Please provide valid url for image!');
+  }else if(!request.body.image.match(/\.(gif|png)$/i)){
+    contextData.errors.push('Image must be gif or png!');
+  }
+  
+  if (validator.isInt(request.body.year) === false){ 
+    contextData.errors.push('Invalid year!');
+  }else if(request.body.year > 2016 || request.body.year < 2015){
+    contextData.errors.push('Invalid year!');
+  }
+  
+  if (validator.isInt(request.body.month) === false){ 
+    contextData.errors.push('Invalid month!');
+  }else if(request.body.month > 11 || request.body.month < 0){
+    contextData.errors.push('Invalid month!');
+  }
+  
+  if (validator.isInt(request.body.day) === false){ 
+    contextData.errors.push('Invalid day!');
+  }else if(request.body.day > 31 || request.body.day < 1){
+    contextData.errors.push('Invalid day!');
+  }
+  
+  if (validator.isInt(request.body.hour) === false){ 
+    contextData.errors.push('Invalid hour!');
+  }else if(request.body.hour > 23 || request.body.hour < 0){
+    contextData.errors.push('Invalid hour!');
+  }if (validator.isInt(request.body.minute) === false){ 
+    contextData.errors.push('Invalid minute!');
+  }else if(request.body.minute !== '0' && request.body.minute !== '30'){
+    contextData.errors.push('Minute must be 0 or 30!');
+  }
+  
 
   if (contextData.errors.length === 0) {
+    var newEventID = events.getMaxID() + 1;
     var newEvent = {
+      id: newEventID,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(request.body.year, request.body.month, request.body.day, request.body.hour, request.body.minute),
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+
+    var redirectPath = '/events/' + newEventID;
+    response.redirect(302, redirectPath);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -87,19 +131,43 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
+  var contextData = {errors: [], event: ev};
+  var checkDomain = request.body.email.toLowerCase();
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
   if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+    if(checkDomain.indexOf('yale.edu') === checkDomain.length - 'yale.edu'.length){
+      console.log(checkDomain);
+      ev.attending.push(request.body.email);
+      response.redirect('/events/' + ev.id);
+    }else{
+      contextData.errors.push('Yale emails only!');
+      response.render('event-detail.html', contextData);    
+    }
+  
   }else{
-    var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
 
+}
+
+function api(request, response){
+  var output = {events: []};
+  var search = request.query.search;
+  
+  if(search){
+    for(var i = 0; i < events.all.length; i++){
+      if(events.all[i].title.indexOf(search) !== -1){
+      output.events.push(events.all[i]);
+      }
+    }
+  }else{
+    output.events = events.all;
+  }
+  response.json(output);
 }
 
 /**
@@ -111,5 +179,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
