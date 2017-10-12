@@ -12,11 +12,41 @@
       </ul>
     </div>
   {% endif %}
-
-	<form id="create-event" method="POST">
+<div class="divEventForm">
+  <div style="background-color: white; opacity: .85;">
+  	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
-  </form>
+    
+   <p><label for="location">Event location:</label>
+    <input type="text" name="location"></p>
+    
+    <p><label for="image">Event image:</label>
+    <input type="text" name="image"></p>
+    
+    <p><label for="year">Event year:</label>
+    <input type="text" name="year"></p>
+    
+    <p><label for="month">Event month:</label>
+    <input type="text" name="month"></p>
+    
+    <p><label for="day">Event day:</label>
+    <input type="text" name="day"></p>
+   
+    <p><label for="hour">Event hour:</label>
+    <input type="text" name="hour"></p> 
+    
+    <p><label for="minute">Event minute:</label>
+    <input type="text" name="minute"></p>
+    
+    <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+=======
+
+	
+>>>>>>> master
 {% endblock %}
 
 
